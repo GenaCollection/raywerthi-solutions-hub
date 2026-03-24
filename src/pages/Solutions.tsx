@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { Blinds, DoorOpen, Umbrella, Layers, Curtains, Cpu, ExternalLink } from 'lucide-react';
+import { Blinds, DoorOpen, Umbrella, Layers, PanelTop, Cpu, ExternalLink } from 'lucide-react';
 
 const categoryIcons: Record<string, React.ElementType> = {
   blinds: Blinds,
