@@ -10,7 +10,7 @@ const categoryIcons: Record<string, React.ElementType> = {
   rollshutters: DoorOpen,
   awnings: Umbrella,
   screens: Layers,
-  interior: Curtains,
+  interior: PanelTop,
   smarthome: Cpu,
 };
 
