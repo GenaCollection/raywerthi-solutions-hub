@@ -5,6 +5,7 @@ interface LanguageContextType {
   lang: Language;
   setLang: (lang: Language) => void;
   t: (key: string) => string;
+  tRaw: (key: string) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -12,7 +13,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [lang, setLang] = useState<Language>('ru');
 
-  const t = useCallback((key: string): string => {
+  const resolve = useCallback((key: string): any => {
     const keys = key.split('.');
     let result: any = translations[lang];
     for (const k of keys) {
@@ -22,8 +23,17 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         return key;
       }
     }
-    return typeof result === 'string' ? result : key;
+    return result;
   }, [lang]);
+
+  const t = useCallback((key: string): string => {
+    const result = resolve(key);
+    return typeof result === 'string' ? result : key;
+  }, [resolve]);
+
+  const tRaw = useCallback((key: string): any => {
+    return resolve(key);
+  }, [resolve]);
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>
