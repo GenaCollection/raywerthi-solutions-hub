@@ -117,8 +117,8 @@ export const translations: Record<Language, Record<string, any>> = {
       subtitle: 'Свяжитесь с нами для консультации',
       company: 'RayWerThi',
       country: 'Армения',
-      address: 'Адрес офиса (будет обновлён)',
-      phone: '+374 XX XXX XXX',
+      address: 'Тиграна Мец 69',
+      phone: '+374 91 223 855',
       email: 'raywerthi@gmail.com',
       form: {
         title: 'Отправить заявку',
@@ -330,8 +330,8 @@ export const translations: Record<Language, Record<string, any>> = {
       subtitle: 'Կապ հաստատեք խորհրդատվության համար',
       company: 'RayWerThi',
       country: 'Հայաստան',
-      address: 'Գրասենյակի հասցե (կթարմացվի)', // կամ փոխիր իրականով
-      phone: '+374 XX XXX XXX',
+      address: 'Տիգրան Մեծ 69',
+      phone: '+374 91 223 855',
       email: 'raywerthi@gmail.com',
       form: {
         title: 'Ուղարկել հայտ',
@@ -473,8 +473,8 @@ export const translations: Record<Language, Record<string, any>> = {
       subtitle: 'Get in touch for a consultation',
       company: 'RayWerThi',
       country: 'Armenia',
-      address: 'Office address (to be updated)',
-      phone: '+374 XX XXX XXX',
+      address: 'Tigran Mets 69',
+      phone: '+374 91 223 855',
       email: 'raywerthi@gmail.com',
       form: {
         title: 'Send a Request',
