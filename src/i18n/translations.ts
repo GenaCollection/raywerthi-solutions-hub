@@ -473,8 +473,8 @@ export const translations: Record<Language, Record<string, any>> = {
       subtitle: 'Get in touch for a consultation',
       company: 'RayWerThi',
       country: 'Armenia',
-      address: 'Office address (to be updated)',
-      phone: '+374 XX XXX XXX',
+      address: 'Tigran Mets 69',
+      phone: '+374 91 223 855',
       email: 'raywerthi@gmail.com',
       form: {
         title: 'Send a Request',

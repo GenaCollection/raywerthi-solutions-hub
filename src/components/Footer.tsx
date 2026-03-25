@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                 <Mail size={14} /> raywerthi@gmail.com
               </a>
               <span className="flex items-center gap-2">
-                <Phone size={14} /> +374 XX XXX XXX
+                <Phone size={14} /> +374 91 223 855
               </span>
               <span className="flex items-center gap-2">
                 <MapPin size={14} /> {t('contacts.country')}
