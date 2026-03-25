@@ -13,8 +13,8 @@ const placeholderProjects = [
 ];
 
 const PortfolioPreview: React.FC = () => {
-  const { t, lang } = useLanguage();
-  const projects = (t('portfolio.projects') as unknown as any[]) || [];
+  const { t, tRaw } = useLanguage();
+  const projects = Array.isArray(tRaw('portfolio.projects')) ? tRaw('portfolio.projects') : [];
 
   return (
     <section className="section-padding bg-secondary">
