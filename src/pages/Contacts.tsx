@@ -103,9 +103,9 @@ const Contacts: React.FC = () => {
                 {/* Map placeholder */}
                 <div className="rounded-xl overflow-hidden border border-border aspect-[4/3]">
                   <iframe
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=44.4,40.15,44.6,40.22&layer=mapnik"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=44.5050,40.1760,44.5150,40.1820&layer=mapnik&marker=40.1792,44.5105"
                     className="w-full h-full"
-                    title="Map - Yerevan"
+                    title="RayWerThi - Tigran Mets 69, Yerevan"
                     loading="lazy"
                   />
                 </div>

@@ -322,7 +322,8 @@ export const translations: Record<Language, Record<string, any>> = {
         { name: 'Մասնավոր տուն Աշտարակում', location: 'Աշտարակ', type: 'house', solution: 'Ռոլշտորներ', brands: 'HELLA' },
         { name: 'Դիզայներական ինտերիեր', location: 'Երևան', type: 'interior', solution: 'Վարագույրների համակարգեր', brands: 'Silent Gliss' },
         { name: 'Բիզնես կենտրոնի ֆասադ', location: 'Երևան', type: 'facade', solution: 'Տեքստիլ էկրաններ', brands: 'WAREMA' },
-        { name: 'Աշխատանք՝ Սևանի ափին', location: 'Սևան', type: 'house', solution: 'Պերգոլաներ', brands: 'WAREMA' },
+        { name: 'Առանձնատուն Սեվանի մոտ', location: 'Սեվան', type: 'house', solution: 'Պերգոլաներ', brands: 'WAREMA' },
+        { name: 'Լյուքս ապարտամենտներ', location: 'Երևան', type: 'interior', solution: 'Մոտորիզացված վարագույններ', brands: 'Silent Gliss' },
       ],
     },
     contacts: {
