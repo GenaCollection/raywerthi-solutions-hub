@@ -117,8 +117,8 @@ export const translations: Record<Language, Record<string, any>> = {
       subtitle: 'Свяжитесь с нами для консультации',
       company: 'RayWerThi',
       country: 'Армения',
-      address: 'Адрес офиса (будет обновлён)',
-      phone: '+374 XX XXX XXX',
+      address: 'Тиграна Мец 69',
+      phone: '+374 91 223 855',
       email: 'raywerthi@gmail.com',
       form: {
         title: 'Отправить заявку',
