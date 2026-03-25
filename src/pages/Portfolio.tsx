@@ -18,9 +18,9 @@ const placeholderImages = [
 const filterKeys = ['house', 'terrace', 'office', 'facade', 'interior'];
 
 const Portfolio: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, tRaw } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<string>('all');
-  const projects = (t('portfolio.projects') as unknown as any[]) || [];
+  const projects = Array.isArray(tRaw('portfolio.projects')) ? tRaw('portfolio.projects') : [];
 
   const filtered = activeFilter === 'all'
     ? projects
