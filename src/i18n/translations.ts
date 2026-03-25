@@ -330,8 +330,8 @@ export const translations: Record<Language, Record<string, any>> = {
       subtitle: 'Կապ հաստատեք խորհրդատվության համար',
       company: 'RayWerThi',
       country: 'Հայաստան',
-      address: 'Գրասենյակի հասցե (կթարմացվի)', // կամ փոխիր իրականով
-      phone: '+374 XX XXX XXX',
+      address: 'Տիգրան Մեծ 69',
+      phone: '+374 91 223 855',
       email: 'raywerthi@gmail.com',
       form: {
         title: 'Ուղարկել հայտ',
