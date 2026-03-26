@@ -1,9 +1,9 @@
 import React from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { ExternalLink } from 'lucide-react';
-import hellaLogo from '@/assets/brands/hella-logo.png';
-import waremaLogo from '@/assets/brands/warema-logo.png';
-import silentglissLogo from '@/assets/brands/silentgliss-logo.png';
+import hellaLogo from '@/assets/brands/hella-logo.svg';
+import waremaLogo from '@/assets/brands/warema-logo.svg';
+import silentglissLogo from '@/assets/brands/silentgliss-logo.svg';
 
 const brands = [
   { name: 'HELLA', key: 'hella', url: 'https://www.hella.info', logo: hellaLogo },
