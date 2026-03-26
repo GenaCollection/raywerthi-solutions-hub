@@ -26,8 +26,8 @@ const BrandsSection: React.FC = () => {
               key={brand.key}
               className="bg-secondary rounded-xl p-8 text-center flex flex-col items-center"
             >
-              <div className="text-2xl md:text-3xl font-bold text-foreground mb-4 tracking-tight">
-                {brand.name}
+              <div className="h-20 flex items-center justify-center mb-4">
+                <img src={brand.logo} alt={`${brand.name} logo`} loading="lazy" className="max-h-16 w-auto object-contain" />
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
                 {t(`brands.${brand.key}`)}
