@@ -1,11 +1,14 @@
 import React from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { ExternalLink } from 'lucide-react';
+import hellaLogo from '@/assets/brands/hella-logo.png';
+import waremaLogo from '@/assets/brands/warema-logo.png';
+import silentglissLogo from '@/assets/brands/silentgliss-logo.png';
 
 const brands = [
-  { name: 'HELLA', key: 'hella', url: 'https://www.hella.info' },
-  { name: 'WAREMA', key: 'warema', url: 'https://www.warema.com' },
-  { name: 'Silent Gliss', key: 'silentgliss', url: 'https://www.silentgliss.com' },
+  { name: 'HELLA', key: 'hella', url: 'https://www.hella.info', logo: hellaLogo },
+  { name: 'WAREMA', key: 'warema', url: 'https://www.warema.com', logo: waremaLogo },
+  { name: 'Silent Gliss', key: 'silentgliss', url: 'https://www.silentgliss.com', logo: silentglissLogo },
 ];
 
 const BrandsSection: React.FC = () => {
