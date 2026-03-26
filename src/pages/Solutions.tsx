@@ -3,15 +3,22 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { Blinds, DoorOpen, Umbrella, Layers, PanelTop, Cpu, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
-const categoryIcons: Record<string, React.ElementType> = {
-  blinds: Blinds,
-  rollshutters: DoorOpen,
-  awnings: Umbrella,
-  screens: Layers,
-  interior: PanelTop,
-  smarthome: Cpu,
+import blindsImg from '@/assets/solutions/blinds.jpg';
+import rollshuttersImg from '@/assets/solutions/rollshutters.jpg';
+import awningsImg from '@/assets/solutions/awnings.jpg';
+import screensImg from '@/assets/solutions/screens.jpg';
+import interiorImg from '@/assets/solutions/interior.jpg';
+import smarthomeImg from '@/assets/solutions/smarthome.jpg';
+
+const categoryImages: Record<string, string> = {
+  blinds: blindsImg,
+  rollshutters: rollshuttersImg,
+  awnings: awningsImg,
+  screens: screensImg,
+  interior: interiorImg,
+  smarthome: smarthomeImg,
 };
 
 const categoryKeys = ['blinds', 'rollshutters', 'awnings', 'screens', 'interior', 'smarthome'];
@@ -44,21 +51,31 @@ const Solutions: React.FC = () => {
         {/* Categories grid */}
         <section className="section-padding">
           <div className="container-site">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {categoryKeys.map((key) => {
-                const Icon = categoryIcons[key] || Layers;
-                return (
-                  <div key={key} className="bg-background border border-border rounded-xl p-8 hover:shadow-lg transition-shadow">
-                    <div className="w-12 h-12 rounded-lg gradient-warm flex items-center justify-center mb-5">
-                      <Icon className="text-primary-foreground" size={22} />
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground mb-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {categoryKeys.map((key) => (
+                <div
+                  key={key}
+                  className="group bg-background border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="relative h-52 overflow-hidden">
+                    <img
+                      src={categoryImages[key]}
+                      alt={t(`solutions.categories.${key}.title`)}
+                      loading="lazy"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold text-foreground mb-2">
                       {t(`solutions.categories.${key}.title`)}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-3">
                       {t(`solutions.categories.${key}.desc`)}
                     </p>
-                    <p className="text-xs text-primary font-semibold mb-5">
+                    <p className="text-xs text-primary font-semibold mb-4">
                       {t(`solutions.categories.${key}.brands`)}
                     </p>
                     <Link
@@ -68,8 +85,8 @@ const Solutions: React.FC = () => {
                       {t('solutions.learnMore')} →
                     </Link>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </section>
