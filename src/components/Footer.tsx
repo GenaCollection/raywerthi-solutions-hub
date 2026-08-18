@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import logoLight from '@/assets/raywerthi-mark-light.png.asset.json';
+
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -21,12 +23,16 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company */}
           <div className="lg:col-span-1">
-            <h3 className="text-xl font-bold mb-2 tracking-[0.2em]">
-              RAY<span className="text-primary">WER</span>THI
-            </h3>
+            <img
+              src={logoLight.url}
+              alt="RayWerThi"
+              loading="lazy"
+              className="h-12 md:h-14 w-auto object-contain mb-3"
+            />
             <p className="text-primary text-[10px] uppercase tracking-[0.3em] mb-4">
               Intelligent Shading Systems
             </p>
+
 
             <p className="text-background/70 text-sm leading-relaxed">
               {t('footer.description')}
