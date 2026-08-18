@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import type { Language } from '@/i18n/translations';
 import { Menu, X } from 'lucide-react';
+import logoAsset from '@/assets/raywerthi-logo.jpg.asset.json';
+
 
 const languages: { code: Language; label: string }[] = [
   { code: 'ru', label: 'RU' },
@@ -27,9 +29,14 @@ const Header: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container-site flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
-          Ray<span className="text-primary">Wer</span>Thi
+        <Link to="/" className="flex items-center" aria-label="RayWerThi — Intelligent Shading Systems">
+          <img
+            src={logoAsset.url}
+            alt="RayWerThi — Intelligent Shading Systems"
+            className="h-12 md:h-16 w-auto object-contain"
+          />
         </Link>
+
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1">
