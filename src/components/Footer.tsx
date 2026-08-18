@@ -21,9 +21,13 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company */}
           <div className="lg:col-span-1">
-            <h3 className="text-xl font-bold mb-4">
-              Ray<span className="text-primary">Wer</span>Thi
+            <h3 className="text-xl font-bold mb-2 tracking-[0.2em]">
+              RAY<span className="text-primary">WER</span>THI
             </h3>
+            <p className="text-primary text-[10px] uppercase tracking-[0.3em] mb-4">
+              Intelligent Shading Systems
+            </p>
+
             <p className="text-background/70 text-sm leading-relaxed">
               {t('footer.description')}
             </p>
