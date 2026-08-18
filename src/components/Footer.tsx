@@ -22,22 +22,24 @@ const Footer: React.FC = () => {
       <div className="container-site py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company */}
-          <div className="lg:col-span-1">
-            <img
-              src={logoLight.url}
-              alt="RayWerThi"
-              loading="lazy"
-              className="h-12 md:h-14 w-auto object-contain mb-3"
-            />
-            <p className="text-primary text-[10px] uppercase tracking-[0.3em] mb-4">
-              Intelligent Shading Systems
-            </p>
+          <div className="lg:col-span-1 flex flex-col items-center text-center md:items-start md:text-left">
+            <div className="inline-flex flex-col items-center">
+              <img
+                src={logoLight.url}
+                alt="RayWerThi"
+                loading="lazy"
+                className="h-12 md:h-14 w-auto object-contain"
+              />
+              <p className="text-primary text-[10px] uppercase tracking-[0.3em] mt-3 text-center pl-[0.3em]">
+                Intelligent Shading Systems
+              </p>
+            </div>
 
-
-            <p className="text-background/70 text-sm leading-relaxed">
+            <p className="text-background/70 text-sm leading-relaxed mt-5">
               {t('footer.description')}
             </p>
           </div>
+
 
           {/* Navigation */}
           <div>
