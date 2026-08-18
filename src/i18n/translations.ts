@@ -82,9 +82,9 @@ export const translations: Record<Language, Record<string, any>> = {
       title: 'Услуги',
       subtitle: 'Полный цикл работ — от подбора до сервиса',
       items: {
-        selection: { title: 'Подбор решения', desc: 'Консультация с учётом архитектуры, ориентации по сторонам света и ваших задач. Поможем выбрать оптимальный тип солнцезащиты и бренд для вашего объекта.' },
-        measurement: { title: 'Профессиональный выезд и замеры', desc: 'Наши специалисты выезжают на объект по всей Армении для точных замеров и оценки монтажных условий.' },
-        delivery: { title: 'Поставка и логистика', desc: 'Заказываем системы напрямую у производителей HELLA, WAREMA и Silent Gliss. Обеспечиваем надёжную доставку до объекта в любом регионе Армении.' },
+        selection: { title: 'Подбор решения', desc: 'Консультация с учётом архитектуры, угла падения света и ваших задач. Поможем выбрать оптимальный тип солнцезащиты и бренд специально под ваш проект.' },
+        measurement: { title: 'Профессиональный выезд и замеры', desc: 'Наши специалисты выезжают на объект по всей Армении для точных замеров и оценки условий установки.' },
+        delivery: { title: 'Поставка и логистика', desc: 'Заказываем системы напрямую у производителей — HELLA, WAREMA и Silent Gliss. Обеспечиваем надёжную доставку до объекта в любой регион Армении.' },
         installation: { title: 'Монтаж и пусконаладка', desc: 'Профессиональный монтаж сертифицированными специалистами. Настройка автоматики, датчиков и интеграция с системой умного дома.' },
         support: { title: 'Сервис и поддержка', desc: 'Гарантийное и постгарантийное обслуживание. Регулировка, ремонт и замена комплектующих. Всегда на связи для наших клиентов.' },
       },
@@ -261,15 +261,15 @@ export const translations: Record<Language, Record<string, any>> = {
       items: {
         selection: {
           title: 'Լուծման ընտրություն',
-          desc: 'Խորհրդատվություն՝ հաշվի առնելով ճարտարապետությունը, աշխարհագրական կողմերը և ձեր խնդիրները։ Կօգնենք ընտրել օպտիմալ արևապաշտպան տեսակը և բրենդը ձեր օբյեկտի համար։',
+          desc: 'Խորհրդատվություն՝ հաշվի առնելով ճարտարապետությունը, լույսի ընկման անկյունը և ձեր խնդիրները։ Կօգնենք ընտրել արևապաշտպանության օպտիմալ տեսակն ու ապրանքանիշը՝ հատուկ ձեր նախագծին համապատասխան։',
         },
         measurement: {
-          title: 'Մասնագիտական այց և չափագրում',
-          desc: 'Մեր մասնագետները այցելում են օբյեկտ ամբողջ Հայաստանի տարածքում՝ ճշգրիտ չափագրումների և մոնտաժի պայմանների գնահատման համար։',
+          title: 'Մասնագիտական այցելություն և չափագրում',
+          desc: 'Մեր մասնագետներն այցելում են օբյեկտ Հայաստանի ողջ տարածքում՝ ճշգրիտ չափագրման և տեղադրման պայմանների գնահատման համար:',
         },
         delivery: {
           title: 'Մատակարարում և լոգիստիկա',
-          desc: 'Համակարգերը պատվիրում ենք անմիջապես HELLA, WAREMA և Silent Gliss արտադրողներից։ Ապահովում ենք հուսալի մատակարարում Հայաստանի ցանկացած տարածաշրջան։',
+          desc: 'Պատվիրում ենք համակարգերն ուղղակիորեն արտադրողներից՝ HELLA, WAREMA և Silent Gliss: Ապահովում ենք հուսալի առաքում դեպի օբյեկտ՝ Հայաստանի ցանկացած տարածաշրջանում։',
         },
         installation: {
           title: 'Մոնտաժ և գործարկում',
@@ -439,9 +439,9 @@ export const translations: Record<Language, Record<string, any>> = {
       title: 'Services',
       subtitle: 'Full cycle of work — from selection to service',
       items: {
-        selection: { title: 'Solution Selection', desc: 'Consultation considering architecture, sun orientation and your requirements. We help choose the optimal type of sun protection and brand for your property.' },
-        measurement: { title: 'Professional On-Site Measurements', desc: 'Our specialists visit properties across Armenia for precise measurements and assessment of installation conditions.' },
-        delivery: { title: 'Delivery & Logistics', desc: 'We order systems directly from HELLA, WAREMA and Silent Gliss. We ensure reliable delivery to any region of Armenia.' },
+        selection: { title: 'Solution Selection', desc: 'Consultation considering architecture, light incidence angle and your requirements. We\'ll help you choose the optimal type of sun protection and brand specifically for your project.' },
+        measurement: { title: 'Professional On-Site Visit & Measurements', desc: 'Our specialists visit properties across Armenia for precise measurements and assessment of installation conditions.' },
+        delivery: { title: 'Delivery & Logistics', desc: 'We order systems directly from manufacturers — HELLA, WAREMA and Silent Gliss. We ensure reliable delivery to the project site in any region of Armenia.' },
         installation: { title: 'Installation & Commissioning', desc: 'Professional installation by certified specialists. Setup of automation, sensors and smart home integration when needed.' },
         support: { title: 'Service & Support', desc: 'Warranty and post-warranty maintenance. Adjustment, repair and component replacement. Always available for our clients.' },
       },
