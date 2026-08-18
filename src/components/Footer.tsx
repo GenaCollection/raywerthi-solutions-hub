@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                 loading="lazy"
                 className="h-12 md:h-14 w-auto object-contain"
               />
-              <p className="text-primary text-[10px] uppercase tracking-[0.3em] mt-3 text-center">
+              <p className="text-primary text-[10px] uppercase tracking-[0.3em] mt-3 text-center pl-[0.3em]">
                 Intelligent Shading Systems
               </p>
             </div>
