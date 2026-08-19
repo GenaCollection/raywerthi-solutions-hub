@@ -94,7 +94,7 @@ export const translations: Record<Language, Record<string, any>> = {
       whoWeAre: { title: 'Кто мы', text: 'RayWerThi давно работает на рынке солнцезащитных систем в Армении, специализируясь на комплексных решениях для частных домов и профессиональных проектов. Наш опыт, официальное партнёрство с ведущими европейскими производителями и команда квалифицированных монтажников позволяют нам реализовывать проекты любой сложности.' },
       partnership: { title: 'Официальное представительство', text: 'RayWerThi является официальным представителем HELLA, WAREMA и Silent Gliss в Армении. Мы работаем напрямую с производителями, что гарантирует подлинность продукции, актуальные технические решения и конкурентные условия для наших клиентов.' },
       geography: { title: 'География', text: 'Мы работаем по всей Армении: Ереван и регионы. Реализуем решения как для небольших частных домов, так и для крупных объектов.' },
-      values: { title: 'Наши ценности', text: 'Качественный монтаж, точность замеров, работа «под ключ», долговечность решений и комфорт клиентов — это то, что определяет нашу работу каждый день.' },
+      values: { title: 'Наши ценности', text: 'Наша миссия — предлагать солнцезащитное оборудование неизменно высокого качества, которое решает самые сложные интерьерные задачи. Мы создаём премиальную культуру комфорта, обеспечивая индивидуальный подход, безупречный сервис и десятилетия гарантии, которые соответствуют вашему видению и служат будущим поколениям.' },
     },
     portfolio: {
       title: 'Портфолио',
@@ -301,7 +301,7 @@ export const translations: Record<Language, Record<string, any>> = {
       values: {
         title: 'Մեր արժեքները',
         text:
-          'Որակյալ մոնտաժ, ճշգրիտ չափագրում, «բանալիներով» աշխատանք, լուծումների երկարակեցություն և հաճախորդի հարմարավետություն՝ այս ամենը մեր ամենօրյա աշխատանքի հիմքում է։',
+          'Մեր առաքելությունն է տրամադրել անզիջում որակի արևապաշտպան տեխնիկա, որը լուծում է ամենաբարդ ինտերիերային մարտահրավերները։ Մենք ստեղծում ենք հարմարավետության պրեմիում մշակույթ՝ ապահովելով անհատական մոտեցում, անթերի սպասարկում և տասնամյակների երաշխիք, որոնք հարմարվում են Ձեր տեսլականին և ծառայում սերունդներին։',
       },
     },
     portfolio: {
@@ -451,7 +451,7 @@ export const translations: Record<Language, Record<string, any>> = {
       whoWeAre: { title: 'Who We Are', text: 'RayWerThi has extensive experience in the sun protection systems market in Armenia, specializing in comprehensive solutions for private homes and professional projects.' },
       partnership: { title: 'Official Representation', text: 'RayWerThi is the official representative of HELLA, WAREMA and Silent Gliss in Armenia. We work directly with manufacturers, guaranteeing product authenticity and competitive terms.' },
       geography: { title: 'Geography', text: 'We work across all of Armenia: Yerevan and regions. We implement solutions for small private homes and large-scale projects alike.' },
-      values: { title: 'Our Values', text: 'Quality installation, measurement precision, turnkey work, solution durability and client comfort — this is what defines our work every day.' },
+      values: { title: 'Our Values', text: 'Our mission is to provide uncompromising quality sun protection technology that solves the most complex interior challenges. We create a premium culture of comfort, ensuring an individual approach, impeccable service and decades of warranty that adapt to your vision and serve generations.' },
     },
     portfolio: {
       title: 'Portfolio',
