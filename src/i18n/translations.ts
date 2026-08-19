@@ -371,8 +371,8 @@ export const translations: Record<Language, Record<string, any>> = {
   en: {
     nav: { home: 'Home', solutions: 'Solutions', services: 'Services', about: 'About', portfolio: 'Portfolio', contacts: 'Contacts' },
     hero: {
-      title: 'Premium Sun Protection Systems in Armenia',
-      subtitle: 'RayWerThi — official representative of HELLA, WAREMA and Silent Gliss. Full cycle: solution selection, precise measurements, delivery and professional installation across Armenia.',
+      title: 'Premium Sun Protection Systems in the Caucasus',
+      subtitle: 'RayWerThi — official representative of HELLA, WAREMA and Silent Gliss. Full cycle: solution selection, precise measurements, delivery and professional installation across the Caucasus, including Armenia and Georgia.',
       cta: 'Find a Solution',
       ctaSecondary: 'Contact Us',
     },
@@ -400,7 +400,7 @@ export const translations: Record<Language, Record<string, any>> = {
       step3title: 'Delivery',
       step3desc: 'Ordering and delivery of finished systems from the manufacturer.',
       step4title: 'Installation',
-      step4desc: 'Professional installation and maintenance across Armenia.',
+      step4desc: 'Professional installation and maintenance across the Caucasus, including Armenia and Georgia.',
     },
     advantages: {
       title: 'Advantages of RayWerThi',
@@ -410,7 +410,7 @@ export const translations: Record<Language, Record<string, any>> = {
         'Individual solutions for private homes and large-scale projects',
         'Energy efficiency, comfort and design',
         'Quality guarantee and maintenance service',
-        'Working across all of Armenia',
+        'Working across the Caucasus (experience in Georgia)',
       ],
     },
     portfolioPreview: { title: 'Our Projects', viewAll: 'View All Projects' },
@@ -440,17 +440,17 @@ export const translations: Record<Language, Record<string, any>> = {
       subtitle: 'Full cycle of work — from selection to service',
       items: {
         selection: { title: 'Solution Selection', desc: 'Consultation considering architecture, light incidence angle and your requirements. We\'ll help you choose the optimal type of sun protection and brand specifically for your project.' },
-        measurement: { title: 'Professional On-Site Visit & Measurements', desc: 'Our specialists visit properties across Armenia for precise measurements and assessment of installation conditions.' },
-        delivery: { title: 'Delivery & Logistics', desc: 'We order systems directly from manufacturers — HELLA, WAREMA and Silent Gliss. We ensure reliable delivery to the project site in any region of Armenia.' },
+        measurement: { title: 'Professional On-Site Visit & Measurements', desc: 'Our specialists visit properties across the Caucasus, including Armenia and Georgia, for precise measurements and assessment of installation conditions.' },
+        delivery: { title: 'Delivery & Logistics', desc: 'We order systems directly from manufacturers — HELLA, WAREMA and Silent Gliss. We ensure reliable delivery to the project site in any region of the Caucasus, including Georgia.' },
         installation: { title: 'Installation & Commissioning', desc: 'Professional installation by certified specialists. Setup of automation, sensors and smart home integration when needed.' },
         support: { title: 'Service & Support', desc: 'Warranty and post-warranty maintenance. Adjustment, repair and component replacement. Always available for our clients.' },
       },
     },
     about: {
       title: 'About Us',
-      whoWeAre: { title: 'Who We Are', text: 'RayWerThi has extensive experience in the sun protection systems market in Armenia, specializing in comprehensive solutions for private homes and professional projects.' },
-      partnership: { title: 'Official Representation', text: 'RayWerThi is the official representative of HELLA, WAREMA and Silent Gliss in Armenia. We work directly with manufacturers, guaranteeing product authenticity and competitive terms.' },
-      geography: { title: 'Geography', text: 'We work across all of Armenia: Yerevan and regions. We implement solutions for small private homes and large-scale projects alike.' },
+      whoWeAre: { title: 'Who We Are', text: 'RayWerThi has extensive experience in the sun protection systems market across the Caucasus, specializing in comprehensive solutions for private homes and professional projects, including completed projects in Georgia.' },
+      partnership: { title: 'Official Representation', text: 'RayWerThi is the official representative of HELLA, WAREMA and Silent Gliss in Armenia and operates across the Caucasus. We work directly with manufacturers, guaranteeing product authenticity, up-to-date technical solutions and competitive terms, including successful projects in Georgia.' },
+      geography: { title: 'Geography', text: 'We work across the Caucasus: Armenia, Georgia and other countries in the region. We implement solutions for small private homes and large-scale projects alike.' },
       values: { title: 'Our Values', text: 'Our mission is to provide uncompromising quality sun protection technology that solves the most complex interior challenges. We create a premium culture of comfort, ensuring an individual approach, impeccable service and decades of warranty that adapt to your vision and serve generations.' },
     },
     portfolio: {
@@ -493,7 +493,7 @@ export const translations: Record<Language, Record<string, any>> = {
       },
     },
     footer: {
-      description: 'RayWerThi — official representative of HELLA, WAREMA and Silent Gliss in Armenia. Supply and professional installation of sun protection systems.',
+      description: 'RayWerThi — official representative of HELLA, WAREMA and Silent Gliss in Armenia. Supply and professional installation of sun protection systems across the Caucasus, including Georgia.',
       brandsTitle: 'Brands',
       contactsTitle: 'Contacts',
       linksTitle: 'Navigation',
