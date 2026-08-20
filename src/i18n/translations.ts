@@ -128,7 +128,7 @@ export const translations: Record<Language, Record<string, any>> = {
       company: 'RayWerThi',
       country: 'Армения',
       address: 'Тиграна Мец 69',
-      phone: '+374 91 223 855',
+      phone: '+374 91 553 822',
       email: 'raywerthi@gmail.com',
       form: {
         title: 'Отправить заявку',
@@ -151,7 +151,7 @@ export const translations: Record<Language, Record<string, any>> = {
       contactsTitle: 'Контакты',
       linksTitle: 'Навигация',
       privacy: 'Политика конфиденциальности',
-      copyright: '© 2024 RayWerThi. Все права защищены.',
+      copyright: '© 2026 RayWerThi. Все права защищены.',
     },
   },
   hy: {
@@ -352,7 +352,7 @@ export const translations: Record<Language, Record<string, any>> = {
       company: 'RayWerThi',
       country: 'Հայաստան',
       address: 'Տիգրան Մեծ 69',
-      phone: '+374 91 223 855',
+      phone: '+374 91 553 822',
       email: 'raywerthi@gmail.com',
       form: {
         title: 'Ուղարկել հայտ',
@@ -384,7 +384,7 @@ export const translations: Record<Language, Record<string, any>> = {
       linksTitle: 'Նավիգացիա',
       privacy: 'Գաղտնիության քաղաքականություն',
       copyright:
-        '© 2024 RayWerThi. Բոլոր իրավունքները պաշտպանված են։',
+        '© 2026 RayWerThi. Բոլոր իրավունքները պաշտպանված են։',
     },
   },
 
@@ -505,7 +505,7 @@ export const translations: Record<Language, Record<string, any>> = {
       company: 'RayWerThi',
       country: 'Armenia',
       address: 'Tigran Mets 69',
-      phone: '+374 91 223 855',
+      phone: '+374 91 553 822',
       email: 'raywerthi@gmail.com',
       form: {
         title: 'Send a Request',
@@ -528,7 +528,7 @@ export const translations: Record<Language, Record<string, any>> = {
       contactsTitle: 'Contacts',
       linksTitle: 'Navigation',
       privacy: 'Privacy Policy',
-      copyright: '© 2024 RayWerThi. All rights reserved.',
+      copyright: '© 2026 RayWerThi. All rights reserved.',
     },
   },
 };
