@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Mail, Phone, MapPin, MessageCircle, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
+
 const solutionKeys = ['blinds', 'rollshutters', 'awnings', 'screens', 'interior', 'smarthome'];
 
 const Contacts: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [searchParams] = useSearchParams();
   const prefilledSolution = searchParams.get('solution') || '';
 
@@ -32,9 +34,29 @@ const Contacts: React.FC = () => {
     e.preventDefault();
     setSubmitting(true);
 
-    // For now, simulate form submission. Backend will be connected via Lovable Cloud.
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const details = [
+        formData.objectType ? `${t('contacts.form.objectType')}: ${t(`contacts.form.objectTypes.${formData.objectType}`)}` : '',
+        formData.city ? `${t('contacts.form.city')}: ${formData.city}` : '',
+        formData.solutionType ? `${t('contacts.form.solutionType')}: ${formData.solutionType}` : '',
+        formData.comment ? `${t('contacts.form.comment')}: ${formData.comment}` : '',
+      ]
+        .filter(Boolean)
+        .join('\n');
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          user_name: formData.name,
+          user_phone: formData.phone,
+          user_email: formData.email,
+          message: details,
+          language: lang,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
       toast({
         title: '✓',
         description: t('contacts.form.success'),
@@ -50,6 +72,7 @@ const Contacts: React.FC = () => {
       setSubmitting(false);
     }
   };
+
 
   const objectTypeKeys = ['house', 'apartment', 'commercial', 'other'];
 
