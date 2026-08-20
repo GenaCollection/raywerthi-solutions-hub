@@ -61,6 +61,16 @@ export const translations: Record<Language, Record<string, any>> = {
       title: 'Готовы обсудить ваш проект?',
       subtitle: 'Расскажите о своём объекте, и мы предложим оптимальное солнцезащитное решение.',
       cta: 'Отправить заявку',
+      form: {
+        name: 'Имя',
+        phone: 'Телефон',
+        email: 'Email',
+        message: 'Сообщение',
+        submit: 'Отправить заявку',
+        sending: 'Отправка...',
+        success: 'Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.',
+        error: 'Произошла ошибка при отправке. Пожалуйста, попробуйте ещё раз.',
+      },
     },
     solutions: {
       title: 'Решения',
@@ -212,6 +222,16 @@ export const translations: Record<Language, Record<string, any>> = {
       subtitle:
         'Պատմեք ձեր օբյեկտի մասին, և մենք կառաջարկենք լավագույն արևապաշտպան լուծումը։',
       cta: 'Ուղարկել հայտ',
+      form: {
+        name: 'Անուն',
+        phone: 'Հեռախոս',
+        email: 'Էլ. փոստ',
+        message: 'Հաղորդագրություն',
+        submit: 'Ուղարկել հայտ',
+        sending: 'Ուղարկում...',
+        success: 'Ձեր հայտը հաջողությամբ ուղարկվել է։ Մոտ ժամանակում մենք կապ կհաստատենք ձեզ հետ։',
+        error: 'Ուղարկման ընթացքում տեղի ունեցավ սխալ։ Խնդրում ենք փորձել կրկին։',
+      },
     },
     solutions: {
       title: 'Լուծումներ',
@@ -418,6 +438,16 @@ export const translations: Record<Language, Record<string, any>> = {
       title: 'Ready to discuss your project?',
       subtitle: 'Tell us about your property and we will suggest the optimal sun protection solution.',
       cta: 'Send a Request',
+      form: {
+        name: 'Name',
+        phone: 'Phone',
+        email: 'Email',
+        message: 'Message',
+        submit: 'Send a Request',
+        sending: 'Sending...',
+        success: 'Your request has been sent successfully! We will contact you shortly.',
+        error: 'An error occurred while sending. Please try again.',
+      },
     },
     solutions: {
       title: 'Solutions',
