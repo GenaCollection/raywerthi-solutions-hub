@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import type { Language } from '@/i18n/translations';
 import { Menu, X } from 'lucide-react';
-import logoAsset from '@/assets/raywerthi-mark.png.asset.json';
+import logoMark from '@/assets/raywerthi-mark.png';
 
 
 const languages: { code: Language; label: string }[] = [
@@ -31,7 +31,7 @@ const Header: React.FC = () => {
       <div className="container-site flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center py-2" aria-label="RayWerThi — Intelligent Shading Systems">
           <img
-            src={logoAsset.url}
+            src={logoMark}
             alt="RayWerThi"
             className="h-11 md:h-14 w-auto object-contain"
           />
