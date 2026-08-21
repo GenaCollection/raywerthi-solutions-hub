@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -28,6 +29,16 @@ const Portfolio: React.FC = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Портфолио выполненных объектов | Raywerthi Solutions</title>
+        <meta name="description" content="Примеры реализованных проектов по установке моторизованных карнизов, маркиз и фасадных систем." />
+        <link rel="canonical" href="https://raywerthi.com/portfolio" />
+        <meta property="og:title" content="Портфолио выполненных объектов | Raywerthi Solutions" />
+        <meta property="og:description" content="Примеры реализованных проектов по установке моторизованных карнизов, маркиз и фасадных систем." />
+        <meta property="og:url" content="https://raywerthi.com/portfolio" />
+        <meta name="twitter:title" content="Портфолио выполненных объектов | Raywerthi Solutions" />
+        <meta name="twitter:description" content="Примеры реализованных проектов по установке моторизованных карнизов, маркиз и фасадных систем." />
+      </Helmet>
       <Header />
       <main className="pt-20">
         <section className="section-padding gradient-warm-soft">
