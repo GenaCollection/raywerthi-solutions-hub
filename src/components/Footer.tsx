@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import logoLight from '@/assets/raywerthi-mark-light.png.asset.json';
+import logoLight from '@/assets/raywerthi-mark-light.png';
 
 
 const Footer: React.FC = () => {
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1 flex flex-col items-center text-center md:items-start md:text-left">
             <div className="inline-flex flex-col items-center">
               <img
-                src={logoLight.url}
+                src={logoLight}
                 alt="RayWerThi"
                 loading="lazy"
                 className="h-12 md:h-14 w-auto object-contain"
