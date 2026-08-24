@@ -1,5 +1,5 @@
-import { Helmet } from 'react-helmet-async';
 import React from 'react';
+import SEO from '@/components/SEO';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
@@ -13,16 +13,13 @@ import ContactBlock from '@/components/ContactBlock';
 const Index: React.FC = () => {
   return (
     <div className="min-h-screen">
-      <Helmet>
-        <title>Raywerthi — Премиальные солнцезащитные и фасадные системы</title>
-        <meta name="description" content="Официальные решения HELLA, WAREMA и Silent Gliss в Армении, Грузии и по всему Кавказу." />
-        <link rel="canonical" href="https://raywerthi.com/" />
-        <meta property="og:title" content="Raywerthi — Премиальные солнцезащитные и фасадные системы" />
-        <meta property="og:description" content="Официальные решения HELLA, WAREMA и Silent Gliss в Армении, Грузии и по всему Кавказу." />
-        <meta property="og:url" content="https://raywerthi.com/" />
-        <meta name="twitter:title" content="Raywerthi — Премиальные солнцезащитные и фасадные системы" />
-        <meta name="twitter:description" content="Официальные решения HELLA, WAREMA и Silent Gliss в Армении, Грузии и по всему Кавказу." />
-      </Helmet>
+      <SEO
+        title="Raywerthi — Солнцезащита и моторизованные карнизы | Армения, Грузия, Кавказ"
+        description="Официальные системы HELLA, WAREMA и Silent Gliss: маркизы, рафшторы, роллеты, автоматика для умного дома в Армении, Грузии и по всему Кавказу."
+        keywords="маркизы Ереван, рафшторы Тбилиси, солнцезащита Армения, Silent Gliss Ереван, WAREMA Грузия, HELLA Кавказ, моторизованные карнизы"
+        canonicalUrl="https://raywerthi.com/"
+      />
+
       <Header />
       <main>
         <HeroSection />

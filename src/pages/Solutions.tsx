@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import SEO from '@/components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -35,16 +35,13 @@ const Solutions: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
-        <title>Солнцезащитные решения: Маркизы, Рафшторы, Роллеты | Raywerthi</title>
-        <meta name="description" content="Полный каталог систем внешней и внутренней солнцезащиты, фасадных экранов и автоматики для умного дома." />
-        <link rel="canonical" href="https://raywerthi.com/solutions" />
-        <meta property="og:title" content="Солнцезащитные решения: Маркизы, Рафшторы, Роллеты | Raywerthi" />
-        <meta property="og:description" content="Полный каталог систем внешней и внутренней солнцезащиты, фасадных экранов и автоматики для умного дома." />
-        <meta property="og:url" content="https://raywerthi.com/solutions" />
-        <meta name="twitter:title" content="Солнцезащитные решения: Маркизы, Рафшторы, Роллеты | Raywerthi" />
-        <meta name="twitter:description" content="Полный каталог систем внешней и внутренней солнцезащиты, фасадных экранов и автоматики для умного дома." />
-      </Helmet>
+      <SEO
+        title="Каталог систем: Маркизы, Рафшторы, Экраны, Карнизы | Raywerthi"
+        description="Полный ассортимент внешней и внутренней солнцезащиты премиум-класса. Автоматические маркизы, перголы, ZIP-системы и рафшторы."
+        keywords="маркизы Ереван, рафшторы Тбилиси, ZIP-системы, перголы Армения, фасадные экраны Кавказ, моторизованные карнизы Silent Gliss"
+        canonicalUrl="https://raywerthi.com/solutions"
+      />
+
       <Header />
       <main className="pt-20">
         {/* Header */}
