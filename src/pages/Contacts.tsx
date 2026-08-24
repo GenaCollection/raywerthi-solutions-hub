@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import SEO from '@/components/SEO';
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
@@ -79,16 +79,13 @@ const Contacts: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
-        <title>Контакты и заказ замера | Raywerthi Армения, Грузия, Кавказ</title>
-        <meta name="description" content="Свяжитесь с нами для консультации и вызова специалиста на замер по всему Кавказскому региону." />
-        <link rel="canonical" href="https://raywerthi.com/contacts" />
-        <meta property="og:title" content="Контакты и заказ замера | Raywerthi Армения, Грузия, Кавказ" />
-        <meta property="og:description" content="Свяжитесь с нами для консультации и вызова специалиста на замер по всему Кавказскому региону." />
-        <meta property="og:url" content="https://raywerthi.com/contacts" />
-        <meta name="twitter:title" content="Контакты и заказ замера | Raywerthi Армения, Грузия, Кавказ" />
-        <meta name="twitter:description" content="Свяжитесь с нами для консультации и вызова специалиста на замер по всему Кавказскому региону." />
-      </Helmet>
+      <SEO
+        title="Контакты и заказ замера | Ереван, Тбилиси, Кавказ | Raywerthi"
+        description="Закажите профессиональный замер и консультацию по автоматическим солнцезащитным системам. Выезд по всему региону."
+        keywords="заказать замер маркиз Ереван, солнцезащита Тбилиси контакты, Raywerthi телефон, автоматические карнизы Кавказ"
+        canonicalUrl="https://raywerthi.com/contacts"
+      />
+
       <Header />
       <main className="pt-20">
         <section className="section-padding gradient-warm-soft">
