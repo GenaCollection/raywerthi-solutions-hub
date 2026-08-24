@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import SEO from '@/components/SEO';
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -17,16 +17,13 @@ const About: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
-        <title>О компании Raywerthi — Премиум-культура комфорта</title>
-        <meta name="description" content="Партнер ведущих европейских брендов HELLA, WAREMA, Silent Gliss. Решаем сложные интерьерные задачи." />
-        <link rel="canonical" href="https://raywerthi.com/about" />
-        <meta property="og:title" content="О компании Raywerthi — Премиум-культура комфорта" />
-        <meta property="og:description" content="Партнер ведущих европейских брендов HELLA, WAREMA, Silent Gliss. Решаем сложные интерьерные задачи." />
-        <meta property="og:url" content="https://raywerthi.com/about" />
-        <meta name="twitter:title" content="О компании Raywerthi — Премиум-культура комфорта" />
-        <meta name="twitter:description" content="Партнер ведущих европейских брендов HELLA, WAREMA, Silent Gliss. Решаем сложные интерьерные задачи." />
-      </Helmet>
+      <SEO
+        title="О компании Raywerthi — Партнер HELLA, WAREMA, Silent Gliss"
+        description="Премиальная культура комфорта и солнцезащиты на Кавказе. Многолетний опыт реализации сложных архитектурных проектов."
+        keywords="Raywerthi Армения, партнер HELLA, WAREMA Кавказ, Silent Gliss Ереван, солнцезащитные системы Грузия"
+        canonicalUrl="https://raywerthi.com/about"
+      />
+
       <Header />
       <main className="pt-20">
         <section className="section-padding gradient-warm-soft">

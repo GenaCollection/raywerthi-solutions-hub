@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import SEO from '@/components/SEO';
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -19,16 +19,13 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
-        <title>Услуги: Замер, Проектирование, Логистика и Монтаж | Raywerthi</title>
-        <meta name="description" content="Профессиональный выезд на объект, точный замер и гарантийное обслуживание в Армении, Грузии и на Кавказе." />
-        <link rel="canonical" href="https://raywerthi.com/services" />
-        <meta property="og:title" content="Услуги: Замер, Проектирование, Логистика и Монтаж | Raywerthi" />
-        <meta property="og:description" content="Профессиональный выезд на объект, точный замер и гарантийное обслуживание в Армении, Грузии и на Кавказе." />
-        <meta property="og:url" content="https://raywerthi.com/services" />
-        <meta name="twitter:title" content="Услуги: Замер, Проектирование, Логистика и Монтаж | Raywerthi" />
-        <meta name="twitter:description" content="Профессиональный выезд на объект, точный замер и гарантийное обслуживание в Армении, Грузии и на Кавказе." />
-      </Helmet>
+      <SEO
+        title="Услуги замера, проектирования и монтажа систем | Raywerthi"
+        description="Профессиональный выезд на объект по Армении и Кавказу, точный замер, логистика от европейских заводов и шеф-монтаж."
+        keywords="замер солнцезащиты Ереван, монтаж маркиз Армения, проектирование рафшторов, шеф-монтаж Кавказ"
+        canonicalUrl="https://raywerthi.com/services"
+      />
+
       <Header />
       <main className="pt-20">
         <section className="section-padding gradient-warm-soft">
