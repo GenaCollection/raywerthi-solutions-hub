@@ -3,8 +3,8 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { CheckCircle2 } from 'lucide-react';
 
 const AdvantagesSection: React.FC = () => {
-  const { t } = useLanguage();
-  const items = t('advantages.items') as unknown as string[];
+  const { t, tRaw } = useLanguage();
+  const items = tRaw('advantages.items') as string[];
 
   return (
     <section className="section-padding">

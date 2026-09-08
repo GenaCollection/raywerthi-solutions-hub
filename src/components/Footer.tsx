@@ -80,9 +80,9 @@ const Footer: React.FC = () => {
               <a href="mailto:raywerthi@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail size={14} /> raywerthi@gmail.com
               </a>
-              <span className="flex items-center gap-2">
+              <a href="tel:+37491553822" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone size={14} /> +374 91 553 822
-              </span>
+              </a>
               <span className="flex items-center gap-2">
                 <MapPin size={14} /> {t('contacts.country')}
               </span>

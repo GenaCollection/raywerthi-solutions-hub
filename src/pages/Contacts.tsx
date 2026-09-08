@@ -111,10 +111,10 @@ const Contacts: React.FC = () => {
                       <div className="text-muted-foreground text-sm">{t('contacts.address')}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 text-foreground">
+                  <a href="tel:+37491553822" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                     <Phone className="text-primary shrink-0" size={20} />
                     <span>{t('contacts.phone')}</span>
-                  </div>
+                  </a>
                   <a href="mailto:raywerthi@gmail.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                     <Mail className="text-primary shrink-0" size={20} />
                     <span>{t('contacts.email')}</span>
@@ -123,10 +123,20 @@ const Contacts: React.FC = () => {
 
                 {/* Messenger buttons */}
                 <div className="flex gap-3 mb-8">
-                  <a href="#" className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors">
+                  <a
+                    href="https://wa.me/37491553822"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+                  >
                     <MessageCircle size={16} /> WhatsApp
                   </a>
-                  <a href="#" className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors">
+                  <a
+                    href="https://t.me/+37491553822"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+                  >
                     <Send size={16} /> Telegram
                   </a>
                 </div>

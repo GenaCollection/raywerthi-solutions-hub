@@ -7,7 +7,10 @@
     <title>Raywerthi — Солнцезащитные системы и автоматика | Армения, Грузия, Кавказ</title>
     <meta name="description" content="Премиальные маркизы, рафшторы, фасадные экраны и моторизованные карнизы от HELLA, WAREMA и Silent Gliss. Проектирование, поставка и монтаж в Армении, Грузии и по всему Кавказу." />
     <meta name="keywords" content="маркизы Ереван, рафшторы Тбилиси, солнцезащита Армения, автоматические карнизы Silent Gliss, WAREMA Кавказ, HELLA роллеты, умный дом карнизы, արևապաշտպան համակարգեր, sun protection systems Georgia" />
-    <meta name="author" content="Raywerthi" />
+    <meta name="author" content="RayWerThi" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <meta property="og:title" content="Raywerthi — Солнцезащитные системы и автоматика | Армения, Грузия, Кавказ" />
     <meta property="og:description" content="Премиальные маркизы, рафшторы, фасадные экраны и моторизованные карнизы от HELLA, WAREMA и Silent Gliss. Проектирование, поставка и монтаж в Армении, Грузии и по всему Кавказу." />
@@ -23,12 +26,57 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Raywerthi",
-        "url": "https://raywerthi.com/",
-        "description": "Премиальные солнцезащитные и фасадные системы HELLA, WAREMA, Silent Gliss в Армении, Грузии и на Кавказе.",
-        "areaServed": ["Armenia", "Georgia", "Caucasus"],
-        "telephone": "+374 91 55 38 22"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://raywerthi.com/#organization",
+            "name": "RayWerThi",
+            "url": "https://raywerthi.com/",
+            "description": "Официальный представитель HELLA, WAREMA и Silent Gliss в Армении и Грузии. Проектирование, поставка и монтаж солнцезащитных и фасадных систем по всему Кавказу.",
+            "logo": "https://raywerthi.com/logo.png",
+            "image": "https://raywerthi.com/og-image.jpg",
+            "email": "raywerthi@gmail.com",
+            "telephone": "+37491553822",
+            "areaServed": ["Armenia", "Georgia", "Caucasus"],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+37491553822",
+                "email": "raywerthi@gmail.com",
+                "contactType": "customer service",
+                "areaServed": ["AM", "GE"],
+                "availableLanguage": ["ru", "hy", "en"]
+              }
+            ]
+          },
+          {
+            "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+            "@id": "https://raywerthi.com/#localbusiness",
+            "name": "RayWerThi",
+            "url": "https://raywerthi.com/",
+            "description": "Официальный представитель HELLA, WAREMA и Silent Gliss в Армении и Грузии. Проектирование, поставка и монтаж солнцезащитных и фасадных систем по всему Кавказу.",
+            "image": "https://raywerthi.com/og-image.jpg",
+            "telephone": "+37491553822",
+            "email": "raywerthi@gmail.com",
+            "priceRange": "$$$",
+            "areaServed": ["Armenia", "Georgia", "Caucasus"],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Тиграна Мец 69",
+              "addressLocality": "Ереван",
+              "addressCountry": "AM"
+            },
+            "parentOrganization": { "@id": "https://raywerthi.com/#organization" }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://raywerthi.com/#website",
+            "url": "https://raywerthi.com/",
+            "name": "RayWerThi",
+            "publisher": { "@id": "https://raywerthi.com/#organization" },
+            "inLanguage": ["ru", "hy", "en"]
+          }
+        ]
       }
     </script>
   </head>

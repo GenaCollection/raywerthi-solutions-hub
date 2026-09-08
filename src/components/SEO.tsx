@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SITE_URL = 'https://raywerthi.com';
-const PHONE = '+374 91 553 822';
 
 interface SEOProps {
   title: string;
@@ -19,47 +18,19 @@ const SEO: React.FC<SEOProps> = ({
   canonicalUrl = `${SITE_URL}/`,
   ogImage = `${SITE_URL}/og-image.jpg`,
 }) => {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': `${SITE_URL}/#organization`,
-        name: 'Raywerthi Solutions Hub',
-        description:
-          'Премиальные солнцезащитные, фасадные и моторизованные системы HELLA, WAREMA, Silent Gliss.',
-        url: SITE_URL,
-        telephone: PHONE,
-        areaServed: ['Armenia', 'Georgia', 'Caucasus'],
-      },
-      {
-        '@type': 'LocalBusiness',
-        '@id': `${SITE_URL}/#localbusiness`,
-        name: 'Raywerthi Solutions Hub',
-        description:
-          'Премиальные солнцезащитные, фасадные и моторизованные системы HELLA, WAREMA, Silent Gliss.',
-        url: SITE_URL,
-        telephone: PHONE,
-        areaServed: ['Armenia', 'Georgia', 'Caucasus'],
-        priceRange: '$$$',
-        image: ogImage,
-      },
-    ],
-  };
-
+  // Organization/LocalBusiness JSON-LD lives once, statically, in index.html —
+  // it must not be duplicated here with different data (that caused conflicting
+  // NAP/name signals across the two blocks).
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonicalUrl} />
+      {/* No hreflang alternates: RU/HY/EN share one URL (client-side toggle only),
+          so there are no distinct per-language pages to declare yet. */}
 
-      <link rel="alternate" hrefLang="ru" href={`${SITE_URL}/`} />
-      <link rel="alternate" hrefLang="hy" href={`${SITE_URL}/`} />
-      <link rel="alternate" hrefLang="en" href={`${SITE_URL}/`} />
-      <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/`} />
-
-      <meta property="og:site_name" content="Raywerthi" />
+      <meta property="og:site_name" content="RayWerThi" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -70,8 +41,6 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
   );
 };
