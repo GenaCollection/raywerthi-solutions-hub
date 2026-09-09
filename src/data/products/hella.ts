@@ -50,12 +50,21 @@ import venturOneSideImg from '@/assets/products/hella/ventur-one-side.png';
 import venturSunImg from '@/assets/products/hella/ventur-sun.png';
 import venturSunB from '@/assets/products/hella/ventur-sun-b.png';
 import soleyaAufglasImg from '@/assets/products/hella/soleya-aufglas.png';
+import soleyaUnterglasImg from '@/assets/products/hella/soleya-unterglas.png';
 import solanyaProtectImg from '@/assets/products/hella/solanya-protect.png';
 import solanyaProtectB from '@/assets/products/hella/solanya-protect-b.png';
 import windschutzImg from '@/assets/products/hella/windsichtschutz.png';
 import windschutzHero from '@/assets/products/hella/windschutz-hero.png';
 import windschutzB from '@/assets/products/hella/windschutz-b.png';
 import jumbrellaImg from '@/assets/products/hella/jumbrella.png';
+import schirmOneImg from '@/assets/products/hella/schirm-one.png';
+import schirmPureImg from '@/assets/products/hella/schirm-pure.png';
+import jumbrellaOutsideImg from '@/assets/products/hella/jumbrella-outside.png';
+import jumbrellaXlImg from '@/assets/products/hella/jumbrella-xl.png';
+import largoImg from '@/assets/products/hella/largo.png';
+import elips4sunImg from '@/assets/products/hella/elips4sun.png';
+import square4sunCrossProImg from '@/assets/products/hella/square4sun-crosspro.png';
+import square4sunLineImg from '@/assets/products/hella/square4sun-line.png';
 import magnumImg from '@/assets/products/hella/magnum.png';
 import square4sunImg from '@/assets/products/hella/square4sun-cross.png';
 import square4sunB from '@/assets/products/hella/square4sun-b.png';
@@ -711,6 +720,54 @@ export const hella: BrandCatalog = {
           sourceUrl: 'https://www.hella.info/de/produkte/soleya-aufglasmarkise',
         },
         {
+          id: 'soleya-protect-aufglas',
+          name: 'SOLEYA protect Aufglasmarkise',
+          description: {
+            ru: 'Крупноформатная надстекольная маркиза с боковой направляющей ткани — доступна двойная направляющая, одиночный, спаренный или рядной монтаж.',
+            hy: 'Խոշոր ձևաչափի վերապակե մարկիզա գործվածքի կողային ուղղորդմամբ՝ հասանելի է կրկնակի ուղղորդում, առանձին, զույգ կամ շարքային տեղադրում։',
+            en: 'A large-format overglass awning with side-guided fabric — a double guide rail, single, coupled or in-line installation are all available.',
+          },
+          specs: {
+            ru: ['Максимум 6000×6000 мм (26 м²)', 'Боковая направляющая ткани', 'Одиночный, спаренный или рядной монтаж'],
+            hy: ['Առավելագույնը 6000×6000 մմ (26 մ²)', 'Գործվածքի կողային ուղղորդում', 'Առանձին, զույգ կամ շարքային տեղադրում'],
+            en: ['Max 6000×6000 mm (26 m²)', 'Side-guided fabric', 'Single, coupled or in-line installation'],
+          },
+          image: soleyaAufglasImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/soleya-protect-aufglasmarkise',
+        },
+        {
+          id: 'soleya-unterglas',
+          name: 'SOLEYA Unterglasmarkise',
+          description: {
+            ru: 'Крупноформатная подстекольная маркиза без боковой направляющей — опциональная LED-подсветка встраивается в профиль кассеты и направляющие.',
+            hy: 'Խոշոր ձևաչափի ենթապակե մարկիզա առանց կողային ուղղորդման՝ հավելյալ LED լուսավորությունը ինտեգրվում է կասետայի պրոֆիլում և ուղղորդիչներում։',
+            en: 'A large-format underglass awning without side guidance — optional LED lighting can be integrated into the cassette profile and guide rails.',
+          },
+          specs: {
+            ru: ['Максимум 6000×6500 мм (30 м²)', 'Без боковой направляющей ткани', 'Опциональная LED-подсветка в кассете'],
+            hy: ['Առավելագույնը 6000×6500 մմ (30 մ²)', 'Առանց գործվածքի կողային ուղղորդման', 'Հավելյալ LED լուսավորություն կասետայում'],
+            en: ['Max 6000×6500 mm (30 m²)', 'No side-guided fabric', 'Optional LED lighting in the cassette'],
+          },
+          image: soleyaUnterglasImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/soleya-unterglasmarkise',
+        },
+        {
+          id: 'soleya-protect-unterglas',
+          name: 'SOLEYA protect Unterglasmarkise',
+          description: {
+            ru: 'Подстекольная версия с боковой направляющей ткани для повышенной устойчивости — так же доступна LED-подсветка в кассете и направляющих.',
+            hy: 'Ենթապակե տարբերակ գործվածքի կողային ուղղորդմամբ՝ ավելացված կայունության համար, հասանելի է նաև LED լուսավորություն կասետայում և ուղղորդիչներում։',
+            en: 'An underglass version with side-guided fabric for extra stability — LED lighting in the cassette and guide rails is also available.',
+          },
+          specs: {
+            ru: ['Максимум 6000×6000 мм (26 м²)', 'Боковая направляющая ткани', 'Опциональная LED-подсветка'],
+            hy: ['Առավելագույնը 6000×6000 մմ (26 մ²)', 'Գործվածքի կողային ուղղորդում', 'Հավելյալ LED լուսավորություն'],
+            en: ['Max 6000×6000 mm (26 m²)', 'Side-guided fabric', 'Optional LED lighting'],
+          },
+          image: soleyaUnterglasImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/soleya-protect-unterglasmarkise',
+        },
+        {
           id: 'solanya-protect',
           name: 'SOLANYA protect',
           description: {
@@ -763,9 +820,9 @@ export const hella: BrandCatalog = {
       image: jumbrellaImg,
       name: { ru: 'Зонты и солнечные паруса', hy: 'Հովանոցներ և արևային առագաստներ', en: 'Umbrellas & Sun Sails' },
       intro: {
-        ru: 'От компактных зонтов для террасы до крупноформатных коммерческих Magnum и Largo (140 м²), а также автоматических парусов square4sun с площадью укрытия до 53 м².',
-        hy: 'Պատշգամբի կոմպակտ հովանոցներից մինչև խոշոր կոմերցիոն Magnum և Largo (140 մ²), ինչպես նաև square4sun ավտոմատ առագաստներ՝ մինչև 53 մ² ծածկույթով։',
-        en: 'From compact terrace umbrellas to large-format commercial Magnum and Largo models (140 m²), plus automatic square4sun sails with coverage up to 53 m².',
+        ru: 'Одиннадцать моделей: от компактных зонтов One и Pure для террасы до крупноформатных коммерческих Magnum и Largo (140 м²), а также автоматических парусов square4sun и elips4sun с площадью укрытия до 53 м².',
+        hy: 'Տասնմեկ մոդել՝ պատշգամբի կոմպակտ One և Pure հովանոցներից մինչև խոշոր կոմերցիոն Magnum և Largo (140 մ²), ինչպես նաև square4sun և elips4sun ավտոմատ առագաստներ՝ մինչև 53 մ² ծածկույթով։',
+        en: 'Eleven models: from compact One and Pure terrace umbrellas to large-format commercial Magnum and Largo (140 m²), plus automatic square4sun and elips4sun sails with coverage up to 53 m².',
       },
       models: [
         {
@@ -785,6 +842,70 @@ export const hella: BrandCatalog = {
           sourceUrl: 'https://www.hella.info/de/produkte/jumbrella',
         },
         {
+          id: 'jumbrella-outside',
+          name: 'Jumbrella outSide',
+          description: {
+            ru: 'Изящный зонт с боковой мачтой — стойка смещена в сторону, оставляя купол зонта визуально лёгким и полностью свободным от центральной опоры.',
+            hy: 'Նրբագեղ հովանոց կողային կայմով՝ հենասյունը շեղված է կողքի, ինչը թողնում է հովանոցի գմբեթը վիզուալապես թեթև և ամբողջովին ազատ կենտրոնական հենարանից։',
+            en: 'An elegant umbrella with a side-mounted mast — the post is offset to the side, keeping the canopy visually light and completely free of a central support.',
+          },
+          specs: {
+            ru: ['Площадь укрытия 16 м²', 'Вес 120 кг', 'Ветроустойчивость до 50 км/ч'],
+            hy: ['Ծածկույթի մակերես՝ 16 մ²', 'Քաշը՝ 120 կգ', 'Քամակայունությունը՝ մինչև 50 կմ/ժ'],
+            en: ['Coverage area 16 m²', 'Weight 120 kg', 'Wind resistance up to 50 km/h'],
+          },
+          image: jumbrellaOutsideImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/jumbrella-outside',
+        },
+        {
+          id: 'jumbrella-xl',
+          name: 'Jumbrella XL',
+          description: {
+            ru: 'Всепогодный зонт увеличенного размера для больших зон отдыха — круглая, квадратная или прямоугольная форма с длиной стороны до 7 м.',
+            hy: 'Մեծացված չափի ամենեղանակային հովանոց մեծ հանգստի գոտիների համար՝ կլոր, քառակուսի կամ ուղղանկյուն ձև, կողի երկարությունը՝ մինչև 7 մ։',
+            en: 'An extra-large, all-weather umbrella for spacious outdoor areas — round, square or rectangular, with side lengths up to 7 m.',
+          },
+          specs: {
+            ru: ['Площадь укрытия до 49 м²', '8 типоразмеров', 'Каркас: антрацит или белый'],
+            hy: ['Ծածկույթի մակերես՝ մինչև 49 մ²', '8 չափաբերություն', 'Կարկաս՝ անտրացիտ կամ սպիտակ'],
+            en: ['Coverage area up to 49 m²', '8 size variants', 'Frame: anthracite or white'],
+          },
+          image: jumbrellaXlImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/jumbrella-xl',
+        },
+        {
+          id: 'one',
+          name: 'One',
+          description: {
+            ru: 'Премиальный зонт для сада, террасы или зоны у бассейна — круглая или квадратная форма, антрацитовый каркас в стандарте, широкий выбор цветов ткани.',
+            hy: 'Պրեմիում հովանոց այգու, պատշգամբի կամ լողավազանի գոտու համար՝ կլոր կամ քառակուսի ձև, անտրացիտ կարկաս ստանդարտով, գործվածքի գույների լայն ընտրանի։',
+            en: 'A premium umbrella for gardens, patios or poolside areas — round or square, an anthracite frame as standard, and a wide choice of fabric colours.',
+          },
+          specs: {
+            ru: ['Площадь укрытия 25 м²', 'Вес 63–77 кг', 'Ветроустойчивость до 102 км/ч'],
+            hy: ['Ծածկույթի մակերես՝ 25 մ²', 'Քաշը՝ 63–77 կգ', 'Քամակայունությունը՝ մինչև 102 կմ/ժ'],
+            en: ['Coverage area 25 m²', 'Weight 63–77 kg', 'Wind resistance up to 102 km/h'],
+          },
+          image: schirmOneImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/one',
+        },
+        {
+          id: 'pure',
+          name: 'Pure',
+          description: {
+            ru: 'Пуристичный начальный зонт для современной архитектуры — телескопическое раскрытие увеличивает высоту над землёй, встроенный натяжной рычаг держит полотно ровным.',
+            hy: 'Պուրիստական սկսնակ հովանոց ժամանակակից ճարտարապետության համար՝ հեռադիտակային բացումն ավելացնում է գետնից բարձրությունը, ներկառուցված լարման լծակը գործվածքը պահում է հարթ։',
+            en: 'A purist entry-level umbrella for modern architecture — telescopic opening increases ground clearance, and a built-in tensioning lever keeps the canopy taut.',
+          },
+          specs: {
+            ru: ['Площадь укрытия 16 м²', 'Вес 24–39 кг', 'Круглая, квадратная или прямоугольная форма'],
+            hy: ['Ծածկույթի մակերես՝ 16 մ²', 'Քաշը՝ 24–39 կգ', 'Կլոր, քառակուսի կամ ուղղանկյուն ձև'],
+            en: ['Coverage area 16 m²', 'Weight 24–39 kg', 'Round, square or rectangular shape'],
+          },
+          image: schirmPureImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/pure',
+        },
+        {
           id: 'magnum',
           name: 'Magnum',
           description: {
@@ -799,6 +920,22 @@ export const hella: BrandCatalog = {
           },
           image: magnumImg,
           sourceUrl: 'https://www.hella.info/de/produkte/magnum',
+        },
+        {
+          id: 'largo',
+          name: 'Largo',
+          description: {
+            ru: 'Технически сложная модель с тюльпановидной конструкцией, раскрывающейся вверх — классический принцип зонта перевёрнут, видна только ткань и облицовка опорной колонны.',
+            hy: 'Տեխնիկապես բարդ մոդել՝ դեպի վեր բացվող, նման է թուլիպի կոնստրուկցիա. հովանոցի դասական սկզբունքը շրջված է, տեսանելի է միայն գործվածքն ու հենասյան երեսպատումը։',
+            en: 'A technically sophisticated model with a tulip-shaped construction that opens upward — the classic umbrella principle is inverted, leaving only the fabric and the column cladding visible.',
+          },
+          specs: {
+            ru: ['Площадь укрытия 140 м²', 'Вес 1000–1850 кг', 'Ветроустойчивость до 130 км/ч'],
+            hy: ['Ծածկույթի մակերես՝ 140 մ²', 'Քաշը՝ 1000–1850 կգ', 'Քամակայունությունը՝ մինչև 130 կմ/ժ'],
+            en: ['Coverage area 140 m²', 'Weight 1000–1850 kg', 'Wind resistance up to 130 km/h'],
+          },
+          image: largoImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/largo',
         },
         {
           id: 'square4sun',
@@ -816,6 +953,54 @@ export const hella: BrandCatalog = {
           image: square4sunImg,
           gallery: [square4sunB],
           sourceUrl: 'https://www.hella.info/de/produkte/square4sun-cross',
+        },
+        {
+          id: 'square4sun-cross-pro',
+          name: 'square4sun | CROSS PRO',
+          description: {
+            ru: 'Компактная версия для крыш-террас и небольших патио — мачта расположена прямо у полотна паруса, а укороченные тросы делают конструкцию экономной по месту.',
+            hy: 'Կոմպակտ տարբերակ տանիքի պատշգամբների և փոքր բակերի համար՝ կայմը տեղակայված է հենց առագաստի գործվածքի մոտ, իսկ կարճացված ճոպանները դարձնում են կոնստրուկցիան տեղախնայող։',
+            en: 'A compact version for roof terraces and small patios — the mast sits directly at the sail\'s edge, and shortened cables make the structure space-efficient.',
+          },
+          specs: {
+            ru: ['Максимум 6800×7800 мм (47 м²)', 'Мачта у самого полотна паруса', 'Экономит место на небольших террасах'],
+            hy: ['Առավելագույնը 6800×7800 մմ (47 մ²)', 'Կայմը՝ հենց առագաստի մոտ', 'Խնայում է տեղ փոքր պատշգամբներում'],
+            en: ['Max 6800×7800 mm (47 m²)', 'Mast positioned at the sail edge', 'Space-saving on small terraces'],
+          },
+          image: square4sunCrossProImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/square4sun-cross-pro',
+        },
+        {
+          id: 'square4sun-line',
+          name: 'square4sun | LINE',
+          description: {
+            ru: 'Мачты стоят перед торцом полотна, что подчёркивает выразительный контур паруса — четыре троса усиливают выпуклую форму и обеспечивают высокую устойчивость на ветру.',
+            hy: 'Կայմերը կանգնած են գործվածքի ծայրի առջևում, ինչը շեշտում է առագաստի արտահայտիչ ուրվագիծը՝ չորս ճոպան ամրապնդում են ուռուցիկ ձևը և ապահովում բարձր քամակայունություն։',
+            en: 'The masts stand in front of the sail\'s edge, emphasising its expressive silhouette — four cables reinforce the convex shape and give high wind stability.',
+          },
+          specs: {
+            ru: ['Максимум 6800×7800 мм (53 м²)', 'Мачты перед торцом полотна', 'Четыре троса для устойчивости на ветру'],
+            hy: ['Առավելագույնը 6800×7800 մմ (53 մ²)', 'Կայմեր՝ գործվածքի ծայրի առջևում', 'Չորս ճոպան՝ քամուն դիմադրության համար'],
+            en: ['Max 6800×7800 mm (53 m²)', 'Masts positioned in front of the sail edge', 'Four cables for wind stability'],
+          },
+          image: square4sunLineImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/square4sun-line',
+        },
+        {
+          id: 'elips4sun',
+          name: 'elips4sun',
+          description: {
+            ru: 'Эллипсовидный крой с боковыми «талиями» — выпуклый контур кромки даёт особенно широкое полотно, а центральная мачта с четырьмя тросами сохраняет минимальную занимаемую площадь.',
+            hy: 'Էլիպսաձև հատում կողային «գոտիներով»՝ եզրի ուռուցիկ ուրվագիծը տալիս է հատկապես լայն գործվածք, իսկ չորս ճոպանով կենտրոնական կայմը պահպանում է նվազագույն զբաղեցրած տարածք։',
+            en: 'An ellipsoid cut with side "waists" — the convex edge contour gives an especially wide sail, while a central mast with four cables keeps the footprint minimal.',
+          },
+          specs: {
+            ru: ['Максимум 6000×6800 мм (31 м²)', 'Эллипсовидная форма с боковыми выемками', 'Один центральный мачт с четырьмя тросами'],
+            hy: ['Առավելագույնը 6000×6800 մմ (31 մ²)', 'Էլիպսաձև ձև կողային ընդարձակմամբ', 'Մեկ կենտրոնական կայմ չորս ճոպանով'],
+            en: ['Max 6000×6800 mm (31 m²)', 'Ellipsoid shape with side tailoring', 'A single central mast with four cables'],
+          },
+          image: elips4sunImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/elips4sun',
         },
       ],
     },
