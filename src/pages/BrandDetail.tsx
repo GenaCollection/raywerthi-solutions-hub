@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useParams, useLocation, Link, Navigate } from 'react-router-dom';
+import React from 'react';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import SEO from '@/components/SEO';
 import Header from '@/components/Header';
@@ -15,23 +15,8 @@ const otherBrandSlugs = (current: string) => Object.keys(brandCatalogs).filter((
 const BrandDetail: React.FC = () => {
   const { brandSlug } = useParams<{ brandSlug: string }>();
   const { t, lang } = useLanguage();
-  const location = useLocation();
 
   const catalog = brandSlug ? brandCatalogs[brandSlug] : undefined;
-
-  useEffect(() => {
-    if (!catalog) return;
-    if (location.hash) {
-      const id = location.hash.replace('#', '');
-      // Wait for layout to settle before scrolling to the anchored section.
-      const timer = setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 150);
-      return () => clearTimeout(timer);
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [catalog, location.hash, location.pathname]);
 
   if (!catalog) {
     return <Navigate to="/solutions" replace />;

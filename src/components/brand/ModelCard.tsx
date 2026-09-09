@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check, ExternalLink } from 'lucide-react';
 import type { ProductModel } from '@/data/products/types';
 import type { Language } from '@/i18n/translations';
@@ -10,21 +10,42 @@ interface ModelCardProps {
   sourceLabel: string;
 }
 
+const ROTATE_MS = 4000;
+
 const ModelCard: React.FC<ModelCardProps> = ({ model, lang, fallbackImage, sourceLabel }) => {
   const images = [model.image ?? fallbackImage, ...(model.gallery ?? [])];
   const [activeIndex, setActiveIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (images.length <= 1 || paused) return;
+    const timer = setInterval(() => {
+      if (document.hidden) return;
+      setActiveIndex((i) => (i + 1) % images.length);
+    }, ROTATE_MS);
+    return () => clearInterval(timer);
+  }, [images.length, paused]);
 
   return (
     <div className="bg-background border border-border rounded-xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300">
-      <div className="relative h-44 overflow-hidden bg-secondary">
-        <img
-          src={images[activeIndex]}
-          alt={model.name}
-          loading="lazy"
-          className="w-full h-full object-cover"
-        />
+      <div
+        className="relative h-44 overflow-hidden bg-secondary"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        {images.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt={model.name}
+            loading="lazy"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+              i === activeIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
         {images.length > 1 && (
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
             {images.map((_, i) => (
               <button
                 key={i}

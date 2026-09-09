@@ -2,6 +2,7 @@ import type { BrandCatalog } from './types';
 import silentglissLogo from '@/assets/brands/silentgliss-logo.svg';
 
 import tracksImg from '@/assets/products/silentgliss/sg5600-v2.jpg';
+import sg5600Gallery from '@/assets/products/silentgliss/tracks-sg5600.jpg';
 import sg5100Img from '@/assets/products/silentgliss/sg5100.jpg';
 import metropoleImg from '@/assets/products/silentgliss/metropole-v2.jpg';
 import cubicleImg from '@/assets/products/silentgliss/cubicle-v2.jpg';
@@ -57,6 +58,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Երկարությունը՝ մինչև 25 մ, գործվածքի քաշը՝ մինչև 65 կգ', 'Կառավարում՝ կառավարիչ, Move հավելված, BMS', 'Անաղմուկ և հարթ ընթացք'],
             en: ['Length up to 25 m, fabric weight up to 65 kg', 'Control: remote, Move app, or BMS', 'Silent, smooth operation'],
           },
+          gallery: [sg5600Gallery],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/curtain-track-systems/electric/5600/',
         },
         {

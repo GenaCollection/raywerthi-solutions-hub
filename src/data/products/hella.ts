@@ -2,6 +2,8 @@ import type { BrandCatalog } from './types';
 import hellaLogo from '@/assets/brands/hella-logo.svg';
 
 import raffstorenImg from '@/assets/products/hella/raffstoren-arb80.png';
+import raffstorenArb80Hires from '@/assets/products/hella/raffstoren-arb80-hires.png';
+import raffstorenAr92Img from '@/assets/products/hella/raffstoren-ar92.png';
 import rollladenImg from '@/assets/products/hella/rollladen-vorbau.png';
 import schachtmarkiseImg from '@/assets/products/hella/senkrecht-schachtmarkise.png';
 import sm101Img from '@/assets/products/hella/senkrecht-sm101.png';
@@ -11,6 +13,8 @@ import viva7040Img from '@/assets/products/hella/viva7040.png';
 import areia7040Img from '@/assets/products/hella/areia7040.png';
 import eleganzaImg from '@/assets/products/hella/eleganza.png';
 import venturImg from '@/assets/products/hella/terrassendach-ventur.png';
+import venturOneSideImg from '@/assets/products/hella/ventur-one-side.png';
+import venturSunImg from '@/assets/products/hella/ventur-sun.png';
 import soleyaAufglasImg from '@/assets/products/hella/soleya-aufglas.png';
 import solanyaProtectImg from '@/assets/products/hella/solanya-protect.png';
 import windschutzImg from '@/assets/products/hella/windsichtschutz.png';
@@ -63,6 +67,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 5000×5200 մմ (20 մ²)', 'Շուրջ 28 գունային տարբերակ (RAL)', 'Շարժիչային, ձեռքի կամ արևային մեկնարկ'],
             en: ['Max 5000×5200 mm (20 m²)', 'Around 28 colour options (RAL)', 'Motorised, manual or solar drive'],
           },
+          gallery: [raffstorenArb80Hires],
           sourceUrl: 'https://www.hella.info/de/produkte/arb-80',
         },
         {
@@ -78,6 +83,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 5000×5200 մմ (18 մ²)', 'Պրոֆիլներ՝ Z-աձև կամ S-աձև', 'ECN միացման համակարգ'],
             en: ['Max 5000×5200 mm (18 m²)', 'Z- or S-profile slats', 'ECN connector system'],
           },
+          image: raffstorenAr92Img,
           sourceUrl: 'https://www.hella.info/de/produkte/ar-92-z-ecn',
         },
         {
@@ -353,6 +359,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 4500×3000×6200 մմ (Լ×Բ×Ե)', 'Լամելների թեքում մինչև 135°', 'Մոդուլային հավաքածու մի քանի հատվածներից'],
             en: ['Max 4500×3000×6200 mm (W×H×D)', 'Slats tilt up to 135°', 'Modular assembly from multiple bays'],
           },
+          gallery: [venturOneSideImg],
           sourceUrl: 'https://www.hella.info/de/produkte/ventur-neu',
         },
         {
@@ -368,6 +375,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 4500×3000×6000 մմ', 'PV վահանակներ ներկառուցված լամելների մեջ', 'Սպասվող մոդել — ճշտեք ժամկետները'],
             en: ['Max 4500×3000×6000 mm', 'PV panels integrated into the slats', 'Upcoming — confirm availability with our team'],
           },
+          image: venturSunImg,
           sourceUrl: 'https://www.hella.info/de/produkte/ventur-neu',
         },
       ],

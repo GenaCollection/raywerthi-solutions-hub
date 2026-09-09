@@ -11,8 +11,10 @@ import rollladenTopMounted from '@/assets/products/warema/rollladen-topmounted.w
 import rollladenFrontMounted from '@/assets/products/warema/rollladen-frontmounted.jpg';
 import rollladenShaft from '@/assets/products/warema/rollladen-shaft.webp';
 import terreaImg from '@/assets/products/warema/terrea-markise.webp';
-import pereaImg from '@/assets/products/warema/perea-pergola-v2.webp';
-import pereaGallery2 from '@/assets/products/warema/perea-gallery2.webp';
+import pereaImg from '@/assets/products/warema/perea-gallery2.webp';
+import pereaGallery2 from '@/assets/products/warema/perea-gallery4.webp';
+import pereaGallery3 from '@/assets/products/warema/perea-gallery3.webp';
+import pereaIllustration from '@/assets/products/warema/perea-pergola-v2.webp';
 import fenstermarkiseImg from '@/assets/products/warema/fenstermarkise-hero.webp';
 import fenstermarkiseFrontMounted from '@/assets/products/warema/fenstermarkise-frontmounted.jpg';
 import markisoletteImg from '@/assets/products/warema/markisolette.webp';
@@ -23,6 +25,7 @@ import climaraW10 from '@/assets/products/warema/climara-v2a.jpg';
 import climaraD3 from '@/assets/products/warema/climara-v2b.jpg';
 import climaraW20 from '@/assets/products/warema/climara-w20.webp';
 import lamaxaHero from '@/assets/products/warema/lamaxa-l70-hero.webp';
+import lamaxaL70Detail from '@/assets/products/warema/lamaxa-l70-detail.webp';
 import lamaxaL50 from '@/assets/products/warema/lamaxa-l50.jpg';
 import soneaHero from '@/assets/products/warema/sonea-hero.webp';
 import soneaModel from '@/assets/products/warema/sonea-model.webp';
@@ -281,7 +284,7 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 6000 մմ, խորությունը՝ մինչև 5000 մմ', 'Մակերեսը՝ մինչև 30 մ²', 'Մոտորացված մեկնարկ'],
             en: ['Width up to 6000 mm, depth up to 5000 mm', 'Area up to 30 m²', 'Motorised drive'],
           },
-          gallery: [pereaGallery2],
+          gallery: [pereaGallery2, pereaGallery3, pereaIllustration],
           sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning.html',
         },
         {
@@ -502,6 +505,7 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 4750×6330 մմ', 'Պտտվող լամելներ մի քանի դիրքով', 'LED լուսավորություն և ջեռուցիչներ՝ հավելյալ'],
             en: ['Max 4750×6330 mm', 'Rotating slats with multiple positions', 'Optional LED lighting and radiant heaters'],
           },
+          gallery: [lamaxaL70Detail],
           sourceUrl: 'https://www.warema.com/en/patio-covers/l70-slat-roof.html',
         },
         {
