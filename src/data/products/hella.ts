@@ -2,19 +2,27 @@ import type { BrandCatalog } from './types';
 import hellaLogo from '@/assets/brands/hella-logo.svg';
 
 import raffstorenImg from '@/assets/products/hella/raffstoren-arb80.png';
-import rollladenImg from '@/assets/solutions/rollshutters.jpg';
+import rollladenImg from '@/assets/products/hella/rollladen-vorbau.png';
 import schachtmarkiseImg from '@/assets/products/hella/senkrecht-schachtmarkise.png';
 import sm101Img from '@/assets/products/hella/senkrecht-sm101.png';
 import putzmarkiseImg from '@/assets/products/hella/senkrecht-putzmarkise.png';
 import pan7040Img from '@/assets/products/hella/markisen-pan7040.png';
-import pergolaImg from '@/assets/solutions/awnings.jpg';
+import viva7040Img from '@/assets/products/hella/viva7040.png';
+import areia7040Img from '@/assets/products/hella/areia7040.png';
+import eleganzaImg from '@/assets/products/hella/eleganza.png';
 import venturImg from '@/assets/products/hella/terrassendach-ventur.png';
-import conservatoryImg from '@/assets/solutions/awnings.jpg';
+import soleyaAufglasImg from '@/assets/products/hella/soleya-aufglas.png';
+import solanyaProtectImg from '@/assets/products/hella/solanya-protect.png';
 import windschutzImg from '@/assets/products/hella/windsichtschutz.png';
-import umbrellasImg from '@/assets/solutions/screens.jpg';
+import jumbrellaImg from '@/assets/products/hella/jumbrella.png';
+import magnumImg from '@/assets/products/hella/magnum.png';
+import square4sunImg from '@/assets/products/hella/square4sun-cross.png';
 import ispl18Img from '@/assets/products/hella/insekten-ispl18.png';
 import isrImg from '@/assets/products/hella/insekten-isr.png';
-import interiorBlindsImg from '@/assets/solutions/interior.jpg';
+import istImg from '@/assets/products/hella/ist.png';
+import plisseesImg from '@/assets/products/hella/plissees.png';
+import innenrollosImg from '@/assets/products/hella/innenrollos.png';
+import vertikaljalousienImg from '@/assets/products/hella/vertikaljalousien.png';
 import onyxCenterImg from '@/assets/products/hella/onyx-center.png';
 import onyxConnectorImg from '@/assets/products/hella/onyx-connector.png';
 import onyxTagSunImg from '@/assets/products/hella/onyx-tag-sun.png';
@@ -233,6 +241,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 7000×4000 մմ', 'Պաշտպանիչ տանիք մեխանիզմի վրա', '200-ից ավել գործվածքի գույն'],
             en: ['Max 7000×4000 mm', 'Protective roof over the mechanism', '200+ fabric colours'],
           },
+          image: viva7040Img,
         },
         {
           id: 'areia',
@@ -247,12 +256,13 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 7000×4000 մմ', 'Բաց թևային կոնստրուկցիա', 'Տնտեսողական լուծում տանիքի տակ տեղադրելու համար'],
             en: ['Max 7000×4000 mm', 'Open-arm construction', 'Economical choice for under-eave mounting'],
           },
+          image: areia7040Img,
         },
       ],
     },
     {
       slug: 'pergolamarkise',
-      image: pergolaImg,
+      image: eleganzaImg,
       name: { ru: 'Пергола-маркиза ELEGANZA', hy: 'ELEGANZA պերգոլա-մարկիզա', en: 'ELEGANZA Pergola Awning' },
       intro: {
         ru: 'Тканевая крыша на двух свободностоящих колоннах с регулируемым углом наклона — интегрированная светодиодная подсветка в рычагах и кассете, отвод дождевой воды через люверсы в полотне.',
@@ -332,7 +342,7 @@ export const hella: BrandCatalog = {
     },
     {
       slug: 'wintergartenmarkisen',
-      image: conservatoryImg,
+      image: soleyaAufglasImg,
       name: { ru: 'Маркизы для зимнего сада', hy: 'Ձմեռային այգու մարկիզաներ', en: 'Conservatory Awnings' },
       intro: {
         ru: 'Надстекольные и подстекольные маркизы SOLEYA и SOLANYA — защита от перегрева остеклённых крыш и зимних садов площадью до 30 м².',
@@ -367,6 +377,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 5000×4500 մմ (22,5 մ²)', 'Քամակայունության դաս 3', 'Կոմպակտ 151×131 մմ կասետա'],
             en: ['Max 5000×4500 mm (22.5 m²)', 'Wind resistance class 3', 'Compact 151×131 mm cassette'],
           },
+          image: solanyaProtectImg,
         },
       ],
     },
@@ -398,7 +409,7 @@ export const hella: BrandCatalog = {
     },
     {
       slug: 'schirme-segel',
-      image: umbrellasImg,
+      image: jumbrellaImg,
       name: { ru: 'Зонты и солнечные паруса', hy: 'Հովանոցներ և արևային առագաստներ', en: 'Umbrellas & Sun Sails' },
       intro: {
         ru: 'От компактных зонтов для террасы до крупноформатных коммерческих Magnum и Largo (140 м²), а также автоматических парусов square4sun с площадью укрытия до 53 м².',
@@ -419,6 +430,7 @@ export const hella: BrandCatalog = {
             hy: ['Ծածկույթի մակերես՝ 36 մ²', 'Քաշը՝ 30–99 կգ', 'Քամակայունությունը՝ մինչև 102 կմ/ժ'],
             en: ['Coverage area 36 m²', 'Weight 30–99 kg', 'Wind resistance up to 102 km/h'],
           },
+          image: jumbrellaImg,
         },
         {
           id: 'magnum',
@@ -433,6 +445,7 @@ export const hella: BrandCatalog = {
             hy: ['Ծածկույթի մակերես՝ 140 մ²', 'Քաշը՝ 800–1550 կգ', 'Քամակայունությունը՝ մինչև 130 կմ/ժ'],
             en: ['Coverage area 140 m²', 'Weight 800–1550 kg', 'Wind resistance up to 130 km/h'],
           },
+          image: magnumImg,
         },
         {
           id: 'square4sun',
@@ -447,6 +460,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 6800×7800 մմ (47 մ²)', 'Ամբողջովին մոտորացված բացում', 'Կառավարում հավելվածով/կառավարիչով'],
             en: ['Max 6800×7800 mm (47 m²)', 'Fully motorised deployment', 'App/remote control'],
           },
+          image: square4sunImg,
         },
       ],
     },
@@ -502,12 +516,13 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 4000×2500 մմ', 'Հարթ ընթացք վերին և ստորին ուղղորդիչներով', 'Պատշգամբի և բալկոնի դռների համար'],
             en: ['Max 4000×2500 mm', 'Smooth motion on top and bottom tracks', 'For patio and balcony doors'],
           },
+          image: istImg,
         },
       ],
     },
     {
       slug: 'innenbeschattung',
-      image: interiorBlindsImg,
+      image: plisseesImg,
       name: { ru: 'Интерьерные жалюзи и рулонные шторы', hy: 'Ինտերիերի ժալյուզիներ և ռուլոնային վարագույրներ', en: 'Interior Blinds & Roller Shades' },
       intro: {
         ru: 'Четыре линейки для внутреннего затенения: жалюзи, плиссе Duette, рулонные шторы и вертикальные жалюзи — включая эко-коллекцию из переработанного океанического пластика.',
@@ -542,6 +557,7 @@ export const hella: BrandCatalog = {
             hy: ['Լույսի թափանցելիության մի քանի մակարդակ', 'Էկո-կոլեկցիա օվկիանոսային պլաստիկից', 'Մոտորացում ծրագրավորվող կառավարիչով'],
             en: ['Multiple light-transmission levels', 'Eco-collection from ocean plastic', 'Motorised with a programmable remote'],
           },
+          image: innenrollosImg,
         },
         {
           id: 'vertikaljalousien',
@@ -556,6 +572,7 @@ export const hella: BrandCatalog = {
             hy: ['Լամելի լայնությունը՝ 63, 89 կամ 127 մմ', 'Հարմար է մեծ ապակեպատ պատուհանների համար', 'Շղթայական կամ մոտորացված կառավարում'],
             en: ['Slat width 63, 89 or 127 mm', 'Suited to large glazed windows', 'Chain or motorised control'],
           },
+          image: vertikaljalousienImg,
         },
       ],
     },

@@ -2,18 +2,32 @@ import type { BrandCatalog } from './types';
 import waremaLogo from '@/assets/brands/warema-logo.svg';
 
 import raffstorenHero from '@/assets/products/warema/raffstoren-hero.webp';
+import raffstorenTopMounted from '@/assets/products/warema/raffstoren-topmounted.jpg';
+import raffstorenFrontMounted from '@/assets/products/warema/raffstoren-frontmounted.jpg';
+import raffstorenWindowSystem from '@/assets/products/warema/raffstoren-windowsystem.jpg';
+import raffstorenShaft from '@/assets/products/warema/raffstoren-shaft.jpg';
 import rollladenHero from '@/assets/products/warema/rollladen-hero.webp';
+import rollladenTopMounted from '@/assets/products/warema/rollladen-topmounted.webp';
+import rollladenFrontMounted from '@/assets/products/warema/rollladen-frontmounted.jpg';
+import rollladenShaft from '@/assets/products/warema/rollladen-shaft.webp';
 import terreaImg from '@/assets/products/warema/terrea-markise.webp';
 import pereaImg from '@/assets/products/warema/perea-pergola.webp';
 import fenstermarkiseImg from '@/assets/products/warema/fenstermarkise-hero.webp';
+import fenstermarkiseFrontMounted from '@/assets/products/warema/fenstermarkise-frontmounted.jpg';
+import markisoletteImg from '@/assets/products/warema/markisolette.webp';
+import easyzipImg from '@/assets/products/warema/easyzip.webp';
 import senkrechtmarkiseImg from '@/assets/products/warema/senkrechtmarkise.webp';
 import climaraImg from '@/assets/products/warema/climara-wintergarten.webp';
+import climaraW10 from '@/assets/products/warema/climara-v2a.jpg';
+import climaraD3 from '@/assets/products/warema/climara-v2b.jpg';
 import lamaxaHero from '@/assets/products/warema/lamaxa-l70-hero.webp';
 import lamaxaDetail from '@/assets/products/warema/lamaxa-detail.webp';
 import soneaHero from '@/assets/products/warema/sonea-hero.webp';
 import soneaModel from '@/assets/products/warema/sonea-model.webp';
 import insektenHero from '@/assets/products/warema/insekten-hero.webp';
 import insektenLifestyle from '@/assets/products/warema/insekten-lifestyle.webp';
+import insektenRoller from '@/assets/products/warema/insekten-roller.jpg';
+import insektenSliding from '@/assets/products/warema/insekten-sliding.webp';
 import smarthomeHero from '@/assets/products/warema/smarthome-hero.webp';
 import smarthomeDevice from '@/assets/products/warema/smarthome-device.webp';
 
@@ -55,6 +69,7 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 4500 մմ, բարձրությունը՝ մինչև 5000 մմ', 'Մակերեսը՝ մինչև 16 մ²', 'Ուղղորդում՝ ռելսային կամ ճոպանային'],
             en: ['Width up to 4500 mm, height up to 5000 mm', 'Area up to 16 m²', 'Rail or cable guidance'],
           },
+          image: raffstorenTopMounted,
         },
         {
           id: 'front-mounted',
@@ -69,6 +84,7 @@ export const warema: BrandCatalog = {
             hy: ['Լամելների պրոֆիլներ՝ եզրագծված, հարթ, Zetra (խավարեցնող)', 'Արևային շարժիչ՝ առանց մալուխի անցկացման', 'Տուփի գույների լայն ընտրանի'],
             en: ['Slat profiles: beaded, flat, or Zetra dim-out', 'Solar drive option — no cabling needed', 'Wide box colour palette'],
           },
+          image: raffstorenFrontMounted,
         },
         {
           id: 'window-system',
@@ -83,6 +99,7 @@ export const warema: BrandCatalog = {
             hy: ['Ուղղորդում՝ ռելսային կամ ճոպանային', 'Հարմար է նոր ճակատների և վերանորոգման համար', 'Թաքնված տեղադրում ջերմամեկուսիչ շերտում'],
             en: ['Rail or cable guidance', 'Suitable for new façades and renovation', 'Concealed installation within the insulation layer'],
           },
+          image: raffstorenWindowSystem,
         },
         {
           id: 'shaft',
@@ -97,6 +114,7 @@ export const warema: BrandCatalog = {
             hy: ['Խորշով առկա բացվածքների համար', 'Ճակատի փոփոխություն չի պահանջում', 'Շարժիչը՝ ներկառուցված վերջնային անջատիչներով'],
             en: ['For existing openings with a niche', 'No façade modification required', 'Motor with integrated limit switches'],
           },
+          image: raffstorenShaft,
         },
       ],
     },
@@ -123,6 +141,7 @@ export const warema: BrandCatalog = {
             hy: ['Միասնական հանգույց՝ պատուհանի բլոկի հետ', 'Կոմպակտ տուփ բացվածքի վերևում', 'Շարժիչային, ձեռքի կամ արևային շարժիչ'],
             en: ['Single unit with the window frame', 'Compact box above the opening', 'Motorised, manual or solar drive'],
           },
+          image: rollladenTopMounted,
         },
         {
           id: 'front-mounted',
@@ -137,6 +156,7 @@ export const warema: BrandCatalog = {
             hy: ['Տուփի ձևեր՝ ուղղանկյուն, կիսակլոր, քառակուսի', 'Առավելագույնը 3500×3500 մմ (մինչև 10 մ²)', 'Հավելյալ՝ ներկառուցված մոծակների ցանց'],
             en: ['Box shapes: rectangular, half-round, square', 'Max 3500×3500 mm (up to 10 m²)', 'Option: integrated insect screen'],
           },
+          image: rollladenFrontMounted,
         },
         {
           id: 'shaft',
@@ -151,6 +171,7 @@ export const warema: BrandCatalog = {
             hy: ['Կախված չէ պատուհանի տեսակից և արտադրողից', 'Արագ տեղադրում առանց պատուհանը ապամոնտաժելու', 'Համատեղելի է WMS համակարգի հետ'],
             en: ['Independent of window type or manufacturer', 'Fast installation without removing the window', 'Compatible with the WMS control system'],
           },
+          image: rollladenShaft,
         },
         {
           id: 'solar',
@@ -165,6 +186,7 @@ export const warema: BrandCatalog = {
             hy: ['Ինքնավար սնուցում արևից', 'Չի պահանջում էլեկտրական մալուխային անցկացում', 'Կառավարում ռադիոկառավարիչով կամ հավելվածով'],
             en: ['Self-sufficient solar power', 'No mains wiring required', 'Controlled via radio remote or app'],
           },
+          image: rollladenFrontMounted,
         },
       ],
     },
@@ -299,6 +321,7 @@ export const warema: BrandCatalog = {
             hy: ['Ուղղորդում՝ ճոպանային, ռելսային, easyZIP', 'easyZIP՝ մինչև 6000×6000 մմ (18 մ²)', 'Բաց կամ ծեփի մեջ թաքնված տուփ'],
             en: ['Guidance: cable, rail, or easyZIP', 'easyZIP: up to 6000×6000 mm (18 m²)', 'Exposed or plaster-concealed box'],
           },
+          image: fenstermarkiseFrontMounted,
         },
         {
           id: 'markisolette',
@@ -313,6 +336,7 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 2500×2900 մմ (7,3 մ²)', 'Համատեղում է ուղղահայաց և դուրս եկող պաշտպանությունը', 'Ձեռքի կամ մոտորացված մեկնարկ'],
             en: ['Max 2500×2900 mm (7.3 m²)', 'Combines vertical and projecting protection', 'Manual or motorised drive'],
           },
+          image: markisoletteImg,
         },
         {
           id: 'easyzip',
@@ -327,6 +351,7 @@ export const warema: BrandCatalog = {
             hy: ['Փորձարկված քամակայունություն մինչև 150 կմ/ժ', 'Կասետային, առանց կասետի կամ ներկառուցվող տուփ', 'Առավելագույնը 6000×6000 մմ'],
             en: ['Tested wind resistance up to 150 km/h', 'Cassette, cassette-free or built-in box', 'Max 6000×6000 mm'],
           },
+          image: easyzipImg,
         },
       ],
     },
@@ -372,7 +397,7 @@ export const warema: BrandCatalog = {
     },
     {
       slug: 'climara',
-      image: climaraImg,
+      image: climaraW10,
       name: { ru: 'Маркизы для зимнего сада Climara', hy: 'Climara ձմեռային այգու մարկիզաներ', en: 'Climara Conservatory Awnings' },
       intro: {
         ru: 'Затенение остеклённых крыш и зимних садов — пять моделей под скатные, вальмовые и нестандартные формы крыши, площадь полотна до 30 м².',
@@ -407,6 +432,7 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 6500 մմ, երկարությունը՝ մինչև 6000 մմ', 'Արև, քամի, անձրև սենսորներ (WMS)', 'Անկյունային ծածկող պլանկա (հավելյալ)'],
             en: ['Width up to 6500 mm, length up to 6000 mm', 'Sun, wind and rain sensors (WMS)', 'Angular cover profile (optional)'],
           },
+          image: climaraImg,
         },
         {
           id: 'd3',
@@ -421,6 +447,7 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 4000×5000 մմ (10 մ²)', 'Եռանկյունաձև և սեղանաձև թեքությունների համար', 'Կոմպակտ կասետա'],
             en: ['Max 4000×5000 mm (10 m²)', 'For triangular and trapezoidal slopes', 'Compact cassette'],
           },
+          image: climaraD3,
         },
       ],
     },
@@ -557,6 +584,7 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 2200×2800 մմ (4 մ²)', 'Հարթ փակում արգելակով', 'Խոզանակավոր կնիքներ կասետայում և ուղղորդիչներում'],
             en: ['Max 2200×2800 mm (4 m²)', 'Slow-close braking mechanism', 'Brush seals in cassette and side tracks'],
           },
+          image: insektenRoller,
         },
         {
           id: 'sliding',
@@ -571,6 +599,7 @@ export const warema: BrandCatalog = {
             hy: ['Մեծ ապակեպատ բացվածքների համար', 'Մեկ կամ երկու սահող կտոր', 'Հարթ ընթացք ստորին ուղղորդիչով'],
             en: ['For large glazed openings', 'One or two sliding panels', 'Smooth motion along the bottom track'],
           },
+          image: insektenSliding,
         },
         {
           id: 'grandslide',

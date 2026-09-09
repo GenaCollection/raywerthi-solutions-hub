@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
 import Solutions from "./pages/Solutions";
 import BrandDetail from "./pages/BrandDetail";
+import CategoryDetail from "./pages/CategoryDetail";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
@@ -23,6 +24,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/category/:categorySlug" element={<CategoryDetail />} />
             <Route path="/solutions/:brandSlug" element={<BrandDetail />} />
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />

@@ -7,9 +7,7 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Mail, Phone, MapPin, MessageCircle, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
-
-
-const solutionKeys = ['blinds', 'rollshutters', 'awnings', 'screens', 'interior', 'smarthome'];
+import { unifiedCategories } from '@/data/products';
 
 const Contacts: React.FC = () => {
   const { t, lang } = useLanguage();
@@ -230,9 +228,9 @@ const Contacts: React.FC = () => {
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
                     >
                       <option value="">—</option>
-                      {solutionKeys.map((key) => (
-                        <option key={key} value={t(`solutions.categories.${key}.title`)}>
-                          {t(`solutions.categories.${key}.title`)}
+                      {unifiedCategories.map((category) => (
+                        <option key={category.slug} value={category.name[lang]}>
+                          {category.name[lang]}
                         </option>
                       ))}
                     </select>

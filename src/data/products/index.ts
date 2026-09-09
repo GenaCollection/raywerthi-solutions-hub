@@ -11,4 +11,6 @@ export const brandCatalogs: Record<string, BrandCatalog> = {
 
 export const brandSlugs = Object.keys(brandCatalogs);
 
+export { unifiedCategories } from './unifiedCategories';
+export type { UnifiedCategory, CategorySource } from './unifiedCategories';
 export type { BrandCatalog, ProductCategory, ProductModel, LocalizedText, LocalizedList } from './types';

@@ -42,6 +42,13 @@ export const translations: Record<Language, Record<string, any>> = {
       ctaButton: 'Оставить заявку',
       otherBrands: 'Другие бренды',
     },
+    categoryPage: {
+      backToSolutions: 'Все категории',
+      availableFrom: 'Доступно у брендов',
+      introTitle: 'Что мы предлагаем',
+      viewFullRange: 'Весь ассортимент',
+      otherCategories: 'Другие категории',
+    },
     howWeWork: {
       title: 'Как мы работаем',
       step1title: 'Консультация',
@@ -86,18 +93,10 @@ export const translations: Record<Language, Record<string, any>> = {
     solutions: {
       title: 'Решения',
       subtitle: 'Всё, что мы можем предложить — через понятную структуру по типам решений',
-      learnMore: 'Узнать больше',
+      learnMore: 'Смотреть модели',
       catalogTitle: 'Полный каталог продукции',
       catalogDesc: 'Изучите категории и модели каждого бренда на нашем сайте — фото, описания и характеристики.',
       visitCatalog: 'Смотреть каталог',
-      categories: {
-        blinds: { title: 'Наружные горизонтальные жалюзи и фасадные системы', desc: 'Регулируют свет и тепло, подходят для фасадов частных домов и коммерческих зданий.', brands: 'HELLA, WAREMA' },
-        rollshutters: { title: 'Роллставни и роллеты', desc: 'Защита от солнца, шума, холода и дополнительная безопасность, управление светом и приватностью.', brands: 'HELLA, WAREMA' },
-        awnings: { title: 'Маркизы и террасные решения', desc: 'Кассетные и открытые маркизы, перголы, навесы, создающие тень и комфорт на террасах и балконах.', brands: 'HELLA, WAREMA' },
-        screens: { title: 'Текстильные экраны и вертикальные системы', desc: 'ZIP-экраны, вертикальные ткани для больших проёмов, защита от бликов и перегрева с современным видом.', brands: 'HELLA, WAREMA' },
-        interior: { title: 'Интерьерные шторы, карнизы и рулонные системы', desc: 'Карнизы, шторные системы, рулонные и другие текстильные решения для интерьеров, в том числе премиальные моторизованные системы.', brands: 'Silent Gliss, HELLA, WAREMA' },
-        smarthome: { title: 'Управление и Smart Home', desc: 'Системы управления солнцезащитой, интеграция с умным домом, датчики солнца, ветра, таймеры и сценарии.', brands: 'HELLA, WAREMA' },
-      },
     },
     services: {
       title: 'Услуги',
@@ -211,6 +210,13 @@ export const translations: Record<Language, Record<string, any>> = {
       ctaButton: 'Թողնել հայտ',
       otherBrands: 'Այլ բրենդներ',
     },
+    categoryPage: {
+      backToSolutions: 'Բոլոր կատեգորիաները',
+      availableFrom: 'Հասանելի է բրենդներից',
+      introTitle: 'Ինչ ենք առաջարկում',
+      viewFullRange: 'Ամբողջ տեսականին',
+      otherCategories: 'Այլ կատեգորիաներ',
+    },
     howWeWork: {
       title: 'Ինչպես ենք մենք աշխատում',
       step1title: 'Խորհրդատվություն',
@@ -259,43 +265,11 @@ export const translations: Record<Language, Record<string, any>> = {
       title: 'Լուծումներ',
       subtitle:
         'Մեր բոլոր առաջարկները՝ հստակ կառուցվածքով ըստ լուծման տեսակների',
-      learnMore: 'Իմանալ ավելին',
+      learnMore: 'Տեսնել մոդելները',
       catalogTitle: 'Ամբողջական կատալոգ',
       catalogDesc:
         'Ուսումնասիրեք յուրաքանչյուր բրենդի կատեգորիաներն ու մոդելները մեր կայքում՝ լուսանկարներ, նկարագրություններ և բնութագրեր։',
       visitCatalog: 'Դիտել կատալոգը',
-      categories: {
-        blinds: {
-          title: 'Արտաքին հորիզոնական ջալյուզիներ և ֆասադային համակարգեր',
-          desc: 'Կարգավորում են լույսն ու ջերմությունը, հարմար են մասնավոր տների և բիզնես շենքերի ֆասադների համար։',
-          brands: 'HELLA, WAREMA',
-        },
-        rollshutters: {
-          title: 'Ռոլշտորներ և ռոլլետներ',
-          desc: 'Պաշտպանություն արևից, աղմուկից և սառնությունից, լրացուցիչ անվտանգություն, լույսի և գաղտնիության կառավարում։',
-          brands: 'HELLA, WAREMA',
-        },
-        awnings: {
-          title: 'Մարկիզներ և տեռասային լուծումներ',
-          desc: 'Կասետային և բաց մարկիզներ, պերգոլաներ, ծածկեր, որոնք ստեղծում են ստվեր և հարմարավետություն տեռասներում և պատշգամբներում։',
-          brands: 'HELLA, WAREMA',
-        },
-        screens: {
-          title: 'Տեքստիլ էկրաններ և ուղղահայաց համակարգեր',
-          desc: 'ZIP-էկրաններ, ուղղահայաց կտորներ մեծ բացվածքների համար, պաշտպանություն պայծառությունից և գերտաքացումից՝ ժամանակակից տեսքով։',
-          brands: 'HELLA, WAREMA',
-        },
-        interior: {
-          title: 'Ներքին վարագույրներ, գորգաձողեր և ռուլոնային համակարգեր',
-          desc: 'Գորգաձողեր, վարագույրների համակարգեր, ռուլոնային և այլ տեքստիլ լուծումներ ինտերիերի համար, ներառյալ պրեմիում մոդելներով շարժիչով համակարգեր։',
-          brands: 'Silent Gliss, HELLA, WAREMA',
-        },
-        smarthome: {
-          title: 'Կառավարում և Smart Home',
-          desc: 'Արևապաշտպան համակարգերի կառավարում, ինտեգրում խելացի տան հետ, արևի և քամու սենսորներ, ժամաչափեր և սցենարներ։',
-          brands: 'HELLA, WAREMA',
-        },
-      },
     },
     services: {
       title: 'Ծառայություններ',
@@ -444,6 +418,13 @@ export const translations: Record<Language, Record<string, any>> = {
       ctaButton: 'Send a Request',
       otherBrands: 'Other Brands',
     },
+    categoryPage: {
+      backToSolutions: 'All Categories',
+      availableFrom: 'Available From',
+      introTitle: 'What We Offer',
+      viewFullRange: 'Full Range',
+      otherCategories: 'Other Categories',
+    },
     howWeWork: {
       title: 'How We Work',
       step1title: 'Consultation',
@@ -485,18 +466,10 @@ export const translations: Record<Language, Record<string, any>> = {
     solutions: {
       title: 'Solutions',
       subtitle: 'Everything we offer — organized by solution type',
-      learnMore: 'Learn More',
+      learnMore: 'View Models',
       catalogTitle: 'Full Product Catalog',
       catalogDesc: 'Explore each brand\'s categories and models on our site — photos, descriptions and specifications.',
       visitCatalog: 'View Catalog',
-      categories: {
-        blinds: { title: 'Exterior Horizontal Blinds & Facade Systems', desc: 'Regulate light and heat, suitable for facades of private homes and commercial buildings.', brands: 'HELLA, WAREMA' },
-        rollshutters: { title: 'Roller Shutters', desc: 'Protection from sun, noise, cold and additional security, light and privacy control.', brands: 'HELLA, WAREMA' },
-        awnings: { title: 'Awnings & Terrace Solutions', desc: 'Cassette and open awnings, pergolas, canopies creating shade and comfort on terraces and balconies.', brands: 'HELLA, WAREMA' },
-        screens: { title: 'Textile Screens & Vertical Systems', desc: 'ZIP screens, vertical fabrics for large openings, glare and overheating protection with a modern look.', brands: 'HELLA, WAREMA' },
-        interior: { title: 'Interior Curtains, Tracks & Roller Systems', desc: 'Curtain tracks, curtain systems, roller and other textile solutions for interiors, including premium motorized systems.', brands: 'Silent Gliss, HELLA, WAREMA' },
-        smarthome: { title: 'Control & Smart Home', desc: 'Sun protection control systems, smart home integration, sun and wind sensors, timers and scenarios.', brands: 'HELLA, WAREMA' },
-      },
     },
     services: {
       title: 'Services',

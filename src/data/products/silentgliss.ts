@@ -1,17 +1,27 @@
 import type { BrandCatalog } from './types';
 import silentglissLogo from '@/assets/brands/silentgliss-logo.svg';
 
-import tracksImg from '@/assets/products/silentgliss/tracks-sg5600.jpg';
-import metropoleImg from '@/assets/products/silentgliss/metropole.jpg';
-import cubicleImg from '@/assets/products/silentgliss/cubicle.jpg';
-import rollerBlindImg from '@/assets/products/silentgliss/roller-blind.jpg';
-import panelGlideImg from '@/assets/products/silentgliss/panel-glide.jpg';
-import romanBlindImg from '@/assets/products/silentgliss/roman-blind.jpg';
-import verticalBlindImg from '@/assets/products/silentgliss/vertical-blind.jpg';
+import tracksImg from '@/assets/products/silentgliss/sg5600-v2.jpg';
+import sg5100Img from '@/assets/products/silentgliss/sg5100.jpg';
+import metropoleImg from '@/assets/products/silentgliss/metropole-v2.jpg';
+import cubicleImg from '@/assets/products/silentgliss/cubicle-v2.jpg';
+import rollerBlindImg from '@/assets/products/silentgliss/roller-blind-v2.jpg';
+import dimoutNoxImg from '@/assets/products/silentgliss/dimout-nox.jpg';
+import dimoutMoonImg from '@/assets/products/silentgliss/dimout-moon.jpg';
+import panelGlideImg from '@/assets/products/silentgliss/panel-glide-v2.jpg';
+import panelHandImg from '@/assets/products/silentgliss/panel-hand.jpg';
+import romanBlindImg from '@/assets/products/silentgliss/roman-blind-v2.jpg';
+import roman2355Img from '@/assets/products/silentgliss/roman-2355.jpg';
+import roman2120Img from '@/assets/products/silentgliss/roman-2120.jpg';
+import verticalBlindImg from '@/assets/products/silentgliss/vertical-blind-v2.jpg';
+import vertical2910Img from '@/assets/products/silentgliss/vertical-2910.jpg';
 import pleatedImg from '@/assets/products/silentgliss/pleated.jpg';
-import venetianBlindImg from '@/assets/products/silentgliss/venetian-blind.jpg';
-import skylightImg from '@/assets/products/silentgliss/skylight.jpg';
-import smarthomeImg from '@/assets/solutions/smarthome.jpg';
+import venetianBlindImg from '@/assets/products/silentgliss/venetian-blind-v2.jpg';
+import venetian8110Img from '@/assets/products/silentgliss/venetian-8110.jpg';
+import skylightImg from '@/assets/products/silentgliss/skylight-v2-hero.webp';
+import skylight2195Img from '@/assets/products/silentgliss/skylight-2195.jpg';
+import skylight2190Img from '@/assets/products/silentgliss/skylight-2190.jpg';
+import smarthomeImg from '@/assets/products/silentgliss/sg5600-v2.jpg';
 
 export const silentGliss: BrandCatalog = {
   slug: 'silent-gliss',
@@ -61,6 +71,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Երկարությունը՝ մինչև 9 մ, գործվածքի քաշը՝ մինչև 30 կգ', 'Կառավարում՝ կառավարիչ, Move հավելված, BMS', 'Կոմպակտ պրոֆիլ'],
             en: ['Length up to 9 m, fabric weight up to 30 kg', 'Control: remote, Move app, or BMS', 'Compact profile'],
           },
+          image: sg5100Img,
         },
         {
           id: 'sg3970',
@@ -181,6 +192,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Սենյակի ամբողջական խավարեցում', 'Խորշային կամ վրադիր տեղադրում', 'Ննջասենյակների և բնակելի ինտերիերի համար'],
             en: ['Total room darkening', 'Recess or surface mounting', 'For bedrooms and residential interiors'],
           },
+          image: dimoutNoxImg,
         },
         {
           id: 'dimout-moon',
@@ -195,6 +207,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Նախագծված է բժշկական կաբինետների համար', 'Ճշգրիտ խավարեցում առանց եզրային ճեղքերի', 'Համատեղելի է ստանդարտ մեկնարկների հետ'],
             en: ['Designed for medical offices', 'Precise darkening with no edge gaps', 'Compatible with standard drive options'],
           },
+          image: dimoutMoonImg,
         },
       ],
     },
@@ -235,6 +248,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Ձեռքով ձողի կառավարում', 'Ուղիղ կամ կոր ռելսեր', 'Որպես պատուհանի լուծում կամ բաժանիչ'],
             en: ['Manual draw-rod control', 'Straight or curved tracks', 'As a window treatment or room divider'],
           },
+          image: panelHandImg,
         },
       ],
     },
@@ -275,6 +289,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Մարտկոցային մեկնարկ առանց մալուխի', 'Colorama 2 բազմագույն գործվածքներ', 'Պարզ տեղադրում վերանորոգման ժամանակ'],
             en: ['Battery drive, no wiring', 'Multicolour Colorama 2 fabrics', 'Simple installation during renovation'],
           },
+          image: roman2355Img,
         },
         {
           id: 'sg2120',
@@ -289,6 +304,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Շղթայական կառավարում', 'Polyflax գործվածք և այլն', 'Պատրաստի մեխանիզմ կամ ամբողջական արտադրանք'],
             en: ['Chain operation', 'Polyflax fabric and others', 'Hardware-only or a complete blind'],
           },
+          image: roman2120Img,
         },
       ],
     },
@@ -329,6 +345,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Էլեկտրական կամ շղթայական կառավարում', 'Palisade Revive, Multi Visio գործվածքներ', 'Հարմար է մեծ ապակեպատ բացվածքների համար'],
             en: ['Electric or chain control', 'Palisade Revive, Multi Visio fabrics', 'Suited to large glazed openings'],
           },
+          image: vertical2910Img,
         },
       ],
     },
@@ -437,6 +454,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Կարգավորելի լամելներ', 'Ձեռքի, շղթայական կամ պարանով կառավարում', 'Գույների և տեքստուրայի լայն ընտրանի'],
             en: ['Customisable slats', 'Hand, chain or cord control', 'Wide colour and texture palette'],
           },
+          image: venetian8110Img,
         },
       ],
     },
@@ -477,6 +495,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Առավելագույնը 3000×6000 մմ, քաշը՝ մինչև 25 կգ', 'Կառավարում՝ կառավարիչ, Move հավելված', 'Ատրիումների և ձմեռային այգիների համար'],
             en: ['Max 3000×6000 mm, weight up to 25 kg', 'Control: remote, Move app', 'For atriums and conservatories'],
           },
+          image: skylight2195Img,
         },
         {
           id: 'sg2190',
@@ -491,6 +510,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Հանվող պտուտակահանման բռնակ', 'Դժվարամատչելի թեքածածկ պատուհանների համար', 'Չի պահանջում էլեկտրասնուցում'],
             en: ['Detachable crank handle', 'For hard-to-reach skylight windows', 'No power supply required'],
           },
+          image: skylight2190Img,
         },
       ],
     },
