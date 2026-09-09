@@ -2,6 +2,12 @@ import type { BrandCatalog } from './types';
 import waremaLogo from '@/assets/brands/warema-logo.svg';
 
 import raffstorenHero from '@/assets/products/warema/raffstoren-hero.webp';
+import raffstorenBasicHero from '@/assets/products/warema/raffstoren-basic-hero.webp';
+import raffstorenBasicB from '@/assets/products/warema/raffstoren-basic-b.webp';
+import raffstorenAsymHero from '@/assets/products/warema/raffstoren-asym-hero.webp';
+import raffstorenAsymB from '@/assets/products/warema/raffstoren-asym-b.webp';
+import raffstorenSelfSupportHero from '@/assets/products/warema/raffstoren-selfsupport-hero.webp';
+import raffstorenSelfSupportB from '@/assets/products/warema/raffstoren-selfsupport-b.webp';
 import raffstorenTopMounted from '@/assets/products/warema/raffstoren-topmounted.jpg';
 import raffstorenFrontMounted from '@/assets/products/warema/raffstoren-frontmounted.jpg';
 import raffstorenWindowSystem from '@/assets/products/warema/raffstoren-windowsystem.jpg';
@@ -88,8 +94,16 @@ import insektenSliding from '@/assets/products/warema/insekten-sliding.webp';
 import insektenSlidingB from '@/assets/products/warema/insekten-sliding-b.webp';
 import grandslideImg from '@/assets/products/warema/grandslide.webp';
 import grandslideDetail from '@/assets/products/warema/grandslide-detail.webp';
+import insektenPleatedHero from '@/assets/products/warema/insekten-pleated-hero.jpg';
+import insektenPleatedB from '@/assets/products/warema/insekten-pleated-b.webp';
+import insektenFixedHero from '@/assets/products/warema/insekten-fixed-hero.jpg';
+import insektenFixedB from '@/assets/products/warema/insekten-fixed-b.webp';
+import insektenLightwellHero from '@/assets/products/warema/insekten-lightwell-hero.jpg';
+import insektenLightwellB from '@/assets/products/warema/insekten-lightwell-b.webp';
 import smarthomeHero from '@/assets/products/warema/smarthome-hero.webp';
 import smarthomeDevice from '@/assets/products/warema/smarthome-device.webp';
+import smarthomeHomeeHero from '@/assets/products/warema/smarthome-homee-hero.jpg';
+import smarthomeHomeeB from '@/assets/products/warema/smarthome-homee-b.webp';
 import smarthomeWebcontrolproB from '@/assets/products/warema/smarthome-webcontrolpro-b.webp';
 import smarthomeWms from '@/assets/products/warema/smarthome-wms.jpg';
 import smarthomeWmsB from '@/assets/products/warema/smarthome-wms-b.webp';
@@ -188,6 +202,57 @@ export const warema: BrandCatalog = {
           image: raffstorenShaft,
           gallery: [raffstorenShaftB],
           sourceUrl: 'https://www.warema.com/en/external-venetian-blinds/shaft-external-venetian-blinds.html',
+        },
+        {
+          id: 'basic',
+          name: 'Basis-Außenjalousie',
+          description: {
+            ru: 'Универсальная система с тросовой или рельсовой направляющей — подходит для оконных откосов, вентилируемых фасадов, витражных конструкций и зимних садов.',
+            hy: 'Ունիվերսալ համակարգ ճոպանային կամ ռելսային ուղղորդմամբ՝ հարմար է լուսամուտների խորշերի, օդափոխվող ճակատների, վիտրաժային կոնստրուկցիաների և ձմեռային այգիների համար։',
+            en: 'A versatile system with cable or rail guidance — suited to window reveals, rear-ventilated façades, transom-and-mullion structures and conservatories.',
+          },
+          specs: {
+            ru: ['Максимум 5000×5000 мм (25 м²)', 'Тросовая (изящная) или рельсовая (ветростойкая) направляющая', 'Опциональная защитная накрывающая планка'],
+            hy: ['Առավելագույնը 5000×5000 մմ (25 մ²)', 'Ճոպանային (նրբագեղ) կամ ռելսային (քամակայուն) ուղղորդում', 'Հավելյալ պաշտպանիչ ծածկող պլանկա'],
+            en: ['Max 5000×5000 mm (25 m²)', 'Cable (slender) or rail (wind-stable) guidance', 'Optional protective cover panel'],
+          },
+          image: raffstorenBasicHero,
+          gallery: [raffstorenBasicB],
+          sourceUrl: 'https://www.warema.com/en/external-venetian-blinds/basic-external-venetian-blinds.html',
+        },
+        {
+          id: 'asymmetrical',
+          name: 'Sonderform-Außenjalousie',
+          description: {
+            ru: 'Изготавливается по индивидуальным размерам для скатных, треугольных окон и проёмов с наклонным подоконником — угол наклона ламелей регулируется независимо от формы проёма.',
+            hy: 'Արտադրվում է անհատական չափերով՝ թեք, եռանկյունաձև պատուհանների և թեք լուսամուտամարգի բացվածքների համար՝ լամելների թեքության անկյունը կարգավորվում է անկախ բացվածքի ձևից։',
+            en: 'Made to measure for sloping gable, triangular windows and openings with a sloping sill — the slat angle adjusts independently of the opening\'s shape.',
+          },
+          specs: {
+            ru: ['Наклон от 5° до 52°', 'Максимум 4960×4000 мм (20 м²)', 'Сочетается с обычными жалюзи на одном фасаде'],
+            hy: ['Թեքությունը՝ 5°-ից 52°', 'Առավելագույնը 4960×4000 մմ (20 մ²)', 'Համադրվում է սովորական ժալյուզիների հետ նույն ճակատին'],
+            en: ['Inclination 5° to 52°', 'Max 4960×4000 mm (20 m²)', 'Combinable with standard blinds on the same façade'],
+          },
+          image: raffstorenAsymHero,
+          gallery: [raffstorenAsymB],
+          sourceUrl: 'https://www.warema.com/en/external-venetian-blinds/asymmetrical-external-venetian-blinds.html',
+        },
+        {
+          id: 'self-supporting',
+          name: 'Selbsttragende Außenjalousie',
+          description: {
+            ru: 'Накрывающая планка держится на самих направляющих — крепление идёт только через кронштейны направляющих, без отдельной фиксации короба к зданию.',
+            hy: 'Ծածկող պլանկան պահվում է հենց ուղղորդիչների վրա՝ ամրացումն իրականացվում է միայն ուղղորդիչների կրիչներով, առանց տուփի առանձին ամրացման շենքին։',
+            en: 'The cover panel is carried on the guide rails themselves — fixing goes only through the guide-rail brackets, without a separate cover-panel fixing to the building.',
+          },
+          specs: {
+            ru: ['Максимум 4500×5000 мм (13 м²)', 'Не требует отдельного крепления короба к фасаду', 'Для витражных фасадов и зимних садов'],
+            hy: ['Առավելագույնը 4500×5000 մմ (13 մ²)', 'Չի պահանջում տուփի առանձին ամրացում ճակատին', 'Վիտրաժային ճակատների և ձմեռային այգիների համար'],
+            en: ['Max 4500×5000 mm (13 m²)', 'No separate cover-panel fixing to the façade required', 'For transom-and-mullion façades and conservatories'],
+          },
+          image: raffstorenSelfSupportHero,
+          gallery: [raffstorenSelfSupportB],
+          sourceUrl: 'https://www.warema.com/en/external-venetian-blinds/self-supporting-external-venetian-blind.html',
         },
       ],
     },
@@ -796,9 +861,9 @@ export const warema: BrandCatalog = {
       image: insektenHero,
       name: { ru: 'Москитные сетки', hy: 'Մոծակների ցանցեր', en: 'Insect Screens' },
       intro: {
-        ru: 'Десять конструкций защиты от насекомых для окон, дверей и мансардных проёмов, включая систему Grandslide для больших раздвижных дверей. Сетка VisionAir пропускает 77% света.',
-        hy: 'Միջատներից պաշտպանության տասը կոնստրուկցիա պատուհանների, դռների և թեքածածկ բացվածքների համար, այդ թվում՝ Grandslide համակարգը մեծ սահող դռների համար։ VisionAir ցանցը թողնում է 77% լույս։',
-        en: 'Ten insect-protection constructions for windows, doors and roof openings, including the Grandslide system for large lift-and-slide doors. The VisionAir mesh lets through 77% of light.',
+        ru: 'Шесть конструкций защиты от насекомых для окон, дверей, приямков и мансардных проёмов, включая систему Grandslide для больших раздвижных дверей.',
+        hy: 'Միջատներից պաշտպանության վեց կոնստրուկցիա պատուհանների, դռների, վերնախորշերի և թեքածածկ բացվածքների համար, այդ թվում՝ Grandslide համակարգը մեծ սահող դռների համար։',
+        en: 'Six insect-protection constructions for windows, doors, light wells and roof openings, including the Grandslide system for large lift-and-slide doors.',
       },
       models: [
         {
@@ -851,6 +916,57 @@ export const warema: BrandCatalog = {
           image: grandslideImg,
           gallery: [grandslideDetail],
           sourceUrl: 'https://www.warema.com/en/insect-screen/grandslide.html',
+        },
+        {
+          id: 'pleated',
+          name: 'Insektenschutz-Faltrahmen',
+          description: {
+            ru: 'Складчатая сетка сдвигается вбок и компактно складывается в раму — решение для узких террасных и балконных дверей, где нет места для распашной или откатной конструкции.',
+            hy: 'Ծալքավոր ցանցը կողքի է սահում և կոմպակտ ծալվում շրջանակի մեջ՝ լուծում նեղ պատշգամբի և բալկոնի դռների համար, որտեղ տեղ չկա բացվող կամ սահող կոնստրուկցիայի համար։',
+            en: 'The pleated mesh slides sideways and folds compactly into the frame — a solution for narrow patio and balcony doors with no room for a hinged or sliding construction.',
+          },
+          specs: {
+            ru: ['Максимум 2230×2630 мм (5,7 м²)', 'Управление изнутри или снаружи за поручень', 'Не требует пространства для распашного хода'],
+            hy: ['Առավելագույնը 2230×2630 մմ (5,7 մ²)', 'Կառավարում ներսից կամ դրսից՝ բռնակով', 'Չի պահանջում տարածք բացվող ընթացքի համար'],
+            en: ['Max 2230×2630 mm (5.7 m²)', 'Operated from inside or outside via a handle rail', 'No swing clearance required'],
+          },
+          image: insektenPleatedHero,
+          gallery: [insektenPleatedB],
+          sourceUrl: 'https://www.warema.com/en/insect-screen/insect-screen-pleated-blind.html',
+        },
+        {
+          id: 'fixed-frame',
+          name: 'Insektenschutz-Spannrahmen',
+          description: {
+            ru: 'Несъёмная рама для окон, которым не нужна раздвижная или рулонная сетка — круглогодичное решение, доступно и для нестандартных и скруглённых форм проёма.',
+            hy: 'Ֆիքսված շրջանակ պատուհանների համար, որոնց չի պետք սահող կամ ռուլոնային ցանց՝ ամբողջ տարվա լուծում, հասանելի է նաև ոչ ստանդարտ և կլորացված բացվածքների համար։',
+            en: 'A fixed frame for windows that don\'t need a retractable or roller mesh — a year-round solution, also available for irregular and rounded opening shapes.',
+          },
+          specs: {
+            ru: ['Максимум 3000×3000 мм (4,5 м²)', 'Крепление на защёлках, шурупах или без сверления', 'Опциональный щёточный уплотнитель'],
+            hy: ['Առավելագույնը 3000×3000 մմ (4,5 մ²)', 'Ամրացում կողպեքներով, պտուտակներով կամ առանց հորատման', 'Հավելյալ խոզանակավոր կնիք'],
+            en: ['Max 3000×3000 mm (4.5 m²)', 'Fixing by hooks, screws, or without drilling', 'Optional brush seal'],
+          },
+          image: insektenFixedHero,
+          gallery: [insektenFixedB],
+          sourceUrl: 'https://www.warema.com/en/insect-screen/fixed-frame-insect-screen.html',
+        },
+        {
+          id: 'lightwell-cover',
+          name: 'Lichtschachtabdeckung',
+          description: {
+            ru: 'Плоская алюминиевая рама с сеткой из нержавеющей стали устанавливается поверх существующей решётки приямка — защищает подвал от насекомых, листвы и мусора, пропуская свет и воздух.',
+            hy: 'Հարթ ալյումինե շրջանակը չժանգոտվող պողպատե ցանցով տեղադրվում է առկա վերնախորշի ցանցի վրայից՝ պաշտպանում է նկուղը միջատներից, տերևներից և աղբից՝ թողնելով լույս և օդ։',
+            en: 'A flat aluminium frame with stainless-steel mesh fits over an existing light-well grille — keeps insects, leaves and debris out of the basement while still letting light and air through.',
+          },
+          specs: {
+            ru: ['Максимум 1800×1000 мм', 'Сетка из нержавеющей стали', 'Плоская конструкция для решёток заподлицо с полом'],
+            hy: ['Առավելագույնը 1800×1000 մմ', 'Չժանգոտվող պողպատե ցանց', 'Հարթ կոնստրուկցիա հատակի հետ հավասար ցանցերի համար'],
+            en: ['Max 1800×1000 mm', 'Stainless-steel mesh', 'Flat design for flush-floor grates'],
+          },
+          image: insektenLightwellHero,
+          gallery: [insektenLightwellB],
+          sourceUrl: 'https://www.warema.com/en/insect-screen/light-well-cover.html',
         },
       ],
     },
@@ -914,6 +1030,23 @@ export const warema: BrandCatalog = {
           image: smarthomeEwfs,
           gallery: [smarthomeEwfsB],
           sourceUrl: 'https://www.warema.com/en/smart-home/ewfs.html',
+        },
+        {
+          id: 'homee',
+          name: 'homee Smart Home Hub',
+          description: {
+            ru: 'Независимый от производителей модульный центр умного дома — объединяет WMS-управление WAREMA с освещением, отоплением и другой техникой в едином приложении с логикой «если — то».',
+            hy: 'Արտադրողից անկախ մոդուլային խելացի տան կենտրոն՝ WAREMA-ի WMS կառավարումը միավորում է լուսավորության, ջեռուցման և այլ տեխնիկայի հետ մեկ հավելվածում՝ «եթե-ապա» տրամաբանությամբ։',
+            en: 'A manufacturer-independent, modular smart-home hub — unites WAREMA WMS control with lighting, heating and other devices in one app using "if-then" automation rules.',
+          },
+          specs: {
+            ru: ['Белый Brain Cube + красный WMS Cube для WAREMA', 'Расширяется модулями Z-Wave, EnOcean и др.', 'Бесплатное приложение для iOS и Android'],
+            hy: ['Սպիտակ Brain Cube + կարմիր WMS Cube WAREMA-ի համար', 'Ընդլայնվում է Z-Wave, EnOcean և այլ մոդուլներով', 'Անվճար հավելված iOS և Android համար'],
+            en: ['White Brain Cube + red WMS Cube for WAREMA', 'Expandable with Z-Wave, EnOcean and other modules', 'Free iOS and Android app'],
+          },
+          image: smarthomeHomeeHero,
+          gallery: [smarthomeHomeeB],
+          sourceUrl: 'https://www.warema.com/en/smart-home/homee.html',
         },
       ],
     },
