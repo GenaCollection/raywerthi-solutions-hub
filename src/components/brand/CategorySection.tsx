@@ -1,6 +1,7 @@
 import React from 'react';
 import type { ProductCategory } from '@/data/products/types';
 import type { Language } from '@/i18n/translations';
+import { useLanguage } from '@/i18n/LanguageContext';
 import ModelCard from './ModelCard';
 
 interface CategorySectionProps {
@@ -9,8 +10,9 @@ interface CategorySectionProps {
 }
 
 const CategorySection: React.FC<CategorySectionProps> = ({ category, lang }) => {
+  const { t } = useLanguage();
   return (
-    <section id={category.slug} className="scroll-mt-24 py-12 md:py-16 border-b border-border last:border-b-0">
+    <section id={category.slug} className="scroll-mt-40 py-12 md:py-16 border-b border-border last:border-b-0">
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,320px)_1fr] gap-8 items-start">
         <div className="lg:sticky lg:top-28">
           <div className="rounded-xl overflow-hidden h-56 lg:h-72 mb-4">
@@ -27,7 +29,13 @@ const CategorySection: React.FC<CategorySectionProps> = ({ category, lang }) => 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {category.models.map((model) => (
-            <ModelCard key={model.id} model={model} lang={lang} fallbackImage={category.image} />
+            <ModelCard
+              key={model.id}
+              model={model}
+              lang={lang}
+              fallbackImage={category.image}
+              sourceLabel={t('brandPage.sourceLink')}
+            />
           ))}
         </div>
       </div>

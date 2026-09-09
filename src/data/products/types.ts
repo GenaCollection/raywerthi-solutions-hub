@@ -17,6 +17,10 @@ export interface ProductModel {
   description: LocalizedText;
   specs: LocalizedList;
   image?: string;
+  /** Extra photos beyond the primary `image`, shown in a small gallery. */
+  gallery?: string[];
+  /** Official manufacturer page for this model — full specs, more photos. */
+  sourceUrl?: string;
 }
 
 export interface ProductCategory {

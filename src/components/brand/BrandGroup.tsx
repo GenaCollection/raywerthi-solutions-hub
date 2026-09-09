@@ -10,9 +10,10 @@ interface BrandGroupProps {
   category: ProductCategory;
   lang: Language;
   viewFullRangeLabel: string;
+  sourceLabel: string;
 }
 
-const BrandGroup: React.FC<BrandGroupProps> = ({ brand, category, lang, viewFullRangeLabel }) => {
+const BrandGroup: React.FC<BrandGroupProps> = ({ brand, category, lang, viewFullRangeLabel, sourceLabel }) => {
   return (
     <div className="py-10 border-b border-border last:border-b-0">
       <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -23,7 +24,13 @@ const BrandGroup: React.FC<BrandGroupProps> = ({ brand, category, lang, viewFull
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-4">
         {category.models.map((model) => (
-          <ModelCard key={model.id} model={model} lang={lang} fallbackImage={category.image} />
+          <ModelCard
+            key={model.id}
+            model={model}
+            lang={lang}
+            fallbackImage={category.image}
+            sourceLabel={sourceLabel}
+          />
         ))}
       </div>
 

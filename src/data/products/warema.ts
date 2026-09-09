@@ -11,23 +11,26 @@ import rollladenTopMounted from '@/assets/products/warema/rollladen-topmounted.w
 import rollladenFrontMounted from '@/assets/products/warema/rollladen-frontmounted.jpg';
 import rollladenShaft from '@/assets/products/warema/rollladen-shaft.webp';
 import terreaImg from '@/assets/products/warema/terrea-markise.webp';
-import pereaImg from '@/assets/products/warema/perea-pergola.webp';
+import pereaImg from '@/assets/products/warema/perea-pergola-v2.webp';
+import pereaGallery2 from '@/assets/products/warema/perea-gallery2.webp';
 import fenstermarkiseImg from '@/assets/products/warema/fenstermarkise-hero.webp';
 import fenstermarkiseFrontMounted from '@/assets/products/warema/fenstermarkise-frontmounted.jpg';
 import markisoletteImg from '@/assets/products/warema/markisolette.webp';
 import easyzipImg from '@/assets/products/warema/easyzip.webp';
 import senkrechtmarkiseImg from '@/assets/products/warema/senkrechtmarkise.webp';
-import climaraImg from '@/assets/products/warema/climara-wintergarten.webp';
+import senkrechtRail from '@/assets/products/warema/senkrecht-rail.webp';
 import climaraW10 from '@/assets/products/warema/climara-v2a.jpg';
 import climaraD3 from '@/assets/products/warema/climara-v2b.jpg';
+import climaraW20 from '@/assets/products/warema/climara-w20.webp';
 import lamaxaHero from '@/assets/products/warema/lamaxa-l70-hero.webp';
-import lamaxaDetail from '@/assets/products/warema/lamaxa-detail.webp';
+import lamaxaL50 from '@/assets/products/warema/lamaxa-l50.jpg';
 import soneaHero from '@/assets/products/warema/sonea-hero.webp';
 import soneaModel from '@/assets/products/warema/sonea-model.webp';
 import insektenHero from '@/assets/products/warema/insekten-hero.webp';
-import insektenLifestyle from '@/assets/products/warema/insekten-lifestyle.webp';
 import insektenRoller from '@/assets/products/warema/insekten-roller.jpg';
 import insektenSliding from '@/assets/products/warema/insekten-sliding.webp';
+import grandslideImg from '@/assets/products/warema/grandslide.webp';
+import grandslideDetail from '@/assets/products/warema/grandslide-detail.webp';
 import smarthomeHero from '@/assets/products/warema/smarthome-hero.webp';
 import smarthomeDevice from '@/assets/products/warema/smarthome-device.webp';
 
@@ -70,6 +73,7 @@ export const warema: BrandCatalog = {
             en: ['Width up to 4500 mm, height up to 5000 mm', 'Area up to 16 m²', 'Rail or cable guidance'],
           },
           image: raffstorenTopMounted,
+          sourceUrl: 'https://www.warema.com/en/external-venetian-blinds/top-mounted-external-venetian-blinds.html',
         },
         {
           id: 'front-mounted',
@@ -85,6 +89,7 @@ export const warema: BrandCatalog = {
             en: ['Slat profiles: beaded, flat, or Zetra dim-out', 'Solar drive option — no cabling needed', 'Wide box colour palette'],
           },
           image: raffstorenFrontMounted,
+          sourceUrl: 'https://www.warema.com/en/external-venetian-blinds/front-mounted-external-venetian-blinds.html',
         },
         {
           id: 'window-system',
@@ -100,6 +105,7 @@ export const warema: BrandCatalog = {
             en: ['Rail or cable guidance', 'Suitable for new façades and renovation', 'Concealed installation within the insulation layer'],
           },
           image: raffstorenWindowSystem,
+          sourceUrl: 'https://www.warema.com/en/external-venetian-blinds/external-venetian-blind-window-systems.html',
         },
         {
           id: 'shaft',
@@ -115,6 +121,7 @@ export const warema: BrandCatalog = {
             en: ['For existing openings with a niche', 'No façade modification required', 'Motor with integrated limit switches'],
           },
           image: raffstorenShaft,
+          sourceUrl: 'https://www.warema.com/en/external-venetian-blinds/shaft-external-venetian-blinds.html',
         },
       ],
     },
@@ -142,6 +149,7 @@ export const warema: BrandCatalog = {
             en: ['Single unit with the window frame', 'Compact box above the opening', 'Motorised, manual or solar drive'],
           },
           image: rollladenTopMounted,
+          sourceUrl: 'https://www.warema.com/en/roller-shutters/top-mounted-roller-shutter.html',
         },
         {
           id: 'front-mounted',
@@ -157,6 +165,7 @@ export const warema: BrandCatalog = {
             en: ['Box shapes: rectangular, half-round, square', 'Max 3500×3500 mm (up to 10 m²)', 'Option: integrated insect screen'],
           },
           image: rollladenFrontMounted,
+          sourceUrl: 'https://www.warema.com/en/roller-shutters/front-mounted-roller-shutter.html',
         },
         {
           id: 'shaft',
@@ -172,6 +181,7 @@ export const warema: BrandCatalog = {
             en: ['Independent of window type or manufacturer', 'Fast installation without removing the window', 'Compatible with the WMS control system'],
           },
           image: rollladenShaft,
+          sourceUrl: 'https://www.warema.com/en/roller-shutters/shaft-roller-shutters.html',
         },
         {
           id: 'solar',
@@ -187,6 +197,7 @@ export const warema: BrandCatalog = {
             en: ['Self-sufficient solar power', 'No mains wiring required', 'Controlled via radio remote or app'],
           },
           image: rollladenFrontMounted,
+          sourceUrl: 'https://www.warema.com/en/roller-shutters/index-2.html',
         },
       ],
     },
@@ -213,6 +224,7 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 7000 մմ, դուրսբերումը՝ մինչև 4000 մմ', 'Մակերեսը՝ մինչև 28 մ²', 'Ռադիոկառավարվող շարժիչ և քամու սենսոր'],
             en: ['Width up to 7000 mm, projection up to 4000 mm', 'Area up to 28 m²', 'Radio-controlled motor with wind sensor'],
           },
+          sourceUrl: 'https://www.warema.com/en/awnings/terrea-patio-awnings.html',
         },
         {
           id: 'semi-cassette',
@@ -227,6 +239,7 @@ export const warema: BrandCatalog = {
             hy: ['Ամրացում պատին կամ առաստաղին', 'Ձեռքի կամ շարժիչային մեկնարկ', '200-ից ավել գործվածքի տարբերակ'],
             en: ['Wall or ceiling mounting', 'Manual or motorised drive', '200+ fabric options'],
           },
+          sourceUrl: 'https://www.warema.com/en/awnings/terrea-patio-awnings.html',
         },
         {
           id: 'balcony',
@@ -241,6 +254,7 @@ export const warema: BrandCatalog = {
             hy: ['Արտադրություն անհատական չափերով', 'Նվազագույն տեղադրման խորություն', 'Համատեղելի է կողային քամուց պաշտպանիչ էկրանների հետ'],
             en: ['Made to individual measurements', 'Minimal mounting depth', 'Compatible with side wind-protection screens'],
           },
+          sourceUrl: 'https://www.warema.com/en/awnings/balcony-awnings.html',
         },
       ],
     },
@@ -267,6 +281,8 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 6000 մմ, խորությունը՝ մինչև 5000 մմ', 'Մակերեսը՝ մինչև 30 մ²', 'Մոտորացված մեկնարկ'],
             en: ['Width up to 6000 mm, depth up to 5000 mm', 'Area up to 30 m²', 'Motorised drive'],
           },
+          gallery: [pereaGallery2],
+          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning.html',
         },
         {
           id: 'p60',
@@ -281,6 +297,7 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 6500 մմ, խորությունը՝ մինչև 7000 մմ', 'Մակերեսը՝ մինչև 35 մ²', 'secudrive® լարման տեխնոլոգիա'],
             en: ['Width up to 6500 mm, depth up to 7000 mm', 'Area up to 35 m²', 'secudrive® tensioning technology'],
           },
+          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning.html',
         },
         {
           id: 'p70',
@@ -295,6 +312,7 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 6000 մմ, խորությունը՝ մինչև 5000 մմ', 'secudrive® տեխնոլոգիա', '200-ից ավել գործվածքի տարբերակ'],
             en: ['Width up to 6000 mm, depth up to 5000 mm', 'secudrive® technology', '200+ fabric options'],
           },
+          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning.html',
         },
       ],
     },
@@ -322,6 +340,7 @@ export const warema: BrandCatalog = {
             en: ['Guidance: cable, rail, or easyZIP', 'easyZIP: up to 6000×6000 mm (18 m²)', 'Exposed or plaster-concealed box'],
           },
           image: fenstermarkiseFrontMounted,
+          sourceUrl: 'https://www.warema.com/en/awnings/front-mounted-awning.html',
         },
         {
           id: 'markisolette',
@@ -337,6 +356,7 @@ export const warema: BrandCatalog = {
             en: ['Max 2500×2900 mm (7.3 m²)', 'Combines vertical and projecting protection', 'Manual or motorised drive'],
           },
           image: markisoletteImg,
+          sourceUrl: 'https://www.warema.com/en/awnings/markisolettes.html',
         },
         {
           id: 'easyzip',
@@ -352,6 +372,7 @@ export const warema: BrandCatalog = {
             en: ['Tested wind resistance up to 150 km/h', 'Cassette, cassette-free or built-in box', 'Max 6000×6000 mm'],
           },
           image: easyzipImg,
+          sourceUrl: 'https://www.warema.com/en/awnings/easyzip.html',
         },
       ],
     },
@@ -378,6 +399,8 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 3000×3000 մմ (9 մ²)', 'Մինիմալիստական տեսք', 'Ձեռքի կամ մոտորացված կառավարում'],
             en: ['Max 3000×3000 mm (9 m²)', 'Minimalist appearance', 'Manual or motorised control'],
           },
+          image: senkrechtmarkiseImg,
+          sourceUrl: 'https://www.warema.com/en/awnings/vertical-awnings.html',
         },
         {
           id: 'rail',
@@ -392,6 +415,8 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 3000×3000 մմ (9 մ²)', 'Տուփի ձևեր՝ ուղղանկյուն, կիսակլոր, կլոր', 'Տուփի բարձրությունը՝ 75–110 մմ'],
             en: ['Max 3000×3000 mm (9 m²)', 'Box shapes: rectangular, half-round, round', 'Box height 75–110 mm'],
           },
+          image: senkrechtRail,
+          sourceUrl: 'https://www.warema.com/en/awnings/vertical-awnings.html',
         },
       ],
     },
@@ -418,6 +443,7 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 6500 մմ, երկարությունը՝ մինչև 6000 մմ', 'Մակերեսը՝ մինչև 30 մ²', 'Կլոր կամ ուղղանկյուն ծածկող պլանկա'],
             en: ['Width up to 6500 mm, length up to 6000 mm', 'Area up to 30 m²', 'Round or rectangular cover profile'],
           },
+          sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning.html',
         },
         {
           id: 'w20',
@@ -432,7 +458,8 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 6500 մմ, երկարությունը՝ մինչև 6000 մմ', 'Արև, քամի, անձրև սենսորներ (WMS)', 'Անկյունային ծածկող պլանկա (հավելյալ)'],
             en: ['Width up to 6500 mm, length up to 6000 mm', 'Sun, wind and rain sensors (WMS)', 'Angular cover profile (optional)'],
           },
-          image: climaraImg,
+          image: climaraW20,
+          sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning.html',
         },
         {
           id: 'd3',
@@ -448,6 +475,7 @@ export const warema: BrandCatalog = {
             en: ['Max 4000×5000 mm (10 m²)', 'For triangular and trapezoidal slopes', 'Compact cassette'],
           },
           image: climaraD3,
+          sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning.html',
         },
       ],
     },
@@ -474,6 +502,7 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 4750×6330 մմ', 'Պտտվող լամելներ մի քանի դիրքով', 'LED լուսավորություն և ջեռուցիչներ՝ հավելյալ'],
             en: ['Max 4750×6330 mm', 'Rotating slats with multiple positions', 'Optional LED lighting and radiant heaters'],
           },
+          sourceUrl: 'https://www.warema.com/en/patio-covers/l70-slat-roof.html',
         },
         {
           id: 'l50',
@@ -488,7 +517,8 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 4500×6020 մմ (ընդլայնված կոնֆիգուրացիաներ մինչև 7000×4500 մմ)', 'Տարբերակներ՝ ստանդարտ, View (ապակի), Tex (գործվածք)', 'Պատին ամրացվող կամ ազատ կանգնած'],
             en: ['Max 4500×6020 mm (extended configurations up to 7000×4500 mm)', 'Variants: standard, View (glass), Tex (fabric)', 'Wall-mounted or free-standing'],
           },
-          image: lamaxaDetail,
+          image: lamaxaL50,
+          sourceUrl: 'https://www.warema.com/en/patio-covers/l50-roof-system.html',
         },
         {
           id: 'l60',
@@ -503,6 +533,7 @@ export const warema: BrandCatalog = {
             hy: ['Ներկառուցված ջրահեռացում հենասյուներում', 'Ամբողջովին փակվում է անձրևից պաշտպանվելու համար', 'Ռադիոկառավարումը համատեղելի է WMS-ի հետ'],
             en: ['Drainage integrated into the posts', 'Fully closes for rain protection', 'Radio control compatible with WMS'],
           },
+          sourceUrl: 'https://www.warema.com/en/patio-covers/l60-slat-roof.html',
         },
       ],
     },
@@ -530,6 +561,7 @@ export const warema: BrandCatalog = {
             en: ['Width up to 9000 mm, projection up to 6500 mm', 'Symmetrical and asymmetrical triangular shape', 'Adjustable mounting height'],
           },
           image: soneaModel,
+          sourceUrl: 'https://www.warema.com/en/sun-sails/electric-sun-sail.html',
         },
         {
           id: 's50',
@@ -544,6 +576,7 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 9000 մմ, դուրսբերումը՝ մինչև 6500 մմ', 'Ձեռքով պտուտակահանման մեխանիզմ', 'Եռանկյունաձև ձև'],
             en: ['Width up to 9000 mm, projection up to 6500 mm', 'Manual crank mechanism', 'Triangular shape'],
           },
+          sourceUrl: 'https://www.warema.com/en/sun-sails/roll-up-sun-sail.html',
         },
         {
           id: 's40',
@@ -558,6 +591,7 @@ export const warema: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 9000 մմ, դուրսբերումը՝ մինչև 4255 մմ', 'Քառակուսի/ուղղանկյուն ձև', 'Պատին ամրացվող կամ ազատ կանգնած'],
             en: ['Width up to 9000 mm, projection up to 4255 mm', 'Square/rectangular shape', 'Wall-mounted or free-standing'],
           },
+          sourceUrl: 'https://www.warema.com/en/sun-sails/rectangular-sun-sail.html',
         },
       ],
     },
@@ -585,6 +619,7 @@ export const warema: BrandCatalog = {
             en: ['Max 2200×2800 mm (4 m²)', 'Slow-close braking mechanism', 'Brush seals in cassette and side tracks'],
           },
           image: insektenRoller,
+          sourceUrl: 'https://www.warema.com/en/insect-screen/insect-screen-roller-blind.html',
         },
         {
           id: 'sliding',
@@ -600,6 +635,7 @@ export const warema: BrandCatalog = {
             en: ['For large glazed openings', 'One or two sliding panels', 'Smooth motion along the bottom track'],
           },
           image: insektenSliding,
+          sourceUrl: 'https://www.warema.com/en/insect-screen/insect-screen-sash-frame.html',
         },
         {
           id: 'grandslide',
@@ -614,7 +650,9 @@ export const warema: BrandCatalog = {
             hy: ['Ընդլայնված լայնության բացվածքների համար', 'Հեռացում կողային կասետայի մեջ', 'Հարթ ընթացք առանց շեղման'],
             en: ['For extra-wide openings', 'Retracts into a side cassette', 'Smooth, straight-running motion'],
           },
-          image: insektenLifestyle,
+          image: grandslideImg,
+          gallery: [grandslideDetail],
+          sourceUrl: 'https://www.warema.com/en/insect-screen/grandslide.html',
         },
       ],
     },
@@ -642,6 +680,7 @@ export const warema: BrandCatalog = {
             en: ['iOS/Android app + voice control', 'Sun/wind/rain/ice-based automation', 'Room-based device grouping'],
           },
           image: smarthomeDevice,
+          sourceUrl: 'https://www.warema.com/en/smart-home/wms-webcontrol-pro.html',
         },
         {
           id: 'wms',
@@ -656,6 +695,7 @@ export const warema: BrandCatalog = {
             hy: ['Երկկողմանի ռադիոկապ', 'Հարմար է նոր շինարարության և ռետրոֆիտի համար', 'Ընդլայնվող սենսորային համակարգ'],
             en: ['Bidirectional radio communication', 'Suitable for new builds and retrofits', 'Expandable sensor ecosystem'],
           },
+          sourceUrl: 'https://www.warema.com/en/smart-home/wms.html',
         },
         {
           id: 'ewfs',
@@ -670,6 +710,7 @@ export const warema: BrandCatalog = {
             hy: ['Արագ տեղադրում առանց հատուկ հմտությունների', 'Ձեռքի և պատի հաղորդիչներ', 'Արև և քամու սենսորներ'],
             en: ['Quick installation, no special skills needed', 'Handheld and wall transmitters', 'Sun and wind sensors'],
           },
+          sourceUrl: 'https://www.warema.com/en/smart-home/ewfs.html',
         },
       ],
     },

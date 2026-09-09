@@ -84,6 +84,7 @@ const CategoryDetail: React.FC = () => {
               category={cat}
               lang={lang}
               viewFullRangeLabel={t('categoryPage.viewFullRange')}
+              sourceLabel={t('brandPage.sourceLink')}
             />
           ))}
         </section>

@@ -63,6 +63,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 5000×5200 մմ (20 մ²)', 'Շուրջ 28 գունային տարբերակ (RAL)', 'Շարժիչային, ձեռքի կամ արևային մեկնարկ'],
             en: ['Max 5000×5200 mm (20 m²)', 'Around 28 colour options (RAL)', 'Motorised, manual or solar drive'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/arb-80',
         },
         {
           id: 'ar92',
@@ -77,6 +78,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 5000×5200 մմ (18 մ²)', 'Պրոֆիլներ՝ Z-աձև կամ S-աձև', 'ECN միացման համակարգ'],
             en: ['Max 5000×5200 mm (18 m²)', 'Z- or S-profile slats', 'ECN connector system'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/ar-92-z-ecn',
         },
         {
           id: 'af80',
@@ -91,6 +93,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 5000×6200 մմ (20 մ²)', 'Կոր հարթ լամելային պրոֆիլ', 'Համատեղելի է ONYX խելացի տան հետ'],
             en: ['Max 5000×6200 mm (20 m²)', 'Curved flat slat profile', 'Compatible with ONYX Smart Home'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/af-80-plus',
         },
       ],
     },
@@ -117,6 +120,7 @@ export const hella: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 3500–4000 մմ', 'Ջերմային ընդմիջում պրոֆիլում', 'Ազատ կրող տեղադրում ճակատին'],
             en: ['Width up to 3500–4000 mm', 'Thermal break in the profile', 'Cantilevered façade mounting'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/vorbaurollladen-stranggepresst',
         },
         {
           id: 'solarrollladen',
@@ -131,6 +135,7 @@ export const hella: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 3500–4000 մմ', 'Արևային վահանակ մարտկոցով', 'Տեղադրում առանց պատերի կտրման'],
             en: ['Width up to 3500–4000 mm', 'Solar panel with battery', 'Installation without wall chasing'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/solarrollladen',
         },
         {
           id: 'sicherheitsrollladen',
@@ -145,6 +150,7 @@ export const hella: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 2500–3000 մմ', 'Ամրապնդված լամելային պրոֆիլ', 'Բարձրացված պաշտպանություն ներխուժումից'],
             en: ['Width up to 2500–3000 mm', 'Reinforced slat profile', 'Enhanced burglary resistance'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/sicherheitsrollladen-stranggepresst',
         },
       ],
     },
@@ -171,6 +177,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 6000×6000 մմ (18 մ²)', 'Հինգ տուփի ձև՝ Q85–Q150, E100–E130, R130', 'Համատեղելի է elero և Somfy-ի հետ'],
             en: ['Max 6000×6000 mm (18 m²)', 'Five box shapes: Q85–Q150, E100–E130, R130', 'Compatible with elero and Somfy'],
           },
+          sourceUrl: 'https://www.hella.info/de/vorbau-markise-protect-q85/q100/q115/q130/q150',
         },
         {
           id: 'schacht-protect',
@@ -185,7 +192,24 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 3500×4500 մմ (12 մ²)', 'Կիսակասետային տուփ H110/H115/H130', 'Առկա խորշերի համար'],
             en: ['Max 3500×4500 mm (12 m²)', 'H110/H115/H130 half-cassette box', 'For existing niches'],
           },
+          image: schachtmarkiseImg,
+          sourceUrl: 'https://www.hella.info/de/schacht-markise-protect',
+        },
+        {
+          id: 'sm101',
+          name: 'SM 101',
+          description: {
+            ru: 'Рельсовая направляющая без короба — встраивается в подготовленную нишу или фасад заказчика, минималистичный вид.',
+            hy: 'Ռելսային ուղղորդում առանց տուփի՝ ինտեգրվում է հաճախորդի պատրաստած խորշի կամ ճակատի մեջ, մինիմալիստական տեսք։',
+            en: 'Rail-guided with no cassette — integrates into a customer-prepared recess or façade for a minimalist look.',
+          },
+          specs: {
+            ru: ['Ширина 580–3500 мм, высота до 4500 мм', 'Площадь до 9 м²', 'Без декоративного короба'],
+            hy: ['Լայնությունը՝ 580–3500 մմ, բարձրությունը՝ մինչև 4500 մմ', 'Մակերեսը՝ մինչև 9 մ²', 'Առանց դեկորատիվ տուփի'],
+            en: ['Width 580–3500 mm, height up to 4500 mm', 'Area up to 9 m²', 'No decorative box'],
+          },
           image: sm101Img,
+          sourceUrl: 'https://www.hella.info/de/products/sm-101',
         },
         {
           id: 'putz-protect',
@@ -201,6 +225,7 @@ export const hella: BrandCatalog = {
             en: ['Max 4000×4000 mm (12 m²)', 'Fully renderable guide rails', 'Optional 20/40 mm EPS insulation'],
           },
           image: putzmarkiseImg,
+          sourceUrl: 'https://www.hella.info/en/putz-markise-protect-e100-/-e115-/-e130',
         },
       ],
     },
@@ -227,6 +252,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 7000×4000 մմ (նվազագույն լայնությունը՝ 2170 մմ)', 'LED լուսավորություն հոդակապային թևերում', 'Համատեղելի է պատի ինֆրակարմիր ջեռուցիչների հետ'],
             en: ['Max 7000×4000 mm (min. width 2170 mm)', 'LED lighting in the articulated arms', 'Compatible with wall-mounted infrared heaters'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/pan-7040',
         },
         {
           id: 'viva7040',
@@ -242,6 +268,7 @@ export const hella: BrandCatalog = {
             en: ['Max 7000×4000 mm', 'Protective roof over the mechanism', '200+ fabric colours'],
           },
           image: viva7040Img,
+          sourceUrl: 'https://www.hella.info/de/produkte/viva-7040-1',
         },
         {
           id: 'areia',
@@ -257,6 +284,7 @@ export const hella: BrandCatalog = {
             en: ['Max 7000×4000 mm', 'Open-arm construction', 'Economical choice for under-eave mounting'],
           },
           image: areia7040Img,
+          sourceUrl: 'https://www.hella.info/de/produkte/areia-7040',
         },
       ],
     },
@@ -283,6 +311,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 6000×5500 մմ (մինչև 30 մ²)', 'Կասետա՝ 253×156 մմ', 'Գործվածքի կարգավորվող թեքության անկյուն'],
             en: ['Max 6000×5500 mm (up to 30 m²)', 'Cassette 253×156 mm', 'Adjustable fabric tilt angle'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/eleganza',
         },
         {
           id: 'eleganza-protect',
@@ -297,6 +326,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 6000×5500 մմ (մինչև 26 մ²)', 'Գործվածքի կողային ուղղորդում', 'Հավելյալ Varioplus ուղղահայաց էկրան'],
             en: ['Max 6000×5500 mm (up to 26 m²)', 'Side-guided fabric', 'Optional Varioplus vertical closure screen'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkt/eleganza-protect',
         },
       ],
     },
@@ -323,6 +353,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 4500×3000×6200 մմ (Լ×Բ×Ե)', 'Լամելների թեքում մինչև 135°', 'Մոդուլային հավաքածու մի քանի հատվածներից'],
             en: ['Max 4500×3000×6200 mm (W×H×D)', 'Slats tilt up to 135°', 'Modular assembly from multiple bays'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/ventur-neu',
         },
         {
           id: 'ventur-sun',
@@ -337,6 +368,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 4500×3000×6000 մմ', 'PV վահանակներ ներկառուցված լամելների մեջ', 'Սպասվող մոդել — ճշտեք ժամկետները'],
             en: ['Max 4500×3000×6000 mm', 'PV panels integrated into the slats', 'Upcoming — confirm availability with our team'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/ventur-neu',
         },
       ],
     },
@@ -363,6 +395,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 6000×6500 մմ (30 մ²)', 'Տեղադրում ապակու վրայից', 'Ձեռքի կամ մոտորացված մեկնարկ'],
             en: ['Max 6000×6500 mm (30 m²)', 'Mounted above the glazing', 'Manual or motorised drive'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/soleya-aufglasmarkise',
         },
         {
           id: 'solanya-protect',
@@ -378,6 +411,7 @@ export const hella: BrandCatalog = {
             en: ['Max 5000×4500 mm (22.5 m²)', 'Wind resistance class 3', 'Compact 151×131 mm cassette'],
           },
           image: solanyaProtectImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/solanya-protect',
         },
       ],
     },
@@ -404,6 +438,7 @@ export const hella: BrandCatalog = {
             hy: ['Բարձրությունը՝ 1300 կամ 1900 մմ, լայնությունը՝ մինչև 4000 մմ', 'Կարկաս՝ սպիտակ կամ արծաթագույն', 'Գործվածք՝ ակրիլ կամ պոլիեսթեր, մարկիզային'],
             en: ['Height 1300 or 1900 mm, width up to 4000 mm', 'Frame: white or silver', 'Fabric: acrylic or polyester awning textile'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/wind-und-sichtschutz',
         },
       ],
     },
@@ -431,6 +466,7 @@ export const hella: BrandCatalog = {
             en: ['Coverage area 36 m²', 'Weight 30–99 kg', 'Wind resistance up to 102 km/h'],
           },
           image: jumbrellaImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/jumbrella',
         },
         {
           id: 'magnum',
@@ -446,6 +482,7 @@ export const hella: BrandCatalog = {
             en: ['Coverage area 140 m²', 'Weight 800–1550 kg', 'Wind resistance up to 130 km/h'],
           },
           image: magnumImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/magnum',
         },
         {
           id: 'square4sun',
@@ -461,6 +498,7 @@ export const hella: BrandCatalog = {
             en: ['Max 6800×7800 mm (47 m²)', 'Fully motorised deployment', 'App/remote control'],
           },
           image: square4sunImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/square4sun-cross',
         },
       ],
     },
@@ -487,6 +525,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 2200×2850 մմ', 'Կոմպակտ ծալում կողքին', 'Ամբողջ տարվա տեղադրում'],
             en: ['Max 2200×2850 mm', 'Compact side-folding stack', 'Year-round installation'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/insektenschutzplissee-ispl18',
         },
         {
           id: 'isr',
@@ -502,6 +541,7 @@ export const hella: BrandCatalog = {
             en: ['Max 2300×2300 mm (4 m²)', 'Screw-free frame option', 'Pollenschutz mesh — 93% pollen filtration'],
           },
           image: isrImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/isr',
         },
         {
           id: 'ist',
@@ -517,6 +557,7 @@ export const hella: BrandCatalog = {
             en: ['Max 4000×2500 mm', 'Smooth motion on top and bottom tracks', 'For patio and balcony doors'],
           },
           image: istImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/ist',
         },
       ],
     },
@@ -543,6 +584,7 @@ export const hella: BrandCatalog = {
             hy: ['Խավարեցման մի քանի աստիճան', 'Կրակակայուն և լվացվող գործվածքներ', 'Duette՝ փեթակաձև կոնստրուկցիա օդային շերտով'],
             en: ['Multiple black-out levels', 'Fire-resistant, washable fabrics', 'Duette — honeycomb construction with air layer'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/plissees-1',
         },
         {
           id: 'innenrollos',
@@ -558,6 +600,7 @@ export const hella: BrandCatalog = {
             en: ['Multiple light-transmission levels', 'Eco-collection from ocean plastic', 'Motorised with a programmable remote'],
           },
           image: innenrollosImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/innenrollos',
         },
         {
           id: 'vertikaljalousien',
@@ -573,6 +616,7 @@ export const hella: BrandCatalog = {
             en: ['Slat width 63, 89 or 127 mm', 'Suited to large glazed windows', 'Chain or motorised control'],
           },
           image: vertikaljalousienImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/vertikaljalousien',
         },
       ],
     },
@@ -599,6 +643,7 @@ export const hella: BrandCatalog = {
             hy: ['Շուկայում ամենակոմպակտ հանգույցներից մեկը', 'Կապում է հավելվածն ու ռադիոսարքերը', 'Աշխատում է HELLA-ի բոլոր մոտորացված համակարգերի հետ'],
             en: ['One of the smallest hubs on the market', 'Bridges the app and radio devices', 'Works with all HELLA motorised systems'],
           },
+          sourceUrl: 'https://www.hella.info/de/produkte/onyx-center',
         },
         {
           id: 'onyx-weather',
@@ -614,6 +659,7 @@ export const hella: BrandCatalog = {
             en: ['3D wind sensor', 'Brightness range 0–100,000 lux', 'Temperature range −20 to +60 °C'],
           },
           image: onyxWeatherImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/onyx-weather',
         },
         {
           id: 'onyx-connector',
@@ -629,6 +675,7 @@ export const hella: BrandCatalog = {
             en: ['Retrofit without rewiring', 'Works with existing motors', 'Quick "Plug & Play" installation'],
           },
           image: onyxConnectorImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/onyx-connector',
         },
         {
           id: 'onyx-app',
@@ -644,6 +691,7 @@ export const hella: BrandCatalog = {
             en: ['iOS and Android', 'Alexa/Google Home voice control', 'Device grouping and scenes'],
           },
           image: onyxAppImg,
+          sourceUrl: 'https://www.hella.info/de/smart-home/onyx/bedienung/app-bedienung',
         },
         {
           id: 'onyx-tag-sun',
@@ -659,6 +707,7 @@ export const hella: BrandCatalog = {
             en: ['Battery-powered', 'Magnetic mounting, no drilling', 'Automatic protection in strong wind'],
           },
           image: onyxTagSunImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/onyx-tag-sun',
         },
       ],
     },

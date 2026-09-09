@@ -26,7 +26,7 @@ const BrandDetail: React.FC = () => {
       // Wait for layout to settle before scrolling to the anchored section.
       const timer = setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
+      }, 150);
       return () => clearTimeout(timer);
     } else {
       window.scrollTo(0, 0);

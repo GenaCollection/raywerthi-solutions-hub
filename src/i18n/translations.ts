@@ -41,6 +41,7 @@ export const translations: Record<Language, Record<string, any>> = {
       ctaSubtitle: 'Расскажите, какая продукция вас заинтересовала — предложим оптимальную конфигурацию и рассчитаем стоимость.',
       ctaButton: 'Оставить заявку',
       otherBrands: 'Другие бренды',
+      sourceLink: 'Подробнее на сайте бренда',
     },
     categoryPage: {
       backToSolutions: 'Все категории',
@@ -209,6 +210,7 @@ export const translations: Record<Language, Record<string, any>> = {
       ctaSubtitle: 'Պատմեք, թե որ արտադրանքն է հետաքրքրել ձեզ, մենք կառաջարկենք օպտիմալ կոնֆիգուրացիա և կհաշվարկենք արժեքը։',
       ctaButton: 'Թողնել հայտ',
       otherBrands: 'Այլ բրենդներ',
+      sourceLink: 'Մանրամասն՝ բրենդի կայքում',
     },
     categoryPage: {
       backToSolutions: 'Բոլոր կատեգորիաները',
@@ -417,6 +419,7 @@ export const translations: Record<Language, Record<string, any>> = {
       ctaSubtitle: 'Tell us which products caught your interest — we\'ll suggest the optimal configuration and calculate the cost.',
       ctaButton: 'Send a Request',
       otherBrands: 'Other Brands',
+      sourceLink: 'More on the brand\'s website',
     },
     categoryPage: {
       backToSolutions: 'All Categories',
