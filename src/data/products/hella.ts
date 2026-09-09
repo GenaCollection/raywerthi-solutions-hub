@@ -28,6 +28,11 @@ import sm101Img from '@/assets/products/hella/senkrecht-sm101.png';
 import putzmarkiseImg from '@/assets/products/hella/senkrecht-putzmarkise.png';
 import putzProtectB from '@/assets/products/hella/putz-protect-b.png';
 import pan7040Img from '@/assets/products/hella/markisen-pan7040.png';
+import c2Img from '@/assets/products/hella/c2.png';
+import cleo7040Img from '@/assets/products/hella/cleo7040.png';
+import cleo7030Img from '@/assets/products/hella/cleo7030.png';
+import cleo5530Img from '@/assets/products/hella/cleo5530.png';
+import areia6030Img from '@/assets/products/hella/areia6030.png';
 import pan7040Hero from '@/assets/products/hella/pan7040.png';
 import pan7040B from '@/assets/products/hella/pan7040-b.png';
 import viva7040Img from '@/assets/products/hella/viva7040.png';
@@ -38,6 +43,9 @@ import eleganzaImg from '@/assets/products/hella/eleganza.png';
 import eleganzaB from '@/assets/products/hella/eleganza-b.png';
 import eleganzaProtectImg from '@/assets/products/hella/eleganza-protect.png';
 import venturImg from '@/assets/products/hella/terrassendach-ventur.png';
+import sintesiImg from '@/assets/products/hella/sintesi.png';
+import sintesiFreeImg from '@/assets/products/hella/sintesi-free.png';
+import terraSideImg from '@/assets/products/hella/terra-side.png';
 import venturOneSideImg from '@/assets/products/hella/ventur-one-side.png';
 import venturSunImg from '@/assets/products/hella/ventur-sun.png';
 import venturSunB from '@/assets/products/hella/ventur-sun-b.png';
@@ -455,6 +463,86 @@ export const hella: BrandCatalog = {
           gallery: [areia7040B],
           sourceUrl: 'https://www.hella.info/de/produkte/areia-7040',
         },
+        {
+          id: 'areia6030',
+          name: 'AREIA 6030',
+          description: {
+            ru: 'Компактная открытая маркиза с шарнирными рычагами — тонкий силуэт при высокой стабильности, доступна в белом, серебристом и антрацитовом каркасе.',
+            hy: 'Կոմպակտ բաց մարկիզա հոդակապային թևերով՝ բարակ սիլուետ բարձր կայունությամբ, հասանելի է սպիտակ, արծաթագույն և անտրացիտ կարկասով։',
+            en: 'A compact open-arm awning with articulated arms — a slim silhouette combined with high stability, available in white, silver or anthracite frame colours.',
+          },
+          specs: {
+            ru: ['Максимум 6000×3000 мм', 'Каркас: белый, серебристый или антрацит', 'Ручной или моторизованный привод'],
+            hy: ['Առավելագույնը 6000×3000 մմ', 'Կարկաս՝ սպիտակ, արծաթագույն կամ անտրացիտ', 'Ձեռքի կամ մոտորացված մեկնարկ'],
+            en: ['Max 6000×3000 mm', 'Frame: white, silver or anthracite', 'Manual or motorised drive'],
+          },
+          image: areia6030Img,
+          sourceUrl: 'https://www.hella.info/de/produkte/die-offene-markise-areia-6030',
+        },
+        {
+          id: 'c2',
+          name: 'C2',
+          description: {
+            ru: 'Кассетная маркиза с очень плоским корпусом, в котором полностью скрываются ткань и механизм — модульная стыковка для больших теневых зон, доступен вертикальный экран Varioplus.',
+            hy: 'Կասետային մարկիզա շատ հարթ կորպուսով, որում ամբողջությամբ թաքնվում է գործվածքն ու մեխանիզմը՝ մոդուլային միացում մեծ ստվերային գոտիների համար, հասանելի է Varioplus ուղղահայաց էկրանը։',
+            en: 'A cassette awning with an extremely flat housing that fully encloses the fabric and mechanism — modules can be coupled together for large shaded areas, with an optional Varioplus vertical screen.',
+          },
+          specs: {
+            ru: ['Максимум 7000×4000 мм (стыковка до 14000 мм)', 'Очень плоская закрытая кассета', 'Датчики ветра, солнца и дождя опционально'],
+            hy: ['Առավելագույնը 7000×4000 մմ (միացում մինչև 14000 մմ)', 'Շատ հարթ փակ կասետա', 'Քամու, արևի և անձրևի սենսորներ՝ հավելյալ'],
+            en: ['Max 7000×4000 mm (coupled up to 14,000 mm)', 'Extremely flat, fully enclosed cassette', 'Optional wind, sun and rain sensors'],
+          },
+          image: c2Img,
+          sourceUrl: 'https://www.hella.info/de/produkte/c2',
+        },
+        {
+          id: 'cleo7040',
+          name: 'CLEO 7040',
+          description: {
+            ru: 'Крупноформатная кассетная маркиза с овальным корпусом — визуально лёгкая даже при максимальной ширине 7 м, экономит место при монтаже.',
+            hy: 'Խոշոր ձևաչափի կասետային մարկիզա օվալաձև կորպուսով՝ վիզուալապես թեթև նույնիսկ առավելագույն 7 մ լայնության դեպքում, տեղ է խնայում տեղադրման ժամանակ։',
+            en: 'A large-format cassette awning with an oval housing — visually light even at its maximum 7 m width, and space-saving to install.',
+          },
+          specs: {
+            ru: ['Максимум 7000×4000 мм', 'Овальная кассета, компактный монтаж', 'Датчики ветра, солнца и дождя опционально'],
+            hy: ['Առավելագույնը 7000×4000 մմ', 'Օվալաձև կասետա, կոմպակտ տեղադրում', 'Քամու, արևի և անձրևի սենսորներ՝ հավելյալ'],
+            en: ['Max 7000×4000 mm', 'Oval cassette, space-saving installation', 'Optional wind, sun and rain sensors'],
+          },
+          image: cleo7040Img,
+          sourceUrl: 'https://www.hella.info/de/produkte/cleo-7040',
+        },
+        {
+          id: 'cleo7030',
+          name: 'CLEO 7030',
+          description: {
+            ru: 'Стройная маркиза с овальной кассетой и множеством вариантов крепления — легко адаптируется под любую архитектуру фасада даже при ширине до 7 м.',
+            hy: 'Նրբագեղ մարկիզա օվալաձև կասետայով և ամրացման բազմաթիվ տարբերակներով՝ հեշտությամբ հարմարվում է ցանկացած ճակատի ճարտարապետությանը նույնիսկ մինչև 7 մ լայնության դեպքում։',
+            en: 'A slender awning with an oval cassette and numerous fixing options — adapts easily to any façade architecture even at widths up to 7 m.',
+          },
+          specs: {
+            ru: ['Максимум 7000 мм ширина', 'Множество вариантов крепления', 'Овальная кассета, лёгкая конструкция'],
+            hy: ['Առավելագույնը 7000 մմ լայնություն', 'Ամրացման բազմաթիվ տարբերակներ', 'Օվալաձև կասետա, թեթև կոնստրուկցիա'],
+            en: ['Max 7000 mm width', 'Numerous fixing variants', 'Oval cassette, lightweight construction'],
+          },
+          image: cleo7030Img,
+          sourceUrl: 'https://www.hella.info/de/produkte/cleo-7030',
+        },
+        {
+          id: 'cleo5530',
+          name: 'CLEO 5530',
+          description: {
+            ru: 'Компактная версия с овальной кассетой на выносных консолях — при настенном монтаже наклоняется до 65°, при потолочном — до 80°.',
+            hy: 'Կոմպակտ տարբերակը դուրս եկող կրիչներով օվալաձև կասետայով՝ պատին ամրացնելիս թեքվում է մինչև 65°, առաստաղին ամրացնելիս՝ մինչև 80°։',
+            en: 'A compact version with an oval cassette on projecting brackets — tilts up to 65° when wall-mounted or up to 80° when ceiling-mounted.',
+          },
+          specs: {
+            ru: ['Выносные консоли для стены и потолка', 'Наклон до 65° (стена) / 80° (потолок)', 'Лёгкая конструкция'],
+            hy: ['Դուրս եկող կրիչներ պատի և առաստաղի համար', 'Թեքություն մինչև 65° (պատ) / 80° (առաստաղ)', 'Թեթև կոնստրուկցիա'],
+            en: ['Projecting brackets for wall or ceiling', 'Tilt up to 65° (wall) / 80° (ceiling)', 'Lightweight construction'],
+          },
+          image: cleo5530Img,
+          sourceUrl: 'https://www.hella.info/de/produkte/cleo-5530',
+        },
       ],
     },
     {
@@ -506,11 +594,11 @@ export const hella: BrandCatalog = {
     {
       slug: 'terrassendach',
       image: venturImg,
-      name: { ru: 'Терраса-крыша VENTUR', hy: 'VENTUR պատշգամբի տանիք', en: 'VENTUR Patio Roof' },
+      name: { ru: 'Терраса-крыша', hy: 'Պատշգամբի տանիք', en: 'Patio Roofs' },
       intro: {
-        ru: 'Биоклиматическая пергола с дизайном Studio F. A. Porsche — поворотные ламели наклоняются до 135°, закрытое положение полностью защищает от дождя. Модульная конструкция для больших многосекционных террас.',
-        hy: 'Բիոկլիմայական պերգոլա՝ Studio F. A. Porsche դիզայնով. պտտվող լամելները թեքվում են մինչև 135°, փակ դիրքում ամբողջովին պաշտպանում է անձրևից։ Մոդուլային կոնստրուկցիա մեծ, բազմահատված պատշգամբների համար։',
-        en: 'A bioclimatic pergola designed by Studio F. A. Porsche — rotating slats tilt up to 135°, and the closed position provides full rain protection. A modular design for large multi-bay terraces.',
+        ru: 'От биоклиматической перголы VENTUR с дизайном Studio F. A. Porsche до тканевой SINTESI со скрытой направляющей и бокового экрана TERRA SIDE, закрывающего перголу с торца.',
+        hy: 'VENTUR բիոկլիմայական պերգոլայից՝ Studio F. A. Porsche դիզայնով, մինչև SINTESI գործվածքային տանիքը թաքնված ուղղորդմամբ և TERRA SIDE կողային էկրանը, որը փակում է պերգոլան կողքից։',
+        en: 'From the VENTUR bioclimatic pergola designed by Studio F. A. Porsche to the fabric-roofed SINTESI with its hidden guidance, and the TERRA SIDE screen that closes a pergola off at the end.',
       },
       models: [
         {
@@ -545,6 +633,54 @@ export const hella: BrandCatalog = {
           image: venturSunImg,
           gallery: [venturSunB],
           sourceUrl: 'https://www.hella.info/de/produkte/ventur-neu',
+        },
+        {
+          id: 'sintesi',
+          name: 'SINTESI',
+          description: {
+            ru: 'Тканевая крыша со скрытой в тонком профиле направляющей — механизм полностью спрятан внутри рамы, а сложенная крыша занимает на 20% меньше места, чем у обычных конструкций.',
+            hy: 'Գործվածքային տանիք՝ բարակ պրոֆիլում թաքնված ուղղորդմամբ. մեխանիզմն ամբողջությամբ թաքնված է շրջանակի ներսում, իսկ ծալված տանիքը զբաղեցնում է 20%-ով ավելի քիչ տեղ, քան սովորական կոնստրուկցիաները։',
+            en: 'A fabric roof with the fabric guidance hidden inside a slim profile — the mechanism disappears completely into the frame, and the retracted roof takes up 20% less space than conventional designs.',
+          },
+          specs: {
+            ru: ['Максимум 6000×6500 мм, высота колонн 3500 мм', 'Датчики дождя и снега встроены', 'Можно доукомплектовать боковой маркизой TERRA SIDE'],
+            hy: ['Առավելագույնը 6000×6500 մմ, սյուների բարձրությունը՝ 3500 մմ', 'Անձրևի և ձյան սենսորներ ներկառուցված', 'Կարելի է հագեցնել TERRA SIDE կողային մարկիզայով'],
+            en: ['Max 6000×6500 mm, column height 3500 mm', 'Integrated rain and snow sensors', 'Can be retrofitted with the TERRA SIDE side awning'],
+          },
+          image: sintesiImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/sintesi',
+        },
+        {
+          id: 'sintesi-free',
+          name: 'SINTESI FREE',
+          description: {
+            ru: 'Версия без опорных колонн для встраивания в уже существующую конструкцию — компактный механизм идеально подходит для навесов над зимним садом или внутренним двориком.',
+            hy: 'Տարբերակ՝ առանց հենասյուների, արդեն առկա կոնստրուկցիայի մեջ ինտեգրելու համար. կոմպակտ մեխանիզմը իդեալական է ձմեռային այգու կամ բակի ծածկույթի համար։',
+            en: 'A column-free version for integration into an existing structure — the compact mechanism is ideal for shading conservatories or courtyards.',
+          },
+          specs: {
+            ru: ['Максимум 6000×6500 мм', 'Без опорных колонн — крепится к готовой конструкции', 'Датчики дождя и снега встроены'],
+            hy: ['Առավելագույնը 6000×6500 մմ', 'Առանց հենասյուների — ամրացվում է պատրաստի կոնստրուկցիային', 'Անձրևի և ձյան սենսորներ ներկառուցված'],
+            en: ['Max 6000×6500 mm', 'No support columns — fixes to an existing structure', 'Integrated rain and snow sensors'],
+          },
+          image: sintesiFreeImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/sintesi-free',
+        },
+        {
+          id: 'terra-side',
+          name: 'TERRA SIDE',
+          description: {
+            ru: 'Вертикальная маркиза без видимого короба для бокового или переднего закрытия перголы — боковая направляющая ткани обеспечивает устойчивость на ветру, подходит и для прямого монтажа на лоджии или балконе.',
+            hy: 'Ուղղահայաց մարկիզա առանց երևացող տուփի՝ պերգոլայի կողային կամ առջևի փակման համար. գործվածքի կողային ուղղորդումն ապահովում է քամուն դիմադրություն, հարմար է նաև լոջիայի կամ բալկոնի ուղղակի տեղադրման համար։',
+            en: 'A vertical awning with no visible box, for closing off the side or front of a pergola — side-guided fabric provides wind stability, and it also suits direct mounting on loggias or balconies.',
+          },
+          specs: {
+            ru: ['Максимум 6000×3000 мм (18 м²)', 'Без видимого короба', 'Боковая направляющая ткани для устойчивости на ветру'],
+            hy: ['Առավելագույնը 6000×3000 մմ (18 մ²)', 'Առանց երևացող տուփի', 'Գործվածքի կողային ուղղորդում՝ քամուն դիմադրության համար'],
+            en: ['Max 6000×3000 mm (18 m²)', 'No visible box', 'Side-guided fabric for wind stability'],
+          },
+          image: terraSideImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/terra-side',
         },
       ],
     },
