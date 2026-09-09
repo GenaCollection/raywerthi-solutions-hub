@@ -30,6 +30,17 @@ export const translations: Record<Language, Record<string, any>> = {
       warema: 'Решения для фасадов, окон и открытых пространств: наружные жалюзи, текстильные экраны, роллставни, маркизы, перголы, солнцезащитные паруса и системы управления.',
       silentgliss: 'Премиальные интерьерные карнизы, шторы, рулонные и другие текстильные решения для дизайна интерьеров.',
       visitSite: 'Смотреть официальный сайт',
+      viewCatalog: 'Каталог продукции',
+    },
+    brandPage: {
+      backToSolutions: 'Все решения',
+      officialSite: 'Официальный сайт бренда',
+      rangeTitle: 'Ассортимент продукции',
+      rangeSubtitle: 'Ниже — основные категории и модели, которые мы поставляем и устанавливаем. Точную конфигурацию, ткани и цвета подберём индивидуально под ваш проект.',
+      ctaTitle: 'Подобрали решение? Оформим замер',
+      ctaSubtitle: 'Расскажите, какая продукция вас заинтересовала — предложим оптимальную конфигурацию и рассчитаем стоимость.',
+      ctaButton: 'Оставить заявку',
+      otherBrands: 'Другие бренды',
     },
     howWeWork: {
       title: 'Как мы работаем',
@@ -77,8 +88,8 @@ export const translations: Record<Language, Record<string, any>> = {
       subtitle: 'Всё, что мы можем предложить — через понятную структуру по типам решений',
       learnMore: 'Узнать больше',
       catalogTitle: 'Полный каталог продукции',
-      catalogDesc: 'Посетите официальные сайты производителей для подробного каталога продукции.',
-      visitCatalog: 'Полный каталог на сайте производителя',
+      catalogDesc: 'Изучите категории и модели каждого бренда на нашем сайте — фото, описания и характеристики.',
+      visitCatalog: 'Смотреть каталог',
       categories: {
         blinds: { title: 'Наружные горизонтальные жалюзи и фасадные системы', desc: 'Регулируют свет и тепло, подходят для фасадов частных домов и коммерческих зданий.', brands: 'HELLA, WAREMA' },
         rollshutters: { title: 'Роллставни и роллеты', desc: 'Защита от солнца, шума, холода и дополнительная безопасность, управление светом и приватностью.', brands: 'HELLA, WAREMA' },
@@ -188,6 +199,17 @@ export const translations: Record<Language, Record<string, any>> = {
       silentgliss:
         'Պրեմիում ինտերիերային գորգաձողեր, վարագույրներ, ռուլոնային և այլ տեքստիլ լուծումներ ինտերիերի դիզայնի համար։',
       visitSite: 'Դիտել պաշտոնական կայքը',
+      viewCatalog: 'Ապրանքների կատալոգ',
+    },
+    brandPage: {
+      backToSolutions: 'Բոլոր լուծումները',
+      officialSite: 'Բրենդի պաշտոնական կայքը',
+      rangeTitle: 'Ապրանքային տեսականի',
+      rangeSubtitle: 'Ստորև՝ հիմնական կատեգորիաներն ու մոդելները, որոնք մենք մատակարարում և տեղադրում ենք։ Ճշգրիտ կոնֆիգուրացիան, գործվածքներն ու գույները կընտրենք անհատապես՝ ձեր նախագծի համար։',
+      ctaTitle: 'Ընտրե՞լ եք լուծումը։ Կկազմակերպենք չափագրում',
+      ctaSubtitle: 'Պատմեք, թե որ արտադրանքն է հետաքրքրել ձեզ, մենք կառաջարկենք օպտիմալ կոնֆիգուրացիա և կհաշվարկենք արժեքը։',
+      ctaButton: 'Թողնել հայտ',
+      otherBrands: 'Այլ բրենդներ',
     },
     howWeWork: {
       title: 'Ինչպես ենք մենք աշխատում',
@@ -240,8 +262,8 @@ export const translations: Record<Language, Record<string, any>> = {
       learnMore: 'Իմանալ ավելին',
       catalogTitle: 'Ամբողջական կատալոգ',
       catalogDesc:
-        'Ավելի մանրամասն ինֆորմացիայի համար այցելեք արտադրողների պաշտոնական կայքերը։',
-      visitCatalog: 'Ամբողջական կատալոգը արտադրողի կայքում',
+        'Ուսումնասիրեք յուրաքանչյուր բրենդի կատեգորիաներն ու մոդելները մեր կայքում՝ լուսանկարներ, նկարագրություններ և բնութագրեր։',
+      visitCatalog: 'Դիտել կատալոգը',
       categories: {
         blinds: {
           title: 'Արտաքին հորիզոնական ջալյուզիներ և ֆասադային համակարգեր',
@@ -410,6 +432,17 @@ export const translations: Record<Language, Record<string, any>> = {
       warema: 'Solutions for facades, windows and open spaces: exterior blinds, textile screens, roller shutters, awnings, pergolas, sun sails and control systems.',
       silentgliss: 'Premium interior curtain tracks, curtains, roller blinds and other textile solutions for interior design.',
       visitSite: 'Visit Official Website',
+      viewCatalog: 'Product Catalog',
+    },
+    brandPage: {
+      backToSolutions: 'All Solutions',
+      officialSite: "Brand's Official Website",
+      rangeTitle: 'Product Range',
+      rangeSubtitle: 'Below are the main categories and models we supply and install. We\'ll tailor the exact configuration, fabrics and colours to your project.',
+      ctaTitle: 'Found what you need? Let\'s schedule a measurement',
+      ctaSubtitle: 'Tell us which products caught your interest — we\'ll suggest the optimal configuration and calculate the cost.',
+      ctaButton: 'Send a Request',
+      otherBrands: 'Other Brands',
     },
     howWeWork: {
       title: 'How We Work',
@@ -454,8 +487,8 @@ export const translations: Record<Language, Record<string, any>> = {
       subtitle: 'Everything we offer — organized by solution type',
       learnMore: 'Learn More',
       catalogTitle: 'Full Product Catalog',
-      catalogDesc: 'Visit the official manufacturer websites for detailed product catalogs.',
-      visitCatalog: 'Full catalog on manufacturer website',
+      catalogDesc: 'Explore each brand\'s categories and models on our site — photos, descriptions and specifications.',
+      visitCatalog: 'View Catalog',
       categories: {
         blinds: { title: 'Exterior Horizontal Blinds & Facade Systems', desc: 'Regulate light and heat, suitable for facades of private homes and commercial buildings.', brands: 'HELLA, WAREMA' },
         rollshutters: { title: 'Roller Shutters', desc: 'Protection from sun, noise, cold and additional security, light and privacy control.', brands: 'HELLA, WAREMA' },

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { ExternalLink } from 'lucide-react';
+import { brandCatalogs } from '@/data/products';
 
 import blindsImg from '@/assets/solutions/blinds.jpg';
 import rollshuttersImg from '@/assets/solutions/rollshutters.jpg';
@@ -24,10 +24,40 @@ const categoryImages: Record<string, string> = {
 
 const categoryKeys = ['blinds', 'rollshutters', 'awnings', 'screens', 'interior', 'smarthome'];
 
+// Deep links from each generic category into the relevant brand catalogue section.
+const categoryBrandLinks: Record<string, { brand: string; anchor: string }[]> = {
+  blinds: [
+    { brand: 'warema', anchor: 'raffstoren' },
+    { brand: 'hella', anchor: 'raffstoren' },
+  ],
+  rollshutters: [
+    { brand: 'warema', anchor: 'rollladen' },
+    { brand: 'hella', anchor: 'rollladen' },
+  ],
+  awnings: [
+    { brand: 'warema', anchor: 'terrassenmarkisen' },
+    { brand: 'warema', anchor: 'pergola-markisen' },
+    { brand: 'hella', anchor: 'markisen' },
+  ],
+  screens: [
+    { brand: 'warema', anchor: 'fenstermarkisen' },
+    { brand: 'hella', anchor: 'wind-sichtschutz' },
+  ],
+  interior: [
+    { brand: 'silent-gliss', anchor: 'curtain-tracks' },
+    { brand: 'hella', anchor: 'innenbeschattung' },
+  ],
+  smarthome: [
+    { brand: 'warema', anchor: 'smart-home' },
+    { brand: 'hella', anchor: 'onyx' },
+    { brand: 'silent-gliss', anchor: 'smart-motorisation' },
+  ],
+};
+
 const brands = [
-  { name: 'HELLA', url: 'https://www.hella.info' },
-  { name: 'WAREMA', url: 'https://www.warema.com' },
-  { name: 'Silent Gliss', url: 'https://www.silentgliss.com' },
+  { name: 'HELLA', slug: 'hella', url: 'https://www.hella.info' },
+  { name: 'WAREMA', slug: 'warema', url: 'https://www.warema.com' },
+  { name: 'Silent Gliss', slug: 'silent-gliss', url: 'https://www.silentgliss.com' },
 ];
 
 const Solutions: React.FC = () => {
@@ -86,6 +116,22 @@ const Solutions: React.FC = () => {
                     <p className="text-xs text-primary font-semibold mb-4">
                       {t(`solutions.categories.${key}.brands`)}
                     </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {categoryBrandLinks[key]?.map(({ brand, anchor }) => {
+                        const catalog = brandCatalogs[brand];
+                        if (!catalog) return null;
+                        return (
+                          <Link
+                            key={`${brand}-${anchor}`}
+                            to={`/solutions/${brand}#${anchor}`}
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-secondary rounded-md text-xs font-medium text-foreground hover:bg-secondary/70 transition-colors"
+                          >
+                            <img src={catalog.logo} alt={catalog.name} className="h-3 w-auto object-contain" />
+                            {catalog.name}
+                          </Link>
+                        );
+                      })}
+                    </div>
                     <Link
                       to={`/contacts?solution=${encodeURIComponent(t(`solutions.categories.${key}.title`))}`}
                       className="inline-flex items-center gap-1 text-primary font-semibold text-sm hover:underline"
@@ -99,27 +145,32 @@ const Solutions: React.FC = () => {
           </div>
         </section>
 
-        {/* Catalog links */}
+        {/* Catalog by brand */}
         <section className="section-padding bg-secondary">
           <div className="container-site text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               {t('solutions.catalogTitle')}
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+            <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
               {t('solutions.catalogDesc')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {brands.map((brand) => (
-                <a
-                  key={brand.name}
-                  href={brand.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-background border border-border rounded-lg font-semibold text-foreground hover:border-primary hover:text-primary transition-colors text-sm"
-                >
-                  {brand.name} <ExternalLink size={14} />
-                </a>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {brands.map((brand) => {
+                const catalog = brandCatalogs[brand.slug];
+                return (
+                  <Link
+                    key={brand.slug}
+                    to={`/solutions/${brand.slug}`}
+                    className="group bg-background border border-border rounded-xl p-6 flex flex-col items-center hover:border-primary hover:shadow-lg transition-all"
+                  >
+                    <img src={catalog?.logo} alt={brand.name} className="h-10 w-auto object-contain mb-4" />
+                    <span className="font-semibold text-foreground mb-1">{brand.name}</span>
+                    <span className="text-xs text-primary font-medium group-hover:underline">
+                      {t('solutions.visitCatalog')} →
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
