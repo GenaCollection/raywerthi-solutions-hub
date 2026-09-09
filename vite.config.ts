@@ -19,4 +19,9 @@ export default defineConfig(({ mode }) => ({
     },
     dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
   },
+  ssgOptions: {
+    // /solutions/warema -> /solutions/warema.html; paired with `cleanUrls`
+    // in vercel.json so Vercel serves it at the clean URL directly.
+    dirStyle: "flat",
+  },
 }));

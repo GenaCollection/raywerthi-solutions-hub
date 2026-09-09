@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 
 const SITE_URL = 'https://raywerthi.com';
 
@@ -9,6 +9,7 @@ interface SEOProps {
   keywords?: string;
   canonicalUrl?: string;
   ogImage?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -17,12 +18,14 @@ const SEO: React.FC<SEOProps> = ({
   keywords,
   canonicalUrl = `${SITE_URL}/`,
   ogImage = `${SITE_URL}/og-image.jpg`,
+  jsonLd,
 }) => {
   // Organization/LocalBusiness JSON-LD lives once, statically, in index.html —
   // it must not be duplicated here with different data (that caused conflicting
-  // NAP/name signals across the two blocks).
+  // NAP/name signals across the two blocks). Per-page structured data (Service,
+  // ItemList, etc.) can be passed via `jsonLd`.
   return (
-    <Helmet>
+    <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
@@ -41,7 +44,11 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-    </Helmet>
+
+      {jsonLd && (
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      )}
+    </Head>
   );
 };
 

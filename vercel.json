@@ -1,7 +1,6 @@
 {
-  "rewrites": [
-    { "source": "/((?!assets/|favicon.ico|favicon.png|og-image.jpg|logo.png|placeholder.svg|sitemap.xml|robots.txt|llms.txt).*)", "destination": "/index.html" }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
