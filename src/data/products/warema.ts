@@ -28,12 +28,30 @@ import rollladenShaft from '@/assets/products/warema/rollladen-shaft.webp';
 import rollladenShaftB from '@/assets/products/warema/rollladen-shaft-b.webp';
 import rollladenShaftC from '@/assets/products/warema/rollladen-shaft-c.webp';
 import terreaImg from '@/assets/products/warema/terrea-markise.webp';
-import terreaCassette from '@/assets/products/warema/terrea-cassette.webp';
-import terreaCassetteB from '@/assets/products/warema/terrea-cassette-b.webp';
-import terreaSemiCassette from '@/assets/products/warema/terrea-semicassette.webp';
-import terreaBalcony from '@/assets/products/warema/terrea-balcony.webp';
-import terreaBalconyB from '@/assets/products/warema/terrea-balcony-b.webp';
+import terrea550Hero from '@/assets/products/warema/terrea-550-hero.webp';
+import terrea580Hero from '@/assets/products/warema/terrea-580-hero.png';
+import terrea580B from '@/assets/products/warema/terrea-580-b.webp';
+import terreaK50Hero from '@/assets/products/warema/terrea-k50-hero.png';
+import terreaK50B from '@/assets/products/warema/terrea-k50-b.png';
+import terreaK55Hero from '@/assets/products/warema/terrea-k55-hero.jpg';
+import terreaK55B from '@/assets/products/warema/terrea-k55-b.webp';
+import terreaK60Hero from '@/assets/products/warema/terrea-k60-hero.jpg';
+import terreaK60B from '@/assets/products/warema/terrea-k60-b.png';
+import terreaK70Hero from '@/assets/products/warema/terrea-k70-hero.webp';
+import terreaK70B from '@/assets/products/warema/terrea-k70-b.png';
+import terreaH60Hero from '@/assets/products/warema/terrea-h60-hero.jpg';
+import terreaH60B from '@/assets/products/warema/terrea-h60-b.png';
+import terrea530Hero from '@/assets/products/warema/terrea-530-hero.webp';
+import terrea530B from '@/assets/products/warema/terrea-530-b.png';
+import terrea700sHero from '@/assets/products/warema/terrea-700s-hero.png';
+import terrea700sB from '@/assets/products/warema/terrea-700s-b.png';
+import terreaG60Hero from '@/assets/products/warema/terrea-g60-hero.png';
+import terreaG60B from '@/assets/products/warema/terrea-g60-b.webp';
 import pereaImg from '@/assets/products/warema/perea-gallery2.webp';
+import pereaP20Hero from '@/assets/products/warema/perea-p20-hero.png';
+import pereaP20B from '@/assets/products/warema/perea-p20-b.png';
+import pereaP40weHero from '@/assets/products/warema/perea-p40we-hero.jpg';
+import pereaP40weB from '@/assets/products/warema/perea-p40we-b.webp';
 import pereaGallery2 from '@/assets/products/warema/perea-gallery4.webp';
 import pereaGallery3 from '@/assets/products/warema/perea-gallery3.webp';
 import pereaIllustration from '@/assets/products/warema/perea-pergola-v2.webp';
@@ -72,8 +90,22 @@ import climaraD3B from '@/assets/products/warema/climara-d3-b.webp';
 import climaraW20 from '@/assets/products/warema/climara-w20.webp';
 import climaraW20B from '@/assets/products/warema/climara-w20-b.webp';
 import climaraW10Hero from '@/assets/products/warema/climara-w10-hero.jpg';
+import climaraW7Hero from '@/assets/products/warema/climara-w7-hero.webp';
+import climaraW7B from '@/assets/products/warema/climara-w7-b.png';
+import climaraW9Hero from '@/assets/products/warema/climara-w9-hero.jpg';
+import climaraW9B from '@/assets/products/warema/climara-w9-b.png';
+import climaraW19Hero from '@/assets/products/warema/climara-w19-hero.webp';
+import climaraW19B from '@/assets/products/warema/climara-w19-b.png';
+import climaraW10bHero from '@/assets/products/warema/climara-w10b-hero.webp';
+import climaraW10bB from '@/assets/products/warema/climara-w10b-b.png';
 import climaraW10B from '@/assets/products/warema/climara-w10-b.webp';
 import lamaxaHero from '@/assets/products/warema/lamaxa-l70-hero.webp';
+import lamaxaL50TexHero from '@/assets/products/warema/lamaxa-l50tex-hero.jpg';
+import lamaxaL50TexB from '@/assets/products/warema/lamaxa-l50tex-b.png';
+import lamaxaL50ViewHero from '@/assets/products/warema/lamaxa-l50view-hero.png';
+import lamaxaL50ViewB from '@/assets/products/warema/lamaxa-l50view-b.webp';
+import lamaxaL70LineHero from '@/assets/products/warema/lamaxa-l70line-hero.webp';
+import lamaxaL70LineB from '@/assets/products/warema/lamaxa-l70line-b.png';
 import lamaxaL70Detail from '@/assets/products/warema/lamaxa-l70-detail.webp';
 import lamaxaL50 from '@/assets/products/warema/lamaxa-l50.jpg';
 import lamaxaL50B from '@/assets/products/warema/lamaxa-l50-b.webp';
@@ -340,60 +372,179 @@ export const warema: BrandCatalog = {
       image: terreaImg,
       name: { ru: 'Маркизы для террасы Terrea', hy: 'Terrea պատշգամբի մարկիզաներ', en: 'Terrea Patio Awnings' },
       intro: {
-        ru: 'Флагманская линейка кассетных, полукассетных и открытых маркиз WAREMA — свыше 200 вариантов ткани и 200 цветов каркаса, автоматическое втягивание при ветре и дожде.',
-        hy: 'WAREMA-ի հիմնական՝ կասետային, կիսակասետային և բաց մարկիզաների գիծը՝ 200-ից ավել գործվածքի և 200 գույնի կարկասի ընտրանի, ինքնաշխատ ետ քաշում քամու և անձրևի ժամանակ։',
-        en: 'WAREMA\'s flagship range of cassette, semi-cassette and open-arm awnings — 200+ fabric designs and 200+ frame colours, with automatic retraction in wind or rain.',
+        ru: 'Флагманская линейка WAREMA — десять именных моделей: шесть кассетных (полностью закрывают ткань и механизм) и четыре складных с открытым или полуоткрытым рычагом, включая версию для встраивания в готовую нишу. Свыше 200 вариантов ткани и 200 цветов каркаса, автоматическое втягивание при ветре и дожде.',
+        hy: 'WAREMA-ի հիմնական գիծը՝ տասը անվանական մոդել. վեց կասետային (ամբողջությամբ ծածկում են գործվածքն ու մեխանիզմը) և չորս ծալովի՝ բաց կամ կիսաբաց թևով, այդ թվում՝ պատրաստի խորշում տեղադրվող տարբերակ։ 200-ից ավել գործվածքի և 200 գույնի կարկասի ընտրանի, ինքնաշխատ ետ քաշում քամու և անձրևի ժամանակ։',
+        en: 'WAREMA\'s flagship range — ten named models: six cassette designs that fully enclose the fabric and mechanism, and four folding-arm models in open or semi-open form, including a version built into an existing shaft. 200+ fabric designs and 200+ frame colours, with automatic retraction in wind or rain.',
       },
       models: [
         {
-          id: 'cassette',
-          name: 'Terrea Cassette',
+          id: '550',
+          name: 'Terrea 550',
           description: {
-            ru: 'Полностью закрытая кассета защищает ткань и механизм от непогоды в сложенном виде — премиальный внешний вид для террас и балконов.',
-            hy: 'Ամբողջովին փակ կասետը պաշտպանում է գործվածքն ու մեխանիզմը եղանակային ազդեցություններից ծալված վիճակում՝ պրեմիում տեսք պատշգամբների և բալկոնների համար։',
-            en: 'A fully enclosed cassette shields the fabric and mechanism from the elements when retracted — a premium look for patios and balconies.',
+            ru: 'Самая изящная кассета в линейке — плоский профиль для небольших балконов и террас, монтаж возможен как в защищённом, так и в открытом месте.',
+            hy: 'Գծի ամենանրբագեղ կասետան՝ հարթ պրոֆիլ փոքր բալկոնների և պատշգամբների համար, տեղադրումը հնարավոր է ինչպես պաշտպանված, այնպես էլ բաց տեղում։',
+            en: 'The most slender cassette in the range — a flat profile for small balconies and patios, installable in both protected and exposed positions.',
           },
           specs: {
-            ru: ['Ширина до 7000 мм, вынос до 4000 мм', 'Площадь до 28 м²', 'Мотор с радиоуправлением и датчиком ветра'],
-            hy: ['Լայնությունը՝ մինչև 7000 մմ, դուրսբերումը՝ մինչև 4000 մմ', 'Մակերեսը՝ մինչև 28 մ²', 'Ռադիոկառավարվող շարժիչ և քամու սենսոր'],
-            en: ['Width up to 7000 mm, projection up to 4000 mm', 'Area up to 28 m²', 'Radio-controlled motor with wind sensor'],
+            ru: ['Максимум 4500×2500 мм (11,25 м²)', 'Плоская изящная кассета', 'Подходит для незащищённых мест монтажа'],
+            hy: ['Առավելագույնը 4500×2500 մմ (11,25 մ²)', 'Հարթ, նրբագեղ կասետա', 'Հարմար է անպաշտպան տեղադրման վայրերի համար'],
+            en: ['Max 4500×2500 mm (11.25 m²)', 'Flat, slender cassette', 'Suitable for unprotected installation positions'],
           },
-          image: terreaCassette,
-          gallery: [terreaCassetteB],
-          sourceUrl: 'https://www.warema.com/en/awnings/terrea-patio-awnings.html',
+          image: terrea550Hero,
+          sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-550/',
         },
         {
-          id: 'semi-cassette',
-          name: 'Terrea Semi-Cassette',
+          id: '580',
+          name: 'Terrea 580',
           description: {
-            ru: 'Компактный профиль при частичном укрытии ткани — баланс цены и защиты для частных домов.',
-            hy: 'Կոմպակտ պրոֆիլ գործվածքի մասնակի ծածկույթով՝ գնի և պաշտպանության հավասարակշռություն մասնավոր տների համար։',
-            en: 'A compact profile with partial fabric coverage — a balance of price and protection for private homes.',
+            ru: 'Компактная овальная кассета для террас среднего размера — опциональная выдвижная планка-жалюзи защищает от низкого солнца при юго-западной ориентации.',
+            hy: 'Կոմպակտ օվալաձև կասետա միջին չափի պատշգամբների համար՝ հավելյալ դուրս եկող ժալյուզի-պլանկան պաշտպանում է ցածր արևից հարավ-արևմտյան կողմնորոշման դեպքում։',
+            en: 'A compact oval cassette for medium-sized patios — an optional retractable valance blind protects against low sun on south-west-facing terraces.',
           },
           specs: {
-            ru: ['Крепление на стену или под потолком', 'Ручной или моторизованный привод', 'Более 200 вариантов ткани'],
-            hy: ['Ամրացում պատին կամ առաստաղին', 'Ձեռքի կամ շարժիչային մեկնարկ', '200-ից ավել գործվածքի տարբերակ'],
-            en: ['Wall or ceiling mounting', 'Manual or motorised drive', '200+ fabric options'],
+            ru: ['Максимум 5500×3000 мм (16,5 м²)', 'Овальная закрытая кассета', 'Опциональная выдвижная планка от низкого солнца'],
+            hy: ['Առավելագույնը 5500×3000 մմ (16,5 մ²)', 'Օվալաձև փակ կասետա', 'Հավելյալ դուրս եկող պլանկա ցածր արևից'],
+            en: ['Max 5500×3000 mm (16.5 m²)', 'Enclosed oval cassette', 'Optional retractable low-sun valance'],
           },
-          image: terreaSemiCassette,
-          sourceUrl: 'https://www.warema.com/en/awnings/terrea-patio-awnings.html',
+          image: terrea580Hero,
+          gallery: [terrea580B],
+          sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-580/',
         },
         {
-          id: 'balcony',
-          name: 'Balcony Awning',
+          id: 'k50',
+          name: 'Terrea K50',
           description: {
-            ru: 'Маркиза, специально спроектированная под ограниченное пространство балкона — компактный монтаж без потери функциональности.',
-            hy: 'Բալկոնի սահմանափակ տարածքի համար հատուկ նախագծված մարկիզա՝ կոմպակտ տեղադրում առանց ֆունկցիոնալությունը կորցնելու։',
-            en: 'An awning purpose-built for the limited space of a balcony — compact installation without sacrificing function.',
+            ru: 'Кубическая кассета с минимальным расстоянием до стены и потолка — компактный монтаж для небольших и средних балконов и террас в стиле современных фасадов.',
+            hy: 'Խորանարդաձև կասետա՝ պատից և առաստաղից նվազագույն հեռավորությամբ. կոմպակտ տեղադրում փոքր և միջին բալկոնների ու պատշգամբների համար, ժամանակակից ճակատների ոգով։',
+            en: 'A cubic cassette with a minimal gap to the wall and ceiling — a discreet installation for small and medium balconies and patios, matching modern façades.',
           },
           specs: {
-            ru: ['Изготовление по индивидуальным размерам', 'Минимальная глубина монтажа', 'Совместима с боковыми ветрозащитными экранами'],
-            hy: ['Արտադրություն անհատական չափերով', 'Նվազագույն տեղադրման խորություն', 'Համատեղելի է կողային քամուց պաշտպանիչ էկրանների հետ'],
-            en: ['Made to individual measurements', 'Minimal mounting depth', 'Compatible with side wind-protection screens'],
+            ru: ['Максимум 5000×3000 мм (15 м²)', 'Кубический дизайн, малый вылет короба', 'Линейка Cubic Line — сочетается с Climara W10/W20'],
+            hy: ['Առավելագույնը 5000×3000 մմ (15 մ²)', 'Խորանարդաձև դիզայն, տուփի փոքր հեռացում', 'Cubic Line գիծ — համադրվում է Climara W10/W20-ի հետ'],
+            en: ['Max 5000×3000 mm (15 m²)', 'Cubic design, minimal box projection', 'Cubic Line range — pairs with Climara W10/W20'],
           },
-          image: terreaBalcony,
-          gallery: [terreaBalconyB],
-          sourceUrl: 'https://www.warema.com/en/awnings/balcony-awnings.html',
+          image: terreaK50Hero,
+          gallery: [terreaK50B],
+          sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k50/',
+        },
+        {
+          id: 'k55',
+          name: 'Terrea K55',
+          description: {
+            ru: 'Дизайнерская модель, сочетающая скруглённые и кубические формы — обладатель Best of Design Award 2024 и iF Design Award 2025, со встроенной диммируемой LED-подсветкой.',
+            hy: 'Դիզայներական մոդել՝ համադրելով կլորացված և խորանարդաձև ձևեր — Best of Design Award 2024 և iF Design Award 2025 մրցանակակիր, ներկառուցված մարվող LED լուսավորությամբ։',
+            en: 'A designer model that combines rounded and cubic forms — winner of the Best of Design Award 2024 and the iF Design Award 2025, with built-in dimmable LED strip lighting.',
+          },
+          specs: {
+            ru: ['Максимум 6000×3500 мм (19,25 м²)', 'Диммируемая LED-подсветка под кассетой или скрытая', 'Best of Design Award 2024, iF Design Award 2025'],
+            hy: ['Առավելագույնը 6000×3500 մմ (19,25 մ²)', 'Մարվող LED լուսավորություն կասետայի տակ կամ թաքնված', 'Best of Design Award 2024, iF Design Award 2025'],
+            en: ['Max 6000×3500 mm (19.25 m²)', 'Dimmable LED lighting under the cassette or concealed', 'Best of Design Award 2024, iF Design Award 2025'],
+          },
+          image: terreaK55Hero,
+          gallery: [terreaK55B],
+          sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k55/',
+        },
+        {
+          id: 'k60',
+          name: 'Terrea K60',
+          description: {
+            ru: 'Крупная овальная кассета для больших балконов и террас — выдвижная планка-жалюзи убирает блики от низкого солнца и добавляет приватности.',
+            hy: 'Խոշոր օվալաձև կասետա մեծ բալկոնների և պատշգամբների համար՝ դուրս եկող ժալյուզի-պլանկան հեռացնում է ցածր արևի փայլը և ավելացնում գաղտնիություն։',
+            en: 'A large oval cassette for spacious balconies and patios — a retractable valance blind eliminates glare from low sun and adds privacy.',
+          },
+          specs: {
+            ru: ['Максимум 7000×4000 мм (28 м²)', 'Выдвижная планка-жалюзи от бликов', 'Овальная кассета, разнообразие решений под любую террасу'],
+            hy: ['Առավելագույնը 7000×4000 մմ (28 մ²)', 'Դուրս եկող ժալյուզի-պլանկա փայլից', 'Օվալաձև կասետա, բազմազան լուծումներ ցանկացած պատշգամբի համար'],
+            en: ['Max 7000×4000 mm (28 m²)', 'Retractable valance blind against glare', 'Oval cassette, versatile for almost any patio'],
+          },
+          image: terreaK60Hero,
+          gallery: [terreaK60B],
+          sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k60/',
+        },
+        {
+          id: 'k70',
+          name: 'Terrea K70',
+          description: {
+            ru: 'Кубическая кассета для больших площадей — чёткие прямые линии для современной архитектуры и широкий выбор дополнительных опций.',
+            hy: 'Խորանարդաձև կասետա մեծ մակերեսների համար՝ հստակ ուղիղ գծեր ժամանակակից ճարտարապետության համար և հավելյալ ընտրանքների լայն տեսականի։',
+            en: 'A cubic cassette for large areas — clean, straight lines for contemporary architecture and a wide range of optional extras.',
+          },
+          specs: {
+            ru: ['Максимум 7000×4000 мм (24,5 м²)', 'Кубический дизайн, чёткие линии', 'Линейка Cubic Line — сочетается с Climara W10/W20'],
+            hy: ['Առավելագույնը 7000×4000 մմ (24,5 մ²)', 'Խորանարդաձև դիզայն, հստակ գծեր', 'Cubic Line գիծ — համադրվում է Climara W10/W20-ի հետ'],
+            en: ['Max 7000×4000 mm (24.5 m²)', 'Cubic design, clean lines', 'Cubic Line range — pairs with Climara W10/W20'],
+          },
+          image: terreaK70Hero,
+          gallery: [terreaK70B],
+          sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k70/',
+        },
+        {
+          id: 'h60',
+          name: 'Terrea H60',
+          description: {
+            ru: 'Складная маркиза с защитным козырьком сверху — ткань и рычаги защищены дождевым козырьком, ткань All Weather выдерживает лёгкий дождь. Доступна версия LB для большого выноса при малой ширине.',
+            hy: 'Ծալովի մարկիզա վերևից պաշտպանիչ վահանով՝ գործվածքն ու թևերը պաշտպանված են անձրևապաշտպան վահանով, All Weather գործվածքը դիմանում է թեթև անձրևին։ Հասանելի է LB տարբերակը մեծ դուրսբերման և փոքր լայնության համար։',
+            en: 'A folding-arm awning with a protective rain hood on top — the fabric and arms are shielded by the hood, and the All Weather fabric tolerates light rain. An LB variant is available for a large projection at a narrow width.',
+          },
+          specs: {
+            ru: ['Максимум 7000×4000 мм (28 м²)', 'Встроенный дождевой козырёк', 'Ткань All Weather — защита от лёгкого дождя'],
+            hy: ['Առավելագույնը 7000×4000 մմ (28 մ²)', 'Ներկառուցված անձրևապաշտպան վահան', 'All Weather գործվածք — պաշտպանություն թեթև անձրևից'],
+            en: ['Max 7000×4000 mm (28 m²)', 'Integrated rain hood', 'All Weather fabric — light rain protection'],
+          },
+          image: terreaH60Hero,
+          gallery: [terreaH60B],
+          sourceUrl: 'https://www.warema.com/en/awnings/articulated-arm-awning-terrea-h60/',
+        },
+        {
+          id: '530',
+          name: 'Terrea 530',
+          description: {
+            ru: 'Функциональная маркиза начального уровня для защищённого монтажа — оптимальное соотношение цены и качества, опциональный дождевой козырёк или версия LB для узких ниш.',
+            hy: 'Ֆունկցիոնալ, մուտքային մակարդակի մարկիզա պաշտպանված տեղադրման համար՝ գնի և որակի օպտիմալ հարաբերակցություն, հավելյալ անձրևապաշտպան վահան կամ LB տարբերակ նեղ խորշերի համար։',
+            en: 'A functional, entry-level awning for protected installation positions — an optimal price-to-quality ratio, with an optional rain hood or an LB variant for narrow recesses.',
+          },
+          specs: {
+            ru: ['Максимум 6000×3500 мм (18 м²)', 'Оптимальное соотношение цены и качества', 'Версия LB для узких ниш с большим выносом'],
+            hy: ['Առավելագույնը 6000×3500 մմ (18 մ²)', 'Գնի և որակի օպտիմալ հարաբերակցություն', 'LB տարբերակ նեղ խորշերի համար մեծ դուրսբերմամբ'],
+            en: ['Max 6000×3500 mm (18 m²)', 'Optimal price-to-quality ratio', 'LB variant for narrow recesses with a large projection'],
+          },
+          image: terrea530Hero,
+          gallery: [terrea530B],
+          sourceUrl: 'https://www.warema.com/en/awnings/articulated-arm-awning-terrea-530/',
+        },
+        {
+          id: '700s',
+          name: 'Terrea 700S',
+          description: {
+            ru: 'Встраивается в готовую нишу на фасаде — в сложенном виде полностью скрывается, освобождая террасу. Оптимальна для нового строительства и капитальной реновации фасада.',
+            hy: 'Ինտեգրվում է ֆասադի պատրաստի խորշում — ծալված վիճակում ամբողջովին թաքնվում է՝ ազատելով պատշգամբը։ Օպտիմալ է նոր շինարարության և ֆասադի կապիտալ վերանորոգման համար։',
+            en: 'Integrates into an existing on-site shaft in the façade — when retracted, it disappears completely, freeing up the patio. Best suited to new construction and major façade renovation.',
+          },
+          specs: {
+            ru: ['Максимум 5960×3000 мм (17,88 м²)', 'Полностью скрывается в нише при сложении', 'Опциональная накрывающая планка на фасаде'],
+            hy: ['Առավելագույնը 5960×3000 մմ (17,88 մ²)', 'Ամբողջովին թաքնվում է խորշում ծալված վիճակում', 'Հավելյալ ծածկող պլանկա ճակատին'],
+            en: ['Max 5960×3000 mm (17.88 m²)', 'Disappears completely into the shaft when retracted', 'Optional front cover panel on the façade'],
+          },
+          image: terrea700sHero,
+          gallery: [terrea700sB],
+          sourceUrl: 'https://www.warema.com/en/awnings/articulated-arm-awning-terrea-700s/',
+        },
+        {
+          id: 'g60',
+          name: 'Terrea G60',
+          description: {
+            ru: 'Складная маркиза для больших площадей в защищённом месте — выдвижная планка-жалюзи от низкого солнца, доступна версия LB для узких террас.',
+            hy: 'Ծալովի մարկիզա մեծ մակերեսների համար պաշտպանված վայրում՝ դուրս եկող ժալյուզի-պլանկա ցածր արևից, հասանելի է LB տարբերակը նեղ պատշգամբների համար։',
+            en: 'A folding-arm awning for large areas in a protected position — a retractable valance blind against low sun, with an LB variant available for narrow patios.',
+          },
+          specs: {
+            ru: ['Максимум 7000×4000 мм (28 м²)', 'Выдвижная планка-жалюзи от бликов', 'Версия LB для узких террас'],
+            hy: ['Առավելագույնը 7000×4000 մմ (28 մ²)', 'Դուրս եկող ժալյուզի-պլանկա փայլից', 'LB տարբերակ նեղ պատշգամբների համար'],
+            en: ['Max 7000×4000 mm (28 m²)', 'Retractable valance blind against glare', 'LB variant for narrow patios'],
+          },
+          image: terreaG60Hero,
+          gallery: [terreaG60B],
+          sourceUrl: 'https://www.warema.com/en/awnings/articulated-arm-awning-terrea-g60/',
         },
       ],
     },
@@ -408,6 +559,23 @@ export const warema: BrandCatalog = {
       },
       models: [
         {
+          id: 'p20',
+          name: 'Perea P20',
+          description: {
+            ru: 'Самая изящная модель линейки — тонкий кубический профиль и технология secudrive® для натяжения ткани в направляющих, усиленных армирующим профилем.',
+            hy: 'Գծի ամենանրբագեղ մոդելը՝ բարակ խորանարդաձև պրոֆիլ և secudrive® տեխնոլոգիա՝ գործվածքի լարման համար ուղղորդիչներում, ամրապնդված արմատուրային պրոֆիլով։',
+            en: 'The most slender model in the range — a thin cubic profile with secudrive® technology tensioning the fabric in rails reinforced by a stiffening bar.',
+          },
+          specs: {
+            ru: ['Ширина до 6500 мм, глубина до 6000 мм', 'Площадь до 30 м²', 'Кубический профиль, технология secudrive®'],
+            hy: ['Լայնությունը՝ մինչև 6500 մմ, խորությունը՝ մինչև 6000 մմ', 'Մակերեսը՝ մինչև 30 մ²', 'Խորանարդաձև պրոֆիլ, secudrive® տեխնոլոգիա'],
+            en: ['Width up to 6500 mm, depth up to 6000 mm', 'Area up to 30 m²', 'Cubic profile, secudrive® technology'],
+          },
+          image: pereaP20Hero,
+          gallery: [pereaP20B],
+          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning-perea-p20/',
+        },
+        {
           id: 'p40',
           name: 'Perea P40',
           description: {
@@ -421,7 +589,24 @@ export const warema: BrandCatalog = {
             en: ['Width up to 6000 mm, depth up to 5000 mm', 'Area up to 30 m²', 'Motorised drive'],
           },
           gallery: [pereaGallery2, pereaGallery3, pereaIllustration],
-          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning.html',
+          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning-perea-p40/',
+        },
+        {
+          id: 'p40-weatheredition',
+          name: 'Perea P40 WeatherEdition',
+          description: {
+            ru: 'Влагостойкая версия P40 с полупрозрачной тканью Sunworker Top (класс дождя 2) — дренажная сетка отводит воду, пропуская свет даже в непогоду.',
+            hy: 'P40-ի խոնավակայուն տարբերակը՝ կիսաթափանցիկ Sunworker Top գործվածքով (անձրևի դաս 2). դրենաժային ցանցը հեռացնում է ջուրը՝ թողնելով լույս նույնիսկ վատ եղանակին։',
+            en: 'A rain-resistant version of the P40 with translucent Sunworker Top fabric (rain class 2) — a drainage grid clears the water while still letting light through in bad weather.',
+          },
+          specs: {
+            ru: ['Ширина до 6000 мм, глубина до 5000 мм', 'Площадь до 30 м²', 'Ткань Sunworker Top, дренажная сетка'],
+            hy: ['Լայնությունը՝ մինչև 6000 մմ, խորությունը՝ մինչև 5000 մմ', 'Մակերեսը՝ մինչև 30 մ²', 'Sunworker Top գործվածք, դրենաժային ցանց'],
+            en: ['Width up to 6000 mm, depth up to 5000 mm', 'Area up to 30 m²', 'Sunworker Top fabric, drainage grid'],
+          },
+          image: pereaP40weHero,
+          gallery: [pereaP40weB],
+          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning-perea-p40-weatheredition/',
         },
         {
           id: 'p60',
@@ -673,14 +858,48 @@ export const warema: BrandCatalog = {
       image: climaraW10,
       name: { ru: 'Маркизы для зимнего сада Climara', hy: 'Climara ձմեռային այգու մարկիզաներ', en: 'Climara Conservatory Awnings' },
       intro: {
-        ru: 'Затенение остеклённых крыш и зимних садов — пять моделей под скатные, вальмовые и нестандартные формы крыши, площадь полотна до 30 м².',
-        hy: 'Ապակեպատ տանիքների և ձմեռային այգիների ստվերապատում. հինգ մոդել՝ թեք, բարդ և ոչ ստանդարտ տանիքի ձևերի համար, գործվածքի մակերես մինչև 30 մ²։',
-        en: 'Shading for glass roofs and conservatories — five models for pitched, hipped and irregular roof shapes, with fabric areas up to 30 m².',
+        ru: 'Затенение остеклённых крыш и зимних садов — восемь моделей под скатные, вальмовые и нестандартные формы крыши, внутренние и внешние, площадь полотна до 60 м².',
+        hy: 'Ապակեպատ տանիքների և ձմեռային այգիների ստվերապատում. ութ մոդել՝ թեք, բարդ և ոչ ստանդարտ տանիքի ձևերի համար, ներքին և արտաքին, գործվածքի մակերես մինչև 60 մ²։',
+        en: 'Shading for glass roofs and conservatories — eight models for pitched, hipped and irregular roof shapes, internal and external, with fabric areas up to 60 m².',
       },
       models: [
         {
-          id: 'w10',
-          name: 'Climara W10',
+          id: 'w7',
+          name: 'Climara W7',
+          description: {
+            ru: 'Наружная маркиза со смещённой направляющей, выходящей за пределы рельса — накрывает труднодоступные участки вальмовых или наклонных зимних садов.',
+            hy: 'Արտաքին մարկիզա տեղաշարժված ուղղորդիչով, որը դուրս է գալիս ռելսի սահմաններից՝ ծածկելով դժվարամատչելի հատվածները վալմային կամ թեք ձմեռային այգիների։',
+            en: 'An external awning with an offset guide rail that extends beyond the track — reaches hard-to-shade areas of hipped or sloped conservatories.',
+          },
+          specs: {
+            ru: ['Ширина до 6000 мм, длина до 4500 мм', 'Площадь до 24 м²', 'Направляющие крепятся на существующий профиль зимнего сада'],
+            hy: ['Լայնությունը՝ մինչև 6000 մմ, երկարությունը՝ մինչև 4500 մմ', 'Մակերեսը՝ մինչև 24 մ²', 'Ուղղորդիչները ամրացվում են ձմեռային այգու առկա պրոֆիլին'],
+            en: ['Width up to 6000 mm, length up to 4500 mm', 'Area up to 24 m²', 'Guide rails mount onto the existing conservatory profile'],
+          },
+          image: climaraW7Hero,
+          gallery: [climaraW7B],
+          sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning-climara-w7/',
+        },
+        {
+          id: 'w9',
+          name: 'Climara W9',
+          description: {
+            ru: 'Внутренняя маркиза с системой обратной тяги — монтируется под крышей и полностью защищена от ветра, дождя и загрязнений; доступна выдвижная планка-жалюзи для дополнительной приватности.',
+            hy: 'Ինտերիերի մարկիզա հակադարձ քաշքշուկի համակարգով՝ տեղադրվում է տանիքի տակ և ամբողջովին պաշտպանված է քամուց, անձրևից և կեղտից, հասանելի է դուրս եկող ժալյուզի-պլանկա հավելյալ գաղտնիության համար։',
+            en: 'An internal awning with a counter-pull system — installed under the roof and fully protected from wind, rain and soiling, with an optional lowerable valance for extra privacy.',
+          },
+          specs: {
+            ru: ['Максимум 6000×6000 мм (30 м²)', 'Внутренний монтаж под крышей', 'Опциональная выдвижная планка с ручным приводом'],
+            hy: ['Առավելագույնը 6000×6000 մմ (30 մ²)', 'Ինտերիերում տեղադրում տանիքի տակ', 'Հավելյալ դուրս եկող պլանկա ձեռքի մեկնարկով'],
+            en: ['Max 6000×6000 mm (30 m²)', 'Internal installation under the roof', 'Optional crank-operated valance'],
+          },
+          image: climaraW9Hero,
+          gallery: [climaraW9B],
+          sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning-climara-w9/',
+        },
+        {
+          id: 'w10-a',
+          name: 'Climara W10² — Model A',
           description: {
             ru: 'Технология secudrive® для больших площадей, опциональная светодиодная подсветка в направляющих.',
             hy: 'secudrive® տեխնոլոգիա մեծ մակերեսների համար, հավելյալ՝ LED լուսավորություն ուղղորդիչներում։',
@@ -693,7 +912,41 @@ export const warema: BrandCatalog = {
           },
           image: climaraW10Hero,
           gallery: [climaraW10B],
-          sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning.html',
+          sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning-climara-w10-model-a/',
+        },
+        {
+          id: 'w10-b',
+          name: 'Climara W10² — Model B',
+          description: {
+            ru: 'Состыкованные направляющие позволяют получить очень большую длину выноса — до 12 метров при небольшой накрывающей планке, с технологией secudrive® без единого просвета в ткани.',
+            hy: 'Միացված ուղղորդիչները թույլ են տալիս ստանալ շատ մեծ դուրսբերման երկարություն՝ մինչև 12 մետր փոքր ծածկող պլանկայով, secudrive® տեխնոլոգիայով՝ առանց գործվածքի մեկ ճեղքի։',
+            en: 'Joined guide rails allow an extremely long projection — up to 12 metres with a small cover panel, using secudrive® technology for a completely gap-free fabric.',
+          },
+          specs: {
+            ru: ['Максимум 6500×12000 мм (60 м²)', 'Состыкованные направляющие для большой длины', 'Технология secudrive® без просвета в ткани'],
+            hy: ['Առավելագույնը 6500×12000 մմ (60 մ²)', 'Միացված ուղղորդիչներ մեծ երկարության համար', 'secudrive® տեխնոլոգիա՝ առանց գործվածքի ճեղքի'],
+            en: ['Max 6500×12000 mm (60 m²)', 'Joined guide rails for extra-long projections', 'Gap-free fabric via secudrive® technology'],
+          },
+          image: climaraW10bHero,
+          gallery: [climaraW10bB],
+          sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning-climara-w10-model-b/',
+        },
+        {
+          id: 'w19',
+          name: 'Climara W19',
+          description: {
+            ru: 'Наружная маркиза для больших площадей с усовершенствованной системой обратной тяги и дополнительным щёточным уплотнителем — сочетается с Climara D3 для единого вида на архитектурно сложных зимних садах.',
+            hy: 'Արտաքին մարկիզա մեծ մակերեսների համար՝ կատարելագործված հակադարձ քաշքշուկի համակարգով և հավելյալ խոզանակավոր կնիքով. համադրվում է Climara D3-ի հետ՝ մեկ տեսք ապահովելու համար ճարտարապետորեն բարդ ձմեռային այգիներում։',
+            en: 'An external awning for large areas with an optimised counter-pull system and an additional brush seal — combines with the Climara D3 for a uniform look on architecturally complex conservatories.',
+          },
+          specs: {
+            ru: ['Максимум 6000×6000 мм (30 м²)', 'Усовершенствованная система обратной тяги', 'Сочетается с Climara D3'],
+            hy: ['Առավելագույնը 6000×6000 մմ (30 մ²)', 'Կատարելագործված հակադարձ քաշքշուկի համակարգ', 'Համադրվում է Climara D3-ի հետ'],
+            en: ['Max 6000×6000 mm (30 m²)', 'Optimised counter-pull system', 'Combines with the Climara D3'],
+          },
+          image: climaraW19Hero,
+          gallery: [climaraW19B],
+          sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning-climara-w19/',
         },
         {
           id: 'w20',
@@ -736,9 +989,9 @@ export const warema: BrandCatalog = {
       image: lamaxaHero,
       name: { ru: 'Терраса-крыша Lamaxa', hy: 'Lamaxa պատշգամբի տանիք', en: 'Lamaxa Patio Roof' },
       intro: {
-        ru: 'Модульная алюминиевая крыша с поворотными ламелями — закрытая защищает от дождя, приоткрытая создаёт вентиляцию и тень. Совмещается с LED-подсветкой, обогревателями и стеклянными раздвижными стенами.',
-        hy: 'Մոդուլային ալյումինե տանիք պտտվող լամելներով՝ փակ վիճակում պաշտպանում է անձրևից, մասնակի բացվածքով ապահովում է օդափոխություն և ստվեր։ Համատեղվում է LED լուսավորության, ջեռուցիչների և ապակե սահող պատերի հետ։',
-        en: 'A modular aluminium roof with rotating slats — closed it keeps out rain, tilted it provides ventilation and shade. Combinable with LED lighting, heaters and glass sliding walls.',
+        ru: 'Модульная алюминиевая крыша — от классических поворотных ламелей до тканевой (Tex) и стеклянной (View) версий, включая модульную Line-серию для больших площадей. Ламельная крыша закрытой защищает от дождя, приоткрытой создаёт вентиляцию и тень; совмещается с LED-подсветкой, обогревателями и стеклянными раздвижными стенами.',
+        hy: 'Մոդուլային ալյումինե տանիք՝ դասական պտտվող լամելներից մինչև գործվածքային (Tex) և ապակե (View) տարբերակներ, այդ թվում՝ մոդուլային Line շարքը մեծ մակերեսների համար։ Լամելային տանիքը փակ վիճակում պաշտպանում է անձրևից, մասնակի բացվածքով ապահովում է օդափոխություն և ստվեր; համատեղվում է LED լուսավորության, ջեռուցիչների և ապակե սահող պատերի հետ։',
+        en: 'A modular aluminium roof — from classic rotating slats to fabric (Tex) and glass (View) versions, plus a modular Line series for large areas. The slat roof, closed, keeps out rain, and tilted, provides ventilation and shade; combinable with LED lighting, heaters and glass sliding walls.',
       },
       models: [
         {
@@ -775,6 +1028,40 @@ export const warema: BrandCatalog = {
           sourceUrl: 'https://www.warema.com/en/patio-covers/l50-roof-system.html',
         },
         {
+          id: 'l50-tex',
+          name: 'Lamaxa L50 Tex',
+          description: {
+            ru: 'Тканевая крыша вместо ламелей — та же стройная рама с тонкими балками, полотно регулируется по всей длине без боковых просветов благодаря направляющей secudrive®.',
+            hy: 'Գործվածքային տանիք լամելների փոխարեն՝ նույն նրբագեղ շրջանակը բարակ հեծաններով, գործվածքը կարգավորվում է ողջ երկարությամբ առանց կողային ճեղքերի՝ շնորհիվ secudrive® ուղղորդման։',
+            en: 'A fabric roof instead of slats — the same slender frame with thin crossbeams, with the fabric adjustable along its full length and no side gaps thanks to secudrive® guidance.',
+          },
+          specs: {
+            ru: ['Максимум 6000×4500 мм', 'Тканевая крыша вместо ламелей', 'Сочетается со стеклянными раздвижными системами и жалюзи'],
+            hy: ['Առավելագույնը 6000×4500 մմ', 'Գործվածքային տանիք լամելների փոխարեն', 'Համադրվում է ապակե սահող համակարգերի և ժալյուզիների հետ'],
+            en: ['Max 6000×4500 mm', 'Fabric roof instead of slats', 'Combinable with glass sliding systems and sash frames'],
+          },
+          image: lamaxaL50TexHero,
+          gallery: [lamaxaL50TexB],
+          sourceUrl: 'https://www.warema.com/en/roof-systems/fabric-roof-lamaxa-l50-tex/',
+        },
+        {
+          id: 'l50-view',
+          name: 'Lamaxa L50 View',
+          description: {
+            ru: 'Самая изящная кубическая стеклянная крыша на рынке — круглогодичная защита от непогоды со встроенным водоотводом, светлое пространство даже в пасмурную погоду.',
+            hy: 'Շուկայում ամենանրբագեղ խորանարդաձև ապակե տանիքը՝ ամբողջ տարվա եղանակային պաշտպանություն ներկառուցված ջրահեռացումով, լուսավոր տարածք նույնիսկ ամպամած եղանակին։',
+            en: 'The most slender cubic glass roof on the market — year-round weather protection with integrated drainage, keeping the space bright even in overcast weather.',
+          },
+          specs: {
+            ru: ['Максимум 7000×4500 мм', 'Стеклянная крыша со встроенным водоотводом', 'Сочетается с внутренней или внешней маркизой Climara'],
+            hy: ['Առավելագույնը 7000×4500 մմ', 'Ապակե տանիք ներկառուցված ջրահեռացումով', 'Համադրվում է Climara ինտերիերի կամ արտաքին մարկիզայի հետ'],
+            en: ['Max 7000×4500 mm', 'Glass roof with integrated drainage', 'Combinable with an internal or external Climara awning'],
+          },
+          image: lamaxaL50ViewHero,
+          gallery: [lamaxaL50ViewB],
+          sourceUrl: 'https://www.warema.com/en/roof-systems/glass-roof-lamaxa-l50-view/',
+        },
+        {
           id: 'l60',
           name: 'Lamaxa L60',
           description: {
@@ -790,6 +1077,23 @@ export const warema: BrandCatalog = {
           image: lamaxaL60,
           gallery: [lamaxaL60B],
           sourceUrl: 'https://www.warema.com/en/patio-covers/l60-slat-roof.html',
+        },
+        {
+          id: 'l70-line',
+          name: 'Lamaxa L70 Line',
+          description: {
+            ru: 'Модульная система для крупных площадей — несколько секций стыкуются через центральную стойку в ряд или звездой, подходит и для коммерческих объектов.',
+            hy: 'Մոդուլային համակարգ մեծ մակերեսների համար՝ մի քանի հատված միանում է կենտրոնական սյան միջոցով՝ շարքով կամ աստղաձև, հարմար է նաև կոմերցիոն օբյեկտների համար։',
+            en: 'A modular system for large areas — multiple bays connect via a central pole in a row or star layout, also suitable for commercial venues.',
+          },
+          specs: {
+            ru: ['Максимум 6000×4500 мм на секцию', 'Стыковка нескольких секций через центральную стойку', 'Комбинируется с L60 Line для гибкой конфигурации'],
+            hy: ['Առավելագույնը 6000×4500 մմ մեկ հատվածում', 'Մի քանի հատվածի միացում կենտրոնական սյան միջոցով', 'Համադրվում է L60 Line-ի հետ ճկուն կոնֆիգուրացիայի համար'],
+            en: ['Max 6000×4500 mm per bay', 'Multiple bays connect via a central pole', 'Combinable with the L60 Line for a flexible layout'],
+          },
+          image: lamaxaL70LineHero,
+          gallery: [lamaxaL70LineB],
+          sourceUrl: 'https://www.warema.com/en/roof-systems/slat-roof-lamaxa-l70-line/',
         },
       ],
     },
