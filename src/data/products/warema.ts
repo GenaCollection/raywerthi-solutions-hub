@@ -37,6 +37,21 @@ import pereaP70B from '@/assets/products/warema/perea-p70-b.webp';
 import fenstermarkiseImg from '@/assets/products/warema/fenstermarkise-hero.webp';
 import fenstermarkiseFrontMounted from '@/assets/products/warema/fenstermarkise-frontmounted.jpg';
 import fenstermarkiseFrontMountedB from '@/assets/products/warema/fenstermarkise-frontmounted-b.webp';
+import fmTopMountedHero from '@/assets/products/warema/fm-topmounted-hero.webp';
+import fmTopMountedB from '@/assets/products/warema/fm-topmounted-b.webp';
+import fmTopMountedC from '@/assets/products/warema/fm-topmounted-c.webp';
+import fmWindowSystemHero from '@/assets/products/warema/fm-windowsystem-hero.jpg';
+import fmWindowSystemB from '@/assets/products/warema/fm-windowsystem-b.webp';
+import fmWindowSystemC from '@/assets/products/warema/fm-windowsystem-c.webp';
+import fmShaftHero from '@/assets/products/warema/fm-shaft-hero.webp';
+import fmShaftB from '@/assets/products/warema/fm-shaft-b.webp';
+import fmShaftC from '@/assets/products/warema/fm-shaft-c.webp';
+import fmDropArmHero from '@/assets/products/warema/fm-droparm-hero.jpg';
+import fmDropArmB from '@/assets/products/warema/fm-droparm-b.webp';
+import fmDropArmC from '@/assets/products/warema/fm-droparm-c.webp';
+import patioSideHero from '@/assets/products/warema/patioside-hero.webp';
+import patioSideB from '@/assets/products/warema/patioside-b.webp';
+import patioSideC from '@/assets/products/warema/patioside-c.webp';
 import markisoletteImg from '@/assets/products/warema/markisolette.webp';
 import markisoletteB from '@/assets/products/warema/markisolette-b.webp';
 import easyzipImg from '@/assets/products/warema/easyzip.webp';
@@ -383,9 +398,9 @@ export const warema: BrandCatalog = {
       image: fenstermarkiseImg,
       name: { ru: 'Маркизы для окон и ZIP-экраны', hy: 'Պատուհանի մարկիզաներ և ZIP-էկրաններ', en: 'Window Awnings & ZIP Screens' },
       intro: {
-        ru: 'Затенение отдельных окон и witryn: от классических маркиз с отвесом до системы easyZIP — ткань идёт в боковых направляющих без единого просвета, выдерживает порывы ветра до 150 км/ч.',
-        hy: 'Առանձին պատուհանների ստվերապատում. դասական մարկիզաներից մինչև easyZIP համակարգ, որտեղ գործվածքը շարժվում է կողային ուղղորդիչներում առանց ճեղքի՝ դիմանալով մինչև 150 կմ/ժ քամու հորձանուտին։',
-        en: 'Shading for individual windows: from classic drop-arm awnings to the easyZIP system, where the fabric runs in side guide rails with no gaps, rated for gusts up to 150 km/h.',
+        ru: 'Затенение отдельных окон — семь конструкций монтажа: от заводской интеграции в новое окно до классических маркиз с отвесом и системы easyZIP, где ткань идёт в боковых направляющих без единого просвета и выдерживает порывы ветра до 150 км/ч.',
+        hy: 'Առանձին պատուհանների ստվերապատում. յոթ տեղադրման կոնստրուկցիա՝ նոր պատուհանի մեջ գործարանային ինտեգրումից մինչև դասական մարկիզաներ և easyZIP համակարգ, որտեղ գործվածքը շարժվում է կողային ուղղորդիչներում առանց ճեղքի՝ դիմանալով մինչև 150 կմ/ժ քամու հորձանուտին։',
+        en: 'Shading for individual windows — seven mounting constructions: from factory integration into a new window to classic drop-arm awnings and the easyZIP system, where the fabric runs in side guide rails with no gaps, rated for gusts up to 150 km/h.',
       },
       models: [
         {
@@ -406,6 +421,57 @@ export const warema: BrandCatalog = {
           sourceUrl: 'https://www.warema.com/en/awnings/front-mounted-awning.html',
         },
         {
+          id: 'top-mounted',
+          name: 'Aufsatz-Fenstermarkise (NA-MA)',
+          description: {
+            ru: 'Крепится прямо к окну ещё на заводе и монтируется вместе с ним единым узлом — решение для нового строительства, где короб и направляющие можно полностью скрыть в штукатурке.',
+            hy: 'Ամրացվում է անմիջապես պատուհանին դեռևս գործարանում և տեղադրվում է դրա հետ մեկ միասնական հանգույցով՝ լուծում նոր շինարարության համար, որտեղ տուփն ու ուղղորդիչները կարելի է ամբողջությամբ թաքցնել ծեփի մեջ։',
+            en: 'Fixed directly to the window at the factory and installed together with it as one unit — a solution for new construction where the box and guide rails can be fully concealed in the render.',
+          },
+          specs: {
+            ru: ['Максимум 3000×3100 мм (9 м²)', 'Ветростойкая направляющая easyZIP', 'Короб под кладку, ревизия снаружи'],
+            hy: ['Առավելագույնը 3000×3100 մմ (9 մ²)', 'Քամակայուն easyZIP ուղղորդում', 'Տուփ որմնադրության համար, վերանայում դրսից'],
+            en: ['Max 3000×3100 mm (9 m²)', 'Wind-stable easyZIP guidance', 'Box for masonry, inspection access outside'],
+          },
+          image: fmTopMountedHero,
+          gallery: [fmTopMountedB, fmTopMountedC],
+          sourceUrl: 'https://www.warema.com/en/awnings/top-mounted-awnings-for-new-buildings.html',
+        },
+        {
+          id: 'window-system',
+          name: 'Fenster-System-Fenstermarkise (FSM)',
+          description: {
+            ru: 'Согласованная интеграция в фасад — короб, направляющие, отвесная планка и привод подобраны под конкретную конструкцию: утеплённый фасад, готовую нишу или видимый монтаж в откосе.',
+            hy: 'Ֆասադի հետ համաձայնեցված ինտեգրում. տուփը, ուղղորդիչները, ծայրագլանը և շարժիչը ընտրված են կոնկրետ կոնստրուկցիայի համար՝ ջերմամեկուսացված ֆասադ, պատրաստի խորշ կամ երևացող տեղադրում լուսամուտի մեջ։',
+            en: 'Coordinated integration into the façade — the box, guide rails, end rail and drive are matched to the specific construction: insulated façade, existing niche, or visible mounting in the window reveal.',
+          },
+          specs: {
+            ru: ['Максимум 4500×4500 мм (18 м²)', 'Тросовая, рельсовая или easyZIP направляющая', 'Варианты: под ETICS-фасад, нишу или откос'],
+            hy: ['Առավելագույնը 4500×4500 մմ (18 մ²)', 'Ճոպանային, ռելսային կամ easyZIP ուղղորդում', 'Տարբերակներ՝ ETICS ֆասադի, խորշի կամ լուսամուտի համար'],
+            en: ['Max 4500×4500 mm (18 m²)', 'Cable, rail or easyZIP guidance', 'Variants for ETICS façades, niches or reveals'],
+          },
+          image: fmWindowSystemHero,
+          gallery: [fmWindowSystemB, fmWindowSystemC],
+          sourceUrl: 'https://www.warema.com/en/awnings/awning-window-systems.html',
+        },
+        {
+          id: 'shaft',
+          name: 'Schacht-Fenstermarkise',
+          description: {
+            ru: 'Использует готовую нишу или перемычку над окном вместо отдельного короба — в собранном виде ткань и механизм практически не заметны на фасаде.',
+            hy: 'Օգտագործում է պատուհանի վերևում առկա խորշը կամ վերնաշեմը՝ առանձին տուփի փոխարեն. հավաքված վիճակում գործվածքն ու մեխանիզմը գրեթե աննկատ են ճակատին։',
+            en: 'Uses an existing niche or lintel above the window instead of a separate box — when retracted, the fabric and drive are barely visible on the façade.',
+          },
+          specs: {
+            ru: ['Максимум 4000×4500 мм (18 м²)', 'Без отдельного короба', 'Тросовая, рельсовая, отвесная или easyZIP направляющая'],
+            hy: ['Առավելագույնը 4000×4500 մմ (18 մ²)', 'Առանց առանձին տուփի', 'Ճոպանային, ռելսային, ծայրագլանային կամ easyZIP ուղղորդում'],
+            en: ['Max 4000×4500 mm (18 m²)', 'No separate box', 'Cable, rail, drop-arm or easyZIP guidance'],
+          },
+          image: fmShaftHero,
+          gallery: [fmShaftB, fmShaftC],
+          sourceUrl: 'https://www.warema.com/en/awnings/shaft-awnings.html',
+        },
+        {
           id: 'markisolette',
           name: 'Markisolette',
           description: {
@@ -421,6 +487,23 @@ export const warema: BrandCatalog = {
           image: markisoletteImg,
           gallery: [markisoletteB],
           sourceUrl: 'https://www.warema.com/en/awnings/markisolettes.html',
+        },
+        {
+          id: 'drop-arm',
+          name: 'Ausstellarm-Fenstermarkise',
+          description: {
+            ru: 'Ткань опускается вертикально и одновременно выносится вперёд на боковых рычагах — наклонное полотно даёт тень, сохраняя вид наружу. Доступна как открытая, кассетная или встроенная в нишу.',
+            hy: 'Գործվածքն իջնում է ուղղահայաց և միաժամանակ առաջ է դուրս գալիս կողային թևերի վրա՝ թեք գործվածքը ստվեր է ստեղծում՝ պահպանելով դրսի տեսադաշտը։ Հասանելի է բաց, կասետային կամ խորշում ինտեգրված տարբերակով։',
+            en: 'The fabric lowers vertically while lateral arms simultaneously project it forwards — the sloping panel creates shade while retaining the view outside. Available as open, cassette or shaft-integrated designs.',
+          },
+          specs: {
+            ru: ['Максимум 4000×1600 мм (6,4 м²)', 'Открытый, кассетный или безкоробный монтаж', 'Ручной или моторизованный привод'],
+            hy: ['Առավելագույնը 4000×1600 մմ (6,4 մ²)', 'Բաց, կասետային կամ առանց տուփի տեղադրում', 'Ձեռքի կամ մոտորացված մեկնարկ'],
+            en: ['Max 4000×1600 mm (6.4 m²)', 'Open, cassette or box-free installation', 'Manual or motorised drive'],
+          },
+          image: fmDropArmHero,
+          gallery: [fmDropArmB, fmDropArmC],
+          sourceUrl: 'https://www.warema.com/en/awnings/front-mounted-awnings-with-drop-arm.html',
         },
         {
           id: 'easyzip',
@@ -484,6 +567,39 @@ export const warema: BrandCatalog = {
           image: senkrechtRail,
           gallery: [senkrechtRailB],
           sourceUrl: 'https://www.warema.com/en/awnings/vertical-awnings.html',
+        },
+      ],
+    },
+    {
+      slug: 'patio-side-screen',
+      image: patioSideHero,
+      name: {
+        ru: 'Боковые экраны для террасы',
+        hy: 'Պատշգամբի կողային էկրաններ',
+        en: 'Retractable Patio Side Screens',
+      },
+      intro: {
+        ru: 'Раздвижная тканевая перегородка защищает террасу и балкон от низкого солнца, ветра и посторонних взглядов, а после использования полностью убирается в компактную кассету.',
+        hy: 'Սահող գործվածքային միջնորմը պաշտպանում է պատշգամբն ու բալկոնը ցածր արևից, քամուց և կողմնակի հայացքից, իսկ օգտագործումից հետո ամբողջությամբ հեռացվում է կոմպակտ կասետայի մեջ։',
+        en: 'A retractable fabric partition protects the patio or balcony from low sun, wind and unwanted views, then retracts fully into a compact cassette when not in use.',
+      },
+      models: [
+        {
+          id: 'patio-side-screen',
+          name: 'Seitenmarkise',
+          description: {
+            ru: 'Полотно выдвигается горизонтально из бокового короба и фиксируется в держателе на противоположном конце — прямая или наклонная кромка ткани позволяет согласовать экран с террасной крышей или маркизой.',
+            hy: 'Գործվածքը հորիզոնական դուրս է բերվում կողային տուփից և ամրացվում է հակառակ ծայրի կրիչում. գործվածքի ուղիղ կամ թեք եզրը թույլ է տալիս էկրանը համաձայնեցնել պատշգամբի տանիքի կամ մարկիզայի հետ։',
+            en: 'The fabric extends horizontally from a side-mounted cassette and locks into a holder at the opposite end — a straight or sloped fabric edge lets the screen be matched to a patio roof or awning.',
+          },
+          specs: {
+            ru: ['Высота до 2500 мм, вылет до 5000 мм', 'Площадь до 10 м²', 'Прямая или наклонная кромка ткани'],
+            hy: ['Բարձրությունը՝ մինչև 2500 մմ, երկարությունը՝ մինչև 5000 մմ', 'Մակերեսը՝ մինչև 10 մ²', 'Գործվածքի ուղիղ կամ թեք եզր'],
+            en: ['Height up to 2500 mm, extension up to 5000 mm', 'Area up to 10 m²', 'Straight or sloped fabric edge'],
+          },
+          image: patioSideHero,
+          gallery: [patioSideB, patioSideC],
+          sourceUrl: 'https://www.warema.com/en/awnings/patio-side-screen.html',
         },
       ],
     },

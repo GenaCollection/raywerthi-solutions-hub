@@ -48,6 +48,7 @@ import ispl18Img from '@/assets/products/hella/insekten-ispl18.png';
 import ispl18Hero from '@/assets/products/hella/ispl18-hero.png';
 import isrImg from '@/assets/products/hella/insekten-isr.png';
 import istImg from '@/assets/products/hella/ist.png';
+import innenjalousienImg from '@/assets/products/hella/innenjalousien.png';
 import plisseesImg from '@/assets/products/hella/plissees.png';
 import plisseesHero from '@/assets/products/hella/plissees-hero.png';
 import plisseesB from '@/assets/products/hella/plissees-b.png';
@@ -653,14 +654,30 @@ export const hella: BrandCatalog = {
     },
     {
       slug: 'innenjalousien',
-      image: plisseesImg,
+      image: innenjalousienImg,
       name: { ru: 'Интерьерные жалюзи и плиссе', hy: 'Ինտերիերի ժալյուզիներ և պլիսե', en: 'Interior Blinds & Pleated Shades' },
       intro: {
-        ru: 'Плиссе Duette и вертикальные жалюзи для внутреннего затенения — точный контроль света в любом помещении.',
-        hy: 'Duette պլիսե և ուղղահայաց ժալյուզիներ ինտերիերի ստվերապատման համար՝ լույսի ճշգրիտ վերահսկում ցանկացած սենյակում։',
-        en: 'Duette pleated blinds and vertical louvres for interior shading — precise light control in any room.',
+        ru: 'Горизонтальные и вертикальные жалюзи, а также плиссе Duette для внутреннего затенения — точный контроль света и ступенчатая защита от посторонних взглядов в любом помещении.',
+        hy: 'Հորիզոնական և ուղղահայաց ժալյուզիներ, ինչպես նաև Duette պլիսե ինտերիերի ստվերապատման համար՝ լույսի ճշգրիտ վերահսկում և աստիճանական պաշտպանություն կողմնակի հայացքից ցանկացած սենյակում։',
+        en: 'Horizontal and vertical louvre blinds, plus Duette pleated shades for interior shading — precise light control and stepless privacy protection in any room.',
       },
       models: [
+        {
+          id: 'innenjalousien',
+          name: 'Innenjalousien',
+          description: {
+            ru: 'Горизонтальные алюминиевые ламели для внутреннего монтажа — практичная модернизация существующих окон без штробления стен.',
+            hy: 'Հորիզոնական ալյումինե լամելներ ինտերիերի տեղադրման համար՝ գործնական արդիականացում առկա պատուհանների համար՝ առանց պատերի կտրման։',
+            en: 'Horizontal aluminium louvres for interior mounting — a practical retrofit for existing windows with no wall chasing required.',
+          },
+          specs: {
+            ru: ['Плавная регулировка угла ламелей', 'Широкая палитра цветов и текстур', 'Цепное, шнуровое или моторизованное управление'],
+            hy: ['Լամելների անկյան հարթ կարգավորում', 'Գույների և հյուսվածքների լայն ընտրանի', 'Շղթայական, պարանային կամ մոտորացված կառավարում'],
+            en: ['Stepless slat-angle adjustment', 'Wide range of colours and textures', 'Chain, cord or motorised control'],
+          },
+          image: innenjalousienImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/innenjalousien-1',
+        },
         {
           id: 'plissees',
           name: 'Plissees / Duette',

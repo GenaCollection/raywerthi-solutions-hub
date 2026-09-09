@@ -97,6 +97,7 @@ export const unifiedCategories: UnifiedCategory[] = [
     sources: [
       { brand: 'warema', categorySlug: 'fenstermarkisen' },
       { brand: 'warema', categorySlug: 'senkrechtmarkisen' },
+      { brand: 'warema', categorySlug: 'patio-side-screen' },
       { brand: 'hella', categorySlug: 'senkrechtmarkisen' },
       { brand: 'hella', categorySlug: 'wind-sichtschutz' },
     ],
