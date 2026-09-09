@@ -172,6 +172,7 @@ export const unifiedCategories: UnifiedCategory[] = [
       { brand: 'silent-gliss', categorySlug: 'roller-blinds' },
       { brand: 'silent-gliss', categorySlug: 'roman-blinds' },
       { brand: 'silent-gliss', categorySlug: 'panel-glide' },
+      { brand: 'hella', categorySlug: 'innenrollos' },
     ],
   },
   {
@@ -187,7 +188,7 @@ export const unifiedCategories: UnifiedCategory[] = [
       { brand: 'silent-gliss', categorySlug: 'venetian-blinds' },
       { brand: 'silent-gliss', categorySlug: 'vertical-blinds' },
       { brand: 'silent-gliss', categorySlug: 'pleated-blinds' },
-      { brand: 'hella', categorySlug: 'innenbeschattung' },
+      { brand: 'hella', categorySlug: 'innenjalousien' },
     ],
   },
   {

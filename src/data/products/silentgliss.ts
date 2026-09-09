@@ -3,24 +3,56 @@ import silentglissLogo from '@/assets/brands/silentgliss-logo.svg';
 
 import tracksImg from '@/assets/products/silentgliss/sg5600-v2.jpg';
 import sg5600Gallery from '@/assets/products/silentgliss/tracks-sg5600.jpg';
+import sg5600Mechanism from '@/assets/products/silentgliss/sg5600-pmo1.jpg';
+import sg5600Office from '@/assets/products/silentgliss/sg5600-prs1.jpg';
 import sg5100Img from '@/assets/products/silentgliss/sg5100.jpg';
 import metropoleImg from '@/assets/products/silentgliss/metropole-v2.jpg';
+import metropoleBay from '@/assets/products/silentgliss/metropole-b.jpg';
+import metropoleHardware from '@/assets/products/silentgliss/metropole-c.jpg';
+import metropoleLodge from '@/assets/products/silentgliss/metropole-e.jpg';
 import cubicleImg from '@/assets/products/silentgliss/cubicle-v2.jpg';
+import cubicleOffice from '@/assets/products/silentgliss/cubicle-b.jpg';
+import cubicleDetail from '@/assets/products/silentgliss/cubicle-c.jpg';
 import rollerBlindImg from '@/assets/products/silentgliss/roller-blind-v2.jpg';
+import rollerBlindFascia from '@/assets/products/silentgliss/roller-b.jpg';
+import rollerBlindDetail from '@/assets/products/silentgliss/roller-c.jpg';
 import dimoutNoxImg from '@/assets/products/silentgliss/dimout-nox.jpg';
+import dimoutNoxB from '@/assets/products/silentgliss/dimout-nox-b.jpg';
 import dimoutMoonImg from '@/assets/products/silentgliss/dimout-moon.jpg';
+import dimoutMoonB from '@/assets/products/silentgliss/dimout-moon-b.jpg';
+import dimoutGeneric from '@/assets/products/silentgliss/dimout-generic-b.jpg';
+import dimoutMechanism from '@/assets/products/silentgliss/dimout-mech.jpg';
 import panelGlideImg from '@/assets/products/silentgliss/panel-glide-v2.jpg';
+import panelGlideDetail from '@/assets/products/silentgliss/panel-glide-c.jpg';
 import panelHandImg from '@/assets/products/silentgliss/panel-hand.jpg';
+import panelHandB from '@/assets/products/silentgliss/panel-hand-c.jpg';
+import panelHandC from '@/assets/products/silentgliss/panel-hand-d.jpg';
 import romanBlindImg from '@/assets/products/silentgliss/roman-blind-v2.jpg';
+import roman2360B from '@/assets/products/silentgliss/roman2360-b.jpg';
+import roman2360C from '@/assets/products/silentgliss/roman2360-c.jpg';
+import roman2360D from '@/assets/products/silentgliss/roman2360-d.jpg';
 import roman2355Img from '@/assets/products/silentgliss/roman-2355.jpg';
 import roman2120Img from '@/assets/products/silentgliss/roman-2120.jpg';
 import verticalBlindImg from '@/assets/products/silentgliss/vertical-blind-v2.jpg';
+import vertical2960B from '@/assets/products/silentgliss/vertical2960-b.jpg';
+import vertical2960C from '@/assets/products/silentgliss/vertical2960-c.jpg';
+import vertical2960D from '@/assets/products/silentgliss/vertical2960-d.jpg';
 import vertical2910Img from '@/assets/products/silentgliss/vertical-2910.jpg';
+import vertical2910B from '@/assets/products/silentgliss/vertical2910-b.jpg';
+import vertical2910C from '@/assets/products/silentgliss/vertical2910-c.jpg';
 import pleatedImg from '@/assets/products/silentgliss/pleated.jpg';
 import venetianBlindImg from '@/assets/products/silentgliss/venetian-blind-v2.jpg';
+import venetian8960B from '@/assets/products/silentgliss/venetian8960-b.jpg';
+import venetian8960C from '@/assets/products/silentgliss/venetian8960-c.jpg';
 import venetian8110Img from '@/assets/products/silentgliss/venetian-8110.jpg';
+import venetian8110B from '@/assets/products/silentgliss/venetian8110-b.jpg';
+import venetian8110C from '@/assets/products/silentgliss/venetian8110-c.jpg';
 import skylightImg from '@/assets/products/silentgliss/skylight-v2-hero.webp';
+import skylight8600B from '@/assets/products/silentgliss/skylight8600-b.jpg';
+import skylight8600C from '@/assets/products/silentgliss/skylight8600-c.jpg';
 import skylight2195Img from '@/assets/products/silentgliss/skylight-2195.jpg';
+import skylight2195B from '@/assets/products/silentgliss/skylight2195-b.jpg';
+import skylight2195C from '@/assets/products/silentgliss/skylight2195-c.jpg';
 import skylight2190Img from '@/assets/products/silentgliss/skylight-2190.jpg';
 import smarthomeImg from '@/assets/products/silentgliss/sg5600-v2.jpg';
 
@@ -58,7 +90,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Երկարությունը՝ մինչև 25 մ, գործվածքի քաշը՝ մինչև 65 կգ', 'Կառավարում՝ կառավարիչ, Move հավելված, BMS', 'Անաղմուկ և հարթ ընթացք'],
             en: ['Length up to 25 m, fabric weight up to 65 kg', 'Control: remote, Move app, or BMS', 'Silent, smooth operation'],
           },
-          gallery: [sg5600Gallery],
+          gallery: [sg5600Mechanism, sg5600Gallery, sg5600Office],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/curtain-track-systems/electric/5600/',
         },
         {
@@ -75,6 +107,7 @@ export const silentGliss: BrandCatalog = {
             en: ['Length up to 9 m, fabric weight up to 30 kg', 'Control: remote, Move app, or BMS', 'Compact profile'],
           },
           image: sg5100Img,
+          gallery: [sg5600Mechanism],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/curtain-track-systems/electric/5100/',
         },
         {
@@ -96,7 +129,7 @@ export const silentGliss: BrandCatalog = {
     },
     {
       slug: 'metropole',
-      image: metropoleImg,
+      image: metropoleHardware,
       name: { ru: 'Карниз-штанга Metropole', hy: 'Metropole կարնիզ-ձող', en: 'Metropole Curtain Pole' },
       intro: {
         ru: 'Декоративная штанга классической формы со скрытым внутри бесшумным ходовым каналом — шторы держатся на фирменных двухкомпонентных бегунках без колец.',
@@ -117,6 +150,8 @@ export const silentGliss: BrandCatalog = {
             hy: ['Ձողի չորս ձև և հատված', 'Ծածկույթ՝ Charcoal, Antique Bronze, Silver, Black և այլն', 'Ընտրովի դեկորատիվ ծայրադիրներ'],
             en: ['Four pole shapes and profiles', 'Finishes: Charcoal, Antique Bronze, Silver, Black and more', 'Choice of decorative finials'],
           },
+          image: metropoleHardware,
+          gallery: [metropoleImg, metropoleBay],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/metropole/hand/7610/',
         },
         {
@@ -132,6 +167,8 @@ export const silentGliss: BrandCatalog = {
             hy: ['Արտադրություն անհատական չափերով, ծալվում է', 'Համատեղելի է բոլոր ծածկույթների և ծայրադիրների հետ', 'Ավելի տնտեսողական է, քան մոտորացված տարբերակը'],
             en: ['Made to measure, bendable', 'Compatible with all finishes and finials', 'More economical than the motorised version'],
           },
+          image: metropoleBay,
+          gallery: [metropoleLodge, metropoleImg],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/metropole/',
         },
       ],
@@ -159,6 +196,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Ծալվում է ցանկացած տարածքի պլանավորման համար', 'Փոշուց և մանրէներից պաշտպանիչ շերտ', 'Ձեռքի կառավարում, արտադրություն ըստ չափերի'],
             en: ['Bendable to any room layout', 'Dust-cover strip with antimicrobial properties', 'Hand-operated, made to measure'],
           },
+          gallery: [cubicleOffice, cubicleDetail],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/cubicle-room-divider/hand/6100/',
         },
       ],
@@ -186,6 +224,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Մեկնարկ՝ էլեկտրական, մարտկոցային, շղթայական, զսպանակային', 'Ֆասադ՝ կլոր կամ քառակուսի', 'Գործվածքներ՝ Colorama, Versascreen, Multiscreen'],
             en: ['Drive: electric, battery, chain or spring', 'Fascia: round or square', 'Fabrics: Colorama, Versascreen, Multiscreen'],
           },
+          gallery: [rollerBlindFascia, rollerBlindDetail],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/roller-blind-systems/roller-blind-systems/electric/4960/',
         },
         {
@@ -202,6 +241,7 @@ export const silentGliss: BrandCatalog = {
             en: ['Total room darkening', 'Recess or surface mounting', 'For bedrooms and residential interiors'],
           },
           image: dimoutNoxImg,
+          gallery: [dimoutNoxB, dimoutMechanism],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/roller-blind-systems/dim-out-blind-systems/',
         },
         {
@@ -218,6 +258,7 @@ export const silentGliss: BrandCatalog = {
             en: ['Designed for medical offices', 'Precise darkening with no edge gaps', 'Compatible with standard drive options'],
           },
           image: dimoutMoonImg,
+          gallery: [dimoutMoonB, dimoutGeneric],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/roller-blind-systems/dim-out-blind-systems/',
         },
       ],
@@ -245,6 +286,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 6 մ, բարձրությունը՝ մինչև 4 մ', 'Կառավարում՝ կառավարիչ, Move հավելված', 'Ուղիղ կամ կոր ռելսեր'],
             en: ['Width up to 6 m, height up to 4 m', 'Control: remote, Move app', 'Straight or curved tracks'],
           },
+          gallery: [panelGlideDetail],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/panel-glide-systems/panel/electric/2750/',
         },
         {
@@ -261,6 +303,7 @@ export const silentGliss: BrandCatalog = {
             en: ['Manual draw-rod control', 'Straight or curved tracks', 'As a window treatment or room divider'],
           },
           image: panelHandImg,
+          gallery: [panelHandB, panelHandC],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/panel-glide-systems/panel/hand-draw-rod/',
         },
       ],
@@ -288,6 +331,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Մոտորացված մեկնարկ', 'Colorama գործվածք և այլ կոլեկցիաներ', 'Կառավարում Move հավելվածով'],
             en: ['Motorised drive', 'Colorama fabric and other collections', 'Move app control'],
           },
+          gallery: [roman2360B, roman2360C, roman2360D],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/roman-blind-systems/electric/2360/',
         },
         {
@@ -347,6 +391,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Էլեկտրական կամ շղթայական կառավարում', 'Vertical Wave և 3D Vertical Wave դիզայն', 'Colorama 2, Multi Visio գործվածքներ'],
             en: ['Electric or chain control', 'Vertical Wave and 3D Vertical Wave design', 'Colorama 2, Multi Visio fabrics'],
           },
+          gallery: [vertical2960B, vertical2960C, vertical2960D],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/vertical-blind-systems/electric/2960/',
         },
         {
@@ -363,6 +408,7 @@ export const silentGliss: BrandCatalog = {
             en: ['Electric or chain control', 'Palisade Revive, Multi Visio fabrics', 'Suited to large glazed openings'],
           },
           image: vertical2910Img,
+          gallery: [vertical2910B, vertical2910C],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/vertical-blind-systems/electric/2910/',
         },
       ],
@@ -447,6 +493,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Առավելագույնը 3600×3600 մմ', 'Լամելներ՝ ալյումին, կաշի կամ փայտ 50 մմ', 'Էլեկտրական կամ շղթայական կառավարում'],
             en: ['Max 3600×3600 mm', 'Slats: aluminium, leather or 50 mm wood', 'Electric or chain control'],
           },
+          gallery: [venetian8960B, venetian8960C],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/venetian-blind-systems/electric/8960/',
         },
         {
@@ -478,6 +525,7 @@ export const silentGliss: BrandCatalog = {
             en: ['Customisable slats', 'Hand, chain or cord control', 'Wide colour and texture palette'],
           },
           image: venetian8110Img,
+          gallery: [venetian8110B, venetian8110C],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/venetian-blind-systems/electric/8110/',
         },
       ],
@@ -505,6 +553,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Առավելագույնը 4000×6500 մմ', 'Տեղադրում ցանկացած թեքության անկյան տակ', 'Կառավարում՝ կառավարիչ կամ Move հավելված'],
             en: ['Max 4000×6500 mm', 'Mounting at any tilt angle', 'Control: remote or Move app'],
           },
+          gallery: [skylight8600B, skylight8600C],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/skylight-shading-systems/electric/8600/',
         },
         {
@@ -521,6 +570,7 @@ export const silentGliss: BrandCatalog = {
             en: ['Max 3000×6000 mm, weight up to 25 kg', 'Control: remote, Move app', 'For atriums and conservatories'],
           },
           image: skylight2195Img,
+          gallery: [skylight2195B, skylight2195C],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/skylight-shading-systems/electric/2195/',
         },
         {

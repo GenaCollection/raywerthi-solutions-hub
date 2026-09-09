@@ -4,30 +4,43 @@ import hellaLogo from '@/assets/brands/hella-logo.svg';
 import raffstorenImg from '@/assets/products/hella/raffstoren-arb80.png';
 import raffstorenArb80Hires from '@/assets/products/hella/raffstoren-arb80-hires.png';
 import raffstorenAr92Img from '@/assets/products/hella/raffstoren-ar92.png';
+import af80Img from '@/assets/products/hella/af80.png';
 import rollladenImg from '@/assets/products/hella/rollladen-vorbau.png';
+import novaVorbauImg from '@/assets/products/hella/nova-vorbau.png';
+import solarrollladenImg from '@/assets/products/hella/solarrollladen.png';
+import sicherheitsrollladenImg from '@/assets/products/hella/sicherheitsrollladen.png';
+import vorbauProtectImg from '@/assets/products/hella/vorbau-protect.png';
 import schachtmarkiseImg from '@/assets/products/hella/senkrecht-schachtmarkise.png';
 import sm101Img from '@/assets/products/hella/senkrecht-sm101.png';
 import putzmarkiseImg from '@/assets/products/hella/senkrecht-putzmarkise.png';
 import pan7040Img from '@/assets/products/hella/markisen-pan7040.png';
+import pan7040Hero from '@/assets/products/hella/pan7040.png';
+import pan7040B from '@/assets/products/hella/pan7040-b.png';
 import viva7040Img from '@/assets/products/hella/viva7040.png';
 import areia7040Img from '@/assets/products/hella/areia7040.png';
 import eleganzaImg from '@/assets/products/hella/eleganza.png';
+import eleganzaProtectImg from '@/assets/products/hella/eleganza-protect.png';
 import venturImg from '@/assets/products/hella/terrassendach-ventur.png';
 import venturOneSideImg from '@/assets/products/hella/ventur-one-side.png';
 import venturSunImg from '@/assets/products/hella/ventur-sun.png';
 import soleyaAufglasImg from '@/assets/products/hella/soleya-aufglas.png';
 import solanyaProtectImg from '@/assets/products/hella/solanya-protect.png';
 import windschutzImg from '@/assets/products/hella/windsichtschutz.png';
+import windschutzHero from '@/assets/products/hella/windschutz-hero.png';
+import windschutzB from '@/assets/products/hella/windschutz-b.png';
 import jumbrellaImg from '@/assets/products/hella/jumbrella.png';
 import magnumImg from '@/assets/products/hella/magnum.png';
 import square4sunImg from '@/assets/products/hella/square4sun-cross.png';
 import ispl18Img from '@/assets/products/hella/insekten-ispl18.png';
+import ispl18Hero from '@/assets/products/hella/ispl18-hero.png';
 import isrImg from '@/assets/products/hella/insekten-isr.png';
 import istImg from '@/assets/products/hella/ist.png';
 import plisseesImg from '@/assets/products/hella/plissees.png';
+import plisseesHero from '@/assets/products/hella/plissees-hero.png';
 import innenrollosImg from '@/assets/products/hella/innenrollos.png';
 import vertikaljalousienImg from '@/assets/products/hella/vertikaljalousien.png';
 import onyxCenterImg from '@/assets/products/hella/onyx-center.png';
+import onyxCenterHero from '@/assets/products/hella/onyx-center-hero.png';
 import onyxConnectorImg from '@/assets/products/hella/onyx-connector.png';
 import onyxTagSunImg from '@/assets/products/hella/onyx-tag-sun.png';
 import onyxWeatherImg from '@/assets/products/hella/onyx-weather.png';
@@ -99,6 +112,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 5000×6200 մմ (20 մ²)', 'Կոր հարթ լամելային պրոֆիլ', 'Համատեղելի է ONYX խելացի տան հետ'],
             en: ['Max 5000×6200 mm (20 m²)', 'Curved flat slat profile', 'Compatible with ONYX Smart Home'],
           },
+          image: af80Img,
           sourceUrl: 'https://www.hella.info/de/produkte/af-80-plus',
         },
       ],
@@ -126,6 +140,7 @@ export const hella: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 3500–4000 մմ', 'Ջերմային ընդմիջում պրոֆիլում', 'Ազատ կրող տեղադրում ճակատին'],
             en: ['Width up to 3500–4000 mm', 'Thermal break in the profile', 'Cantilevered façade mounting'],
           },
+          image: novaVorbauImg,
           sourceUrl: 'https://www.hella.info/de/produkte/vorbaurollladen-stranggepresst',
         },
         {
@@ -141,6 +156,7 @@ export const hella: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 3500–4000 մմ', 'Արևային վահանակ մարտկոցով', 'Տեղադրում առանց պատերի կտրման'],
             en: ['Width up to 3500–4000 mm', 'Solar panel with battery', 'Installation without wall chasing'],
           },
+          image: solarrollladenImg,
           sourceUrl: 'https://www.hella.info/de/produkte/solarrollladen',
         },
         {
@@ -156,6 +172,7 @@ export const hella: BrandCatalog = {
             hy: ['Լայնությունը՝ մինչև 2500–3000 մմ', 'Ամրապնդված լամելային պրոֆիլ', 'Բարձրացված պաշտպանություն ներխուժումից'],
             en: ['Width up to 2500–3000 mm', 'Reinforced slat profile', 'Enhanced burglary resistance'],
           },
+          image: sicherheitsrollladenImg,
           sourceUrl: 'https://www.hella.info/de/produkte/sicherheitsrollladen-stranggepresst',
         },
       ],
@@ -183,6 +200,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 6000×6000 մմ (18 մ²)', 'Հինգ տուփի ձև՝ Q85–Q150, E100–E130, R130', 'Համատեղելի է elero և Somfy-ի հետ'],
             en: ['Max 6000×6000 mm (18 m²)', 'Five box shapes: Q85–Q150, E100–E130, R130', 'Compatible with elero and Somfy'],
           },
+          image: vorbauProtectImg,
           sourceUrl: 'https://www.hella.info/de/vorbau-markise-protect-q85/q100/q115/q130/q150',
         },
         {
@@ -258,6 +276,8 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 7000×4000 մմ (նվազագույն լայնությունը՝ 2170 մմ)', 'LED լուսավորություն հոդակապային թևերում', 'Համատեղելի է պատի ինֆրակարմիր ջեռուցիչների հետ'],
             en: ['Max 7000×4000 mm (min. width 2170 mm)', 'LED lighting in the articulated arms', 'Compatible with wall-mounted infrared heaters'],
           },
+          image: pan7040Hero,
+          gallery: [pan7040B],
           sourceUrl: 'https://www.hella.info/de/produkte/pan-7040',
         },
         {
@@ -317,6 +337,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 6000×5500 մմ (մինչև 30 մ²)', 'Կասետա՝ 253×156 մմ', 'Գործվածքի կարգավորվող թեքության անկյուն'],
             en: ['Max 6000×5500 mm (up to 30 m²)', 'Cassette 253×156 mm', 'Adjustable fabric tilt angle'],
           },
+          image: eleganzaImg,
           sourceUrl: 'https://www.hella.info/de/produkte/eleganza',
         },
         {
@@ -332,6 +353,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 6000×5500 մմ (մինչև 26 մ²)', 'Գործվածքի կողային ուղղորդում', 'Հավելյալ Varioplus ուղղահայաց էկրան'],
             en: ['Max 6000×5500 mm (up to 26 m²)', 'Side-guided fabric', 'Optional Varioplus vertical closure screen'],
           },
+          image: eleganzaProtectImg,
           sourceUrl: 'https://www.hella.info/de/produkt/eleganza-protect',
         },
       ],
@@ -403,6 +425,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 6000×6500 մմ (30 մ²)', 'Տեղադրում ապակու վրայից', 'Ձեռքի կամ մոտորացված մեկնարկ'],
             en: ['Max 6000×6500 mm (30 m²)', 'Mounted above the glazing', 'Manual or motorised drive'],
           },
+          image: soleyaAufglasImg,
           sourceUrl: 'https://www.hella.info/de/produkte/soleya-aufglasmarkise',
         },
         {
@@ -446,6 +469,8 @@ export const hella: BrandCatalog = {
             hy: ['Բարձրությունը՝ 1300 կամ 1900 մմ, լայնությունը՝ մինչև 4000 մմ', 'Կարկաս՝ սպիտակ կամ արծաթագույն', 'Գործվածք՝ ակրիլ կամ պոլիեսթեր, մարկիզային'],
             en: ['Height 1300 or 1900 mm, width up to 4000 mm', 'Frame: white or silver', 'Fabric: acrylic or polyester awning textile'],
           },
+          image: windschutzHero,
+          gallery: [windschutzB],
           sourceUrl: 'https://www.hella.info/de/produkte/wind-und-sichtschutz',
         },
       ],
@@ -533,6 +558,7 @@ export const hella: BrandCatalog = {
             hy: ['Առավելագույնը 2200×2850 մմ', 'Կոմպակտ ծալում կողքին', 'Ամբողջ տարվա տեղադրում'],
             en: ['Max 2200×2850 mm', 'Compact side-folding stack', 'Year-round installation'],
           },
+          image: ispl18Hero,
           sourceUrl: 'https://www.hella.info/de/produkte/insektenschutzplissee-ispl18',
         },
         {
@@ -570,30 +596,15 @@ export const hella: BrandCatalog = {
       ],
     },
     {
-      slug: 'innenbeschattung',
-      image: plisseesImg,
-      name: { ru: 'Интерьерные жалюзи и рулонные шторы', hy: 'Ինտերիերի ժալյուզիներ և ռուլոնային վարագույրներ', en: 'Interior Blinds & Roller Shades' },
+      slug: 'innenrollos',
+      image: innenrollosImg,
+      name: { ru: 'Внутренние рулонные шторы', hy: 'Ինտերիերի ռուլոնային վարագույրներ', en: 'Interior Roller Blinds' },
       intro: {
-        ru: 'Четыре линейки для внутреннего затенения: жалюзи, плиссе Duette, рулонные шторы и вертикальные жалюзи — включая эко-коллекцию из переработанного океанического пластика.',
-        hy: 'Չորս գիծ ինտերիերի ստվերապատման համար՝ ժալյուզիներ, Duette պլիսե, ռուլոնային վարագույրներ և ուղղահայաց ժալյուզիներ, այդ թվում՝ վերամշակված օվկիանոսային պլաստիկից էկո-կոլեկցիա։',
-        en: 'Four product lines for interior shading: venetian blinds, Duette pleated blinds, roller shades and vertical blinds — including an eco-collection made from recycled ocean plastic.',
+        ru: 'Рулонные шторы с боковыми направляющими для точного контроля света — включая эко-коллекцию из переработанного океанического пластика и версии для мансардных окон.',
+        hy: 'Ռուլոնային վարագույրներ կողային ուղղորդիչներով՝ լույսի ճշգրիտ վերահսկման համար, այդ թվում՝ վերամշակված օվկիանոսային պլաստիկից էկո-կոլեկցիա և թեքածածկ պատուհանների տարբերակներ։',
+        en: 'Roller shades with side guide rails for precise light control — including an eco-collection made from recycled ocean plastic and versions for skylight windows.',
       },
       models: [
-        {
-          id: 'plissees',
-          name: 'Plissees / Duette',
-          description: {
-            ru: 'Плиссе для нестандартных проёмов, включая сотовую (Duette) конструкцию с воздушными камерами для теплоизоляции.',
-            hy: 'Պլիսե ոչ ստանդարտ բացվածքների համար, այդ թվում՝ Duette փեթակաձև կոնստրուկցիա օդային խցիկներով՝ ջերմամեկուսացման համար։',
-            en: 'Pleated blinds for irregular openings, including the Duette honeycomb construction with air chambers for insulation.',
-          },
-          specs: {
-            ru: ['Несколько степеней затемнения', 'Огнестойкие и моющиеся ткани', 'Duette — сотовая конструкция с воздушной прослойкой'],
-            hy: ['Խավարեցման մի քանի աստիճան', 'Կրակակայուն և լվացվող գործվածքներ', 'Duette՝ փեթակաձև կոնստրուկցիա օդային շերտով'],
-            en: ['Multiple black-out levels', 'Fire-resistant, washable fabrics', 'Duette — honeycomb construction with air layer'],
-          },
-          sourceUrl: 'https://www.hella.info/de/produkte/plissees-1',
-        },
         {
           id: 'innenrollos',
           name: 'Innenrollos',
@@ -609,6 +620,34 @@ export const hella: BrandCatalog = {
           },
           image: innenrollosImg,
           sourceUrl: 'https://www.hella.info/de/produkte/innenrollos',
+        },
+      ],
+    },
+    {
+      slug: 'innenjalousien',
+      image: plisseesImg,
+      name: { ru: 'Интерьерные жалюзи и плиссе', hy: 'Ինտերիերի ժալյուզիներ և պլիսե', en: 'Interior Blinds & Pleated Shades' },
+      intro: {
+        ru: 'Плиссе Duette и вертикальные жалюзи для внутреннего затенения — точный контроль света в любом помещении.',
+        hy: 'Duette պլիսե և ուղղահայաց ժալյուզիներ ինտերիերի ստվերապատման համար՝ լույսի ճշգրիտ վերահսկում ցանկացած սենյակում։',
+        en: 'Duette pleated blinds and vertical louvres for interior shading — precise light control in any room.',
+      },
+      models: [
+        {
+          id: 'plissees',
+          name: 'Plissees / Duette',
+          description: {
+            ru: 'Плиссе для нестандартных проёмов, включая сотовую (Duette) конструкцию с воздушными камерами для теплоизоляции.',
+            hy: 'Պլիսե ոչ ստանդարտ բացվածքների համար, այդ թվում՝ Duette փեթակաձև կոնստրուկցիա օդային խցիկներով՝ ջերմամեկուսացման համար։',
+            en: 'Pleated blinds for irregular openings, including the Duette honeycomb construction with air chambers for insulation.',
+          },
+          specs: {
+            ru: ['Несколько степеней затемнения', 'Огнестойкие и моющиеся ткани', 'Duette — сотовая конструкция с воздушной прослойкой'],
+            hy: ['Խավարեցման մի քանի աստիճան', 'Կրակակայուն և լվացվող գործվածքներ', 'Duette՝ փեթակաձև կոնստրուկցիա օդային շերտով'],
+            en: ['Multiple black-out levels', 'Fire-resistant, washable fabrics', 'Duette — honeycomb construction with air layer'],
+          },
+          image: plisseesHero,
+          sourceUrl: 'https://www.hella.info/de/produkte/plissees-1',
         },
         {
           id: 'vertikaljalousien',
@@ -651,6 +690,7 @@ export const hella: BrandCatalog = {
             hy: ['Շուկայում ամենակոմպակտ հանգույցներից մեկը', 'Կապում է հավելվածն ու ռադիոսարքերը', 'Աշխատում է HELLA-ի բոլոր մոտորացված համակարգերի հետ'],
             en: ['One of the smallest hubs on the market', 'Bridges the app and radio devices', 'Works with all HELLA motorised systems'],
           },
+          image: onyxCenterHero,
           sourceUrl: 'https://www.hella.info/de/produkte/onyx-center',
         },
         {
