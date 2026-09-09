@@ -70,6 +70,14 @@ import square4sunImg from '@/assets/products/hella/square4sun-cross.png';
 import square4sunB from '@/assets/products/hella/square4sun-b.png';
 import ispl18Img from '@/assets/products/hella/insekten-ispl18.png';
 import ispl18Hero from '@/assets/products/hella/ispl18-hero.png';
+import isdImg from '@/assets/products/hella/isd.png';
+import pendelrahmenPtImg from '@/assets/products/hella/pendelrahmen-pt.png';
+import is13Img from '@/assets/products/hella/is13.png';
+import lichtschachtabdeckungImg from '@/assets/products/hella/lichtschachtabdeckung.png';
+import absturzGlasImg from '@/assets/products/hella/absturz-glas.png';
+import absturzGitterImg from '@/assets/products/hella/absturz-gitter.png';
+import absturzPlatteImg from '@/assets/products/hella/absturz-platte.png';
+import absturzStangeImg from '@/assets/products/hella/absturz-stange.png';
 import isrImg from '@/assets/products/hella/insekten-isr.png';
 import istImg from '@/assets/products/hella/ist.png';
 import innenjalousienImg from '@/assets/products/hella/innenjalousien.png';
@@ -82,6 +90,10 @@ import onyxCenterImg from '@/assets/products/hella/onyx-center.png';
 import onyxCenterHero from '@/assets/products/hella/onyx-center-hero.png';
 import onyxConnectorImg from '@/assets/products/hella/onyx-connector.png';
 import onyxTagSunImg from '@/assets/products/hella/onyx-tag-sun.png';
+import onyxTagWindImg from '@/assets/products/hella/onyx-tag-wind.png';
+import onyxTagTemperatureImg from '@/assets/products/hella/onyx-tag-temperature.png';
+import onyxNodeImg from '@/assets/products/hella/onyx-node.png';
+import onyxSilentMotorImg from '@/assets/products/hella/onyx-silent-motor.png';
 import onyxWeatherImg from '@/assets/products/hella/onyx-weather.png';
 import onyxAppImg from '@/assets/products/hella/onyx-app.jpg';
 import onyxAppB from '@/assets/products/hella/onyx-app-b.png';
@@ -1062,6 +1074,150 @@ export const hella: BrandCatalog = {
           image: istImg,
           sourceUrl: 'https://www.hella.info/de/produkte/ist',
         },
+        {
+          id: 'isd',
+          name: 'ISD — Drehrahmen',
+          description: {
+            ru: 'Лёгкая рама, открывающаяся в обе стороны — точно подходит под стандартные проёмы балконных и террасных дверей, монтируется за несколько минут.',
+            hy: 'Թեթև շրջանակ, որը բացվում է երկու ուղղություններով՝ ճշգրիտ տեղավորվում է բալկոնի և պատշգամբի դռների ստանդարտ բացվածքներում, տեղադրվում է մի քանի րոպեում։',
+            en: 'A lightweight frame that opens in both directions — fits precisely into standard balcony and patio door openings, installed in just a few minutes.',
+          },
+          specs: {
+            ru: ['Максимум 3000×2850 мм (7 м²)', 'Одно- или двустворчатый', 'Круговой щёточный уплотнитель'],
+            hy: ['Առավելագույնը 3000×2850 մմ (7 մ²)', 'Մեկ կամ երկու թևով', 'Շրջանաձև խոզանակավոր կնիք'],
+            en: ['Max 3000×2850 mm (7 m²)', 'Single or double-leaf', 'All-round brush seal'],
+          },
+          image: isdImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/isd',
+        },
+        {
+          id: 'pendelrahmen-pt',
+          name: 'Pendelrahmen PT',
+          description: {
+            ru: 'Маятниковая рама, открывающаяся в обе стороны — нижняя пластина для лёгкого нажатия ногой и встроенный доводчик, автоматически закрывающий дверь.',
+            hy: 'Ճոճանակավոր շրջանակ, որը բացվում է երկու կողմ՝ ստորին ափսեով՝ ոտքով հեշտ բացելու համար և ներկառուցված ինքնափակիչով, որն ավտոմատ փակում է դուռը։',
+            en: 'A pendulum frame that swings open in both directions — a kick plate for easy opening and a built-in spring closer that shuts the door automatically.',
+          },
+          specs: {
+            ru: ['Максимум 2400×2600 мм', 'Автоматическое закрывание пружинным доводчиком', 'Опциональная дверца для животных'],
+            hy: ['Առավելագույնը 2400×2600 մմ', 'Ավտոմատ փակում զսպանակային ինքնափակիչով', 'Հավելյալ դռնակ ընտանի կենդանիների համար'],
+            en: ['Max 2400×2600 mm', 'Automatic closing via a spring closer', 'Optional integrated pet flap'],
+          },
+          image: pendelrahmenPtImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/pendelrahmen-pt',
+        },
+        {
+          id: 'is13',
+          name: 'Insektenschutzrollo IS13',
+          description: {
+            ru: 'Самая полная защита в линейке HELLA — щётки встроены в направляющие, кассету и концевую планку. Пружинный привод с тормозом раскрывает и убирает сетку быстро, но без рывков.',
+            hy: 'HELLA-ի ամենաամբողջական պաշտպանությունը՝ խոզանակները ներկառուցված են ուղղորդիչներում, կասետայում և վերջնային ձողում։ Զսպանակային մեկնարկն արգելակով արագ, բայց առանց ցնցումների բացում ու հեռացնում է ցանցը։',
+            en: 'The most complete protection in HELLA\'s range — brush seals are built into the guide rails, cassette and end bar. A spring drive with a brake opens and retracts the mesh quickly but without snapping back.',
+          },
+          specs: {
+            ru: ['Максимум 2200×2800 мм (4 м²)', 'Компактный короб 43×52 мм', 'Четвертькруглый или квадратный профиль короба'],
+            hy: ['Առավելագույնը 2200×2800 մմ (4 մ²)', 'Կոմպակտ տուփ 43×52 մմ', 'Քառորդ-կլոր կամ քառակուսի տուփի պրոֆիլ'],
+            en: ['Max 2200×2800 mm (4 m²)', 'Compact 43×52 mm box', 'Quarter-round or square box profile'],
+          },
+          image: is13Img,
+          sourceUrl: 'https://www.hella.info/de/produkte/insektenschutzrollo-is13',
+        },
+        {
+          id: 'lichtschachtabdeckung',
+          name: 'Lichtschachtabdeckung',
+          description: {
+            ru: 'Сетка из нержавеющей стали защищает приямки от листвы, грызунов и насекомых, пропуская свет и воздух — доступна заподлицо, с боковой щёткой, уголком L или с бортиком.',
+            hy: 'Չժանգոտվող պողպատե ցանցը պաշտպանում է վերնախորշերը տերևներից, կրծողներից և միջատներից՝ թողնելով լույս ու օդ. հասանելի է հարթ, կողային խոզանակով, L-անկյունով կամ եզրագծով։',
+            en: 'A stainless-steel mesh protects light wells from leaves, rodents and insects while letting light and air through — available flush, with a side brush, an L-angle, or with an upstand.',
+          },
+          specs: {
+            ru: ['Максимум 2000×1300 мм', 'Сетка из нержавеющей стали', 'Варианты: заподлицо, со щёткой, L-уголок, с бортиком'],
+            hy: ['Առավելագույնը 2000×1300 մմ', 'Չժանգոտվող պողպատե ցանց', 'Տարբերակներ՝ հարթ, խոզանակով, L-անկյուն, եզրագծով'],
+            en: ['Max 2000×1300 mm', 'Stainless-steel mesh', 'Variants: flush, with brush, L-angle, with upstand'],
+          },
+          image: lichtschachtabdeckungImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/lichtschachtabdeckung',
+        },
+      ],
+    },
+    {
+      slug: 'absturzsicherungen',
+      image: absturzGitterImg,
+      name: {
+        ru: 'Защита от падения из окна',
+        hy: 'Պատուհանից անկումից պաշտպանություն',
+        en: 'Window Fall Protection',
+      },
+      intro: {
+        ru: 'Системы безопасности, интегрируемые прямо в оконный проём вместе с жалюзи, рольставнями или вертикальной маркизой — от прозрачного стекла до декоративной перфорированной панели.',
+        hy: 'Անվտանգության համակարգեր, որոնք ինտեգրվում են անմիջապես պատուհանի բացվածքի մեջ՝ ժալյուզիների, ռոլետների կամ ուղղահայաց մարկիզայի հետ միասին. թափանցիկ ապակուց մինչև դեկորատիվ պերֆորացված վահանակ։',
+        en: 'Safety systems integrated directly into the window opening alongside blinds, roller shutters or a vertical awning — from clear glass to a decorative perforated panel.',
+      },
+      models: [
+        {
+          id: 'absturz-glas',
+          name: 'Absturzsicherung Glas',
+          description: {
+            ru: 'Прозрачная стеклянная панель — сочетает безопасность с современным дизайном, все крепления скрыты. Подходит для пластиковых, деревянных, дерево-алюминиевых и алюминиевых окон.',
+            hy: 'Թափանցիկ ապակե վահանակ՝ համատեղում է անվտանգությունը ժամանակակից դիզայնի հետ, բոլոր ամրացումները թաքնված են։ Հարմար է պլաստմասե, փայտե, փայտ-ալյումինե և ալյումինե պատուհանների համար։',
+            en: 'A transparent glass panel — combines safety with a modern look, with all fixings concealed. Suits PVC, timber, timber-aluminium and aluminium windows.',
+          },
+          specs: {
+            ru: ['Максимум 3000 мм ширина', 'Полностью скрытый крепёж', 'Не закрывает вид из окна'],
+            hy: ['Առավելագույնը 3000 մմ լայնություն', 'Ամբողջովին թաքնված ամրացում', 'Չի փակում պատուհանից տեսադաշտը'],
+            en: ['Max 3000 mm width', 'Fully concealed fixings', 'Does not block the view through the window'],
+          },
+          image: absturzGlasImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/glas',
+        },
+        {
+          id: 'absturz-gitter',
+          name: 'Absturzsicherung Gitter',
+          description: {
+            ru: 'Классическая решётка в духе французского балкона — алюминиевый профиль в любом цвете или более прочная стальная конструкция под заказ.',
+            hy: 'Դասական ցանց ֆրանսիական բալկոնի ոգով՝ ալյումինե պրոֆիլ ցանկացած գույնով կամ ավելի ամուր պողպատե կոնստրուկցիա պատվերով։',
+            en: 'A classic grille in the spirit of a French balcony — an aluminium profile in any colour, or a sturdier steel construction to order.',
+          },
+          specs: {
+            ru: ['Максимум 2500 мм ширина', 'Алюминий (экструзия) или сталь', 'Окраска в любой цвет по RAL'],
+            hy: ['Առավելագույնը 2500 մմ լայնություն', 'Ալյումին (էքստրուդացված) կամ պողպատ', 'Ներկում ցանկացած RAL գույնով'],
+            en: ['Max 2500 mm width', 'Aluminium (extruded) or steel', 'Painted in any RAL colour'],
+          },
+          image: absturzGitterImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/gitter',
+        },
+        {
+          id: 'absturz-platte',
+          name: 'Absturzsicherung Platte',
+          description: {
+            ru: 'Алюминиевый лист с перфорацией или индивидуальным узором — свобода дизайна без необходимости в дополнительном несущем поручне.',
+            hy: 'Ալյումինե թերթ ծակոտկեն կամ անհատական նախշով՝ դիզայնի ազատություն՝ առանց լրացուցիչ բեռնակիր բռնաձող պահանջելու։',
+            en: 'A perforated or custom-patterned aluminium sheet — creative freedom in the design, with no separate load-bearing handrail required.',
+          },
+          specs: {
+            ru: ['Максимум 2500 мм ширина', 'Перфорация, индивидуальный узор или сквозные мотивы', 'Не требует отдельного несущего поручня'],
+            hy: ['Առավելագույնը 2500 մմ լայնություն', 'Ծակոտկեն, անհատական նախշ կամ շարունակական մոտիվներ', 'Չի պահանջում առանձին բեռնակիր բռնաձող'],
+            en: ['Max 2500 mm width', 'Perforated, custom-patterned or continuous motifs', 'No separate load-bearing handrail needed'],
+          },
+          image: absturzPlatteImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/platte',
+        },
+        {
+          id: 'absturz-stange',
+          name: 'Absturzsicherung Stange',
+          description: {
+            ru: 'Лаконичная штанга из круглой алюминиевой трубы — решение для невысоких подоконников в новом строительстве или при реновации, с расчётом на общественные и частные объекты.',
+            hy: 'Հակիրճ ձող կլոր ալյումինե խողովակից՝ լուծում ցածր լուսամուտամարգերի համար նոր շինարարությունում կամ վերանորոգման ժամանակ, հաշվարկված հանրային և մասնավոր օբյեկտների համար։',
+            en: 'A simple bar made from round aluminium tube — a solution for low sill heights in new builds or renovations, engineered for both public and private buildings.',
+          },
+          specs: {
+            ru: ['Максимум 2400 мм ширина', 'Круглая алюминиевая труба, любой цвет', 'Типовой расчёт для общественных и частных объектов'],
+            hy: ['Առավելագույնը 2400 մմ լայնություն', 'Կլոր ալյումինե խողովակ, ցանկացած գույն', 'Տիպային հաշվարկ հանրային և մասնավոր օբյեկտների համար'],
+            en: ['Max 2400 mm width', 'Round aluminium tube, any colour', 'Standard structural calculation for public and private buildings'],
+          },
+          image: absturzStangeImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/stange',
+        },
       ],
     },
     {
@@ -1230,19 +1386,83 @@ export const hella: BrandCatalog = {
         },
         {
           id: 'onyx-tag-sun',
-          name: 'ONYX.TAG sun / wind',
+          name: 'ONYX.TAG sun',
           description: {
-            ru: 'Беспроводные датчики на батарейках с магнитным креплением — устанавливаются без электромонтажа.',
-            hy: 'Անլար, մարտկոցով սենսորներ մագնիսական ամրացմամբ՝ տեղադրվում են առանց էլեկտրամոնտաժի։',
-            en: 'Wireless, battery-powered sensors with magnetic mounting — installed without any electrical work.',
+            ru: 'Беспроводной датчик солнца и яркости на батарейке с магнитным креплением — устанавливается без электромонтажа.',
+            hy: 'Անլար, մարտկոցով արևի և պայծառության սենսոր մագնիսական ամրացմամբ՝ տեղադրվում է առանց էլեկտրամոնտաժի։',
+            en: 'A wireless, battery-powered sun and brightness sensor with magnetic mounting — installed without any electrical work.',
           },
           specs: {
-            ru: ['Питание от батареи', 'Магнитное крепление без сверления', 'Автоматическая защита при сильном ветре'],
-            hy: ['Մարտկոցով սնուցում', 'Մագնիսական ամրացում առանց հորատման', 'Ինքնաշխատ պաշտպանություն ուժեղ քամու ժամանակ'],
-            en: ['Battery-powered', 'Magnetic mounting, no drilling', 'Automatic protection in strong wind'],
+            ru: ['Питание от батареи', 'Магнитное крепление без сверления', 'Автоматика по яркости солнца'],
+            hy: ['Մարտկոցով սնուցում', 'Մագնիսական ամրացում առանց հորատման', 'Ավտոմատացում ըստ արևի պայծառության'],
+            en: ['Battery-powered', 'Magnetic mounting, no drilling', 'Automation based on sun brightness'],
           },
           image: onyxTagSunImg,
           sourceUrl: 'https://www.hella.info/de/produkte/onyx-tag-sun',
+        },
+        {
+          id: 'onyx-tag-wind',
+          name: 'ONYX.TAG wind',
+          description: {
+            ru: '3D-датчик ветра размером всего 40×40 мм — самый компактный на рынке, измеряет вибрацию маркизы и автоматически убирает её при превышении заданного порога.',
+            hy: 'Ընդամենը 40×40 մմ 3D քամու սենսոր՝ շուկայում ամենակոմպակտը, չափում է մարկիզայի թրթռումը և ավտոմատ հեռացնում է այն սահմանված շեմը գերազանցելիս։',
+            en: 'A 3D wind sensor just 40×40 mm — the most compact on the market, it measures vibration on the awning and automatically retracts it once a set threshold is exceeded.',
+          },
+          specs: {
+            ru: ['Размер 40×40 мм', 'Магнитное крепление на монтажную пластину', 'Батарея CR2032, лёгкая замена'],
+            hy: ['Չափսը՝ 40×40 մմ', 'Մագնիսական ամրացում տեղադրման ափսեին', 'CR2032 մարտկոց, հեշտ փոխարինում'],
+            en: ['Size 40×40 mm', 'Magnetic mounting to a fixing plate', 'CR2032 battery, easy replacement'],
+          },
+          image: onyxTagWindImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/onyx-tag-wind',
+        },
+        {
+          id: 'onyx-tag-temperature',
+          name: 'ONYX.TAG temperature',
+          description: {
+            ru: 'Датчик температуры и влажности — контролирует климат внутри помещения и может отслеживать заморозки снаружи, управляя шторами по заданным порогам.',
+            hy: 'Ջերմաստիճանի և խոնավության սենսոր՝ վերահսկում է սենյակի միկրոկլիման և կարող է հետևել դրսի սառնամանիքին՝ կառավարելով վարագույրները սահմանված շեմերով։',
+            en: 'A temperature and humidity sensor — monitors indoor climate and can track outdoor frost, controlling shading according to set thresholds.',
+          },
+          specs: {
+            ru: ['Диапазон измерения от −20 до +60 °C', 'Магнитное крепление на монтажную пластину', 'Питание от батареи'],
+            hy: ['Չափման միջակայքը՝ −20-ից մինչև +60 °C', 'Մագնիսական ամրացում տեղադրման ափսեին', 'Մարտկոցով սնուցում'],
+            en: ['Measurement range −20 to +60 °C', 'Magnetic mounting to a fixing plate', 'Battery-powered'],
+          },
+          image: onyxTagTemperatureImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/onyx-tag-temperature',
+        },
+        {
+          id: 'onyx-node',
+          name: 'ONYX.NODE',
+          description: {
+            ru: 'Радиоузел, устанавливаемый в подрозетник между питанием и уже смонтированным мотором — превращает любой отдельный привод в умное устройство, сохраняя возможность подключить обычную кнопку.',
+            hy: 'Ռադիո հանգույց, որը տեղադրվում է վարդակի տակ սնուցման և արդեն տեղադրված շարժիչի միջև՝ ցանկացած առանձին շարժիչ դարձնում է խելացի սարք՝ պահպանելով սովորական կոճակ միացնելու հնարավորությունը։',
+            en: 'A radio node installed behind the wall outlet between the power supply and an already-mounted motor — turns any single drive into a smart device while still allowing a standard push-button to be wired in.',
+          },
+          specs: {
+            ru: ['Устанавливается в подрозетник', 'Подходит для нового строительства', 'Совместим с обычной кнопкой управления'],
+            hy: ['Տեղադրվում է վարդակի տակ', 'Հարմար է նոր շինարարության համար', 'Համատեղելի է սովորական կառավարման կոճակի հետ'],
+            en: ['Installed behind the wall outlet', 'Suited to new construction', 'Compatible with a standard control button'],
+          },
+          image: onyxNodeImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/onyx-node',
+        },
+        {
+          id: 'onyx-silent-motor',
+          name: 'ONYX SILENT Motor',
+          description: {
+            ru: 'Трубчатый мотор для рольставен со встроенным радиоприёмником и увеличенной тишиной хода — два режима скорости, включая тихий «шёпот»; при необходимости работает и от обычного проводного выключателя.',
+            hy: 'Ռոլետների խողովակաձև շարժիչ ներկառուցված ռադիոընդունիչով և ավելացված անաղմուկ ընթացքով՝ երկու արագության ռեժիմ, այդ թվում՝ հանգիստ «շշուկ». անհրաժեշտության դեպքում աշխատում է նաև սովորական լարային անջատիչից։',
+            en: 'A tubular motor for roller shutters with a built-in radio receiver and exceptionally quiet running — two speed modes including a quiet "whisper" setting, and it also works from a standard wired switch if no radio control is needed.',
+          },
+          specs: {
+            ru: ['Plug & Play с радиоприёмником', 'Два режима скорости, включая тихий', 'Совместим с обычными проводными выключателями'],
+            hy: ['Plug & Play ռադիոընդունիչով', 'Երկու արագության ռեժիմ, այդ թվում՝ հանգիստ', 'Համատեղելի է սովորական լարային անջատիչների հետ'],
+            en: ['Plug & Play with radio receiver', 'Two speed modes including a quiet setting', 'Compatible with standard wired switches'],
+          },
+          image: onyxSilentMotorImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/onyx-r-silent-motor',
         },
       ],
     },
