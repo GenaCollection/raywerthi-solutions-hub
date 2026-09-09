@@ -4,7 +4,14 @@ import hellaLogo from '@/assets/brands/hella-logo.svg';
 import raffstorenImg from '@/assets/products/hella/raffstoren-arb80.png';
 import raffstorenArb80Hires from '@/assets/products/hella/raffstoren-arb80-hires.png';
 import raffstorenAr92Img from '@/assets/products/hella/raffstoren-ar92.png';
+import ar92SImg from '@/assets/products/hella/ar92-s.png';
+import ar63ZImg from '@/assets/products/hella/ar63-z.png';
+import ar63SImg from '@/assets/products/hella/ar63-s.png';
+import af60Img from '@/assets/products/hella/af60.png';
+import af80BaseImg from '@/assets/products/hella/af80-base.png';
 import af80Img from '@/assets/products/hella/af80.png';
+import vorbausystemImg from '@/assets/products/hella/vorbausystem.png';
+import fassadensystemImg from '@/assets/products/hella/fassadensystem.png';
 import rollladenImg from '@/assets/products/hella/rollladen-vorbau.png';
 import novaVorbauImg from '@/assets/products/hella/nova-vorbau.png';
 import novaVorbauB from '@/assets/products/hella/nova-vorbau-b.png';
@@ -78,9 +85,9 @@ export const hella: BrandCatalog = {
       image: raffstorenImg,
       name: { ru: 'Наружные жалюзи', hy: 'Արտաքին ժալյուզիներ', en: 'External Venetian Blinds' },
       intro: {
-        ru: 'Восемь линеек с ламелями шириной от 60 до 92 мм и площадью полотна до 20 м². Фирменная система Omega-перфорации ARB 80 обходится без лестничных лент, сохраняя чистую геометрию фасада.',
-        hy: 'Ութ գիծ՝ 60-ից 92 մմ լամելային լայնությամբ և գործվածքի մակերեսով մինչև 20 մ²։ ARB 80-ի ֆիրմային Omega-պերֆորացիայի համակարգն անց է կացնում առանց աստիճանաձև ժապավենների՝ պահպանելով ճակատի մաքուր երկրաչափությունը։',
-        en: 'Eight product lines with slat widths from 60 to 92 mm and panel areas up to 20 m². The signature Omega-perforation system on the ARB 80 eliminates ladder tapes, keeping the façade geometry clean.',
+        ru: 'Десять линеек с ламелями шириной от 60 до 92 мм и площадью полотна до 20 м², а также накладные и самонесущие короба для их монтажа. Фирменная система Omega-перфорации ARB 80 обходится без лестничных лент, сохраняя чистую геометрию фасада.',
+        hy: 'Տասը գիծ՝ 60-ից 92 մմ լամելային լայնությամբ և գործվածքի մակերեսով մինչև 20 մ², ինչպես նաև վրադիր և ինքնակրող տուփեր դրանց տեղադրման համար։ ARB 80-ի ֆիրմային Omega-պերֆորացիայի համակարգն անց է կացնում առանց աստիճանաձև ժապավենների՝ պահպանելով ճակատի մաքուր երկրաչափությունը։',
+        en: 'Ten product lines with slat widths from 60 to 92 mm and panel areas up to 20 m², plus surface-mount and self-supporting boxes for installing them. The signature Omega-perforation system on the ARB 80 eliminates ladder tapes, keeping the façade geometry clean.',
       },
       models: [
         {
@@ -116,7 +123,7 @@ export const hella: BrandCatalog = {
           sourceUrl: 'https://www.hella.info/de/produkte/ar-92-z-ecn',
         },
         {
-          id: 'af80',
+          id: 'af80-plus',
           name: 'AF 80 Plus',
           description: {
             ru: 'Изогнутая плоская ламель 80 мм для высоких проёмов — увеличенная максимальная высота полотна.',
@@ -130,6 +137,118 @@ export const hella: BrandCatalog = {
           },
           image: af80Img,
           sourceUrl: 'https://www.hella.info/de/produkte/af-80-plus',
+        },
+        {
+          id: 'af80-base',
+          name: 'AF 80',
+          description: {
+            ru: 'Базовая версия с плоскими ламелями 80 мм и фирменной Omega-перфорацией — надёжная тихая ветрозащита и долгий срок службы.',
+            hy: 'Հիմնական տարբերակը՝ 80 մմ հարթ լամելներով և ֆիրմային Omega-պերֆորացիայով՝ հուսալի, անաղմուկ քամուց պաշտպանություն և երկար ծառայության ժամկետ։',
+            en: 'The entry-level version with 80 mm flat slats and the signature Omega perforation — reliable, low-noise wind protection and a long service life.',
+          },
+          specs: {
+            ru: ['Максимум 5000×4000 мм (20 м²)', 'Тросовая или рельсовая направляющая', 'Мотор со встроенными концевыми выключателями'],
+            hy: ['Առավելագույնը 5000×4000 մմ (20 մ²)', 'Ճոպանային կամ ռելսային ուղղորդում', 'Շարժիչը՝ ներկառուցված վերջնային անջատիչներով'],
+            en: ['Max 5000×4000 mm (20 m²)', 'Cable or rail guidance', 'Motor with integrated limit switches'],
+          },
+          image: af80BaseImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/af-80',
+        },
+        {
+          id: 'af60',
+          name: 'AF 60',
+          description: {
+            ru: 'Компактная 60-мм плоская ламель с той же Omega-перфорацией — облегчённый вариант для небольших окон.',
+            hy: 'Կոմպակտ 60 մմ հարթ լամել՝ նույն Omega-պերֆորացիայով՝ թեթևացված տարբերակ փոքր պատուհանների համար։',
+            en: 'A compact 60 mm flat slat with the same Omega perforation — a lighter-weight option for smaller windows.',
+          },
+          specs: {
+            ru: ['Максимум 5000×4000 мм (20 м²)', 'Тросовая или рельсовая направляющая', 'Тихая ветрозащита'],
+            hy: ['Առավելագույնը 5000×4000 մմ (20 մ²)', 'Ճոպանային կամ ռելսային ուղղորդում', 'Անաղմուկ քամուց պաշտպանություն'],
+            en: ['Max 5000×4000 mm (20 m²)', 'Cable or rail guidance', 'Low-noise wind protection'],
+          },
+          image: af60Img,
+          sourceUrl: 'https://www.hella.info/de/produkte/af-60',
+        },
+        {
+          id: 'ar92-s',
+          name: 'AR 92 S ECN',
+          description: {
+            ru: 'Широкая 92-мм ламель S-профиля с системой ECN — запатентованная лента из нержавеющей стали обеспечивает точную укладку пакета и минимальную высоту в поднятом состоянии.',
+            hy: '92 մմ լայն S-պրոֆիլ լամել ECN համակարգով՝ չժանգոտվող պողպատե արտոնագրված ժապավենն ապահովում է փաթեթի ճշգրիտ դասավորություն և նվազագույն բարձրություն բարձրացված վիճակում։',
+            en: 'A wide 92 mm S-profile slat with the ECN system — a patented stainless-steel band gives precise stacking and a minimal package height when raised.',
+          },
+          specs: {
+            ru: ['Максимум 5000×5200 мм (18 м²)', 'Тросовая или рельсовая направляющая', 'Мотор или ручной привод'],
+            hy: ['Առավելագույնը 5000×5200 մմ (18 մ²)', 'Ճոպանային կամ ռելսային ուղղորդում', 'Շարժիչային կամ ձեռքի մեկնարկ'],
+            en: ['Max 5000×5200 mm (18 m²)', 'Cable or rail guidance', 'Motor or manual drive'],
+          },
+          image: ar92SImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/ar-92-s-ecn',
+        },
+        {
+          id: 'ar63-z',
+          name: 'AR 63 Z ECN',
+          description: {
+            ru: 'Изящная узкая ламель 63 мм в Z-профиле с системой ECN — универсальное решение для небольших и средних окон.',
+            hy: 'Նրբագեղ, նեղ 63 մմ լամել Z-պրոֆիլով ECN համակարգով՝ ունիվերսալ լուծում փոքր և միջին պատուհանների համար։',
+            en: 'A slim, narrow 63 mm Z-profile slat with the ECN system — a versatile choice for small and medium windows.',
+          },
+          specs: {
+            ru: ['Максимум 5000×4200 мм (18 м²)', 'Тросовая или рельсовая направляющая', 'Мотор или ручной привод'],
+            hy: ['Առավելագույնը 5000×4200 մմ (18 մ²)', 'Ճոպանային կամ ռելսային ուղղորդում', 'Շարժիչային կամ ձեռքի մեկնարկ'],
+            en: ['Max 5000×4200 mm (18 m²)', 'Cable or rail guidance', 'Motor or manual drive'],
+          },
+          image: ar63ZImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/ar-63-z-ecn',
+        },
+        {
+          id: 'ar63-s',
+          name: 'AR 63 S ECN',
+          description: {
+            ru: 'S-профиль той же узкой 63-мм ламели — оптимален для тонких конструкций стены и последующего монтажа.',
+            hy: 'Նույն նեղ 63 մմ լամելի S-պրոֆիլ տարբերակը՝ օպտիմալ է բարակ պատի կոնստրուկցիաների և հետագա տեղադրման համար։',
+            en: 'The S-profile of the same narrow 63 mm slat — ideal for slim wall constructions and retrofit installation.',
+          },
+          specs: {
+            ru: ['Максимум 5000×4200 мм (18 м²)', 'Тросовая или рельсовая направляющая', 'Оптимален для узких стеновых конструкций'],
+            hy: ['Առավելագույնը 5000×4200 մմ (18 մ²)', 'Ճոպանային կամ ռելսային ուղղորդում', 'Օպտիմալ է բարակ պատերի համար'],
+            en: ['Max 5000×4200 mm (18 m²)', 'Cable or rail guidance', 'Ideal for slim wall constructions'],
+          },
+          image: ar63SImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/ar-63-s-ecn',
+        },
+        {
+          id: 'vorbausystem',
+          name: 'Vorbausystem stranggepresst',
+          description: {
+            ru: 'Экструдированный накладной короб круглой, угловой или квадратной формы — той же кассеты, что и у рольставен HELLA. Жалюзи или раффшторы монтируются на заводе, москитная сетка встраивается прямо в короб.',
+            hy: 'Էքստրուդացված վրադիր տուփ՝ կլոր, անկյունային կամ քառակուսի ձևով, նույն կասետայով ինչ HELLA-ի ռոլետները. ժալյուզին կամ ռաֆշտորը հավաքվում է գործարանում, մոծակների ցանցը ինտեգրվում է անմիջապես տուփի մեջ։',
+            en: 'An extruded surface-mount box in round, angular or square form — the same cassette as HELLA\'s roller shutters. The blind or venetian slat is factory-fitted, and an insect screen can be built directly into the box.',
+          },
+          specs: {
+            ru: ['Максимум 4000 мм ширина (20 м²)', 'Совместим с AF 60/80, ARB 80', 'Возможна интеграция защиты от падения'],
+            hy: ['Առավելագույնը 4000 մմ լայնություն (20 մ²)', 'Համատեղելի է AF 60/80, ARB 80-ի հետ', 'Հնարավոր է անկումից պաշտպանության ինտեգրում'],
+            en: ['Max 4000 mm width (20 m²)', 'Compatible with AF 60/80, ARB 80', 'Fall-protection integration available'],
+          },
+          image: vorbausystemImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/vorbausystem-stranggepresst',
+        },
+        {
+          id: 'fassadensystem',
+          name: 'Fassadensystem freitragend',
+          description: {
+            ru: 'Гнутый алюминиевый короб, надеваемый прямо на направляющие — самонесущий монтаж всего в нескольких точках крепления, без отдельного каркаса.',
+            hy: 'Ծալված ալյումինե տուփ, որը հագցվում է անմիջապես ուղղորդիչների վրա՝ ինքնակրող տեղադրում ընդամենը մի քանի ամրացման կետով, առանց առանձին կարկասի։',
+            en: 'A folded aluminium box that slides directly onto the guide rails — self-supporting installation with only a few fixing points and no separate frame.',
+          },
+          specs: {
+            ru: ['Максимум 4000 мм ширина (20 м²)', 'Совместим с AF 60/80, ARB 80, AR 63/92', 'Быстрый монтаж без отдельного каркаса'],
+            hy: ['Առավելագույնը 4000 մմ լայնություն (20 մ²)', 'Համատեղելի է AF 60/80, ARB 80, AR 63/92-ի հետ', 'Արագ տեղադրում առանց առանձին կարկասի'],
+            en: ['Max 4000 mm width (20 m²)', 'Compatible with AF 60/80, ARB 80, AR 63/92', 'Fast installation with no separate frame'],
+          },
+          image: fassadensystemImg,
+          sourceUrl: 'https://www.hella.info/de/produkte/fassadensystem-freitragend',
         },
       ],
     },
