@@ -36,35 +36,46 @@ import pereaP70 from '@/assets/products/warema/perea-p70.jpg';
 import pereaP70B from '@/assets/products/warema/perea-p70-b.webp';
 import fenstermarkiseImg from '@/assets/products/warema/fenstermarkise-hero.webp';
 import fenstermarkiseFrontMounted from '@/assets/products/warema/fenstermarkise-frontmounted.jpg';
+import fenstermarkiseFrontMountedB from '@/assets/products/warema/fenstermarkise-frontmounted-b.webp';
 import markisoletteImg from '@/assets/products/warema/markisolette.webp';
 import markisoletteB from '@/assets/products/warema/markisolette-b.webp';
 import easyzipImg from '@/assets/products/warema/easyzip.webp';
 import easyzipB from '@/assets/products/warema/easyzip-b.webp';
 import senkrechtmarkiseImg from '@/assets/products/warema/senkrechtmarkise.webp';
+import senkrechtCableB from '@/assets/products/warema/senkrecht-cable-b.webp';
 import senkrechtRail from '@/assets/products/warema/senkrecht-rail.webp';
+import senkrechtRailB from '@/assets/products/warema/senkrecht-rail-b.webp';
 import climaraW10 from '@/assets/products/warema/climara-v2a.jpg';
 import climaraD3 from '@/assets/products/warema/climara-v2b.jpg';
+import climaraD3B from '@/assets/products/warema/climara-d3-b.webp';
 import climaraW20 from '@/assets/products/warema/climara-w20.webp';
+import climaraW20B from '@/assets/products/warema/climara-w20-b.webp';
 import climaraW10Hero from '@/assets/products/warema/climara-w10-hero.jpg';
 import climaraW10B from '@/assets/products/warema/climara-w10-b.webp';
 import lamaxaHero from '@/assets/products/warema/lamaxa-l70-hero.webp';
 import lamaxaL70Detail from '@/assets/products/warema/lamaxa-l70-detail.webp';
 import lamaxaL50 from '@/assets/products/warema/lamaxa-l50.jpg';
+import lamaxaL50B from '@/assets/products/warema/lamaxa-l50-b.webp';
+import lamaxaL50C from '@/assets/products/warema/lamaxa-l50-c.webp';
 import lamaxaL60 from '@/assets/products/warema/lamaxa-l60.jpg';
 import lamaxaL60B from '@/assets/products/warema/lamaxa-l60-b.webp';
 import soneaHero from '@/assets/products/warema/sonea-hero.webp';
 import soneaModel from '@/assets/products/warema/sonea-model.webp';
+import soneaS70B from '@/assets/products/warema/sonea-s70-b.webp';
 import soneaS50 from '@/assets/products/warema/sonea-s50.webp';
 import soneaS50B from '@/assets/products/warema/sonea-s50-b.webp';
 import soneaS40 from '@/assets/products/warema/sonea-s40.jpg';
 import soneaS40B from '@/assets/products/warema/sonea-s40-b.webp';
 import insektenHero from '@/assets/products/warema/insekten-hero.webp';
 import insektenRoller from '@/assets/products/warema/insekten-roller.jpg';
+import insektenRollerB from '@/assets/products/warema/insekten-roller-b.webp';
 import insektenSliding from '@/assets/products/warema/insekten-sliding.webp';
+import insektenSlidingB from '@/assets/products/warema/insekten-sliding-b.webp';
 import grandslideImg from '@/assets/products/warema/grandslide.webp';
 import grandslideDetail from '@/assets/products/warema/grandslide-detail.webp';
 import smarthomeHero from '@/assets/products/warema/smarthome-hero.webp';
 import smarthomeDevice from '@/assets/products/warema/smarthome-device.webp';
+import smarthomeWebcontrolproB from '@/assets/products/warema/smarthome-webcontrolpro-b.webp';
 import smarthomeWms from '@/assets/products/warema/smarthome-wms.jpg';
 import smarthomeWmsB from '@/assets/products/warema/smarthome-wms-b.webp';
 import smarthomeEwfs from '@/assets/products/warema/smarthome-ewfs.png';
@@ -391,6 +402,7 @@ export const warema: BrandCatalog = {
             en: ['Guidance: cable, rail, or easyZIP', 'easyZIP: up to 6000×6000 mm (18 m²)', 'Exposed or plaster-concealed box'],
           },
           image: fenstermarkiseFrontMounted,
+          gallery: [fenstermarkiseFrontMountedB],
           sourceUrl: 'https://www.warema.com/en/awnings/front-mounted-awning.html',
         },
         {
@@ -453,6 +465,7 @@ export const warema: BrandCatalog = {
             en: ['Max 3000×3000 mm (9 m²)', 'Minimalist appearance', 'Manual or motorised control'],
           },
           image: senkrechtmarkiseImg,
+          gallery: [senkrechtCableB],
           sourceUrl: 'https://www.warema.com/en/awnings/vertical-awnings.html',
         },
         {
@@ -469,6 +482,7 @@ export const warema: BrandCatalog = {
             en: ['Max 3000×3000 mm (9 m²)', 'Box shapes: rectangular, half-round, round', 'Box height 75–110 mm'],
           },
           image: senkrechtRail,
+          gallery: [senkrechtRailB],
           sourceUrl: 'https://www.warema.com/en/awnings/vertical-awnings.html',
         },
       ],
@@ -514,6 +528,7 @@ export const warema: BrandCatalog = {
             en: ['Width up to 6500 mm, length up to 6000 mm', 'Sun, wind and rain sensors (WMS)', 'Angular cover profile (optional)'],
           },
           image: climaraW20,
+          gallery: [climaraW20B],
           sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning.html',
         },
         {
@@ -530,6 +545,7 @@ export const warema: BrandCatalog = {
             en: ['Max 4000×5000 mm (10 m²)', 'For triangular and trapezoidal slopes', 'Compact cassette'],
           },
           image: climaraD3,
+          gallery: [climaraD3B],
           sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning.html',
         },
       ],
@@ -574,6 +590,7 @@ export const warema: BrandCatalog = {
             en: ['Max 4500×6020 mm (extended configurations up to 7000×4500 mm)', 'Variants: standard, View (glass), Tex (fabric)', 'Wall-mounted or free-standing'],
           },
           image: lamaxaL50,
+          gallery: [lamaxaL50B, lamaxaL50C],
           sourceUrl: 'https://www.warema.com/en/patio-covers/l50-roof-system.html',
         },
         {
@@ -619,6 +636,7 @@ export const warema: BrandCatalog = {
             en: ['Width up to 9000 mm, projection up to 6500 mm', 'Symmetrical and asymmetrical triangular shape', 'Adjustable mounting height'],
           },
           image: soneaModel,
+          gallery: [soneaS70B],
           sourceUrl: 'https://www.warema.com/en/sun-sails/electric-sun-sail.html',
         },
         {
@@ -681,6 +699,7 @@ export const warema: BrandCatalog = {
             en: ['Max 2200×2800 mm (4 m²)', 'Slow-close braking mechanism', 'Brush seals in cassette and side tracks'],
           },
           image: insektenRoller,
+          gallery: [insektenRollerB],
           sourceUrl: 'https://www.warema.com/en/insect-screen/insect-screen-roller-blind.html',
         },
         {
@@ -697,6 +716,7 @@ export const warema: BrandCatalog = {
             en: ['For large glazed openings', 'One or two sliding panels', 'Smooth motion along the bottom track'],
           },
           image: insektenSliding,
+          gallery: [insektenSlidingB],
           sourceUrl: 'https://www.warema.com/en/insect-screen/insect-screen-sash-frame.html',
         },
         {
@@ -742,6 +762,7 @@ export const warema: BrandCatalog = {
             en: ['iOS/Android app + voice control', 'Sun/wind/rain/ice-based automation', 'Room-based device grouping'],
           },
           image: smarthomeDevice,
+          gallery: [smarthomeWebcontrolproB],
           sourceUrl: 'https://www.warema.com/en/smart-home/wms-webcontrol-pro.html',
         },
         {

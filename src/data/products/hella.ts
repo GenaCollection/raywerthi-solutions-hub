@@ -7,36 +7,50 @@ import raffstorenAr92Img from '@/assets/products/hella/raffstoren-ar92.png';
 import af80Img from '@/assets/products/hella/af80.png';
 import rollladenImg from '@/assets/products/hella/rollladen-vorbau.png';
 import novaVorbauImg from '@/assets/products/hella/nova-vorbau.png';
+import novaVorbauB from '@/assets/products/hella/nova-vorbau-b.png';
 import solarrollladenImg from '@/assets/products/hella/solarrollladen.png';
+import solarrollladenB from '@/assets/products/hella/solarrollladen-b.png';
 import sicherheitsrollladenImg from '@/assets/products/hella/sicherheitsrollladen.png';
+import sicherheitsrollladenB from '@/assets/products/hella/sicherheitsrollladen-b.png';
+import sicherheitsrollladenC from '@/assets/products/hella/sicherheitsrollladen-c.png';
 import vorbauProtectImg from '@/assets/products/hella/vorbau-protect.png';
+import vorbauProtectB from '@/assets/products/hella/vorbau-protect-b.png';
 import schachtmarkiseImg from '@/assets/products/hella/senkrecht-schachtmarkise.png';
+import schachtProtectB from '@/assets/products/hella/schacht-protect-b.png';
 import sm101Img from '@/assets/products/hella/senkrecht-sm101.png';
 import putzmarkiseImg from '@/assets/products/hella/senkrecht-putzmarkise.png';
+import putzProtectB from '@/assets/products/hella/putz-protect-b.png';
 import pan7040Img from '@/assets/products/hella/markisen-pan7040.png';
 import pan7040Hero from '@/assets/products/hella/pan7040.png';
 import pan7040B from '@/assets/products/hella/pan7040-b.png';
 import viva7040Img from '@/assets/products/hella/viva7040.png';
+import viva7040B from '@/assets/products/hella/viva7040-b.png';
 import areia7040Img from '@/assets/products/hella/areia7040.png';
+import areia7040B from '@/assets/products/hella/areia7040-b.png';
 import eleganzaImg from '@/assets/products/hella/eleganza.png';
+import eleganzaB from '@/assets/products/hella/eleganza-b.png';
 import eleganzaProtectImg from '@/assets/products/hella/eleganza-protect.png';
 import venturImg from '@/assets/products/hella/terrassendach-ventur.png';
 import venturOneSideImg from '@/assets/products/hella/ventur-one-side.png';
 import venturSunImg from '@/assets/products/hella/ventur-sun.png';
+import venturSunB from '@/assets/products/hella/ventur-sun-b.png';
 import soleyaAufglasImg from '@/assets/products/hella/soleya-aufglas.png';
 import solanyaProtectImg from '@/assets/products/hella/solanya-protect.png';
+import solanyaProtectB from '@/assets/products/hella/solanya-protect-b.png';
 import windschutzImg from '@/assets/products/hella/windsichtschutz.png';
 import windschutzHero from '@/assets/products/hella/windschutz-hero.png';
 import windschutzB from '@/assets/products/hella/windschutz-b.png';
 import jumbrellaImg from '@/assets/products/hella/jumbrella.png';
 import magnumImg from '@/assets/products/hella/magnum.png';
 import square4sunImg from '@/assets/products/hella/square4sun-cross.png';
+import square4sunB from '@/assets/products/hella/square4sun-b.png';
 import ispl18Img from '@/assets/products/hella/insekten-ispl18.png';
 import ispl18Hero from '@/assets/products/hella/ispl18-hero.png';
 import isrImg from '@/assets/products/hella/insekten-isr.png';
 import istImg from '@/assets/products/hella/ist.png';
 import plisseesImg from '@/assets/products/hella/plissees.png';
 import plisseesHero from '@/assets/products/hella/plissees-hero.png';
+import plisseesB from '@/assets/products/hella/plissees-b.png';
 import innenrollosImg from '@/assets/products/hella/innenrollos.png';
 import vertikaljalousienImg from '@/assets/products/hella/vertikaljalousien.png';
 import onyxCenterImg from '@/assets/products/hella/onyx-center.png';
@@ -45,6 +59,7 @@ import onyxConnectorImg from '@/assets/products/hella/onyx-connector.png';
 import onyxTagSunImg from '@/assets/products/hella/onyx-tag-sun.png';
 import onyxWeatherImg from '@/assets/products/hella/onyx-weather.png';
 import onyxAppImg from '@/assets/products/hella/onyx-app.jpg';
+import onyxAppB from '@/assets/products/hella/onyx-app-b.png';
 
 export const hella: BrandCatalog = {
   slug: 'hella',
@@ -141,6 +156,7 @@ export const hella: BrandCatalog = {
             en: ['Width up to 3500–4000 mm', 'Thermal break in the profile', 'Cantilevered façade mounting'],
           },
           image: novaVorbauImg,
+          gallery: [novaVorbauB],
           sourceUrl: 'https://www.hella.info/de/produkte/vorbaurollladen-stranggepresst',
         },
         {
@@ -157,6 +173,7 @@ export const hella: BrandCatalog = {
             en: ['Width up to 3500–4000 mm', 'Solar panel with battery', 'Installation without wall chasing'],
           },
           image: solarrollladenImg,
+          gallery: [solarrollladenB],
           sourceUrl: 'https://www.hella.info/de/produkte/solarrollladen',
         },
         {
@@ -173,6 +190,7 @@ export const hella: BrandCatalog = {
             en: ['Width up to 2500–3000 mm', 'Reinforced slat profile', 'Enhanced burglary resistance'],
           },
           image: sicherheitsrollladenImg,
+          gallery: [sicherheitsrollladenB, sicherheitsrollladenC],
           sourceUrl: 'https://www.hella.info/de/produkte/sicherheitsrollladen-stranggepresst',
         },
       ],
@@ -201,6 +219,7 @@ export const hella: BrandCatalog = {
             en: ['Max 6000×6000 mm (18 m²)', 'Five box shapes: Q85–Q150, E100–E130, R130', 'Compatible with elero and Somfy'],
           },
           image: vorbauProtectImg,
+          gallery: [vorbauProtectB],
           sourceUrl: 'https://www.hella.info/de/vorbau-markise-protect-q85/q100/q115/q130/q150',
         },
         {
@@ -217,6 +236,7 @@ export const hella: BrandCatalog = {
             en: ['Max 3500×4500 mm (12 m²)', 'H110/H115/H130 half-cassette box', 'For existing niches'],
           },
           image: schachtmarkiseImg,
+          gallery: [schachtProtectB],
           sourceUrl: 'https://www.hella.info/de/schacht-markise-protect',
         },
         {
@@ -249,6 +269,7 @@ export const hella: BrandCatalog = {
             en: ['Max 4000×4000 mm (12 m²)', 'Fully renderable guide rails', 'Optional 20/40 mm EPS insulation'],
           },
           image: putzmarkiseImg,
+          gallery: [putzProtectB],
           sourceUrl: 'https://www.hella.info/en/putz-markise-protect-e100-/-e115-/-e130',
         },
       ],
@@ -294,6 +315,7 @@ export const hella: BrandCatalog = {
             en: ['Max 7000×4000 mm', 'Protective roof over the mechanism', '200+ fabric colours'],
           },
           image: viva7040Img,
+          gallery: [viva7040B],
           sourceUrl: 'https://www.hella.info/de/produkte/viva-7040-1',
         },
         {
@@ -310,6 +332,7 @@ export const hella: BrandCatalog = {
             en: ['Max 7000×4000 mm', 'Open-arm construction', 'Economical choice for under-eave mounting'],
           },
           image: areia7040Img,
+          gallery: [areia7040B],
           sourceUrl: 'https://www.hella.info/de/produkte/areia-7040',
         },
       ],
@@ -338,6 +361,7 @@ export const hella: BrandCatalog = {
             en: ['Max 6000×5500 mm (up to 30 m²)', 'Cassette 253×156 mm', 'Adjustable fabric tilt angle'],
           },
           image: eleganzaImg,
+          gallery: [eleganzaB],
           sourceUrl: 'https://www.hella.info/de/produkte/eleganza',
         },
         {
@@ -354,6 +378,7 @@ export const hella: BrandCatalog = {
             en: ['Max 6000×5500 mm (up to 26 m²)', 'Side-guided fabric', 'Optional Varioplus vertical closure screen'],
           },
           image: eleganzaProtectImg,
+          gallery: [eleganzaB],
           sourceUrl: 'https://www.hella.info/de/produkt/eleganza-protect',
         },
       ],
@@ -398,6 +423,7 @@ export const hella: BrandCatalog = {
             en: ['Max 4500×3000×6000 mm', 'PV panels integrated into the slats', 'Upcoming — confirm availability with our team'],
           },
           image: venturSunImg,
+          gallery: [venturSunB],
           sourceUrl: 'https://www.hella.info/de/produkte/ventur-neu',
         },
       ],
@@ -442,6 +468,7 @@ export const hella: BrandCatalog = {
             en: ['Max 5000×4500 mm (22.5 m²)', 'Wind resistance class 3', 'Compact 151×131 mm cassette'],
           },
           image: solanyaProtectImg,
+          gallery: [solanyaProtectB],
           sourceUrl: 'https://www.hella.info/de/produkte/solanya-protect',
         },
       ],
@@ -531,6 +558,7 @@ export const hella: BrandCatalog = {
             en: ['Max 6800×7800 mm (47 m²)', 'Fully motorised deployment', 'App/remote control'],
           },
           image: square4sunImg,
+          gallery: [square4sunB],
           sourceUrl: 'https://www.hella.info/de/produkte/square4sun-cross',
         },
       ],
@@ -647,6 +675,7 @@ export const hella: BrandCatalog = {
             en: ['Multiple black-out levels', 'Fire-resistant, washable fabrics', 'Duette — honeycomb construction with air layer'],
           },
           image: plisseesHero,
+          gallery: [plisseesB],
           sourceUrl: 'https://www.hella.info/de/produkte/plissees-1',
         },
         {
@@ -739,6 +768,7 @@ export const hella: BrandCatalog = {
             en: ['iOS and Android', 'Alexa/Google Home voice control', 'Device grouping and scenes'],
           },
           image: onyxAppImg,
+          gallery: [onyxAppB],
           sourceUrl: 'https://www.hella.info/de/smart-home/onyx/bedienung/app-bedienung',
         },
         {
