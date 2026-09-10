@@ -17,6 +17,7 @@ const ModelCard: React.FC<ModelCardProps> = ({ model, lang, fallbackImage, sourc
   const images = [model.image ?? fallbackImage, ...(model.gallery ?? [])];
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [variantIndex, setVariantIndex] = useState(0);
 
   useEffect(() => {
     if (images.length <= 1 || paused) return;
@@ -26,6 +27,12 @@ const ModelCard: React.FC<ModelCardProps> = ({ model, lang, fallbackImage, sourc
     }, ROTATE_MS);
     return () => clearInterval(timer);
   }, [images.length, paused]);
+
+  const variants = model.sizeVariants;
+  const activeVariant = variants?.[variantIndex];
+  const description = activeVariant ? activeVariant.description[lang] : model.description[lang];
+  const specs = activeVariant ? activeVariant.specs[lang] : model.specs[lang];
+  const sourceUrl = activeVariant?.sourceUrl ?? model.sourceUrl;
 
   return (
     <div className="bg-background border border-border rounded-xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300">
@@ -67,21 +74,43 @@ const ModelCard: React.FC<ModelCardProps> = ({ model, lang, fallbackImage, sourc
         )}
       </div>
       <div className="p-5 flex flex-col flex-1">
-        <h4 className="font-bold text-foreground mb-1.5">{model.name}</h4>
+        <div className="flex items-center justify-between gap-2 mb-1.5">
+          <h4 className="font-bold text-foreground">{model.name}</h4>
+          {variants && variants.length > 1 && (
+            <div className="flex gap-1 shrink-0" role="tablist" aria-label={model.name}>
+              {variants.map((v, i) => (
+                <button
+                  key={v.label}
+                  type="button"
+                  role="tab"
+                  aria-selected={i === variantIndex}
+                  onClick={() => setVariantIndex(i)}
+                  className={`px-2 py-0.5 rounded-md text-[11px] font-semibold border transition-colors ${
+                    i === variantIndex
+                      ? 'bg-primary text-primary-foreground border-primary'
+                      : 'bg-secondary text-foreground/70 border-border hover:border-primary/50'
+                  }`}
+                >
+                  {v.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
         <p className="text-muted-foreground text-sm leading-relaxed mb-3 flex-1">
-          {model.description[lang]}
+          {description}
         </p>
         <ul className="space-y-1.5 mb-3">
-          {model.specs[lang].map((spec, i) => (
+          {specs.map((spec, i) => (
             <li key={i} className="flex items-start gap-2 text-xs text-foreground/80">
               <Check size={13} className="text-primary mt-0.5 flex-shrink-0" />
               <span>{spec}</span>
             </li>
           ))}
         </ul>
-        {model.sourceUrl && (
+        {sourceUrl && (
           <a
-            href={model.sourceUrl}
+            href={sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline mt-auto pt-1"

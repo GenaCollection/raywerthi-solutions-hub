@@ -394,14 +394,14 @@ export const warema: BrandCatalog = {
       image: terreaImg,
       name: { ru: 'Маркизы для террасы Terrea', hy: 'Terrea պատշգամբի մարկիզաներ', en: 'Terrea Patio Awnings' },
       intro: {
-        ru: 'Флагманская линейка WAREMA — десять именных моделей: шесть кассетных (полностью закрывают ткань и механизм) и четыре складных с открытым или полуоткрытым рычагом, включая версию для встраивания в готовую нишу. Свыше 200 вариантов ткани и 200 цветов каркаса, автоматическое втягивание при ветре и дожде.',
-        hy: 'WAREMA-ի հիմնական գիծը՝ տասը անվանական մոդել. վեց կասետային (ամբողջությամբ ծածկում են գործվածքն ու մեխանիզմը) և չորս ծալովի՝ բաց կամ կիսաբաց թևով, այդ թվում՝ պատրաստի խորշում տեղադրվող տարբերակ։ 200-ից ավել գործվածքի և 200 գույնի կարկասի ընտրանի, ինքնաշխատ ետ քաշում քամու և անձրևի ժամանակ։',
-        en: 'WAREMA\'s flagship range — ten named models: six cassette designs that fully enclose the fabric and mechanism, and four folding-arm models in open or semi-open form, including a version built into an existing shaft. 200+ fabric designs and 200+ frame colours, with automatic retraction in wind or rain.',
+        ru: 'Флагманская линейка WAREMA — кассетные модели (полностью закрывают ткань и механизм) и складные с открытым или полуоткрытым рычагом, включая версию для встраивания в готовую нишу. Модели одного дизайна в разных размерах (550/580 и K50/K70) объединены в одну карточку с переключателем. Свыше 200 вариантов ткани и 200 цветов каркаса, автоматическое втягивание при ветре и дожде.',
+        hy: 'WAREMA-ի հիմնական գիծը՝ կասետային մոդելներ (ամբողջությամբ ծածկում են գործվածքն ու մեխանիզմը) և ծալովի՝ բաց կամ կիսաբաց թևով, այդ թվում՝ պատրաստի խորշում տեղադրվող տարբերակ։ Նույն դիզայնի, բայց տարբեր չափի մոդելները (550/580 և K50/K70) միավորված են մեկ քարտում անջատիչով։ 200-ից ավել գործվածքի և 200 գույնի կարկասի ընտրանի, ինքնաշխատ ետ քաշում քամու և անձրևի ժամանակ։',
+        en: 'WAREMA\'s flagship range — cassette models that fully enclose the fabric and mechanism, and folding-arm models in open or semi-open form, including a version built into an existing shaft. Models sharing the same design at different sizes (550/580 and K50/K70) are combined into a single card with a size switcher. 200+ fabric designs and 200+ frame colours, with automatic retraction in wind or rain.',
       },
       models: [
         {
-          id: '550',
-          name: 'Terrea 550',
+          id: '550-580',
+          name: 'Terrea 550 / 580',
           description: {
             ru: 'Самая изящная кассета в линейке — плоский профиль для небольших балконов и террас, монтаж возможен как в защищённом, так и в открытом месте.',
             hy: 'Գծի ամենանրբագեղ կասետան՝ հարթ պրոֆիլ փոքր բալկոնների և պատշգամբների համար, տեղադրումը հնարավոր է ինչպես պաշտպանված, այնպես էլ բաց տեղում։',
@@ -412,31 +412,52 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 4500×2500 մմ (11,25 մ²)', 'Հարթ, նրբագեղ կասետա', 'Հարմար է անպաշտպան տեղադրման վայրերի համար'],
             en: ['Max 4500×2500 mm (11.25 m²)', 'Flat, slender cassette', 'Suitable for unprotected installation positions'],
           },
+          sizeVariants: [
+            {
+              label: '550',
+              description: {
+                ru: 'Самая изящная кассета в линейке — плоский профиль для небольших балконов и террас, монтаж возможен как в защищённом, так и в открытом месте.',
+                hy: 'Գծի ամենանրբագեղ կասետան՝ հարթ պրոֆիլ փոքր բալկոնների և պատշգամբների համար, տեղադրումը հնարավոր է ինչպես պաշտպանված, այնպես էլ բաց տեղում։',
+                en: 'The most slender cassette in the range — a flat profile for small balconies and patios, installable in both protected and exposed positions.',
+              },
+              specs: {
+                ru: ['Максимум 4500×2500 мм (11,25 м²)', 'Плоская изящная кассета', 'Подходит для незащищённых мест монтажа'],
+                hy: ['Առավելագույնը 4500×2500 մմ (11,25 մ²)', 'Հարթ, նրբագեղ կասետա', 'Հարմար է անպաշտպան տեղադրման վայրերի համար'],
+                en: ['Max 4500×2500 mm (11.25 m²)', 'Flat, slender cassette', 'Suitable for unprotected installation positions'],
+              },
+              sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-550/',
+            },
+            {
+              label: '580',
+              description: {
+                ru: 'Максимальная версия того же семейства — компактная овальная кассета для террас среднего размера, опциональная выдвижная планка-жалюзи защищает от низкого солнца при юго-западной ориентации.',
+                hy: 'Նույն ընտանիքի առավելագույն տարբերակը՝ կոմպակտ օվալաձև կասետա միջին չափի պատշգամբների համար, հավելյալ դուրս եկող ժալյուզի-պլանկան պաշտպանում է ցածր արևից հարավ-արևմտյան կողմնորոշման դեպքում։',
+                en: 'The maximum-size version of the same family — a compact oval cassette for medium-sized patios, with an optional retractable valance blind protecting against low sun on south-west-facing terraces.',
+              },
+              specs: {
+                ru: ['Максимум 5500×3000 мм (16,5 м²)', 'Овальная закрытая кассета', 'Опциональная выдвижная планка от низкого солнца'],
+                hy: ['Առավելագույնը 5500×3000 մմ (16,5 մ²)', 'Օվալաձև փակ կասետա', 'Հավելյալ դուրս եկող պլանկա ցածր արևից'],
+                en: ['Max 5500×3000 mm (16.5 m²)', 'Enclosed oval cassette', 'Optional retractable low-sun valance'],
+              },
+              sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-580/',
+            },
+          ],
           image: terrea550Hero,
-          gallery: [terrea550Lifestyle2, terrea550Endcap, terrea550Underside, terrea550GreenTerrace, terrea550Render2],
+          gallery: [
+            terrea550Lifestyle2,
+            terrea550Endcap,
+            terrea550Underside,
+            terrea550GreenTerrace,
+            terrea550Render2,
+            terrea580Hero,
+            terrea580B,
+          ],
           bestseller: true,
           sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-550/',
         },
         {
-          id: '580',
-          name: 'Terrea 580',
-          description: {
-            ru: 'Компактная овальная кассета для террас среднего размера — опциональная выдвижная планка-жалюзи защищает от низкого солнца при юго-западной ориентации.',
-            hy: 'Կոմպակտ օվալաձև կասետա միջին չափի պատշգամբների համար՝ հավելյալ դուրս եկող ժալյուզի-պլանկան պաշտպանում է ցածր արևից հարավ-արևմտյան կողմնորոշման դեպքում։',
-            en: 'A compact oval cassette for medium-sized patios — an optional retractable valance blind protects against low sun on south-west-facing terraces.',
-          },
-          specs: {
-            ru: ['Максимум 5500×3000 мм (16,5 м²)', 'Овальная закрытая кассета', 'Опциональная выдвижная планка от низкого солнца'],
-            hy: ['Առավելագույնը 5500×3000 մմ (16,5 մ²)', 'Օվալաձև փակ կասետա', 'Հավելյալ դուրս եկող պլանկա ցածր արևից'],
-            en: ['Max 5500×3000 mm (16.5 m²)', 'Enclosed oval cassette', 'Optional retractable low-sun valance'],
-          },
-          image: terrea580Hero,
-          gallery: [terrea580B],
-          sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-580/',
-        },
-        {
-          id: 'k50',
-          name: 'Terrea K50',
+          id: 'k50-k70',
+          name: 'Terrea K50 / K70',
           description: {
             ru: 'Кубическая кассета с минимальным расстоянием до стены и потолка — компактный монтаж для небольших и средних балконов и террас в стиле современных фасадов.',
             hy: 'Խորանարդաձև կասետա՝ պատից և առաստաղից նվազագույն հեռավորությամբ. կոմպակտ տեղադրում փոքր և միջին բալկոնների ու պատշգամբների համար, ժամանակակից ճակատների ոգով։',
@@ -447,8 +468,47 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 5000×3000 մմ (15 մ²)', 'Խորանարդաձև դիզայն, տուփի փոքր հեռացում', 'Cubic Line գիծ — համադրվում է Climara W10/W20-ի հետ'],
             en: ['Max 5000×3000 mm (15 m²)', 'Cubic design, minimal box projection', 'Cubic Line range — pairs with Climara W10/W20'],
           },
+          sizeVariants: [
+            {
+              label: 'K50',
+              description: {
+                ru: 'Кубическая кассета с минимальным расстоянием до стены и потолка — компактный монтаж для небольших и средних балконов и террас в стиле современных фасадов.',
+                hy: 'Խորանարդաձև կասետա՝ պատից և առաստաղից նվազագույն հեռավորությամբ. կոմպակտ տեղադրում փոքր և միջին բալկոնների ու պատշգամբների համար, ժամանակակից ճակատների ոգով։',
+                en: 'A cubic cassette with a minimal gap to the wall and ceiling — a discreet installation for small and medium balconies and patios, matching modern façades.',
+              },
+              specs: {
+                ru: ['Максимум 5000×3000 мм (15 м²)', 'Кубический дизайн, малый вылет короба', 'Линейка Cubic Line — сочетается с Climara W10/W20'],
+                hy: ['Առավելագույնը 5000×3000 մմ (15 մ²)', 'Խորանարդաձև դիզայն, տուփի փոքր հեռացում', 'Cubic Line գիծ — համադրվում է Climara W10/W20-ի հետ'],
+                en: ['Max 5000×3000 mm (15 m²)', 'Cubic design, minimal box projection', 'Cubic Line range — pairs with Climara W10/W20'],
+              },
+              sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k50/',
+            },
+            {
+              label: 'K70',
+              description: {
+                ru: 'Максимальная версия того же кубического дизайна — для больших площадей, с чёткими прямыми линиями для современной архитектуры и широким выбором дополнительных опций.',
+                hy: 'Նույն խորանարդաձև դիզայնի առավելագույն տարբերակը՝ մեծ մակերեսների համար, հստակ ուղիղ գծերով ժամանակակից ճարտարապետության համար և հավելյալ ընտրանքների լայն տեսականիով։',
+                en: 'The maximum-size version of the same cubic design — for large areas, with clean, straight lines for contemporary architecture and a wide range of optional extras.',
+              },
+              specs: {
+                ru: ['Максимум 7000×4000 мм (24,5 м²)', 'Кубический дизайн, чёткие линии', 'Линейка Cubic Line — сочетается с Climara W10/W20'],
+                hy: ['Առավելագույնը 7000×4000 մմ (24,5 մ²)', 'Խորանարդաձև դիզայն, հստակ գծեր', 'Cubic Line գիծ — համադրվում է Climara W10/W20-ի հետ'],
+                en: ['Max 7000×4000 mm (24.5 m²)', 'Cubic design, clean lines', 'Cubic Line range — pairs with Climara W10/W20'],
+              },
+              sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k70/',
+            },
+          ],
           image: terreaK50Hero,
-          gallery: [terreaK50B, terreaK50Terrace2, terreaK50LedGlow, terreaK50CeilingGap, terreaK50ScreenDoor, terreaK50Render2],
+          gallery: [
+            terreaK50B,
+            terreaK50Terrace2,
+            terreaK50LedGlow,
+            terreaK50CeilingGap,
+            terreaK50ScreenDoor,
+            terreaK50Render2,
+            terreaK70Hero,
+            terreaK70B,
+          ],
           bestseller: true,
           sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k50/',
         },
@@ -495,23 +555,6 @@ export const warema: BrandCatalog = {
           image: terreaK60Hero,
           gallery: [terreaK60B],
           sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k60/',
-        },
-        {
-          id: 'k70',
-          name: 'Terrea K70',
-          description: {
-            ru: 'Кубическая кассета для больших площадей — чёткие прямые линии для современной архитектуры и широкий выбор дополнительных опций.',
-            hy: 'Խորանարդաձև կասետա մեծ մակերեսների համար՝ հստակ ուղիղ գծեր ժամանակակից ճարտարապետության համար և հավելյալ ընտրանքների լայն տեսականի։',
-            en: 'A cubic cassette for large areas — clean, straight lines for contemporary architecture and a wide range of optional extras.',
-          },
-          specs: {
-            ru: ['Максимум 7000×4000 мм (24,5 м²)', 'Кубический дизайн, чёткие линии', 'Линейка Cubic Line — сочетается с Climara W10/W20'],
-            hy: ['Առավելագույնը 7000×4000 մմ (24,5 մ²)', 'Խորանարդաձև դիզայն, հստակ գծեր', 'Cubic Line գիծ — համադրվում է Climara W10/W20-ի հետ'],
-            en: ['Max 7000×4000 mm (24.5 m²)', 'Cubic design, clean lines', 'Cubic Line range — pairs with Climara W10/W20'],
-          },
-          image: terreaK70Hero,
-          gallery: [terreaK70B],
-          sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k70/',
         },
         {
           id: 'h60',
