@@ -5,14 +5,24 @@ import tracksImg from '@/assets/products/silentgliss/sg5600-v2.jpg';
 import sg5600Gallery from '@/assets/products/silentgliss/tracks-sg5600.jpg';
 import sg5600Mechanism from '@/assets/products/silentgliss/sg5600-pmo1.jpg';
 import sg5600Office from '@/assets/products/silentgliss/sg5600-prs1.jpg';
+import sg5600Resort from '@/assets/products/silentgliss/sg5600-prs3.jpg';
+import sg5600Dining from '@/assets/products/silentgliss/sg5600-prs4.jpg';
+import sg5600Terrace from '@/assets/products/silentgliss/sg5600-prs5.jpg';
 import sg5100Img from '@/assets/products/silentgliss/sg5100.jpg';
+import sg6840Hero from '@/assets/products/silentgliss/sg6840-hero.jpg';
+import sg6840Lifestyle from '@/assets/products/silentgliss/sg6840-lifestyle.jpg';
+import sg6840Mechanism from '@/assets/products/silentgliss/sg6840-mechanism.jpg';
 import metropoleImg from '@/assets/products/silentgliss/metropole-v2.jpg';
 import metropoleBay from '@/assets/products/silentgliss/metropole-b.jpg';
 import metropoleHardware from '@/assets/products/silentgliss/metropole-c.jpg';
 import metropoleLodge from '@/assets/products/silentgliss/metropole-e.jpg';
+import metropoleDining from '@/assets/products/silentgliss/metropole-new1.jpg';
+import metropoleGarden from '@/assets/products/silentgliss/metropole-new2.jpg';
 import cubicleImg from '@/assets/products/silentgliss/cubicle-v2.jpg';
 import cubicleOffice from '@/assets/products/silentgliss/cubicle-b.jpg';
 import cubicleDetail from '@/assets/products/silentgliss/cubicle-c.jpg';
+import cubicleWorkspace from '@/assets/products/silentgliss/cubicle-new1.jpg';
+import cubicleWard from '@/assets/products/silentgliss/cubicle-new2.jpg';
 import rollerBlindImg from '@/assets/products/silentgliss/roller-blind-v2.jpg';
 import rollerBlindFascia from '@/assets/products/silentgliss/roller-b.jpg';
 import rollerBlindDetail from '@/assets/products/silentgliss/roller-c.jpg';
@@ -72,9 +82,9 @@ export const silentGliss: BrandCatalog = {
       image: tracksImg,
       name: { ru: 'Карнизы-рельсы для штор', hy: 'Վարագույրների ռելսային կարնիզներ', en: 'Curtain Track Systems' },
       intro: {
-        ru: 'Ручные, шнуровые и электрические карнизные системы — от простых бюджетных решений до флагманского электропривода SG 5600, известного бесшумным и точным ходом.',
-        hy: 'Ձեռքի, պարանով և էլեկտրական կարնիզային համակարգեր՝ պարզ մատչելի լուծումներից մինչև ֆլագման SG 5600 էլեկտրաշարժիչը՝ հայտնի իր անաղմուկ և ճշգրիտ ընթացքով։',
-        en: 'Hand-drawn, corded and electric track systems — from simple, affordable options to the flagship SG 5600 electric drive, renowned for its silent, precise motion.',
+        ru: 'Ручные, шнуровые и электрические карнизные системы — от экономичного ручного карниза до флагманского электропривода SG 5600, известного бесшумным и точным ходом. Все системы построены на фирменной технологии двухкомпонентных бегунков и гнутся под эркеры и нестандартные проёмы.',
+        hy: 'Ձեռքի, պարանով և էլեկտրական կարնիզային համակարգեր՝ տնտեսողական ձեռքի կարնիզից մինչև ֆլագման SG 5600 էլեկտրաշարժիչը՝ հայտնի իր անաղմուկ և ճշգրիտ ընթացքով։ Բոլոր համակարգերը կառուցված են ֆիրմային երկբաղադրիչ սահողների տեխնոլոգիայի հիման վրա և ծալվում են էրկերների ու ոչ ստանդարտ բացվածքների համար։',
+        en: 'Hand-drawn, corded and electric track systems — from an economical hand-drawn track to the flagship SG 5600 electric drive, renowned for its silent, precise motion. Every system is built on the proprietary two-component glider technology and bends for bay windows and irregular openings.',
       },
       models: [
         {
@@ -90,7 +100,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Երկարությունը՝ մինչև 25 մ, գործվածքի քաշը՝ մինչև 65 կգ', 'Կառավարում՝ կառավարիչ, Move հավելված, BMS', 'Անաղմուկ և հարթ ընթացք'],
             en: ['Length up to 25 m, fabric weight up to 65 kg', 'Control: remote, Move app, or BMS', 'Silent, smooth operation'],
           },
-          gallery: [sg5600Mechanism, sg5600Gallery, sg5600Office],
+          gallery: [sg5600Mechanism, sg5600Gallery, sg5600Office, sg5600Resort, sg5600Dining, sg5600Terrace],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/curtain-track-systems/electric/5600/',
         },
         {
@@ -109,6 +119,23 @@ export const silentGliss: BrandCatalog = {
           image: sg5100Img,
           gallery: [sg5600Mechanism],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/curtain-track-systems/electric/5100/',
+        },
+        {
+          id: 'sg6840',
+          name: 'SG 6840 Hand',
+          description: {
+            ru: 'Ручной карниз без электропривода — самый экономичный способ получить фирменную бесшумную двухкомпонентную технологию бегунков Silent Gliss. Гнётся под эркеры и нестандартные проёмы, подходит для штор средней и большой ширины.',
+            hy: 'Ձեռքի կարնիզ առանց էլեկտրաշարժիչի՝ Silent Gliss-ի ֆիրմային անաղմուկ երկբաղադրիչ սահող տեխնոլոգիան ստանալու ամենատնտեսողական եղանակը։ Ծալվում է էրկերների և ոչ ստանդարտ բացվածքների համար, հարմար է միջին և մեծ լայնության վարագույրների համար։',
+            en: 'A hand-drawn track with no motor — the most economical way to get Silent Gliss\'s signature silent two-component glider technology. Bends for bay windows and irregular openings, suited to medium and large curtain widths.',
+          },
+          specs: {
+            ru: ['Диапазон размеров M–L', 'Двухкомпонентные (2C) бегунки, опция Wave', 'Гнётся, крепление на стену или потолок'],
+            hy: ['M–L չափերի միջակայք', 'Երկբաղադրիչ (2C) սահողներ, Wave տարբերակ', 'Ծալվում է, ամրացում պատին կամ առաստաղին'],
+            en: ['M–L size range', '2-component (2C) gliders, Wave option available', 'Bendable, wall or ceiling mounting'],
+          },
+          image: sg6840Hero,
+          gallery: [sg6840Lifestyle, sg6840Mechanism],
+          sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/curtain-track-systems/hand/6840/',
         },
         {
           id: 'sg3970',
@@ -151,7 +178,7 @@ export const silentGliss: BrandCatalog = {
             en: ['Four pole shapes and profiles', 'Finishes: Charcoal, Antique Bronze, Silver, Black and more', 'Choice of decorative finials'],
           },
           image: metropoleHardware,
-          gallery: [metropoleImg, metropoleBay],
+          gallery: [metropoleImg, metropoleBay, metropoleDining, metropoleGarden],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/metropole/hand/7610/',
         },
         {
@@ -196,7 +223,7 @@ export const silentGliss: BrandCatalog = {
             hy: ['Ծալվում է ցանկացած տարածքի պլանավորման համար', 'Փոշուց և մանրէներից պաշտպանիչ շերտ', 'Ձեռքի կառավարում, արտադրություն ըստ չափերի'],
             en: ['Bendable to any room layout', 'Dust-cover strip with antimicrobial properties', 'Hand-operated, made to measure'],
           },
-          gallery: [cubicleOffice, cubicleDetail],
+          gallery: [cubicleOffice, cubicleDetail, cubicleWorkspace, cubicleWard],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/cubicle-room-divider/hand/6100/',
         },
       ],
