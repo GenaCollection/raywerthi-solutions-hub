@@ -54,6 +54,10 @@ import terreaK55Render2 from '@/assets/products/warema/terrea-k55-render2.jpg';
 import terreaK55BracketLed from '@/assets/products/warema/terrea-k55-bracket-led.jpg';
 import terreaK60Hero from '@/assets/products/warema/terrea-k60-hero.jpg';
 import terreaK60B from '@/assets/products/warema/terrea-k60-b.png';
+import terreaK60Underside from '@/assets/products/warema/terrea-k60-underside.jpg';
+import terreaK60LedNight from '@/assets/products/warema/terrea-k60-led-night.jpg';
+import terreaK60FabricPrint from '@/assets/products/warema/terrea-k60-fabric-print.jpg';
+import terreaK60Lifestyle from '@/assets/products/warema/terrea-k60-lifestyle.jpg';
 import terreaK70Hero from '@/assets/products/warema/terrea-k70-hero.webp';
 import terreaK70B from '@/assets/products/warema/terrea-k70-b.png';
 import terreaH60Hero from '@/assets/products/warema/terrea-h60-hero.jpg';
@@ -65,10 +69,16 @@ import terreaH60GableHouse from '@/assets/products/warema/terrea-h60-gable-house
 import terreaH60Garden from '@/assets/products/warema/terrea-h60-garden.jpg';
 import terrea530Hero from '@/assets/products/warema/terrea-530-hero.webp';
 import terrea530B from '@/assets/products/warema/terrea-530-b.png';
+import terrea530Lifestyle from '@/assets/products/warema/terrea-530-lifestyle.jpg';
+import terrea530Exterior from '@/assets/products/warema/terrea-530-exterior.jpg';
 import terrea700sHero from '@/assets/products/warema/terrea-700s-hero.png';
 import terrea700sB from '@/assets/products/warema/terrea-700s-b.png';
+import terrea700sPool from '@/assets/products/warema/terrea-700s-pool.jpg';
+import terrea700sDeck from '@/assets/products/warema/terrea-700s-deck.jpg';
 import terreaG60Hero from '@/assets/products/warema/terrea-g60-hero.png';
 import terreaG60B from '@/assets/products/warema/terrea-g60-b.webp';
+import terreaG60Sidescreen from '@/assets/products/warema/terrea-g60-sidescreen.jpg';
+import terreaG60Mechanism from '@/assets/products/warema/terrea-g60-mechanism.jpg';
 import pereaImg from '@/assets/products/warema/perea-gallery2.webp';
 import pereaP20Hero from '@/assets/products/warema/perea-p20-hero.png';
 import pereaP20B from '@/assets/products/warema/perea-p20-b.png';
@@ -78,8 +88,12 @@ import pereaGallery2 from '@/assets/products/warema/perea-gallery4.webp';
 import pereaGallery3 from '@/assets/products/warema/perea-gallery3.webp';
 import pereaIllustration from '@/assets/products/warema/perea-pergola-v2.webp';
 import pereaP60 from '@/assets/products/warema/perea-p60.webp';
+import pereaP60Autumn from '@/assets/products/warema/perea-p60-autumn.jpg';
+import pereaP60Drainage from '@/assets/products/warema/perea-p60-drainage.jpg';
 import pereaP70 from '@/assets/products/warema/perea-p70.jpg';
 import pereaP70B from '@/assets/products/warema/perea-p70-b.webp';
+import pereaP70Lakeside from '@/assets/products/warema/perea-p70-lakeside.jpg';
+import pereaP70Kinematics from '@/assets/products/warema/perea-p70-kinematics.jpg';
 import fenstermarkiseImg from '@/assets/products/warema/fenstermarkise-hero.webp';
 import fenstermarkiseFrontMounted from '@/assets/products/warema/fenstermarkise-frontmounted.jpg';
 import fenstermarkiseFrontMountedB from '@/assets/products/warema/fenstermarkise-frontmounted-b.webp';
@@ -114,13 +128,17 @@ import climaraW20B from '@/assets/products/warema/climara-w20-b.webp';
 import climaraW10Hero from '@/assets/products/warema/climara-w10-hero.jpg';
 import climaraW7Hero from '@/assets/products/warema/climara-w7-hero.webp';
 import climaraW7B from '@/assets/products/warema/climara-w7-b.png';
+import climaraW7Exterior from '@/assets/products/warema/climara-w7-exterior.jpg';
 import climaraW9Hero from '@/assets/products/warema/climara-w9-hero.jpg';
 import climaraW9B from '@/assets/products/warema/climara-w9-b.png';
+import climaraW9Patio from '@/assets/products/warema/climara-w9-patio.jpg';
 import climaraW19Hero from '@/assets/products/warema/climara-w19-hero.webp';
 import climaraW19B from '@/assets/products/warema/climara-w19-b.png';
+import climaraW19Architectural from '@/assets/products/warema/climara-w19-architectural.jpg';
 import climaraW10bHero from '@/assets/products/warema/climara-w10b-hero.webp';
 import climaraW10bB from '@/assets/products/warema/climara-w10b-b.png';
 import climaraW10B from '@/assets/products/warema/climara-w10-b.webp';
+import climaraW10aConference from '@/assets/products/warema/climara-w10a-conference.jpg';
 import lamaxaHero from '@/assets/products/warema/lamaxa-l70-hero.webp';
 import lamaxaL50TexHero from '@/assets/products/warema/lamaxa-l50tex-hero.jpg';
 import lamaxaL50TexB from '@/assets/products/warema/lamaxa-l50tex-b.png';
@@ -129,6 +147,8 @@ import lamaxaL50ViewB from '@/assets/products/warema/lamaxa-l50view-b.webp';
 import lamaxaL70LineHero from '@/assets/products/warema/lamaxa-l70line-hero.webp';
 import lamaxaL70LineB from '@/assets/products/warema/lamaxa-l70line-b.png';
 import lamaxaL70Detail from '@/assets/products/warema/lamaxa-l70-detail.webp';
+import lamaxaL70AerialPool from '@/assets/products/warema/lamaxa-l70-aerial-pool.jpg';
+import lamaxaL70StoneHouse from '@/assets/products/warema/lamaxa-l70-stone-house.jpg';
 import lamaxaL50 from '@/assets/products/warema/lamaxa-l50.jpg';
 import lamaxaL50B from '@/assets/products/warema/lamaxa-l50-b.webp';
 import lamaxaL50C from '@/assets/products/warema/lamaxa-l50-c.webp';
@@ -553,7 +573,7 @@ export const warema: BrandCatalog = {
             en: ['Max 7000×4000 mm (28 m²)', 'Retractable valance blind against glare', 'Oval cassette, versatile for almost any patio'],
           },
           image: terreaK60Hero,
-          gallery: [terreaK60B],
+          gallery: [terreaK60B, terreaK60Lifestyle, terreaK60Underside, terreaK60LedNight, terreaK60FabricPrint],
           sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k60/',
         },
         {
@@ -588,7 +608,7 @@ export const warema: BrandCatalog = {
             en: ['Max 6000×3500 mm (18 m²)', 'Optimal price-to-quality ratio', 'LB variant for narrow recesses with a large projection'],
           },
           image: terrea530Hero,
-          gallery: [terrea530B],
+          gallery: [terrea530B, terrea530Lifestyle, terrea530Exterior],
           sourceUrl: 'https://www.warema.com/en/awnings/articulated-arm-awning-terrea-530/',
         },
         {
@@ -605,7 +625,7 @@ export const warema: BrandCatalog = {
             en: ['Max 5960×3000 mm (17.88 m²)', 'Disappears completely into the shaft when retracted', 'Optional front cover panel on the façade'],
           },
           image: terrea700sHero,
-          gallery: [terrea700sB],
+          gallery: [terrea700sB, terrea700sPool, terrea700sDeck],
           sourceUrl: 'https://www.warema.com/en/awnings/articulated-arm-awning-terrea-700s/',
         },
         {
@@ -622,7 +642,7 @@ export const warema: BrandCatalog = {
             en: ['Max 7000×4000 mm (28 m²)', 'Retractable valance blind against glare', 'LB variant for narrow patios'],
           },
           image: terreaG60Hero,
-          gallery: [terreaG60B],
+          gallery: [terreaG60B, terreaG60Sidescreen, terreaG60Mechanism],
           sourceUrl: 'https://www.warema.com/en/awnings/articulated-arm-awning-terrea-g60/',
         },
       ],
@@ -701,7 +721,8 @@ export const warema: BrandCatalog = {
             en: ['Width up to 6500 mm, depth up to 7000 mm', 'Area up to 35 m²', 'secudrive® tensioning technology'],
           },
           image: pereaP60,
-          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning.html',
+          gallery: [pereaP60Autumn, pereaP60Drainage],
+          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning-perea-p60/',
         },
         {
           id: 'p70',
@@ -717,8 +738,8 @@ export const warema: BrandCatalog = {
             en: ['Width up to 6000 mm, depth up to 5000 mm', 'secudrive® technology', '200+ fabric options'],
           },
           image: pereaP70,
-          gallery: [pereaP70B],
-          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning.html',
+          gallery: [pereaP70B, pereaP70Lakeside, pereaP70Kinematics],
+          sourceUrl: 'https://www.warema.com/en/awnings/pergola-awning-perea-p70/',
         },
       ],
     },
@@ -956,7 +977,7 @@ export const warema: BrandCatalog = {
             en: ['Width up to 6000 mm, length up to 4500 mm', 'Area up to 24 m²', 'Guide rails mount onto the existing conservatory profile'],
           },
           image: climaraW7Hero,
-          gallery: [climaraW7B],
+          gallery: [climaraW7B, climaraW7Exterior],
           sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning-climara-w7/',
         },
         {
@@ -973,7 +994,7 @@ export const warema: BrandCatalog = {
             en: ['Max 6000×6000 mm (30 m²)', 'Internal installation under the roof', 'Optional crank-operated valance'],
           },
           image: climaraW9Hero,
-          gallery: [climaraW9B],
+          gallery: [climaraW9B, climaraW9Patio],
           sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning-climara-w9/',
         },
         {
@@ -990,7 +1011,7 @@ export const warema: BrandCatalog = {
             en: ['Width up to 6500 mm, length up to 6000 mm', 'Area up to 30 m²', 'Round or rectangular cover profile'],
           },
           image: climaraW10Hero,
-          gallery: [climaraW10B],
+          gallery: [climaraW10B, climaraW10aConference],
           sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning-climara-w10-model-a/',
         },
         {
@@ -1024,7 +1045,7 @@ export const warema: BrandCatalog = {
             en: ['Max 6000×6000 mm (30 m²)', 'Optimised counter-pull system', 'Combines with the Climara D3'],
           },
           image: climaraW19Hero,
-          gallery: [climaraW19B],
+          gallery: [climaraW19B, climaraW19Architectural],
           sourceUrl: 'https://www.warema.com/en/awnings/conservatory-awning-climara-w19/',
         },
         {
@@ -1086,7 +1107,8 @@ export const warema: BrandCatalog = {
             hy: ['Առավելագույնը 4750×6330 մմ', 'Պտտվող լամելներ մի քանի դիրքով', 'LED լուսավորություն և ջեռուցիչներ՝ հավելյալ'],
             en: ['Max 4750×6330 mm', 'Rotating slats with multiple positions', 'Optional LED lighting and radiant heaters'],
           },
-          gallery: [lamaxaL70Detail],
+          image: lamaxaL70AerialPool,
+          gallery: [lamaxaL70Detail, lamaxaL70StoneHouse],
           sourceUrl: 'https://www.warema.com/en/patio-covers/l70-slat-roof.html',
         },
         {
