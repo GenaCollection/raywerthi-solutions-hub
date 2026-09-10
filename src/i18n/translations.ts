@@ -42,6 +42,7 @@ export const translations: Record<Language, Record<string, any>> = {
       ctaButton: 'Оставить заявку',
       otherBrands: 'Другие бренды',
       sourceLink: 'Подробнее на сайте бренда',
+      bestseller: 'Хит продаж',
     },
     categoryPage: {
       backToSolutions: 'Все категории',
@@ -211,6 +212,7 @@ export const translations: Record<Language, Record<string, any>> = {
       ctaButton: 'Թողնել հայտ',
       otherBrands: 'Այլ բրենդներ',
       sourceLink: 'Մանրամասն՝ բրենդի կայքում',
+      bestseller: 'Վաճառքի առաջատար',
     },
     categoryPage: {
       backToSolutions: 'Բոլոր կատեգորիաները',
@@ -420,6 +422,7 @@ export const translations: Record<Language, Record<string, any>> = {
       ctaButton: 'Send a Request',
       otherBrands: 'Other Brands',
       sourceLink: 'More on the brand\'s website',
+      bestseller: 'Bestseller',
     },
     categoryPage: {
       backToSolutions: 'All Categories',

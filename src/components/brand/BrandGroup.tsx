@@ -11,9 +11,10 @@ interface BrandGroupProps {
   lang: Language;
   viewFullRangeLabel: string;
   sourceLabel: string;
+  bestsellerLabel: string;
 }
 
-const BrandGroup: React.FC<BrandGroupProps> = ({ brand, category, lang, viewFullRangeLabel, sourceLabel }) => {
+const BrandGroup: React.FC<BrandGroupProps> = ({ brand, category, lang, viewFullRangeLabel, sourceLabel, bestsellerLabel }) => {
   return (
     <div className="py-10 border-b border-border last:border-b-0">
       <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -30,6 +31,7 @@ const BrandGroup: React.FC<BrandGroupProps> = ({ brand, category, lang, viewFull
             lang={lang}
             fallbackImage={category.image}
             sourceLabel={sourceLabel}
+            bestsellerLabel={bestsellerLabel}
           />
         ))}
       </div>

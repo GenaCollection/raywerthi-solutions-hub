@@ -19,6 +19,8 @@ export interface ProductModel {
   image?: string;
   /** Extra photos beyond the primary `image`, shown in a small gallery. */
   gallery?: string[];
+  /** Shows a "bestseller" badge on the card. */
+  bestseller?: boolean;
   /** Official manufacturer page for this model — full specs, more photos. */
   sourceUrl?: string;
 }

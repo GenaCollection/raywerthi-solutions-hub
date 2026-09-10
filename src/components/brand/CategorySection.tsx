@@ -35,6 +35,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ category, lang }) => 
               lang={lang}
               fallbackImage={category.image}
               sourceLabel={t('brandPage.sourceLink')}
+              bestsellerLabel={t('brandPage.bestseller')}
             />
           ))}
         </div>

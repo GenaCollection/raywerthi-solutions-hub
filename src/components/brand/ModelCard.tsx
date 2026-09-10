@@ -8,11 +8,12 @@ interface ModelCardProps {
   lang: Language;
   fallbackImage: string;
   sourceLabel: string;
+  bestsellerLabel: string;
 }
 
 const ROTATE_MS = 4000;
 
-const ModelCard: React.FC<ModelCardProps> = ({ model, lang, fallbackImage, sourceLabel }) => {
+const ModelCard: React.FC<ModelCardProps> = ({ model, lang, fallbackImage, sourceLabel, bestsellerLabel }) => {
   const images = [model.image ?? fallbackImage, ...(model.gallery ?? [])];
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -33,6 +34,11 @@ const ModelCard: React.FC<ModelCardProps> = ({ model, lang, fallbackImage, sourc
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
+        {model.bestseller && (
+          <span className="absolute top-2 left-2 z-10 rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold text-primary-foreground shadow">
+            {bestsellerLabel}
+          </span>
+        )}
         {images.map((src, i) => (
           <img
             key={src}

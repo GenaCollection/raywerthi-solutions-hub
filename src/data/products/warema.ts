@@ -29,18 +29,40 @@ import rollladenShaftB from '@/assets/products/warema/rollladen-shaft-b.webp';
 import rollladenShaftC from '@/assets/products/warema/rollladen-shaft-c.webp';
 import terreaImg from '@/assets/products/warema/terrea-markise.webp';
 import terrea550Hero from '@/assets/products/warema/terrea-550-hero.webp';
+import terrea550Lifestyle2 from '@/assets/products/warema/terrea-550-lifestyle2.jpg';
+import terrea550Endcap from '@/assets/products/warema/terrea-550-endcap.jpg';
+import terrea550Underside from '@/assets/products/warema/terrea-550-underside.jpg';
+import terrea550GreenTerrace from '@/assets/products/warema/terrea-550-green-terrace.jpg';
+import terrea550Render2 from '@/assets/products/warema/terrea-550-render2.jpg';
 import terrea580Hero from '@/assets/products/warema/terrea-580-hero.png';
 import terrea580B from '@/assets/products/warema/terrea-580-b.webp';
 import terreaK50Hero from '@/assets/products/warema/terrea-k50-hero.png';
 import terreaK50B from '@/assets/products/warema/terrea-k50-b.png';
+import terreaK50Terrace2 from '@/assets/products/warema/terrea-k50-terrace2.jpg';
+import terreaK50LedGlow from '@/assets/products/warema/terrea-k50-led-glow.jpg';
+import terreaK50CeilingGap from '@/assets/products/warema/terrea-k50-ceiling-gap.jpg';
+import terreaK50ScreenDoor from '@/assets/products/warema/terrea-k50-screen-door.jpg';
+import terreaK50Render2 from '@/assets/products/warema/terrea-k50-render2.jpg';
 import terreaK55Hero from '@/assets/products/warema/terrea-k55-hero.jpg';
 import terreaK55B from '@/assets/products/warema/terrea-k55-b.webp';
+import terreaK55EndcapStudio from '@/assets/products/warema/terrea-k55-endcap-studio.jpg';
+import terreaK55RedHouse from '@/assets/products/warema/terrea-k55-red-house.jpg';
+import terreaK55AerialBalcony from '@/assets/products/warema/terrea-k55-aerial-balcony.jpg';
+import terreaK55RetractedBrick from '@/assets/products/warema/terrea-k55-retracted-brick.jpg';
+import terreaK55RetractedWide from '@/assets/products/warema/terrea-k55-retracted-wide.jpg';
+import terreaK55Render2 from '@/assets/products/warema/terrea-k55-render2.jpg';
+import terreaK55BracketLed from '@/assets/products/warema/terrea-k55-bracket-led.jpg';
 import terreaK60Hero from '@/assets/products/warema/terrea-k60-hero.jpg';
 import terreaK60B from '@/assets/products/warema/terrea-k60-b.png';
 import terreaK70Hero from '@/assets/products/warema/terrea-k70-hero.webp';
 import terreaK70B from '@/assets/products/warema/terrea-k70-b.png';
 import terreaH60Hero from '@/assets/products/warema/terrea-h60-hero.jpg';
 import terreaH60B from '@/assets/products/warema/terrea-h60-b.png';
+import terreaH60Render2 from '@/assets/products/warema/terrea-h60-render2.jpg';
+import terreaH60ArmDetail from '@/assets/products/warema/terrea-h60-arm-detail.jpg';
+import terreaH60Heater from '@/assets/products/warema/terrea-h60-heater.jpg';
+import terreaH60GableHouse from '@/assets/products/warema/terrea-h60-gable-house.jpg';
+import terreaH60Garden from '@/assets/products/warema/terrea-h60-garden.jpg';
 import terrea530Hero from '@/assets/products/warema/terrea-530-hero.webp';
 import terrea530B from '@/assets/products/warema/terrea-530-b.png';
 import terrea700sHero from '@/assets/products/warema/terrea-700s-hero.png';
@@ -391,6 +413,8 @@ export const warema: BrandCatalog = {
             en: ['Max 4500×2500 mm (11.25 m²)', 'Flat, slender cassette', 'Suitable for unprotected installation positions'],
           },
           image: terrea550Hero,
+          gallery: [terrea550Lifestyle2, terrea550Endcap, terrea550Underside, terrea550GreenTerrace, terrea550Render2],
+          bestseller: true,
           sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-550/',
         },
         {
@@ -424,7 +448,8 @@ export const warema: BrandCatalog = {
             en: ['Max 5000×3000 mm (15 m²)', 'Cubic design, minimal box projection', 'Cubic Line range — pairs with Climara W10/W20'],
           },
           image: terreaK50Hero,
-          gallery: [terreaK50B],
+          gallery: [terreaK50B, terreaK50Terrace2, terreaK50LedGlow, terreaK50CeilingGap, terreaK50ScreenDoor, terreaK50Render2],
+          bestseller: true,
           sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k50/',
         },
         {
@@ -441,7 +466,17 @@ export const warema: BrandCatalog = {
             en: ['Max 6000×3500 mm (19.25 m²)', 'Dimmable LED lighting under the cassette or concealed', 'Best of Design Award 2024, iF Design Award 2025'],
           },
           image: terreaK55Hero,
-          gallery: [terreaK55B],
+          gallery: [
+            terreaK55B,
+            terreaK55EndcapStudio,
+            terreaK55RedHouse,
+            terreaK55AerialBalcony,
+            terreaK55RetractedBrick,
+            terreaK55RetractedWide,
+            terreaK55Render2,
+            terreaK55BracketLed,
+          ],
+          bestseller: true,
           sourceUrl: 'https://www.warema.com/en/awnings/cassette-awning-terrea-k55/',
         },
         {
@@ -492,7 +527,8 @@ export const warema: BrandCatalog = {
             en: ['Max 7000×4000 mm (28 m²)', 'Integrated rain hood', 'All Weather fabric — light rain protection'],
           },
           image: terreaH60Hero,
-          gallery: [terreaH60B],
+          gallery: [terreaH60B, terreaH60Render2, terreaH60ArmDetail, terreaH60Heater, terreaH60GableHouse, terreaH60Garden],
+          bestseller: true,
           sourceUrl: 'https://www.warema.com/en/awnings/articulated-arm-awning-terrea-h60/',
         },
         {
