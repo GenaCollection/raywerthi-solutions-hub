@@ -81,11 +81,21 @@ import absturzStangeImg from '@/assets/products/hella/absturz-stange.png';
 import isrImg from '@/assets/products/hella/insekten-isr.png';
 import istImg from '@/assets/products/hella/ist.png';
 import innenjalousienImg from '@/assets/products/hella/innenjalousien.png';
+import innenjalousienBooks from '@/assets/products/hella/hella-innenjalousien-books.jpg';
+import innenjalousienOffice from '@/assets/products/hella/hella-innenjalousien-office.jpg';
+import innenjalousienLight from '@/assets/products/hella/hella-innenjalousien-light.jpg';
 import plisseesImg from '@/assets/products/hella/plissees.png';
 import plisseesHero from '@/assets/products/hella/plissees-hero.png';
 import plisseesB from '@/assets/products/hella/plissees-b.png';
-import innenrollosImg from '@/assets/products/hella/innenrollos.png';
+import plisseesSkylight from '@/assets/products/hella/hella-plissee-skylight.jpg';
+import plisseesOffice from '@/assets/products/hella/hella-plissee-office.jpg';
+import innenrollosLoft from '@/assets/products/hella/hella-innenrollo-loft.jpg';
+import innenrollosTexture from '@/assets/products/hella/hella-innenrollo-texture.jpg';
+import innenrollosOffice from '@/assets/products/hella/hella-innenrollo-office.jpg';
+import innenrollosClassroom from '@/assets/products/hella/hella-innenrollo-classroom.jpg';
 import vertikaljalousienImg from '@/assets/products/hella/vertikaljalousien.png';
+import vertikaljalousienGreen from '@/assets/products/hella/hella-vertikaljalousien-green.jpg';
+import vertikaljalousienWhite from '@/assets/products/hella/hella-vertikaljalousien-white.jpg';
 import onyxCenterImg from '@/assets/products/hella/onyx-center.png';
 import onyxCenterHero from '@/assets/products/hella/onyx-center-hero.png';
 import onyxConnectorImg from '@/assets/products/hella/onyx-connector.png';
@@ -1222,89 +1232,92 @@ export const hella: BrandCatalog = {
     },
     {
       slug: 'innenrollos',
-      image: innenrollosImg,
+      image: innenrollosLoft,
       name: { ru: 'Внутренние рулонные шторы', hy: 'Ինտերիերի ռուլոնային վարագույրներ', en: 'Interior Roller Blinds' },
       intro: {
-        ru: 'Рулонные шторы с боковыми направляющими для точного контроля света — включая эко-коллекцию из переработанного океанического пластика и версии для мансардных окон.',
-        hy: 'Ռուլոնային վարագույրներ կողային ուղղորդիչներով՝ լույսի ճշգրիտ վերահսկման համար, այդ թվում՝ վերամշակված օվկիանոսային պլաստիկից էկո-կոլեկցիա և թեքածածկ պատուհանների տարբերակներ։',
-        en: 'Roller shades with side guide rails for precise light control — including an eco-collection made from recycled ocean plastic and versions for skylight windows.',
+        ru: 'Классика среди декоративных внутренних штор — функциональный элемент дизайна интерьера. От блэкаута до прозрачных полотен, ручное или моторизованное управление, эко-коллекция из переработанного океанического пластика.',
+        hy: 'Ինտերիերի դեկորատիվ վարագույրների դասականը՝ ինտերիերի դիզայնի ֆունկցիոնալ տարր։ Խավարեցումից մինչև թափանցիկ գործվածքներ, ձեռքի կամ մոտորացված կառավարում, էկո-կոլեկցիա վերամշակված օվկիանոսային պլաստիկից։',
+        en: 'The classic among decorative interior blinds — a functional element of modern interior design. From blackout to transparent fabrics, manual or motorised operation, and an eco-collection made from recycled ocean plastic.',
       },
       models: [
         {
           id: 'innenrollos',
           name: 'Innenrollos',
           description: {
-            ru: 'Рулонные шторы с боковыми направляющими, включая эко-коллекцию из переработанного океанического пластика и версии для мансардных окон.',
-            hy: 'Ռուլոնային վարագույրներ կողային ուղղորդիչներով, այդ թվում՝ վերամշակված օվկիանոսային պլաստիկից էկո-կոլեկցիա և թեքածածկ պատուհանների տարբերակներ։',
-            en: 'Roller shades with side guide rails, including an eco-collection made from recycled ocean plastic and versions for skylight windows.',
+            ru: 'Гибкая и практичная рулонная штора — универсальный вариант для любого помещения, от мансардных окон до зимних садов. Полотно ровно скручивается и раскручивается, регулируя климат в помещении и защищая от солнца. Широкий выбор тканей — от блэкаута до лёгких прозрачных полотен — и три способа управления: цепочкой, ручкой или мотором.',
+            hy: 'Ճկուն և գործնական ռուլոնային վարագույր՝ ունիվերսալ տարբերակ ցանկացած տարածքի համար, թեքածածկ պատուհաններից մինչև ձմեռային այգիներ։ Գործվածքը հարթ փաթաթվում և բացվում է՝ կարգավորելով սենյակի միկրոկլիման և պաշտպանելով արևից։ Գործվածքի լայն ընտրանի՝ խավարեցումից մինչև թեթև թափանցիկ գործվածքներ, և կառավարման երեք եղանակ՝ շղթայով, բռնակով կամ շարժիչով։',
+            en: 'A flexible, practical roller blind — a versatile choice for any room, from skylight windows to conservatories. The fabric rolls up and down perfectly, helping regulate the indoor climate while shading against the sun. A wide fabric range spans blackout to light, transparent weaves, with three ways to operate it — chain, handle or motor.',
           },
           specs: {
-            ru: ['Несколько уровней светопропускания', 'Эко-коллекция из океанического пластика', 'Моторизация с программируемым пультом'],
-            hy: ['Լույսի թափանցելիության մի քանի մակարդակ', 'Էկո-կոլեկցիա օվկիանոսային պլաստիկից', 'Մոտորացում ծրագրավորվող կառավարիչով'],
-            en: ['Multiple light-transmission levels', 'Eco-collection from ocean plastic', 'Motorised with a programmable remote'],
+            ru: ['Прижимные направляющие против бокового раскачивания', 'С кассетой или без неё', 'Компенсационная пружина для лёгкого хода', 'Эко-коллекция из переработанного океанического пластика'],
+            hy: ['Կողային ճոճման դեմ սեղմող ուղղորդիչներ', 'Կասետայով կամ առանց դրա', 'Փոխհատուցող զսպանակ հեշտ ընթացքի համար', 'Էկո-կոլեկցիա վերամշակված օվկիանոսային պլաստիկից'],
+            en: ['Guide rails prevent lateral oscillation', 'Available with or without a cassette', 'Compensating spring for smooth operation', 'Eco-collection made from recycled ocean plastic'],
           },
-          image: innenrollosImg,
+          image: innenrollosLoft,
+          gallery: [innenrollosClassroom, innenrollosOffice, innenrollosTexture],
           sourceUrl: 'https://www.hella.info/de/produkte/innenrollos',
         },
       ],
     },
     {
       slug: 'innenjalousien',
-      image: innenjalousienImg,
+      image: innenjalousienBooks,
       name: { ru: 'Интерьерные жалюзи и плиссе', hy: 'Ինտերիերի ժալյուզիներ և պլիսե', en: 'Interior Blinds & Pleated Shades' },
       intro: {
-        ru: 'Горизонтальные и вертикальные жалюзи, а также плиссе Duette для внутреннего затенения — точный контроль света и ступенчатая защита от посторонних взглядов в любом помещении.',
-        hy: 'Հորիզոնական և ուղղահայաց ժալյուզիներ, ինչպես նաև Duette պլիսե ինտերիերի ստվերապատման համար՝ լույսի ճշգրիտ վերահսկում և աստիճանական պաշտպանություն կողմնակի հայացքից ցանկացած սենյակում։',
-        en: 'Horizontal and vertical louvre blinds, plus Duette pleated shades for interior shading — precise light control and stepless privacy protection in any room.',
+        ru: 'Горизонтальные и вертикальные жалюзи, а также плиссе Duette для внутреннего затенения — точный контроль света и ступенчатая защита от посторонних взглядов в любом помещении, от квартиры до бизнес-центра.',
+        hy: 'Հորիզոնական և ուղղահայաց ժալյուզիներ, ինչպես նաև Duette պլիսե ինտերիերի ստվերապատման համար՝ լույսի ճշգրիտ վերահսկում և աստիճանական պաշտպանություն կողմնակի հայացքից ցանկացած սենյակում, բնակարանից մինչև բիզնես-կենտրոն։',
+        en: 'Horizontal and vertical louvre blinds, plus Duette pleated shades for interior shading — precise light control and stepless privacy protection in any room, from an apartment to a business centre.',
       },
       models: [
         {
           id: 'innenjalousien',
           name: 'Innenjalousien',
           description: {
-            ru: 'Горизонтальные алюминиевые ламели для внутреннего монтажа — практичная модернизация существующих окон без штробления стен.',
-            hy: 'Հորիզոնական ալյումինե լամելներ ինտերիերի տեղադրման համար՝ գործնական արդիականացում առկա պատուհանների համար՝ առանց պատերի կտրման։',
-            en: 'Horizontal aluminium louvres for interior mounting — a practical retrofit for existing windows with no wall chasing required.',
+            ru: 'Горизонтальные алюминиевые ламели для внутреннего монтажа — удобно контролируют дневной свет и эффективно используют естественное освещение. Ламели с плавной регулировкой угла защищают от посторонних взглядов, а разнообразие исполнений и цветов делает жалюзи декоративным и функциональным элементом интерьера. Особенно удобны при модернизации — монтируются без штробления стен.',
+            hy: 'Հորիզոնական ալյումինե լամելներ ինտերիերի տեղադրման համար՝ հարմարավետորեն վերահսկում են ցերեկային լույսը և արդյունավետ օգտագործում բնական լուսավորությունը։ Անկյան հարթ կարգավորմամբ լամելները պաշտպանում են կողմնակի հայացքից, իսկ կատարումների ու գույների բազմազանությունը ժալյուզին դարձնում է ինտերիերի դեկորատիվ ու ֆունկցիոնալ տարր։ Հատկապես հարմար են արդիականացման համար՝ տեղադրվում են առանց պատերի կտրման։',
+            en: 'Horizontal aluminium louvres for interior mounting — conveniently control daylight and make effective use of natural light. Steplessly adjustable slats protect from prying eyes, and the wide range of finishes and colours makes them both a decorative and functional part of interior design. Especially convenient for retrofitting — no wall chasing required.',
           },
           specs: {
-            ru: ['Плавная регулировка угла ламелей', 'Широкая палитра цветов и текстур', 'Цепное, шнуровое или моторизованное управление'],
-            hy: ['Լամելների անկյան հարթ կարգավորում', 'Գույների և հյուսվածքների լայն ընտրանի', 'Շղթայական, պարանային կամ մոտորացված կառավարում'],
-            en: ['Stepless slat-angle adjustment', 'Wide range of colours and textures', 'Chain, cord or motorised control'],
+            ru: ['Плавная непрерывная регулировка света', 'Отличная защита от взглядов и бликов', 'Идеальны для модернизации без штробления стен', 'Цепное, шнуровое или моторизованное управление'],
+            hy: ['Լույսի հարթ, անընդհատ կարգավորում', 'Գերազանց պաշտպանություն հայացքից և փայլից', 'Իդեալական են արդիականացման համար՝ առանց պատերի կտրման', 'Շղթայական, պարանային կամ մոտորացված կառավարում'],
+            en: ['Smooth, continuous light regulation', 'Very good visual and glare protection', 'Ideal for retrofitting, no wall chasing needed', 'Chain, cord or motorised control'],
           },
-          image: innenjalousienImg,
+          image: innenjalousienBooks,
+          gallery: [innenjalousienOffice, innenjalousienLight, innenjalousienImg],
           sourceUrl: 'https://www.hella.info/de/produkte/innenjalousien-1',
         },
         {
           id: 'plissees',
           name: 'Plissees / Duette',
           description: {
-            ru: 'Плиссе для нестандартных проёмов, включая сотовую (Duette) конструкцию с воздушными камерами для теплоизоляции.',
-            hy: 'Պլիսե ոչ ստանդարտ բացվածքների համար, այդ թվում՝ Duette փեթակաձև կոնստրուկցիա օդային խցիկներով՝ ջերմամեկուսացման համար։',
-            en: 'Pleated blinds for irregular openings, including the Duette honeycomb construction with air chambers for insulation.',
+            ru: 'Современный хит продаж и настоящий универсал: подходит для треугольных, трапециевидных и круглых окон — плиссе изготавливается по индивидуальным размерам под любую архитектурную задачу. Постоянные складки текстильного полотна дают отличную защиту от солнца, бликов и посторонних взглядов, а открывать и закрывать штору можно как сверху вниз, так и снизу вверх. Сотовая конструкция Duette с воздушными камерами дополнительно работает на теплоизоляцию.',
+            hy: 'Ժամանակակից հիթ վաճառք և իսկական ունիվերսալ. հարմար է եռանկյունաձև, սեղանաձև և կլոր պատուհանների համար. պլիսեն արտադրվում է անհատական չափերով ցանկացած ճարտարապետական խնդրի համար։ Տեքստիլ գործվածքի մշտական ծալքերը գերազանց պաշտպանություն են ապահովում արևից, փայլից և կողմնակի հայացքից, իսկ վարագույրը կարելի է բացել ու փակել ինչպես վերևից ներքև, այնպես էլ ներքևից վերև։ Duette փեթակաձև կոնստրուկցիան օդային խցիկներով լրացուցիչ աշխատում է ջերմամեկուսացման ուղղությամբ։',
+            en: 'A contemporary best seller and true all-rounder: suited to triangular, trapezium-shaped and round windows — each pleated blind is custom-made for any architectural challenge. The permanent folds in the textile fabric give excellent protection from sun, glare and prying eyes, and the blind opens and closes both top-to-bottom and bottom-to-top. The Duette honeycomb construction with air chambers adds extra thermal insulation.',
           },
           specs: {
-            ru: ['Несколько степеней затемнения', 'Огнестойкие и моющиеся ткани', 'Duette — сотовая конструкция с воздушной прослойкой'],
-            hy: ['Խավարեցման մի քանի աստիճան', 'Կրակակայուն և լվացվող գործվածքներ', 'Duette՝ փեթակաձև կոնստրուկցիա օդային շերտով'],
-            en: ['Multiple black-out levels', 'Fire-resistant, washable fabrics', 'Duette — honeycomb construction with air layer'],
+            ru: ['Подходит почти для любой формы окна', 'Есть моющиеся варианты', 'Открывается сверху вниз и снизу вверх', 'Низкая горючесть, высокая износостойкость'],
+            hy: ['Հարմար է գրեթե ցանկացած պատուհանի ձևի համար', 'Կան լվացվող տարբերակներ', 'Բացվում է վերևից ներքև և ներքևից վերև', 'Ցածր այրվածություն, բարձր մաշակայունություն'],
+            en: ['Available for almost all window shapes', 'Washable variants available', 'Opens top-to-bottom and bottom-to-top', 'Low flammability, high durability'],
           },
-          image: plisseesHero,
-          gallery: [plisseesB],
+          image: plisseesSkylight,
+          gallery: [plisseesHero, plisseesOffice, plisseesB],
           sourceUrl: 'https://www.hella.info/de/produkte/plissees-1',
         },
         {
           id: 'vertikaljalousien',
           name: 'Vertikaljalousien',
           description: {
-            ru: 'Вертикальные ламели трёх ширин — удобны как разделитель пространства для больших витражных окон.',
-            hy: 'Ուղղահայաց լամելներ երեք լայնությամբ՝ հարմար են որպես տարածքի բաժանիչ մեծ ապակեպատ պատուհանների համար։',
-            en: 'Vertical louvres in three widths — practical as a space divider for large glazed windows.',
+            ru: 'Вертикальные жалюзи идеально подходят для стильного оформления гостиных, а также офисных и коммерческих помещений. Благодаря гибкой регулировке ламелей они играют светом и тенью, создавая ощущение безграничности пространства. Крупные ламели трёх ширин сочетают максимальную защиту от солнца с гибким видом наружу и оптимальным освещением комнаты — отличный разделитель пространства для больших витражных окон, эркеров и арочных проёмов.',
+            hy: 'Ուղղահայաց ժալյուզիները իդեալական են հյուրասենյակների, ինչպես նաև գրասենյակային և կոմերցիոն տարածքների ոճային ձևավորման համար։ Լամելների ճկուն կարգավորման շնորհիվ նրանք խաղում են լույսով ու ստվերով՝ ստեղծելով անսահմանության զգացում։ Երեք լայնության խոշոր լամելները համատեղում են արևից առավելագույն պաշտպանությունը դրսի ճկուն տեսադաշտի և սենյակի օպտիմալ լուսավորության հետ. հիանալի տարածքի բաժանիչ մեծ ապակեպատ պատուհանների, էրկերների և կամարակապ բացվածքների համար։',
+            en: 'Vertical blinds are ideal for the stylish design of living rooms as well as office and commercial premises. Thanks to flexible slat adjustment, they play with light and shade and create a feeling of boundlessness. The generous slats, in three widths, combine maximum sun protection with a flexible outside view and optimal room lighting — an excellent space divider for large glazed windows, bay windows and arched openings.',
           },
           specs: {
-            ru: ['Ширина ламели 63, 89 или 127 мм', 'Подходит для больших витражных окон', 'Цепное или моторизованное управление'],
-            hy: ['Լամելի լայնությունը՝ 63, 89 կամ 127 մմ', 'Հարմար է մեծ ապակեպատ պատուհանների համար', 'Շղթայական կամ մոտորացված կառավարում'],
-            en: ['Slat width 63, 89 or 127 mm', 'Suited to large glazed windows', 'Chain or motorised control'],
+            ru: ['Ширина ламели 63, 89 или 127 мм', 'Идеальны для больших витражных окон, эркеров, арок', 'Цепное или моторизованное управление', 'Низкая горючесть'],
+            hy: ['Լամելի լայնությունը՝ 63, 89 կամ 127 մմ', 'Իդեալական են մեծ ապակեպատ պատուհանների, էրկերների, կամարների համար', 'Շղթայական կամ մոտորացված կառավարում', 'Ցածր այրվածություն'],
+            en: ['Slat width 63, 89 or 127 mm', 'Ideal for large glazed windows, bay windows and arches', 'Chain or motorised control', 'Low flammability'],
           },
-          image: vertikaljalousienImg,
+          image: vertikaljalousienGreen,
+          gallery: [vertikaljalousienWhite, vertikaljalousienImg],
           sourceUrl: 'https://www.hella.info/de/produkte/vertikaljalousien',
         },
       ],
