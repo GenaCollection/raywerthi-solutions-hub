@@ -18,12 +18,20 @@ export interface CategorySource {
   categorySlug: string;
 }
 
+/** Spotlights one model from a source category in a large hero block above the regular grid. */
+export interface FeaturedModelRef {
+  brand: 'warema' | 'hella' | 'silent-gliss';
+  categorySlug: string;
+  modelId: string;
+}
+
 export interface UnifiedCategory {
   slug: string;
   name: LocalizedText;
   description: LocalizedText;
   image: string;
   sources: CategorySource[];
+  featured?: FeaturedModelRef;
 }
 
 export const unifiedCategories: UnifiedCategory[] = [
@@ -175,6 +183,7 @@ export const unifiedCategories: UnifiedCategory[] = [
       { brand: 'silent-gliss', categorySlug: 'panel-glide' },
       { brand: 'hella', categorySlug: 'innenrollos' },
     ],
+    featured: { brand: 'hella', categorySlug: 'innenrollos', modelId: 'innenrollos' },
   },
   {
     slug: 'interior-blinds',

@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactBlock from '@/components/ContactBlock';
 import BrandGroup from '@/components/brand/BrandGroup';
+import FeaturedModelBlock from '@/components/brand/FeaturedModelBlock';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { brandCatalogs, unifiedCategories } from '@/data/products';
 import type { BrandCatalog, ProductCategory } from '@/data/products';
@@ -25,15 +26,24 @@ const CategoryDetail: React.FC = () => {
     return <Navigate to="/solutions" replace />;
   }
 
+  const featured = category.featured;
+  const featuredBrand = featured ? brandCatalogs[featured.brand] : undefined;
+  const featuredCategory = featuredBrand?.categories.find((c) => c.slug === featured?.categorySlug);
+  const featuredModel = featuredCategory?.models.find((m) => m.id === featured?.modelId);
+
   const groups: CategoryGroup[] = category.sources
     .map((source) => {
       const brand = brandCatalogs[source.brand];
       const cat = brand?.categories.find((c) => c.slug === source.categorySlug);
-      return cat ? { brand, category: cat } : null;
+      if (!cat) return null;
+      const isFeaturedSource = featured && featured.brand === source.brand && featured.categorySlug === source.categorySlug;
+      const models = isFeaturedSource ? cat.models.filter((m) => m.id !== featured.modelId) : cat.models;
+      if (models.length === 0) return null;
+      return { brand, category: { ...cat, models } };
     })
     .filter((g): g is CategoryGroup => !!g);
 
-  const uniqueBrands = [...new Map(groups.map((g) => [g.brand.slug, g.brand])).values()];
+  const uniqueBrands = [...new Map([...(featuredBrand ? [[featuredBrand.slug, featuredBrand] as const] : []), ...groups.map((g) => [g.brand.slug, g.brand] as const)]).values()];
 
   return (
     <div className="min-h-screen">
@@ -74,6 +84,20 @@ const CategoryDetail: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Featured bestseller spotlight */}
+        {featuredBrand && featuredModel && (
+          <section className="container-site pt-10">
+            <FeaturedModelBlock
+              brand={featuredBrand}
+              model={featuredModel}
+              lang={lang}
+              badgeLabel={t('brandPage.bestseller')}
+              kickerLabel={t('categoryPage.featuredKicker')}
+              sourceLabel={t('brandPage.sourceLink')}
+            />
+          </section>
+        )}
 
         {/* Brand groups */}
         <section className="container-site pt-8">

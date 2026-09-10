@@ -1255,6 +1255,7 @@ export const hella: BrandCatalog = {
           },
           image: innenrollosLoft,
           gallery: [innenrollosClassroom, innenrollosOffice, innenrollosTexture],
+          bestseller: true,
           sourceUrl: 'https://www.hella.info/de/produkte/innenrollos',
         },
       ],

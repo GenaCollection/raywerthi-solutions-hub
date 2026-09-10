@@ -50,6 +50,7 @@ export const translations: Record<Language, Record<string, any>> = {
       introTitle: 'Что мы предлагаем',
       viewFullRange: 'Весь ассортимент',
       otherCategories: 'Другие категории',
+      featuredKicker: 'Самый продаваемый продукт',
     },
     howWeWork: {
       title: 'Как мы работаем',
@@ -220,6 +221,7 @@ export const translations: Record<Language, Record<string, any>> = {
       introTitle: 'Ինչ ենք առաջարկում',
       viewFullRange: 'Ամբողջ տեսականին',
       otherCategories: 'Այլ կատեգորիաներ',
+      featuredKicker: 'Մեր ամենավաճառվող արտադրանքը',
     },
     howWeWork: {
       title: 'Ինչպես ենք մենք աշխատում',
@@ -430,6 +432,7 @@ export const translations: Record<Language, Record<string, any>> = {
       introTitle: 'What We Offer',
       viewFullRange: 'Full Range',
       otherCategories: 'Other Categories',
+      featuredKicker: 'Our Best-Selling Product',
     },
     howWeWork: {
       title: 'How We Work',
