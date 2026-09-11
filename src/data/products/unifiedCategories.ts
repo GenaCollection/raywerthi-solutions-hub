@@ -167,6 +167,7 @@ export const unifiedCategories: UnifiedCategory[] = [
       { brand: 'silent-gliss', categorySlug: 'metropole' },
       { brand: 'silent-gliss', categorySlug: 'cubicle' },
     ],
+    featured: { brand: 'silent-gliss', categorySlug: 'curtain-tracks', modelId: 'sg5600' },
   },
   {
     slug: 'roller-roman-panel',

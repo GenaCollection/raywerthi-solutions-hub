@@ -8,7 +8,11 @@ import sg5600Office from '@/assets/products/silentgliss/sg5600-prs1.jpg';
 import sg5600Resort from '@/assets/products/silentgliss/sg5600-prs3.jpg';
 import sg5600Dining from '@/assets/products/silentgliss/sg5600-prs4.jpg';
 import sg5600Terrace from '@/assets/products/silentgliss/sg5600-prs5.jpg';
+import sg5600StreamlinedPair from '@/assets/products/silentgliss/sg5600-streamlined-pair.jpg';
+import sg5600Matter from '@/assets/products/silentgliss/sg5600-matter.jpg';
+import sg5600BlackFinish from '@/assets/products/silentgliss/sg5600-black-finish.jpg';
 import sg5100Img from '@/assets/products/silentgliss/sg5100.jpg';
+import sg5100NewProfile from '@/assets/products/silentgliss/sg5100-new-profile.jpg';
 import sg6840Hero from '@/assets/products/silentgliss/sg6840-hero.jpg';
 import sg6840Lifestyle from '@/assets/products/silentgliss/sg6840-lifestyle.jpg';
 import sg6840Mechanism from '@/assets/products/silentgliss/sg6840-mechanism.jpg';
@@ -82,42 +86,53 @@ export const silentGliss: BrandCatalog = {
       image: tracksImg,
       name: { ru: 'Карнизы-рельсы для штор', hy: 'Վարագույրների ռելսային կարնիզներ', en: 'Curtain Track Systems' },
       intro: {
-        ru: 'Ручные, шнуровые и электрические карнизные системы — от экономичного ручного карниза до флагманского электропривода SG 5600, известного бесшумным и точным ходом. Все системы построены на фирменной технологии двухкомпонентных бегунков и гнутся под эркеры и нестандартные проёмы.',
-        hy: 'Ձեռքի, պարանով և էլեկտրական կարնիզային համակարգեր՝ տնտեսողական ձեռքի կարնիզից մինչև ֆլագման SG 5600 էլեկտրաշարժիչը՝ հայտնի իր անաղմուկ և ճշգրիտ ընթացքով։ Բոլոր համակարգերը կառուցված են ֆիրմային երկբաղադրիչ սահողների տեխնոլոգիայի հիման վրա և ծալվում են էրկերների ու ոչ ստանդարտ բացվածքների համար։',
-        en: 'Hand-drawn, corded and electric track systems — from an economical hand-drawn track to the flagship SG 5600 electric drive, renowned for its silent, precise motion. Every system is built on the proprietary two-component glider technology and bends for bay windows and irregular openings.',
+        ru: 'Ручные, шнуровые и электрические карнизные системы — от экономичного ручного карниза до флагманского электропривода SG 5600, известного бесшумным и точным ходом и поддержкой умного дома Matter. Все системы построены на фирменной технологии двухкомпонентных бегунков и гнутся под эркеры и нестандартные проёмы.',
+        hy: 'Ձեռքի, պարանով և էլեկտրական կարնիզային համակարգեր՝ տնտեսողական ձեռքի կարնիզից մինչև ֆլագման SG 5600 էլեկտրաշարժիչը՝ հայտնի իր անաղմուկ և ճշգրիտ ընթացքով և Matter խելացի տան աջակցությամբ։ Բոլոր համակարգերը կառուցված են ֆիրմային երկբաղադրիչ սահողների տեխնոլոգիայի հիման վրա և ծալվում են էրկերների ու ոչ ստանդարտ բացվածքների համար։',
+        en: 'Hand-drawn, corded and electric track systems — from an economical hand-drawn track to the flagship SG 5600 electric drive, renowned for its silent, precise motion and Matter smart-home support. Every system is built on the proprietary two-component glider technology and bends for bay windows and irregular openings.',
       },
       models: [
         {
           id: 'sg5600',
           name: 'SG 5600',
           description: {
-            ru: 'Флагманский электрокарниз с более чем 50-летней историей развития — выбор отелей, офисов и премиальных резиденций.',
-            hy: 'Ֆլագման էլեկտրական կարնիզը՝ ավելի քան 50-ամյա զարգացման պատմությամբ. հյուրանոցների, գրասենյակների և պրեմիում ռեզիդենցիաների ընտրություն։',
-            en: 'The flagship electric track with over 50 years of development behind it — the choice of hotels, offices and premium residences.',
+            ru: 'Флагманский электрокарниз с более чем 50-летней историей развития — выбор отелей, офисов и премиальных резиденций. Обновлённая версия 2026 года получила более обтекаемый корпус привода и поддержку умного дома Matter для лёгкой интеграции с современными экосистемами.',
+            hy: 'Ֆլագման էլեկտրական կարնիզը՝ ավելի քան 50-ամյա զարգացման պատմությամբ. հյուրանոցների, գրասենյակների և պրեմիում ռեզիդենցիաների ընտրություն։ 2026 թվականի թարմացված տարբերակը ստացել է ավելի հոսանագիծ շարժիչի կորպուս և Matter խելացի տան աջակցություն՝ ժամանակակից էկոհամակարգերի հետ հեշտ ինտեգրման համար։',
+            en: 'The flagship electric track with over 50 years of development behind it — the choice of hotels, offices and premium residences. The refreshed 2026 version has a more streamlined drive housing and Matter smart-home compatibility for easy integration with modern building ecosystems.',
           },
           specs: {
-            ru: ['Длина до 25 м, вес полотна до 65 кг', 'Управление: пульт, приложение Move, BMS', 'Бесшумный и плавный ход'],
-            hy: ['Երկարությունը՝ մինչև 25 մ, գործվածքի քաշը՝ մինչև 65 կգ', 'Կառավարում՝ կառավարիչ, Move հավելված, BMS', 'Անաղմուկ և հարթ ընթացք'],
-            en: ['Length up to 25 m, fabric weight up to 65 kg', 'Control: remote, Move app, or BMS', 'Silent, smooth operation'],
+            ru: ['Длина до 25 м, вес полотна до 65 кг', 'Управление: пульт, приложение Move, BMS, Matter', 'Бесшумный и плавный ход', 'Обтекаемый корпус привода, классический белый или чёрный цвет'],
+            hy: ['Երկարությունը՝ մինչև 25 մ, գործվածքի քաշը՝ մինչև 65 կգ', 'Կառավարում՝ կառավարիչ, Move հավելված, BMS, Matter', 'Անաղմուկ և հարթ ընթացք', 'Հոսանագիծ շարժիչի կորպուս, դասական սպիտակ կամ սև գույն'],
+            en: ['Length up to 25 m, fabric weight up to 65 kg', 'Control: remote, Move app, BMS or Matter', 'Silent, smooth operation', 'Streamlined drive housing in classic white or black'],
           },
-          gallery: [sg5600Mechanism, sg5600Gallery, sg5600Office, sg5600Resort, sg5600Dining, sg5600Terrace],
+          gallery: [
+            sg5600Mechanism,
+            sg5600Gallery,
+            sg5600Office,
+            sg5600Resort,
+            sg5600Dining,
+            sg5600Terrace,
+            sg5600StreamlinedPair,
+            sg5600Matter,
+            sg5600BlackFinish,
+          ],
+          bestseller: true,
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/curtain-track-systems/electric/5600/',
         },
         {
           id: 'sg5100',
           name: 'SG 5100',
           description: {
-            ru: 'Компактный электрокарниз для труднодоступных, больших или тяжёлых штор в конференц-залах и жилых интерьерах.',
-            hy: 'Կոմպակտ էլեկտրական կարնիզ դժվարամատչելի, մեծ կամ ծանր վարագույրների համար՝ կոնֆերանս-սրահներում և բնակելի ինտերիերում։',
-            en: 'A compact electric track for hard-to-reach, large or heavy curtains in conference rooms and residential interiors.',
+            ru: 'Компактный электрокарниз для труднодоступных, больших или тяжёлых штор в конференц-залах и жилых интерьерах. Теперь построен на том же профиле, что и флагманский SG 5600 — доступны изогнутые пазовые карнизы и увеличенная ширина и вес полотна.',
+            hy: 'Կոմպակտ էլեկտրական կարնիզ դժվարամատչելի, մեծ կամ ծանր վարագույրների համար՝ կոնֆերանս-սրահներում և բնակելի ինտերիերում։ Այժմ կառուցված է ֆլագման SG 5600-ի նույն պրոֆիլի վրա. հասանելի են ծալվող ուղղորդված կարնիզներ և ավելացված լայնություն ու գործվածքի քաշ։',
+            en: 'A compact electric track for hard-to-reach, large or heavy curtains in conference rooms and residential interiors. Now built on the same profile as the flagship SG 5600 — enabling bendable grooved tracks and greater width and fabric-weight capacity.',
           },
           specs: {
-            ru: ['Длина до 9 м, вес полотна до 30 кг', 'Управление: пульт, приложение Move, BMS', 'Компактный профиль'],
-            hy: ['Երկարությունը՝ մինչև 9 մ, գործվածքի քաշը՝ մինչև 30 կգ', 'Կառավարում՝ կառավարիչ, Move հավելված, BMS', 'Կոմպակտ պրոֆիլ'],
-            en: ['Length up to 9 m, fabric weight up to 30 kg', 'Control: remote, Move app, or BMS', 'Compact profile'],
+            ru: ['Длина до 9 м, вес полотна до 30 кг', 'Управление: пульт, приложение Move, BMS', 'Тот же профиль, что у SG 5600 — гнётся под эркеры', 'Классический белый или эффектный чёрный цвет'],
+            hy: ['Երկարությունը՝ մինչև 9 մ, գործվածքի քաշը՝ մինչև 30 կգ', 'Կառավարում՝ կառավարիչ, Move հավելված, BMS', 'Նույն պրոֆիլը, ինչ SG 5600-ինը՝ ծալվում է էրկերների համար', 'Դասական սպիտակ կամ էֆեկտային սև գույն'],
+            en: ['Length up to 9 m, fabric weight up to 30 kg', 'Control: remote, Move app, or BMS', 'Same profile as the SG 5600 — bends for bay windows', 'Classic white or striking black finish'],
           },
           image: sg5100Img,
-          gallery: [sg5600Mechanism],
+          gallery: [sg5600Mechanism, sg5100NewProfile],
           sourceUrl: 'https://www.silentglissglobal.com/englb/products/view/curtain-systems/curtain-track-systems/electric/5100/',
         },
         {
