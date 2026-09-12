@@ -1,31 +1,40 @@
-import SEO from '@/components/SEO';
 import React, { useState } from 'react';
+import { MapPin } from 'lucide-react';
+import SEO from '@/components/SEO';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
+import ContactBlock from '@/components/ContactBlock';
+import Reveal from '@/components/Reveal';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { MapPin } from 'lucide-react';
-
-const placeholderImages = [
-  'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=400&fit=crop',
-  'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&h=400&fit=crop',
-];
+import { pageHeroes, portfolioIllustrations } from '@/data/siteImages';
+import { cn } from '@/lib/utils';
 
 const filterKeys = ['house', 'terrace', 'office', 'facade', 'interior'];
+
+interface Project {
+  name: string;
+  location: string;
+  type: string;
+  solution: string;
+  brands: string;
+}
 
 const Portfolio: React.FC = () => {
   const { t, tRaw } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<string>('all');
-  const projects = Array.isArray(tRaw('portfolio.projects')) ? tRaw('portfolio.projects') : [];
+  const projects: Project[] = Array.isArray(tRaw('portfolio.projects')) ? tRaw('portfolio.projects') : [];
 
-  const filtered = activeFilter === 'all'
-    ? projects
-    : projects.filter((p: any) => p.type === activeFilter);
+  const entries = projects.map((project, index) => ({ project, image: portfolioIllustrations[index % portfolioIllustrations.length] }));
+  const filtered = activeFilter === 'all' ? entries : entries.filter(({ project }) => project.type === activeFilter);
+
+  const filterClass = (active: boolean) =>
+    cn(
+      'border px-4 py-2 text-[0.6875rem] font-medium uppercase tracking-[0.16em] transition-colors',
+      active
+        ? 'border-primary bg-primary text-primary-foreground'
+        : 'border-border text-muted-foreground hover:border-foreground/40 hover:text-foreground',
+    );
 
   return (
     <div className="min-h-screen">
@@ -36,82 +45,65 @@ const Portfolio: React.FC = () => {
         canonicalUrl="https://raywerthi.com/portfolio"
       />
 
-      <Header />
-      <main className="pt-20">
-        <section className="section-padding gradient-warm-soft">
-          <div className="container-site text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              {t('portfolio.title')}
-            </h1>
-            <p className="text-muted-foreground text-lg">{t('portfolio.subtitle')}</p>
-          </div>
-        </section>
+      <Header overlay />
+      <main>
+        <PageHero
+          image={pageHeroes.portfolio}
+          eyebrow={t('portfolio.eyebrow')}
+          title={t('portfolio.title')}
+          lede={t('portfolio.subtitle')}
+        />
 
         <section className="section-padding">
           <div className="container-site">
-            {/* Filters */}
-            <div className="flex flex-wrap gap-2 justify-center mb-10">
-              <button
-                onClick={() => setActiveFilter('all')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeFilter === 'all'
-                    ? 'gradient-warm text-primary-foreground'
-                    : 'bg-secondary text-muted-foreground hover:text-foreground'
-                }`}
-              >
+            <div className="flex flex-wrap gap-2">
+              <button type="button" onClick={() => setActiveFilter('all')} className={filterClass(activeFilter === 'all')}>
                 {t('portfolio.filterAll')}
               </button>
               {filterKeys.map((key) => (
                 <button
                   key={key}
+                  type="button"
                   onClick={() => setActiveFilter(key)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    activeFilter === key
-                      ? 'gradient-warm text-primary-foreground'
-                      : 'bg-secondary text-muted-foreground hover:text-foreground'
-                  }`}
+                  className={filterClass(activeFilter === key)}
                 >
                   {t(`portfolio.filters.${key}`)}
                 </button>
               ))}
             </div>
 
-            {/* Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filtered.map((project: any, i: number) => (
-                <div key={i} className="group bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-border">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                      src={placeholderImages[i % placeholderImages.length]}
-                      alt={project.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                      width={600}
-                      height={400}
-                    />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-bold text-foreground mb-1">{project.name}</h3>
-                    <div className="flex items-center gap-1 text-muted-foreground text-sm mb-2">
-                      <MapPin size={13} />
-                      <span>{project.location}</span>
+            <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {filtered.map(({ project, image }, i) => (
+                <Reveal key={project.name} variant="slats" delay={(i % 3) * 90}>
+                  <figure>
+                    <div className="relative aspect-[4/3] overflow-hidden bg-sand">
+                      <img src={image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                      <figcaption className="absolute bottom-0 left-0 bg-ink/85 px-3 py-1.5 text-[0.5625rem] uppercase tracking-[0.16em] text-white/80">
+                        {t('portfolio.illustration')}
+                      </figcaption>
                     </div>
-                    <div className="flex gap-2 flex-wrap">
-                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-md font-medium">
+                    <h2 className="mt-5 font-display text-2xl text-foreground">{project.name}</h2>
+                    <p className="mt-2 inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                      <MapPin size={13} strokeWidth={1.5} /> {project.location}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <span className="border border-primary/30 bg-primary/5 px-2.5 py-1 text-[0.6875rem] font-medium text-primary">
                         {project.solution}
                       </span>
-                      <span className="text-xs bg-secondary text-muted-foreground px-2 py-1 rounded-md">
+                      <span className="border border-border px-2.5 py-1 text-[0.6875rem] text-muted-foreground">
                         {project.brands}
                       </span>
                     </div>
-                  </div>
-                </div>
+                  </figure>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
+
+        <ContactBlock />
       </main>
-      <Footer />
+      <Footer showCta={false} />
     </div>
   );
 };

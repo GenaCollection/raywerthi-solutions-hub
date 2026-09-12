@@ -1,16 +1,20 @@
-import SEO from '@/components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import SEO from '@/components/SEO';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
+import SectionHeading from '@/components/SectionHeading';
+import Reveal from '@/components/Reveal';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { brandCatalogs, unifiedCategories } from '@/data/products';
+import { brandVisuals, pageHeroes } from '@/data/siteImages';
 
 const brands = [
-  { name: 'HELLA', slug: 'hella', url: 'https://www.hella.info' },
-  { name: 'WAREMA', slug: 'warema', url: 'https://www.warema.com' },
-  { name: 'Silent Gliss', slug: 'silent-gliss', url: 'https://www.silentgliss.com' },
+  { name: 'HELLA', slug: 'hella' as const },
+  { name: 'WAREMA', slug: 'warema' as const },
+  { name: 'Silent Gliss', slug: 'silent-gliss' as const },
 ];
 
 const Solutions: React.FC = () => {
@@ -25,93 +29,89 @@ const Solutions: React.FC = () => {
         canonicalUrl="https://raywerthi.com/solutions"
       />
 
-      <Header />
-      <main className="pt-20">
-        {/* Header */}
-        <section className="section-padding gradient-warm-soft">
-          <div className="container-site text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              {t('solutions.title')}
-            </h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              {t('solutions.subtitle')}
-            </p>
-          </div>
-        </section>
+      <Header overlay />
+      <main>
+        <PageHero
+          image={pageHeroes.solutions}
+          eyebrow={t('solutions.eyebrow')}
+          title={t('solutions.title')}
+          lede={t('solutions.subtitle')}
+        />
 
-        {/* Categories grid — click a product type to see every matching model from all our brands */}
         <section className="section-padding">
           <div className="container-site">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {unifiedCategories.map((category) => {
-                const brandLogos = [...new Map(
-                  category.sources.map((s) => [s.brand, brandCatalogs[s.brand]])
-                ).values()];
+            <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {unifiedCategories.map((category, i) => {
+                const brandLogos = [
+                  ...new Map(category.sources.map((s) => [s.brand, brandCatalogs[s.brand]])).values(),
+                ];
 
                 return (
-                  <Link
-                    key={category.slug}
-                    to={`/solutions/category/${category.slug}`}
-                    className="group bg-background border border-border rounded-xl overflow-hidden hover:shadow-xl hover:border-primary/40 transition-all duration-300 flex flex-col"
-                  >
-                    <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={category.image}
-                        alt={category.name[lang]}
-                        loading="lazy"
-                        width={800}
-                        height={600}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      <div className="absolute bottom-3 left-4 right-4 flex items-center gap-2">
-                        {brandLogos.map((b) => (
-                          <span key={b.slug} className="bg-white/90 rounded px-1.5 py-1 flex items-center">
-                            <img src={b.logo} alt={b.name} className="h-3 w-auto object-contain" />
-                          </span>
-                        ))}
+                  <Reveal key={category.slug} variant="slats" delay={(i % 3) * 90}>
+                    <Link to={`/solutions/category/${category.slug}`} className="group block">
+                      <div className="relative aspect-[4/5] overflow-hidden bg-sand">
+                        <img
+                          src={category.image}
+                          alt={category.name[lang]}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full object-cover transition-transform [transition-duration:1400ms] ease-out-expo group-hover:scale-105"
+                        />
+                        <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/70 to-transparent" />
+                        <div className="absolute bottom-4 left-4 flex gap-2">
+                          {brandLogos.map((brand) => (
+                            <span key={brand.slug} className="flex h-7 items-center bg-background/95 px-2">
+                              <img src={brand.logo} alt={brand.name} className="h-3 w-auto object-contain" />
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                    <div className="p-6 flex flex-col flex-1">
-                      <h3 className="text-lg font-bold text-foreground mb-2">{category.name[lang]}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-5 flex-1">
-                        {category.description[lang]}
-                      </p>
-                      <span className="inline-flex items-center gap-2 self-start px-4 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold text-sm group-hover:bg-primary/90 transition-colors">
-                        {t('solutions.learnMore')} <ArrowRight size={16} />
+                      <h2 className="display-3 mt-6 text-foreground">{category.name[lang]}</h2>
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{category.description[lang]}</p>
+                      <span className="link-arrow mt-5 text-primary">
+                        {t('solutions.learnMore')} <ArrowRight size={13} />
                       </span>
-                    </div>
-                  </Link>
+                    </Link>
+                  </Reveal>
                 );
               })}
             </div>
           </div>
         </section>
 
-        {/* Catalog by brand */}
-        <section className="section-padding bg-secondary">
-          <div className="container-site text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              {t('solutions.catalogTitle')}
-            </h2>
-            <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
-              {t('solutions.catalogDesc')}
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {brands.map((brand) => {
+        <section className="section-padding bg-ink text-ink-foreground">
+          <div className="container-site">
+            <SectionHeading
+              tone="dark"
+              eyebrow={t('solutions.brandsEyebrow')}
+              title={t('solutions.catalogTitle')}
+              lede={t('solutions.catalogDesc')}
+            />
+
+            <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3">
+              {brands.map((brand, i) => {
                 const catalog = brandCatalogs[brand.slug];
                 return (
-                  <Link
-                    key={brand.slug}
-                    to={`/solutions/${brand.slug}`}
-                    className="group bg-background border border-border rounded-xl p-6 flex flex-col items-center hover:border-primary hover:shadow-lg transition-all"
-                  >
-                    <img src={catalog?.logo} alt={brand.name} className="h-10 w-auto object-contain mb-4" />
-                    <span className="font-semibold text-foreground mb-1">{brand.name}</span>
-                    <span className="text-xs text-primary font-medium group-hover:underline">
-                      {t('solutions.visitCatalog')} →
-                    </span>
-                  </Link>
+                  <Reveal key={brand.slug} delay={i * 100}>
+                    <Link to={`/solutions/${brand.slug}`} className="group block">
+                      <div className="relative aspect-[16/10] overflow-hidden">
+                        <img
+                          src={brandVisuals[brand.slug].image}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full object-cover transition-transform [transition-duration:1400ms] ease-out-expo group-hover:scale-105"
+                        />
+                        <div aria-hidden className="absolute inset-0 bg-ink/25" />
+                        <span className="absolute bottom-4 left-4 flex h-11 items-center bg-background/95 px-4">
+                          <img src={catalog?.logo} alt={brand.name} className="h-5 w-auto object-contain" />
+                        </span>
+                      </div>
+                      <span className="link-arrow mt-5 text-gold">
+                        {t('solutions.visitCatalog')} <ArrowRight size={13} />
+                      </span>
+                    </Link>
+                  </Reveal>
                 );
               })}
             </div>

@@ -1,17 +1,18 @@
 import type { LocalizedText } from './types';
 
-import blindsImg from '@/assets/products/hella/raffstoren-arb80.png';
-import rollShuttersImg from '@/assets/products/warema/rollladen-topmounted.webp';
-import patioAwningsImg from '@/assets/products/hella/markisen-pan7040.png';
-import pergolasImg from '@/assets/products/hella/terrassendach-ventur.png';
-import windowAwningsImg from '@/assets/products/warema/easyzip.webp';
-import conservatoryImg from '@/assets/products/hella/soleya-aufglas.png';
-import sunSailsImg from '@/assets/products/hella/jumbrella.png';
-import insectScreensImg from '@/assets/products/hella/insekten-ispl18.png';
-import curtainTracksImg from '@/assets/products/silentgliss/sg5600-v2.jpg';
-import rollerRomanPanelImg from '@/assets/products/silentgliss/roman-blind-v2.jpg';
-import interiorBlindsImg from '@/assets/products/silentgliss/venetian-blind-v2.jpg';
-import smartHomeImg from '@/assets/products/hella/onyx-center.png';
+// Category covers are lifestyle photography, never packshots — renders belong inside the model cards.
+import blindsImg from '@/assets/products/warema/raffstoren-hero.webp';
+import rollShuttersImg from '@/assets/products/warema/rollladen-frontmounted.jpg';
+import patioAwningsImg from '@/assets/products/warema/terrea-k60-lifestyle.jpg';
+import pergolasImg from '@/assets/products/warema/lamaxa-l70-aerial-pool.jpg';
+import windowAwningsImg from '@/assets/products/warema/fm-droparm-hero.jpg';
+import conservatoryImg from '@/assets/products/warema/climara-w19-architectural.jpg';
+import sunSailsImg from '@/assets/products/warema/sonea-hero.webp';
+import insectScreensImg from '@/assets/products/warema/insekten-hero.webp';
+import curtainTracksImg from '@/assets/products/silentgliss/sg6840-lifestyle.jpg';
+import rollerRomanPanelImg from '@/assets/products/hella/hella-innenrollo-loft.jpg';
+import interiorBlindsImg from '@/assets/products/hella/hella-innenjalousien-office.jpg';
+import smartHomeImg from '@/assets/products/warema/smarthome-hero.webp';
 
 export interface CategorySource {
   brand: 'warema' | 'hella' | 'silent-gliss';

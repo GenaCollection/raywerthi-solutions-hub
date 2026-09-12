@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { translations, type Language } from './translations';
 
 interface LanguageContextType {
@@ -12,6 +12,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [lang, setLang] = useState<Language>('ru');
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const resolve = useCallback((key: string): any => {
     const keys = key.split('.');

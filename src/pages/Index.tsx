@@ -3,7 +3,9 @@ import SEO from '@/components/SEO';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
+import StatsBand from '@/components/StatsBand';
 import TasksSection from '@/components/TasksSection';
+import FlagshipsSection from '@/components/FlagshipsSection';
 import BrandsSection from '@/components/BrandsSection';
 import HowWeWork from '@/components/HowWeWork';
 import AdvantagesSection from '@/components/AdvantagesSection';
@@ -20,17 +22,19 @@ const Index: React.FC = () => {
         canonicalUrl="https://raywerthi.com/"
       />
 
-      <Header />
+      <Header overlay />
       <main>
         <HeroSection />
+        <StatsBand />
         <TasksSection />
+        <FlagshipsSection />
         <BrandsSection />
         <HowWeWork />
         <AdvantagesSection />
         <PortfolioPreview />
         <ContactBlock />
       </main>
-      <Footer />
+      <Footer showCta={false} />
     </div>
   );
 };

@@ -1,18 +1,24 @@
-import SEO from '@/components/SEO';
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
+import { ArrowRight, Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react';
+import SEO from '@/components/SEO';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { Mail, Phone, MapPin, MessageCircle, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { unifiedCategories } from '@/data/products';
+import { pageHeroes } from '@/data/siteImages';
+
+const objectTypeKeys = ['house', 'apartment', 'commercial', 'other'];
 
 const Contacts: React.FC = () => {
   const { t, lang } = useLanguage();
   const [searchParams] = useSearchParams();
+  const fieldId = useId();
   const prefilledSolution = searchParams.get('solution') || '';
+  const prefilledModel = searchParams.get('model') || '';
 
   const [formData, setFormData] = useState({
     name: '',
@@ -21,7 +27,7 @@ const Contacts: React.FC = () => {
     objectType: '',
     city: '',
     solutionType: prefilledSolution,
-    comment: '',
+    comment: prefilledModel ? `${t('contacts.form.interestedIn')}: ${prefilledModel}` : '',
   });
   const [submitting, setSubmitting] = useState(false);
 
@@ -57,13 +63,13 @@ const Contacts: React.FC = () => {
       );
 
       toast({
-        title: '✓',
+        title: t('contacts.form.successTitle'),
         description: t('contacts.form.success'),
       });
       setFormData({ name: '', phone: '', email: '', objectType: '', city: '', solutionType: '', comment: '' });
     } catch {
       toast({
-        title: '✗',
+        title: t('contacts.form.errorTitle'),
         description: t('contacts.form.error'),
         variant: 'destructive',
       });
@@ -72,8 +78,11 @@ const Contacts: React.FC = () => {
     }
   };
 
+  const categoryNames = unifiedCategories.map((category) => category.name[lang]);
+  const solutionOptions =
+    prefilledSolution && !categoryNames.includes(prefilledSolution) ? [prefilledSolution, ...categoryNames] : categoryNames;
 
-  const objectTypeKeys = ['house', 'apartment', 'commercial', 'other'];
+  const id = (name: string) => `${fieldId}-${name}`;
 
   return (
     <div className="min-h-screen">
@@ -84,178 +93,195 @@ const Contacts: React.FC = () => {
         canonicalUrl="https://raywerthi.com/contacts"
       />
 
-      <Header />
-      <main className="pt-20">
-        <section className="section-padding gradient-warm-soft">
-          <div className="container-site text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              {t('contacts.title')}
-            </h1>
-            <p className="text-muted-foreground text-lg">{t('contacts.subtitle')}</p>
-          </div>
-        </section>
+      <Header overlay />
+      <main>
+        <PageHero
+          size="sm"
+          image={pageHeroes.contacts}
+          eyebrow={t('contacts.eyebrow')}
+          title={t('contacts.title')}
+          lede={t('contacts.subtitle')}
+        />
 
         <section className="section-padding">
-          <div className="container-site">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-              {/* Contact info */}
-              <div>
-                <h2 className="text-2xl font-bold text-foreground mb-6">{t('contacts.company')}</h2>
-                <div className="flex flex-col gap-4 mb-8">
-                  <div className="flex items-center gap-3 text-foreground">
-                    <MapPin className="text-primary shrink-0" size={20} />
-                    <div>
-                      <div className="font-medium">{t('contacts.country')}</div>
-                      <div className="text-muted-foreground text-sm">{t('contacts.address')}</div>
-                    </div>
+          <div className="container-site grid gap-14 lg:grid-cols-2 lg:gap-20">
+            <div>
+              <h2 className="display-3 text-foreground">{t('contacts.company')}</h2>
+
+              <dl className="mt-10 space-y-7">
+                <div className="flex gap-4">
+                  <MapPin size={18} strokeWidth={1.5} className="mt-1 shrink-0 text-primary" />
+                  <div>
+                    <dt className="text-[0.6875rem] uppercase tracking-[0.2em] text-muted-foreground">
+                      {t('contacts.addressLabel')}
+                    </dt>
+                    <dd className="mt-1 text-foreground">
+                      {t('contacts.country')}, {t('contacts.address')}
+                    </dd>
                   </div>
-                  <a href="tel:+37491553822" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
-                    <Phone className="text-primary shrink-0" size={20} />
-                    <span>{t('contacts.phone')}</span>
-                  </a>
-                  <a href="mailto:raywerthi@gmail.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
-                    <Mail className="text-primary shrink-0" size={20} />
-                    <span>{t('contacts.email')}</span>
-                  </a>
                 </div>
-
-                {/* Messenger buttons */}
-                <div className="flex gap-3 mb-8">
-                  <a
-                    href="https://wa.me/37491553822"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
-                  >
-                    <MessageCircle size={16} /> WhatsApp
-                  </a>
-                  <a
-                    href="https://t.me/+37491553822"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
-                  >
-                    <Send size={16} /> Telegram
-                  </a>
+                <div className="flex gap-4">
+                  <Phone size={18} strokeWidth={1.5} className="mt-1 shrink-0 text-primary" />
+                  <div>
+                    <dt className="text-[0.6875rem] uppercase tracking-[0.2em] text-muted-foreground">
+                      {t('contacts.phoneLabel')}
+                    </dt>
+                    <dd className="mt-1">
+                      <a href="tel:+37491553822" className="font-display text-2xl text-foreground transition-colors hover:text-primary">
+                        {t('contacts.phone')}
+                      </a>
+                    </dd>
+                  </div>
                 </div>
+                <div className="flex gap-4">
+                  <Mail size={18} strokeWidth={1.5} className="mt-1 shrink-0 text-primary" />
+                  <div>
+                    <dt className="text-[0.6875rem] uppercase tracking-[0.2em] text-muted-foreground">
+                      {t('contacts.emailLabel')}
+                    </dt>
+                    <dd className="mt-1">
+                      <a href="mailto:raywerthi@gmail.com" className="text-foreground transition-colors hover:text-primary">
+                        {t('contacts.email')}
+                      </a>
+                    </dd>
+                  </div>
+                </div>
+              </dl>
 
-                {/* Map placeholder */}
-                <div className="rounded-xl overflow-hidden border border-border aspect-[4/3]">
-                  <iframe
-                    src="https://www.google.com/maps?q=%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F,%20%D0%95%D1%80%D0%B5%D0%B2%D0%B0%D0%BD,%20%D0%A2%D0%B8%D0%B3%D1%80%D0%B0%D0%BD%D0%B0%20%D0%9C%D0%B5%D1%86%2069&z=16&output=embed"
-                    className="w-full h-full"
-                    title="RayWerThi - Армения, Ереван, Тиграна Мец 69"
-                    loading="lazy"
-                  />
+              <div className="mt-10">
+                <p className="text-[0.6875rem] uppercase tracking-[0.2em] text-muted-foreground">
+                  {t('contacts.messengersTitle')}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-3">
+                  <a href="https://wa.me/37491553822" target="_blank" rel="noopener noreferrer" className="btn btn-outline h-11 px-5">
+                    <MessageCircle size={16} strokeWidth={1.5} /> WhatsApp
+                  </a>
+                  <a href="https://t.me/+37491553822" target="_blank" rel="noopener noreferrer" className="btn btn-outline h-11 px-5">
+                    <Send size={16} strokeWidth={1.5} /> Telegram
+                  </a>
                 </div>
               </div>
 
-              {/* Form */}
-              <div>
-                <h2 className="text-2xl font-bold text-foreground mb-6">{t('contacts.form.title')}</h2>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <div className="mt-10 aspect-[4/3] overflow-hidden border border-border">
+                <iframe
+                  src="https://www.google.com/maps?q=%D0%90%D1%80%D0%BC%D0%B5%D0%BD%D0%B8%D1%8F,%20%D0%95%D1%80%D0%B5%D0%B2%D0%B0%D0%BD,%20%D0%A2%D0%B8%D0%B3%D1%80%D0%B0%D0%BD%D0%B0%20%D0%9C%D0%B5%D1%86%2069&z=16&output=embed"
+                  className="h-full w-full"
+                  title="RayWerThi - Армения, Ереван, Тиграна Мец 69"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="bg-sand p-6 md:p-10">
+              <h2 className="display-3 text-foreground">{t('contacts.form.title')}</h2>
+              <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
+                <div>
+                  <label htmlFor={id('name')} className="field-label">{t('contacts.form.name')}</label>
+                  <input
+                    id={id('name')}
+                    type="text"
+                    name="name"
+                    autoComplete="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="field"
+                  />
+                </div>
+
+                <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-1.5">{t('contacts.form.name')}</label>
+                    <label htmlFor={id('phone')} className="field-label">{t('contacts.form.phone')}</label>
                     <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
+                      id={id('phone')}
+                      type="tel"
+                      name="phone"
+                      autoComplete="tel"
+                      value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+                      className="field"
                     />
                   </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-1.5">{t('contacts.form.phone')}</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-1.5">{t('contacts.form.email')}</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-1.5">{t('contacts.form.objectType')}</label>
-                      <select
-                        name="objectType"
-                        value={formData.objectType}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
-                      >
-                        <option value="">—</option>
-                        {objectTypeKeys.map((key) => (
-                          <option key={key} value={key}>{t(`contacts.form.objectTypes.${key}`)}</option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-1.5">{t('contacts.form.city')}</label>
-                      <input
-                        type="text"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
-                      />
-                    </div>
-                  </div>
-
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-1.5">{t('contacts.form.solutionType')}</label>
-                    <select
-                      name="solutionType"
-                      value={formData.solutionType}
+                    <label htmlFor={id('email')} className="field-label">{t('contacts.form.email')}</label>
+                    <input
+                      id={id('email')}
+                      type="email"
+                      name="email"
+                      autoComplete="email"
+                      value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+                      required
+                      className="field"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor={id('objectType')} className="field-label">{t('contacts.form.objectType')}</label>
+                    <select
+                      id={id('objectType')}
+                      name="objectType"
+                      value={formData.objectType}
+                      onChange={handleChange}
+                      required
+                      className="field-select"
                     >
                       <option value="">—</option>
-                      {unifiedCategories.map((category) => (
-                        <option key={category.slug} value={category.name[lang]}>
-                          {category.name[lang]}
-                        </option>
+                      {objectTypeKeys.map((key) => (
+                        <option key={key} value={key}>{t(`contacts.form.objectTypes.${key}`)}</option>
                       ))}
                     </select>
                   </div>
-
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-1.5">{t('contacts.form.comment')}</label>
-                    <textarea
-                      name="comment"
-                      value={formData.comment}
+                    <label htmlFor={id('city')} className="field-label">{t('contacts.form.city')}</label>
+                    <input
+                      id={id('city')}
+                      type="text"
+                      name="city"
+                      autoComplete="address-level2"
+                      value={formData.city}
                       onChange={handleChange}
-                      rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none"
+                      className="field"
                     />
                   </div>
+                </div>
 
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="w-full py-4 gradient-warm text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 text-sm md:text-base"
+                <div>
+                  <label htmlFor={id('solutionType')} className="field-label">{t('contacts.form.solutionType')}</label>
+                  <select
+                    id={id('solutionType')}
+                    name="solutionType"
+                    value={formData.solutionType}
+                    onChange={handleChange}
+                    className="field-select"
                   >
-                    {submitting ? '...' : t('contacts.form.submit')}
-                  </button>
-                </form>
-              </div>
+                    <option value="">—</option>
+                    {solutionOptions.map((name) => (
+                      <option key={name} value={name}>{name}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor={id('comment')} className="field-label">{t('contacts.form.comment')}</label>
+                  <textarea
+                    id={id('comment')}
+                    name="comment"
+                    value={formData.comment}
+                    onChange={handleChange}
+                    rows={4}
+                    className="field-area"
+                  />
+                </div>
+
+                <button type="submit" disabled={submitting} className="btn btn-primary mt-2 w-full">
+                  {submitting ? t('contactBlock.form.sending') : t('contacts.form.submit')}
+                  {!submitting && <ArrowRight size={16} strokeWidth={1.5} />}
+                </button>
+              </form>
             </div>
           </div>
         </section>

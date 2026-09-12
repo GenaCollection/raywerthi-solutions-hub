@@ -1,68 +1,63 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { MapPin } from 'lucide-react';
+import { inspiration } from '@/data/siteImages';
+import { cn } from '@/lib/utils';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
 
-const placeholderProjects = [
-  { img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop', name: 'project1' },
-  { img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop', name: 'project2' },
-  { img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop', name: 'project3' },
-  { img: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=400&fit=crop', name: 'project4' },
-  { img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop', name: 'project5' },
-  { img: 'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&h=400&fit=crop', name: 'project6' },
+const tileLayout = [
+  'aspect-[16/11] sm:col-span-2 lg:col-span-7 lg:row-span-2 lg:aspect-auto',
+  'aspect-[4/3] lg:col-span-5',
+  'aspect-[4/3] lg:col-span-5',
+  'aspect-[4/3] lg:col-span-4',
+  'aspect-[4/3] lg:col-span-4',
+  'aspect-[4/3] lg:col-span-4',
 ];
 
 const PortfolioPreview: React.FC = () => {
-  const { t, tRaw } = useLanguage();
-  const projects = Array.isArray(tRaw('portfolio.projects')) ? tRaw('portfolio.projects') : [];
+  const { t } = useLanguage();
 
   return (
-    <section className="section-padding bg-secondary">
+    <section className="section-padding bg-sand">
       <div className="container-site">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-center mb-12">
-          {t('portfolioPreview.title')}
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {placeholderProjects.slice(0, 6).map((proj, i) => {
-            const projectData = projects[i];
-            return (
-              <div key={i} className="group bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-border">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={proj.img}
-                    alt={projectData?.name || 'Project'}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    width={600}
-                    height={400}
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-bold text-foreground mb-1">{projectData?.name || 'Project'}</h3>
-                  <div className="flex items-center gap-1 text-muted-foreground text-sm mb-2">
-                    <MapPin size={13} />
-                    <span>{projectData?.location || ''}</span>
-                  </div>
-                  <div className="flex gap-2 flex-wrap">
-                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-md font-medium">
-                      {projectData?.solution || ''}
-                    </span>
-                    <span className="text-xs bg-secondary text-muted-foreground px-2 py-1 rounded-md">
-                      {projectData?.brands || ''}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        <div className="text-center mt-10">
-          <Link
-            to="/portfolio"
-            className="inline-flex items-center justify-center px-8 py-3 gradient-warm text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity text-sm"
-          >
-            {t('portfolioPreview.viewAll')}
-          </Link>
+        <SectionHeading
+          eyebrow={t('portfolioPreview.eyebrow')}
+          title={t('portfolioPreview.title')}
+          lede={t('portfolioPreview.subtitle')}
+          action={
+            <Link to="/portfolio" className="btn btn-outline">
+              {t('portfolioPreview.viewAll')} <ArrowRight size={16} strokeWidth={1.5} />
+            </Link>
+          }
+        />
+
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 md:mt-16 lg:grid-cols-12 lg:gap-5">
+          {inspiration.map((item, i) => (
+            <Reveal
+              as="figure"
+              key={item.src}
+              variant="slats"
+              delay={(i % 3) * 110}
+              className={cn('group relative overflow-hidden rounded-sm bg-background', tileLayout[i])}
+            >
+              <img
+                src={item.src}
+                alt={item.caption}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover transition-transform [transition-duration:1400ms] ease-out-expo group-hover:scale-105"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/75 to-transparent" />
+              <figcaption className="absolute inset-x-4 bottom-4 text-white">
+                <span className="block text-sm font-medium">{item.caption}</span>
+                <span className="mt-0.5 block text-[0.625rem] uppercase tracking-[0.2em] text-white/70">
+                  {t('portfolioPreview.photoCredit')}
+                </span>
+              </figcaption>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

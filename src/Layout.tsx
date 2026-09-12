@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { LanguageProvider } from '@/i18n/LanguageContext';
 import ScrollManager from '@/components/ScrollManager';
+import MobileActionBar from '@/components/MobileActionBar';
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const Layout: React.FC = () => (
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>
+        <MobileActionBar />
       </TooltipProvider>
     </LanguageProvider>
   </QueryClientProvider>

@@ -1,16 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { ExternalLink } from 'lucide-react';
+import { brandVisuals } from '@/data/siteImages';
 import hellaLogo from '@/assets/brands/hella-logo.svg';
 import waremaLogo from '@/assets/brands/warema-logo.svg';
 import silentglissLogo from '@/assets/brands/silentgliss-logo.svg';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
 
 const brands = [
   { name: 'HELLA', key: 'hella', slug: 'hella', url: 'https://www.hella.info', logo: hellaLogo },
   { name: 'WAREMA', key: 'warema', slug: 'warema', url: 'https://www.warema.com', logo: waremaLogo },
   { name: 'Silent Gliss', key: 'silentgliss', slug: 'silent-gliss', url: 'https://www.silentgliss.com', logo: silentglissLogo },
-];
+] as const;
 
 const BrandsSection: React.FC = () => {
   const { t } = useLanguage();
@@ -18,38 +21,49 @@ const BrandsSection: React.FC = () => {
   return (
     <section className="section-padding">
       <div className="container-site">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-center mb-12">
-          {t('brands.title')}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {brands.map((brand) => (
-            <div
-              key={brand.key}
-              className="bg-secondary rounded-xl p-8 text-center flex flex-col items-center"
-            >
-              <div className="h-20 flex items-center justify-center mb-4">
-                <img src={brand.logo} alt={`${brand.name} logo`} loading="lazy" className="max-h-16 w-auto object-contain" />
-              </div>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
-                {t(`brands.${brand.key}`)}
-              </p>
-              <div className="flex flex-col items-center gap-2">
-                <Link
-                  to={`/solutions/${brand.slug}`}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:bg-primary/90 transition-colors"
-                >
-                  {t('brands.viewCatalog')}
-                </Link>
-                <a
-                  href={brand.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-muted-foreground text-xs hover:text-primary transition-colors"
-                >
-                  {t('brands.visitSite')} <ExternalLink size={12} />
-                </a>
-              </div>
-            </div>
+        <SectionHeading eyebrow={t('brands.eyebrow')} title={t('brands.title')} />
+
+        <div className="mt-12 grid gap-8 md:mt-16 md:grid-cols-3 md:gap-6">
+          {brands.map((brand, i) => (
+            <Reveal key={brand.key} delay={i * 120} className="flex flex-col">
+              <Link
+                to={`/solutions/${brand.slug}`}
+                className="group relative isolate flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-sm p-6 text-white md:p-7"
+              >
+                <img
+                  src={brandVisuals[brand.slug].image}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform [transition-duration:1400ms] ease-out-expo group-hover:scale-105"
+                />
+                <div className="absolute inset-0 -z-10 scrim-bottom" />
+
+                <div className="flex items-start justify-between gap-4">
+                  <span className="inline-flex h-12 items-center rounded-sm bg-background/95 px-4">
+                    <img src={brand.logo} alt={brand.name} className="h-6 w-auto max-w-[8rem] object-contain" />
+                  </span>
+                  <span className="pt-1 text-[0.6875rem] uppercase tracking-[0.2em] text-white/85">
+                    {t(`brands.origin.${brand.key}`)}
+                  </span>
+                </div>
+
+                <div>
+                  <p className="text-sm leading-relaxed text-white/85">{t(`brands.${brand.key}`)}</p>
+                  <span className="link-arrow mt-5 text-white">
+                    {t('brands.viewCatalog')} <ArrowRight size={14} />
+                  </span>
+                </div>
+              </Link>
+              <a
+                href={brand.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-1.5 self-start text-xs text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {t('brands.visitSite')} <ArrowUpRight size={13} />
+              </a>
+            </Reveal>
           ))}
         </div>
       </div>

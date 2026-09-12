@@ -1,44 +1,30 @@
 import React from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { MessageSquare, Ruler, Truck, Wrench } from 'lucide-react';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
 
-const steps = [
-  { icon: MessageSquare, titleKey: 'step1title', descKey: 'step1desc', num: '01' },
-  { icon: Ruler, titleKey: 'step2title', descKey: 'step2desc', num: '02' },
-  { icon: Truck, titleKey: 'step3title', descKey: 'step3desc', num: '03' },
-  { icon: Wrench, titleKey: 'step4title', descKey: 'step4desc', num: '04' },
-];
+const steps = ['1', '2', '3', '4'];
 
 const HowWeWork: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="section-padding bg-secondary">
+    <section className="section-padding bg-sand">
       <div className="container-site">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-center mb-12">
-          {t('howWeWork.title')}
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step) => {
-            const Icon = step.icon;
-            return (
-              <div key={step.num} className="bg-background rounded-xl p-6 md:p-8 border border-border relative overflow-hidden">
-                <span className="absolute top-4 right-4 text-5xl font-black text-primary/10">
-                  {step.num}
-                </span>
-                <div className="w-12 h-12 rounded-lg gradient-warm flex items-center justify-center mb-5">
-                  <Icon className="text-primary-foreground" size={22} />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">
-                  {t(`howWeWork.${step.titleKey}`)}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {t(`howWeWork.${step.descKey}`)}
-                </p>
+        <SectionHeading eyebrow={t('howWeWork.eyebrow')} title={t('howWeWork.title')} />
+
+        <ol className="mt-14 grid gap-12 sm:grid-cols-2 md:mt-20 lg:grid-cols-4 lg:gap-0">
+          {steps.map((n, i) => (
+            <Reveal as="li" key={n} delay={i * 110} className="lg:pr-10">
+              <div className="flex items-center gap-5">
+                <span className="font-display text-6xl leading-none text-primary md:text-7xl">0{n}</span>
+                <span aria-hidden className="h-px flex-1 bg-foreground/15" />
               </div>
-            );
-          })}
-        </div>
+              <h3 className="mt-6 text-lg font-semibold text-foreground">{t(`howWeWork.step${n}title`)}</h3>
+              <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">{t(`howWeWork.step${n}desc`)}</p>
+            </Reveal>
+          ))}
+        </ol>
       </div>
     </section>
   );
