@@ -19,7 +19,8 @@ const PageHero: React.FC<PageHeroProps> = ({ image, title, eyebrow, lede, above,
       size === 'md' ? 'min-h-[72vh]' : 'min-h-[58vh]',
     )}
   >
-    <img src={image} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" fetchpriority="high" decoding="async" />
+    {/* React 18 only forwards fetchpriority in lowercase; @types/react 18 has no such prop, hence the spread. */}
+    <img src={image} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" {...{ fetchpriority: 'high' }} decoding="async" />
     <div aria-hidden className="absolute inset-0 -z-10 scrim-left" />
     <div aria-hidden className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-ink/85 to-transparent" />
 

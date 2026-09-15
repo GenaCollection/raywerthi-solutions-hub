@@ -10,7 +10,7 @@ import BrandGroup from '@/components/brand/BrandGroup';
 import FeaturedModelBlock from '@/components/brand/FeaturedModelBlock';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { brandCatalogs, unifiedCategories } from '@/data/products';
-import type { BrandCatalog, ProductCategory } from '@/data/products';
+import type { BrandCatalog, ProductCategory, ProductModel } from '@/data/products';
 
 interface CategoryGroup {
   brand: BrandCatalog;
@@ -27,19 +27,26 @@ const CategoryDetail: React.FC = () => {
     return <Navigate to="/solutions" replace />;
   }
 
-  const featured = category.featured;
-  const featuredBrand = featured ? brandCatalogs[featured.brand] : undefined;
-  const featuredCategory = featuredBrand?.categories.find((c) => c.slug === featured?.categorySlug);
-  const featuredModel = featuredCategory?.models.find((m) => m.id === featured?.modelId);
+  const featuredRefs = category.featured ?? [];
+  const spotlights = featuredRefs
+    .map((ref) => {
+      const brand = brandCatalogs[ref.brand];
+      const model = brand?.categories
+        .find((c) => c.slug === ref.categorySlug)
+        ?.models.find((m) => m.id === ref.modelId);
+      return brand && model ? { brand, model } : null;
+    })
+    .filter((s): s is { brand: BrandCatalog; model: ProductModel } => !!s);
 
   const groups: CategoryGroup[] = category.sources
     .map((source) => {
       const brand = brandCatalogs[source.brand];
       const cat = brand?.categories.find((c) => c.slug === source.categorySlug);
       if (!cat) return null;
-      const isFeaturedSource =
-        featured && featured.brand === source.brand && featured.categorySlug === source.categorySlug;
-      const models = isFeaturedSource ? cat.models.filter((m) => m.id !== featured.modelId) : cat.models;
+      const spotlitIds = featuredRefs
+        .filter((ref) => ref.brand === source.brand && ref.categorySlug === source.categorySlug)
+        .map((ref) => ref.modelId);
+      const models = cat.models.filter((m) => !spotlitIds.includes(m.id));
       if (models.length === 0) return null;
       return { brand, category: { ...cat, models } };
     })
@@ -47,7 +54,7 @@ const CategoryDetail: React.FC = () => {
 
   const uniqueBrands = [
     ...new Map([
-      ...(featuredBrand ? [[featuredBrand.slug, featuredBrand] as const] : []),
+      ...spotlights.map((s) => [s.brand.slug, s.brand] as const),
       ...groups.map((g) => [g.brand.slug, g.brand] as const),
     ]).values(),
   ];
@@ -91,14 +98,15 @@ const CategoryDetail: React.FC = () => {
         </PageHero>
 
         <div className="container-site">
-          {featuredBrand && featuredModel && (
+          {spotlights.map(({ brand, model }) => (
             <FeaturedModelBlock
-              brand={featuredBrand}
-              model={featuredModel}
+              key={`${brand.slug}-${model.id}`}
+              brand={brand}
+              model={model}
               kickerLabel={t('categoryPage.featuredKicker')}
               solutionName={solutionName}
             />
-          )}
+          ))}
 
           {groups.map(({ brand, category: cat }) => (
             <BrandGroup key={`${brand.slug}-${cat.slug}`} brand={brand} category={cat} solutionName={solutionName} />

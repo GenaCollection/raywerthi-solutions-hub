@@ -10,7 +10,7 @@ import climaraW10Conference from '@/assets/products/warema/climara-w10a-conferen
 
 import hellaVentur from '@/assets/products/hella/terrassendach-ventur.png';
 import climaraW9Patio from '@/assets/products/warema/climara-w9-patio.jpg';
-import sg6840Lifestyle from '@/assets/products/silentgliss/sg6840-lifestyle.jpg';
+import sg6840Lifestyle from '@/assets/products/silentgliss/sg6840-living.jpg';
 
 import terreaK55RedHouse from '@/assets/products/warema/terrea-k55-red-house.jpg';
 import lamaxaL70Pool from '@/assets/products/warema/lamaxa-l70-aerial-pool.jpg';
@@ -33,7 +33,7 @@ import raffstorenHero from '@/assets/products/warema/raffstoren-hero.webp';
 import raffstorenTopmounted from '@/assets/products/warema/raffstoren-topmounted.jpg';
 import rollladenFrontmounted from '@/assets/products/warema/rollladen-frontmounted.jpg';
 import easyzip from '@/assets/products/warema/easyzip.webp';
-import sg5600Bedroom from '@/assets/products/silentgliss/sg5600-prs3.jpg';
+import sg5600Bedroom from '@/assets/products/silentgliss/sg5600-bedroom.jpg';
 
 export interface HeroSlide {
   src: string;

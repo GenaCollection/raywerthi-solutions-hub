@@ -9,7 +9,7 @@ import windowAwningsImg from '@/assets/products/warema/fm-droparm-hero.jpg';
 import conservatoryImg from '@/assets/products/warema/climara-w19-architectural.jpg';
 import sunSailsImg from '@/assets/products/warema/sonea-hero.webp';
 import insectScreensImg from '@/assets/products/warema/insekten-hero.webp';
-import curtainTracksImg from '@/assets/products/silentgliss/sg6840-lifestyle.jpg';
+import curtainTracksImg from '@/assets/products/silentgliss/tracks-hero.jpg';
 import rollerRomanPanelImg from '@/assets/products/hella/hella-innenrollo-loft.jpg';
 import interiorBlindsImg from '@/assets/products/hella/hella-innenjalousien-office.jpg';
 import smartHomeImg from '@/assets/products/warema/smarthome-hero.webp';
@@ -19,7 +19,7 @@ export interface CategorySource {
   categorySlug: string;
 }
 
-/** Spotlights one model from a source category in a large hero block above the regular grid. */
+/** Spotlights a model from a source category in a large hero block above the regular grid. */
 export interface FeaturedModelRef {
   brand: 'warema' | 'hella' | 'silent-gliss';
   categorySlug: string;
@@ -32,7 +32,8 @@ export interface UnifiedCategory {
   description: LocalizedText;
   image: string;
   sources: CategorySource[];
-  featured?: FeaturedModelRef;
+  /** Rendered in order above the grid; each featured model is dropped from its own group below. */
+  featured?: FeaturedModelRef[];
 }
 
 export const unifiedCategories: UnifiedCategory[] = [
@@ -168,7 +169,7 @@ export const unifiedCategories: UnifiedCategory[] = [
       { brand: 'silent-gliss', categorySlug: 'metropole' },
       { brand: 'silent-gliss', categorySlug: 'cubicle' },
     ],
-    featured: { brand: 'silent-gliss', categorySlug: 'curtain-tracks', modelId: 'sg5600' },
+    featured: [{ brand: 'silent-gliss', categorySlug: 'curtain-tracks', modelId: 'sg5600' }],
   },
   {
     slug: 'roller-roman-panel',
@@ -185,7 +186,10 @@ export const unifiedCategories: UnifiedCategory[] = [
       { brand: 'silent-gliss', categorySlug: 'panel-glide' },
       { brand: 'hella', categorySlug: 'innenrollos' },
     ],
-    featured: { brand: 'hella', categorySlug: 'innenrollos', modelId: 'innenrollos' },
+    featured: [
+      { brand: 'hella', categorySlug: 'innenrollos', modelId: 'innenrollos' },
+      { brand: 'silent-gliss', categorySlug: 'roman-blinds', modelId: 'sg2360' },
+    ],
   },
   {
     slug: 'interior-blinds',
