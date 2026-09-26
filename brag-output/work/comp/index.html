@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>RayWerThi brag</title>
+<link rel="stylesheet" href="/assets/app-DaMgZRTJ.css">
+<style>
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: hsl(var(--ink)); }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  .scene { position: absolute; inset: 0; visibility: hidden; overflow: hidden; }
+  .abs { position: absolute; }
+  .center-x { left: 0; right: 0; text-align: center; }
+  .disp { font-family: "Cormorant Garamond", "Noto Serif Armenian", Georgia, serif; font-weight: 500; }
+  .sans { font-family: "Inter Variable", Inter, "Noto Sans Armenian", system-ui, sans-serif; }
+  .caps { text-transform: uppercase; }
+  .eb { display: inline-flex; align-items: center; gap: 22px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.28em; }
+  .eb::before { content: ''; width: 64px; height: 2px; background: currentColor; opacity: 0.6; }
+  .eb.both::after { content: ''; width: 64px; height: 2px; background: currentColor; opacity: 0.6; }
+
+  /* Scene 1: window + external venetian blind */
+  #win { left: 60px; top: 170px; width: 960px; height: 1230px; overflow: hidden; background: #0b0f15; }
+  #win img.photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+  #bloom { position: absolute; inset: 0; background: radial-gradient(120% 70% at 70% 20%, rgba(255, 226, 170, 0.55), rgba(255, 200, 120, 0.12) 45%, transparent 70%); mix-blend-mode: screen; }
+  .slat { position: absolute; left: -2px; width: 964px; border-radius: 2px; }
+  #rail { position: absolute; left: 0; top: 0; width: 960px; height: 44px; background: linear-gradient(to bottom, #4a5058, #2c3137 60%, #1d2126); box-shadow: 0 6px 14px rgba(0,0,0,0.45); z-index: 3; }
+  #s1eb { left: 64px; top: 846px; color: hsl(var(--gold)); font-size: 26px; }
+  #s1title { left: 60px; top: 906px; color: #fff; font-size: 150px; line-height: 0.96; letter-spacing: -0.015em; }
+  #s1cap { left: 0; right: 0; top: 1440px; text-align: center; color: hsl(var(--ink-muted)); font-size: 21px; letter-spacing: 0.24em; }
+  #s1cap b { color: #fff; font-weight: 500; }
+
+  /* Scene 2 */
+  #s2 { background-color: hsl(var(--ink)); }
+  #mark2 { left: 270px; top: 250px; width: 540px; }
+  #s2eb { top: 600px; color: hsl(var(--gold)); font-size: 26px; }
+  #s2title { top: 660px; color: #fff; font-size: 122px; line-height: 1.02; letter-spacing: -0.01em; }
+  #s2title span { display: block; }
+  .tile { position: absolute; top: 1120px; width: 296px; height: 176px; background: #fff; display: grid; place-items: center; }
+  .tile img { max-width: 210px; max-height: 72px; }
+  .tile .ctry { position: absolute; left: 0; right: 0; top: 196px; text-align: center; color: hsl(var(--ink-muted)); font-size: 20px; letter-spacing: 0.24em; text-transform: uppercase; }
+
+  /* Scene 3 */
+  #s3 { background: hsl(var(--background)); }
+  #s3eb { top: 220px; color: hsl(var(--primary)); font-size: 26px; }
+  #count { top: 262px; display: flex; justify-content: center; align-items: baseline; gap: 26px; color: hsl(var(--foreground)); }
+  #num { font-size: 300px; line-height: 1; width: 470px; text-align: right; }
+  #numLabel { font-size: 110px; line-height: 1; }
+  #s3sub { top: 600px; color: hsl(var(--muted-foreground)); font-size: 40px; letter-spacing: 0.02em; }
+  #grid { left: 72px; top: 700px; width: 936px; height: 786px; }
+  .gt { position: absolute; width: 300px; height: 250px; overflow: hidden; background: hsl(var(--sand)); }
+  .gt img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .gt .sc { position: absolute; inset: 0; background-image: linear-gradient(to top, hsl(var(--ink) / 0.85), hsl(var(--ink) / 0.25) 45%, transparent 70%); }
+  .gt .nm { position: absolute; left: 18px; right: 12px; bottom: 16px; color: #fff; font-size: 19px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.25; }
+
+  /* Scene 4 */
+  #s4 { background: hsl(var(--background)); }
+  #capA, #capB { top: 205px; color: hsl(var(--foreground)); font-size: 86px; line-height: 1; }
+  #cardWrap { left: 207px; top: 330px; width: 360px; transform-origin: 0 0; }
+  #cardWrap article { box-shadow: 0 30px 60px -30px rgba(16, 22, 30, 0.35); }
+  #formWrap { left: 130px; top: 330px; width: 390px; transform-origin: 0 0; }
+  #formPanel { background: hsl(var(--card)); border: 1px solid hsl(var(--border)); padding: 24px 26px 28px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(16, 22, 30, 0.35); }
+  #formPanel h3 { margin: 0; }
+  #toast { left: 140px; right: 140px; top: 1455px; background: hsl(var(--background)); border: 1px solid hsl(var(--border)); padding: 30px 36px; box-shadow: 0 24px 60px -20px rgba(16,22,30,0.45); display: flex; gap: 22px; align-items: center; }
+  #toast .dot { width: 46px; height: 46px; border-radius: 50%; background: hsl(var(--primary)); display: grid; place-items: center; flex: none; }
+  #toast .t { font-size: 32px; font-weight: 600; color: hsl(var(--foreground)); }
+  #toast .d { font-size: 22px; color: hsl(var(--muted-foreground)); margin-top: 4px; }
+  #cur { width: 74px; height: 74px; margin: -37px 0 0 -37px; border-radius: 50%; background: rgba(255,255,255,0.88); border: 2px solid rgba(16,22,30,0.35); box-shadow: 0 10px 26px rgba(16,22,30,0.3); z-index: 20; }
+  #rip { width: 74px; height: 74px; margin: -37px 0 0 -37px; border-radius: 50%; border: 3px solid hsl(var(--primary)); z-index: 19; }
+
+  /* Scene 5 */
+  #s5 { background: hsl(var(--ink)); }
+  #langs { top: 236px; display: flex; justify-content: center; gap: 70px; font-size: 36px; font-weight: 500; letter-spacing: 0.2em; }
+  #langs span { color: rgba(255,255,255,0.4); }
+  #langBar { top: 292px; height: 3px; background: hsl(var(--gold)); }
+  #pan5 { left: 60px; top: 350px; width: 960px; height: 650px; overflow: hidden; }
+  #pan5 img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .t5 { top: 1070px; left: 70px; right: 70px; text-align: center; color: #fff; font-size: 104px; line-height: 1.04; letter-spacing: -0.01em; }
+  .t5[lang="hy"] { font-size: 92px; line-height: 1.16; letter-spacing: 0; }
+
+  /* Scene 6 */
+  #s6 { background-color: hsl(var(--ink)); }
+  #mark6 { left: 225px; top: 420px; width: 630px; }
+  #s6brands { top: 750px; color: rgba(255,255,255,0.62); font-size: 25px; letter-spacing: 0.3em; }
+  #s6btn { top: 860px; display: flex; justify-content: center; }
+  #s6btn a { height: 124px; padding: 0 76px; font-size: 34px; gap: 22px; border-radius: 3px; }
+  #s6url { top: 1040px; color: #fff; font-size: 112px; line-height: 1; letter-spacing: -0.01em; }
+  #s6geo { top: 1195px; color: hsl(var(--ink-muted)); font-size: 25px; letter-spacing: 0.26em; }
+
+  #fontwarm { position: absolute; left: 0; top: 0; opacity: 0.01; pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- 1. Hook: the blind opens -->
+  <section class="scene" id="s1">
+    <div id="win" class="abs">
+      <img class="photo" id="p1" src="/img/terrea-700s-pool.jpg" alt="">
+      <div id="bloom"></div>
+      <div id="s1scrim" class="abs scrim-bottom" style="left:0;right:0;bottom:0;height:62%"></div>
+      <div id="s1eb" class="abs eb sans">RayWerThi</div>
+      <div id="s1title" class="abs disp">Комфорт<br>света и тени</div>
+      <div id="slats"></div>
+      <div id="rail"></div>
+    </div>
+    <div id="s1cap" class="abs sans caps">На фото: <b>WAREMA Terrea 700S</b></div>
+  </section>
+
+  <!-- 2. Who -->
+  <section class="scene lamella-texture" id="s2">
+    <img id="mark2" class="abs" src="/img/raywerthi-mark-light.png" alt="">
+    <div id="s2eb" class="abs center-x sans"><span class="eb both">Официальный представитель</span></div>
+    <div id="s2title" class="abs center-x disp"><span>Премиальные</span><span>солнцезащитные</span><span>системы на Кавказе</span></div>
+    <div class="tile sans" id="tile0" style="left:72px"><img src="/img/hella-logo.svg" alt="HELLA"><div class="ctry">Австрия</div></div>
+    <div class="tile sans" id="tile1" style="left:392px"><img src="/img/warema-logo.svg" alt="WAREMA" style="max-height:112px;max-width:180px"><div class="ctry">Германия</div></div>
+    <div class="tile sans" id="tile2" style="left:712px"><img src="/img/silentgliss-logo.svg" alt="Silent Gliss"><div class="ctry">Швейцария</div></div>
+  </section>
+
+  <!-- 3. Catalogue -->
+  <section class="scene" id="s3">
+    <div id="s3eb" class="abs center-x sans"><span class="eb both">Каталог</span></div>
+    <div id="count" class="abs center-x disp"><span id="num">0</span><span id="numLabel">модель</span></div>
+    <div id="s3sub" class="abs center-x sans">40 категорий · 3 бренда</div>
+    <div id="grid" class="abs"></div>
+  </section>
+
+  <!-- 4. The product in use -->
+  <section class="scene" id="s4">
+    <div id="capA" class="abs center-x disp">Выбираете модель —</div>
+    <div id="capB" class="abs center-x disp">— и она уже в заявке</div>
+    <div id="cardWrap" class="abs sans"></div>
+    <div id="formWrap" class="abs sans">
+      <div id="formPanel">
+        <h2 class="display-3 text-foreground" style="margin:0;font-size:34px">Отправить заявку</h2>
+        <div id="formClip" style="position:relative;overflow:hidden"><div id="formHost"></div></div>
+      </div>
+    </div>
+    <div id="toast" class="abs sans">
+      <div class="dot"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <div><div class="t">Заявка отправлена</div><div class="d">Мы свяжемся с вами в ближайшее время.</div></div>
+    </div>
+    <div id="rip" class="abs"></div>
+    <div id="cur" class="abs"></div>
+  </section>
+
+  <!-- 5. Three languages -->
+  <section class="scene" id="s5">
+    <div id="langs" class="abs center-x sans"><span id="lRU">RU</span><span id="lHY">HY</span><span id="lEN">EN</span></div>
+    <div id="langBar" class="abs"></div>
+    <div id="pan5" class="abs"><img src="/img/perea-p70-lakeside.jpg" alt=""></div>
+    <div class="t5 abs disp" id="tRU" lang="ru">Премиальные солнцезащитные системы на Кавказе</div>
+    <div class="t5 abs disp" id="tHY" lang="hy">Պրեմիում արևապաշտպան համակարգեր Կովկասում</div>
+    <div class="t5 abs disp" id="tEN" lang="en">Premium Sun Protection Systems in the Caucasus</div>
+  </section>
+
+  <!-- 6. Outro -->
+  <section class="scene lamella-texture" id="s6">
+    <img id="mark6" class="abs" src="/img/raywerthi-mark-light.png" alt="">
+    <div id="s6brands" class="abs center-x sans caps">HELLA · WAREMA · Silent Gliss</div>
+    <div id="s6btn" class="abs center-x sans"><a class="btn btn-gold">Заказать замер <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+    <div id="s6url" class="abs center-x disp">raywerthi.com</div>
+    <div id="s6geo" class="abs center-x sans caps">Армения · Грузия · Кавказ</div>
+  </section>
+
+  <div id="fontwarm">
+    <span class="disp">Комфорт света и тени 0123456789 Премиальные солнцезащитные Каталог модель raywerthi.com Premium Sun Protection</span>
+    <span class="disp" lang="hy">Պրեմիում արևապաշտպան համակարգեր Կովկասում</span>
+    <span class="sans">Официальный представитель Австрия 40 категорий · 3 бренда Заявка отправлена RU HY EN Թ</span>
+    <span class="sans" style="font-weight:600">Заявка отправлена</span>
+  </div>
+</div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, p) => a + (b - a) * p;
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+function bez(p1x, p1y, p2x, p2y) {
+  return (x) => {
+    if (x <= 0) return 0; if (x >= 1) return 1;
+    let u = x;
+    for (let i = 0; i < 12; i++) {
+      const bx = 3 * p1x * u * (1 - u) ** 2 + 3 * p2x * u * u * (1 - u) + u ** 3 - x;
+      const dx = 3 * p1x * (1 - u) ** 2 + 6 * (p2x - p1x) * u * (1 - u) + 3 * (1 - p2x) * u * u;
+      if (Math.abs(dx) < 1e-7) break;
+      u = clamp(u - bx / dx);
+    }
+    return 3 * p1y * u * (1 - u) ** 2 + 3 * p2y * u * u * (1 - u) + u ** 3;
+  };
+}
+// The site's own curves: ease-out-expo for reveals, (0.65,0,0.35,1) for slats.
+const expo = bez(0.16, 1, 0.3, 1);
+const inout = bez(0.65, 0, 0.35, 1);
+
+function rise(el, t, start, dur = 0.9, dist = 36) {
+  const p = expo(prog(t, start, start + dur));
+  el.style.opacity = p;
+  el.style.transform = `translateY(${(1 - p) * dist}px)`;
+  return p;
+}
+function slatMask(el, p, period = 60) {
+  if (p >= 1) { el.style.maskImage = el.style.webkitMaskImage = 'none'; return; }
+  const w = Math.max(0, p * period).toFixed(2);
+  const m = `repeating-linear-gradient(to bottom, #000 0 ${w}px, transparent ${w}px ${period}px)`;
+  el.style.maskImage = m; el.style.webkitMaskImage = m;
+}
+
+// ---------- build dynamic parts ----------
+const N_SLATS = 20, WIN_H = 1230, PITCH = WIN_H / N_SLATS;
+const slatEls = [];
+for (let i = 0; i < N_SLATS; i++) {
+  const d = document.createElement('div');
+  d.className = 'slat';
+  $('#slats').appendChild(d);
+  slatEls.push(d);
+}
+
+const GRID = [
+  ['terrea-k55-red-house.jpg', 'WAREMA Terrea K55'],
+  ['hella-innenrollo-loft.jpg', 'HELLA Innenrollo'],
+  ['lamaxa-l70-aerial-pool.jpg', 'WAREMA Lamaxa L70'],
+  ['sg6840-living.jpg', 'Silent Gliss SG 6840'],
+  ['perea-p70-lakeside.jpg', 'WAREMA Perea P70'],
+  ['hella-plissee-skylight.jpg', 'HELLA Plissee'],
+  ['terrea-k60-led-night.jpg', 'WAREMA Terrea K60 LED'],
+  ['metropole-hero.jpg', 'Silent Gliss Metropole'],
+  ['climara-w19-architectural.jpg', 'WAREMA Climara W19'],
+];
+const gridEls = GRID.map(([src, name], i) => {
+  const d = document.createElement('div');
+  d.className = 'gt';
+  d.style.left = (i % 3) * 318 + 'px';
+  d.style.top = Math.floor(i / 3) * 268 + 'px';
+  d.innerHTML = `<img src="/img/${src}" alt=""><div class="sc"></div><div class="nm sans">${name}</div>`;
+  $('#grid').appendChild(d);
+  return d;
+});
+
+const V550 = {
+  desc: 'Самая изящная кассета в линейке — плоский профиль для небольших балконов и террас, монтаж возможен как в защищённом, так и в открытом месте.',
+  specs: ['Максимум 4500×2500 мм (11,25 м²)', 'Плоская изящная кассета', 'Подходит для незащищённых мест монтажа'],
+};
+const V580 = {
+  desc: 'Максимальная версия того же семейства — компактная овальная кассета для террас среднего размера, опциональная выдвижная планка-жалюзи защищает от низкого солнца при юго-западной ориентации.',
+  specs: ['Максимум 5500×3000 мм (16,5 м²)', 'Овальная закрытая кассета', 'Опциональная выдвижная планка от низкого солнца'],
+};
+
+let card, cardImgs, cardDots, pill550, pill580, cardDesc, cardSpecs, cardLink, form, submitBtn, solSel, comment;
+let P = {}; // rest positions of tap targets, in stage px
+const CARD_SCALE = 1.85, FORM_SCALE = 2.1;
+
+async function setup() {
+  $('#cardWrap').innerHTML = await (await fetch('/card.html')).text();
+  $('#formHost').innerHTML = await (await fetch('/form.html')).text();
+  card = $('#cardWrap article');
+  cardImgs = [...card.querySelectorAll('img')];
+  cardImgs.forEach((im) => { im.loading = 'eager'; });
+  cardDots = [...card.querySelectorAll('button[aria-label^="Terrea 550 / 580 —"]')];
+  [pill550, pill580] = [...card.querySelectorAll('[role="tab"]')];
+  cardDesc = card.querySelector('p');
+  cardSpecs = [...card.querySelectorAll('ul li span')];
+  cardLink = card.querySelector('a.link-arrow');
+  form = $('#formHost form');
+  submitBtn = form.querySelector('button[type="submit"]');
+  solSel = form.querySelector('select[name="solutionType"]');
+  comment = form.querySelector('textarea[name="comment"]');
+  const rows = [...form.children];
+  const cut = rows[2].offsetTop - rows[0].offsetTop; // start at "Тип объекта / Город"
+  form.style.marginTop = (-cut + 24) + 'px';
+  $('#formClip').style.maskImage = $('#formClip').style.webkitMaskImage = 'linear-gradient(to bottom, transparent 0, #000 28px)';
+  solSel.value = 'Маркизы для террасы';
+  comment.value = 'Интересует модель: Terrea 550 / 580';
+  form.querySelector('select[name="objectType"]').value = 'house';
+  form.querySelector('input[name="city"]').value = 'Ереван';
+
+  // measure tap targets at rest
+  $('#s4').style.visibility = 'visible';
+  $('#cardWrap').style.transform = `scale(${CARD_SCALE})`;
+  $('#formWrap').style.transform = `scale(${FORM_SCALE})`;
+  const c = (el) => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; };
+  P.pill = c(pill580); P.submit = c(submitBtn);
+  setVariant(580); P.link = c(cardLink); setVariant(550);
+  const cr = card.getBoundingClientRect(), fr = $('#formPanel').getBoundingClientRect();
+  P.cardBottom = cr.bottom; P.formBottom = fr.bottom;
+  $('#s4').style.visibility = 'hidden';
+
+  const imgs = [...document.images];
+  await Promise.all(imgs.map((im) => im.decode().catch(() => {})));
+  await document.fonts.ready;
+  window.__layout = P;
+  return P;
+}
+
+// ---------- timeline ----------
+const SCENES = [
+  ['#s1', 0.0], ['#s2', 3.0], ['#s3', 6.75], ['#s4', 10.5], ['#s5', 15.75], ['#s6', 18.75],
+];
+const XFADE = 0.6;
+
+function renderAt(t) {
+  SCENES.forEach(([sel, start], i) => {
+    const next = SCENES[i + 1] ? SCENES[i + 1][1] : 99;
+    const el = $(sel);
+    el.style.visibility = t >= start && t < next + XFADE ? 'visible' : 'hidden';
+    el.style.zIndex = i + 1;
+    if (i > 0) slatMask(el, inout(prog(t, start, start + 0.55)), 64);
+  });
+  s1(t); s2(t); s3(t); s4(t); s5(t); s6(t);
+}
+
+function s1(t) {
+  // camera: slow push while closed, then settle
+  const push = lerp(1.0, 1.035, inout(prog(t, 0, 3)));
+  $('#win').style.transform = `scale(${push})`;
+  $('#p1').style.transform = `scale(${lerp(1.16, 1.04, expo(prog(t, 0.2, 3.0)))})`;
+  const open = inout(prog(t, 0.3, 1.45));
+  $('#bloom').style.opacity = lerp(0.15, 0.85, open) * lerp(1, 0.55, prog(t, 1.8, 3));
+  $('#p1').style.filter = `brightness(${lerp(0.55, 1.02, open)}) saturate(${lerp(0.7, 1.05, open)})`;
+
+  const lift = inout(prog(t, 1.5, 2.3));
+  for (let i = 0; i < N_SLATS; i++) {
+    const d = i * 0.014;
+    const th = lerp(5, 80, inout(prog(t, 0.3 + d, 1.3 + d))) * Math.PI / 180;
+    const h = Math.max(8, PITCH * 1.03 * Math.cos(th));
+    const yOpen = i * PITCH + PITCH / 2 - h / 2;
+    const yStack = 40 + i * 6.2;
+    const y = lerp(yOpen, yStack, clamp(lift * 1.15 - (N_SLATS - 1 - i) * 0.0));
+    const face = Math.sin(th); // light catches the slat as it tilts
+    const top = `rgba(${Math.round(lerp(78, 196, face))},${Math.round(lerp(84, 186, face))},${Math.round(lerp(92, 170, face))},1)`;
+    const s = slatEls[i].style;
+    s.top = y.toFixed(2) + 'px';
+    s.height = h.toFixed(2) + 'px';
+    s.background = `linear-gradient(to bottom, ${top}, #3a4047 38%, #23282e)`;
+    s.boxShadow = `0 ${lerp(1, 7, face).toFixed(1)}px ${lerp(2, 12, face).toFixed(1)}px rgba(0,0,0,${lerp(0.25, 0.5, face).toFixed(2)})`;
+  }
+  const scr = inout(prog(t, 1.0, 1.8));
+  $('#s1scrim').style.opacity = scr;
+  rise($('#s1eb'), t, 1.1);
+  rise($('#s1title'), t, 1.2, 0.9, 44);
+  rise($('#s1cap'), t, 1.9, 0.8, 14);
+}
+
+function s2(t) {
+  rise($('#mark2'), t, 3.2);
+  rise($('#s2eb'), t, 3.4);
+  [...$('#s2title').children].forEach((sp, i) => rise(sp, t, 3.5 + i * 0.1, 0.9, 44));
+  [0, 1, 2].forEach((i) => {
+    const el = $('#tile' + i);
+    const st = 4.5 + i * 0.375;
+    const p = expo(prog(t, st, st + 0.7));
+    el.style.opacity = p;
+    el.style.transform = `translateY(${(1 - p) * 40}px) scale(${lerp(0.94, 1, p)})`;
+  });
+}
+
+function s3(t) {
+  rise($('#s3eb'), t, 7.0);
+  const cp = expo(prog(t, 7.05, 8.3));
+  $('#num').textContent = Math.round(161 * cp);
+  rise($('#count'), t, 6.95, 0.9, 30);
+  rise($('#s3sub'), t, 7.6);
+  gridEls.forEach((el, i) => {
+    const st = 7.35 + i * 0.1;
+    const p = prog(t, st, st + 0.75);
+    slatMask(el, inout(p), 28);
+    el.style.transform = `translateY(${(1 - expo(p)) * 50}px)`;
+    el.querySelector('img').style.transform = `scale(${lerp(1.14, 1.0, expo(prog(t, st, st + 2.4)))})`;
+    el.style.visibility = t >= st ? 'visible' : 'hidden';
+  });
+  $('#grid').style.transform = `translateY(${lerp(10, -22, prog(t, 7, 11.1))}px)`;
+}
+
+function setVariant(v) {
+  const on = ['border-primary', 'bg-primary', 'text-primary-foreground'];
+  const off = ['border-border', 'text-muted-foreground'];
+  const [a, b] = v === 580 ? [pill580, pill550] : [pill550, pill580];
+  a.classList.remove(...off); a.classList.add(...on);
+  b.classList.remove(...on); b.classList.add(...off);
+  const V = v === 580 ? V580 : V550;
+  if (cardDesc.textContent !== V.desc) cardDesc.textContent = V.desc;
+  cardSpecs.forEach((sp, i) => { if (sp.textContent !== V.specs[i]) sp.textContent = V.specs[i]; });
+}
+
+function s4(t) {
+  if (!card) return;
+  // captions
+  const a = rise($('#capA'), t, 10.8, 0.9, 30);
+  const aOut = inout(prog(t, 13.5, 13.75));
+  $('#capA').style.opacity = a * (1 - aOut);
+  $('#capA').style.transform = `translateY(${-aOut * 30}px)`;
+  rise($('#capB'), t, 13.8, 0.9, 30);
+
+  // card entrance / exit
+  const cin = expo(prog(t, 10.65, 11.5));
+  const cout = inout(prog(t, 13.62, 14.12));
+  $('#cardWrap').style.opacity = cin;
+  $('#cardWrap').style.transform = `translate(${-cout * 1150}px, ${(1 - cin) * 80}px) scale(${CARD_SCALE})`;
+  const fin = inout(prog(t, 13.62, 14.12));
+  $('#formWrap').style.transform = `translate(${(1 - fin) * 1150}px, 0) scale(${FORM_SCALE})`;
+  $('#formWrap').style.visibility = t >= 13.6 ? 'visible' : 'hidden';
+
+  // gallery: hero -> lifestyle, then the 580 photo after the switch
+  const g1 = inout(prog(t, 11.15, 11.65));
+  const g2 = inout(prog(t, 12.6, 13.1));
+  cardImgs.forEach((im, i) => {
+    let o = 0;
+    if (i === 0) o = 1;
+    if (i === 4) o = g1;
+    if (i === 1) o = g2;
+    im.style.opacity = o;
+    im.style.zIndex = i === 1 ? 3 : i === 4 ? 2 : 1;
+  });
+  const activeDot = t >= 12.6 ? 1 : t >= 11.15 ? 4 : 0;
+  cardDots.forEach((d, i) => {
+    d.style.width = i === activeDot ? '24px' : '12px';
+    d.style.backgroundColor = i === activeDot ? 'hsl(var(--ink) / 0.8)' : 'hsl(var(--ink) / 0.25)';
+  });
+
+  // variant switch on the tap at 12.0
+  setVariant(t >= 12.15 ? 580 : 550);
+  const vf = t < 12.0 ? 1 : t < 12.15 ? 1 - prog(t, 12.0, 12.15) : prog(t, 12.15, 12.4);
+  cardDesc.style.opacity = vf;
+  cardSpecs.forEach((sp) => { sp.parentElement.style.opacity = vf; });
+
+  // link hover underline as the finger arrives
+  cardLink.style.backgroundSize = `${inout(prog(t, 13.15, 13.45)) * 100}% 1px`;
+
+  // prefilled fields glow
+  const glow = Math.sin(Math.PI * prog(t, 14.15, 15.0));
+  [solSel, comment].forEach((f) => {
+    f.style.boxShadow = `0 0 0 ${(glow * 4).toFixed(2)}px hsl(var(--gold) / ${(glow * 0.9).toFixed(2)})`;
+    f.style.borderColor = glow > 0.05 ? 'hsl(var(--primary))' : '';
+  });
+  const pressed = t >= 14.95 && t < 15.25;
+  submitBtn.style.backgroundColor = pressed ? 'hsl(var(--foreground))' : '';
+  const tp = expo(prog(t, 15.1, 15.6));
+  $('#toast').style.opacity = tp;
+  $('#toast').style.transform = `translateY(${(1 - tp) * 40}px)`;
+
+  // finger
+  const path = [
+    [11.35, [700, 1180]],
+    [11.9, P.pill], [12.0, P.pill], [12.9, P.pill],
+    [13.4, P.link], [13.5, P.link],
+    [14.5, [P.submit[0] + 160, P.submit[1] + 120]],
+    [14.9, P.submit], [15.0, P.submit], [15.75, P.submit],
+  ];
+  let pos = path[0][1];
+  for (let i = 0; i < path.length - 1; i++) {
+    const [ta, pa] = path[i], [tb, pb] = path[i + 1];
+    if (t >= ta && t <= tb) { const e = inout(prog(t, ta, tb)); pos = [lerp(pa[0], pb[0], e), lerp(pa[1], pb[1], e)]; }
+    if (t > tb) pos = pb;
+  }
+  const vis = clamp(prog(t, 11.3, 11.5)) * (1 - prog(t, 13.6, 13.75)) + (t >= 14.3 ? clamp(prog(t, 14.3, 14.5)) * (1 - prog(t, 15.35, 15.55)) : 0);
+  const taps = [12.0, 13.5, 15.0];
+  let press = 1, rip = null;
+  taps.forEach((tt) => {
+    if (t >= tt - 0.08 && t < tt + 0.12) press = 0.82;
+    if (t >= tt && t < tt + 0.5) rip = prog(t, tt, tt + 0.5);
+  });
+  const cur = $('#cur').style;
+  cur.left = pos[0] + 'px'; cur.top = pos[1] + 'px';
+  cur.opacity = vis; cur.transform = `scale(${press})`;
+  const r = $('#rip').style;
+  r.left = pos[0] + 'px'; r.top = pos[1] + 'px';
+  r.opacity = rip === null ? 0 : (1 - rip) * vis;
+  r.transform = `scale(${rip === null ? 1 : lerp(0.9, 2.4, expo(rip))})`;
+}
+
+function s5(t) {
+  $('#pan5 img').style.transform = `scale(${lerp(1.12, 1.02, expo(prog(t, 15.75, 19)))})`;
+  rise($('#pan5'), t, 15.9, 0.9, 30);
+  rise($('#langs'), t, 16.0, 0.8, 20);
+  const ids = ['RU', 'HY', 'EN'];
+  const k = t < 16.75 ? 0 : t < 17.75 ? 1 : 2;
+  ids.forEach((id, i) => { $('#l' + id).style.color = i === k ? '#fff' : 'rgba(255,255,255,0.4)'; });
+  // underline slides under the active code
+  const rects = ids.map((id) => $('#l' + id).getBoundingClientRect());
+  const m1 = inout(prog(t, 16.7, 16.95)), m2 = inout(prog(t, 17.7, 17.95));
+  const x = lerp(lerp(rects[0].left, rects[1].left, m1), rects[2].left, m2);
+  const w = lerp(lerp(rects[0].width, rects[1].width, m1), rects[2].width, m2);
+  const bar = $('#langBar').style;
+  bar.left = x + 'px'; bar.width = (w - 7) + 'px';
+  bar.opacity = clamp(prog(t, 16.0, 16.4));
+
+  const show = [[15.95, 16.75], [16.85, 17.75], [17.85, 99]];
+  ids.forEach((id, i) => {
+    const el = $('#t' + id);
+    const [a, b] = show[i];
+    const pin = inout(prog(t, a, a + 0.4));
+    const pout = inout(prog(t, b, b + 0.14));
+    el.style.visibility = t >= a && t < b + 0.14 ? 'visible' : 'hidden';
+    slatMask(el, pin * (1 - pout), 26);
+    el.style.transform = `translateY(${(1 - expo(prog(t, a, a + 0.8))) * 24}px)`;
+  });
+}
+
+function s6(t) {
+  rise($('#mark6'), t, 19.0, 1.0, 40);
+  rise($('#s6brands'), t, 19.3);
+  rise($('#s6btn'), t, 19.5);
+  rise($('#s6url'), t, 19.65, 1.0, 40);
+  rise($('#s6geo'), t, 19.85);
+}
+
+window.renderAt = renderAt;
+window.ready = setup().then(() => { renderAt(0); return true; });
+</script>
+</body>
+</html>
