@@ -1,0 +1,24 @@
+const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const fs = require('fs');
+(async () => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
+  await page.goto('http://localhost:4173/solutions/category/patio-awnings', { waitUntil: 'networkidle' });
+  await page.getByRole('button', { name: 'HY', exact: true }).first().click();
+  await page.waitForTimeout(500);
+  const card = page.locator('article', { hasText: 'Terrea 550 / 580' }).first();
+  const html = await card.evaluate((el) => el.outerHTML);
+  fs.writeFileSync('comp/card-hy.html', html);
+  console.log('card lang text:', await card.locator('p').first().innerText());
+  await card.locator('a.link-arrow').click();
+  await page.waitForURL(/contacts/);
+  await page.waitForTimeout(800);
+  const form = page.locator('form').first();
+  fs.writeFileSync('comp/form-hy.html', await form.evaluate((el) => el.outerHTML));
+  const vals = await form.evaluate((f) => Object.fromEntries([...f.elements].filter((e) => e.name).map((e) => [e.name, e.value])));
+  const heading = await page.locator('h2', { has: page.locator('xpath=.') }).allInnerTexts();
+  console.log('url', decodeURIComponent(page.url()));
+  console.log('values', JSON.stringify(vals));
+  console.log('h2s', JSON.stringify(heading.slice(0, 4)));
+  await browser.close();
+})();

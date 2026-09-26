@@ -86,6 +86,9 @@
   #s6url { top: 1040px; color: #fff; font-size: 112px; line-height: 1; letter-spacing: -0.01em; }
   #s6geo { top: 1195px; color: hsl(var(--ink-muted)); font-size: 25px; letter-spacing: 0.26em; }
 
+  html[lang="hy"] .disp { letter-spacing: 0 !important; }
+  .fitln { display: block; width: max-content; white-space: nowrap; }
+  #s2title .fitln, #capA .fitln, #capB .fitln { margin: 0 auto; }
   #fontwarm { position: absolute; left: 0; top: 0; opacity: 0.01; pointer-events: none; }
 </style>
 </head>
@@ -172,6 +175,9 @@
 
 <script>
 const $ = (s) => document.querySelector(s);
+const LANG = new URLSearchParams(location.search).get('lang') || 'ru';
+const HY = LANG === 'hy';
+document.documentElement.lang = LANG;
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
 const lerp = (a, b, p) => a + (b - a) * p;
 const prog = (t, a, b) => clamp((t - a) / (b - a));
@@ -236,22 +242,72 @@ const gridEls = GRID.map(([src, name], i) => {
   return d;
 });
 
-const V550 = {
+let V550 = {
   desc: 'Самая изящная кассета в линейке — плоский профиль для небольших балконов и террас, монтаж возможен как в защищённом, так и в открытом месте.',
   specs: ['Максимум 4500×2500 мм (11,25 м²)', 'Плоская изящная кассета', 'Подходит для незащищённых мест монтажа'],
 };
-const V580 = {
+let V580 = {
   desc: 'Максимальная версия того же семейства — компактная овальная кассета для террас среднего размера, опциональная выдвижная планка-жалюзи защищает от низкого солнца при юго-западной ориентации.',
   specs: ['Максимум 5500×3000 мм (16,5 м²)', 'Овальная закрытая кассета', 'Опциональная выдвижная планка от низкого солнца'],
 };
+
+if (HY) {
+  V550 = {"desc": "Գծի ամենանրբագեղ կասետան՝ հարթ պրոֆիլ փոքր բալկոնների և պատշգամբների համար, տեղադրումը հնարավոր է ինչպես պաշտպանված, այնպես էլ բաց տեղում։", "specs": ["Առավելագույնը 4500×2500 մմ (11,25 մ²)", "Հարթ, նրբագեղ կասետա", "Հարմար է անպաշտպան տեղադրման վայրերի համար"]};
+  V580 = {"desc": "Նույն ընտանիքի առավելագույն տարբերակը՝ կոմպակտ օվալաձև կասետա միջին չափի պատշգամբների համար, հավելյալ դուրս եկող ժալյուզի-պլանկան պաշտպանում է ցածր արևից հարավ-արևմտյան կողմնորոշման դեպքում։", "specs": ["Առավելագույնը 5500×3000 մմ (16,5 մ²)", "Օվալաձև փակ կասետա", "Հավելյալ դուրս եկող պլանկա ցածր արևից"]};
+}
+
+// Shrinks a block of single-line spans until its widest line fits maxW.
+function fitLines(el, lines, maxW, maxPx) {
+  el.innerHTML = lines.map((l) => `<span class="fitln">${l}</span>`).join('');
+  let px = maxPx;
+  el.style.fontSize = px + 'px';
+  const widest = () => Math.max(...[...el.children].map((c) => c.getBoundingClientRect().width));
+  while (widest() > maxW && px > 20) { px -= 1; el.style.fontSize = px + 'px'; }
+  return px;
+}
+
+// Armenian copy — site strings from src/i18n/translations.ts (hy); the two captions are video copy.
+function applyHy() {
+  const s1 = $('#s1title');
+  fitLines(s1, ['Լույսի և ստվերի', 'հարմարավետություն'], 840, 150);
+  s1.style.lineHeight = '1.12';
+  const s1top = 1172 - s1.offsetHeight;
+  s1.style.top = s1top + 'px';
+  $('#s1eb').style.top = (s1top - 58) + 'px';
+  $('#s1cap').innerHTML = 'Լուսանկարում: <b>WAREMA Terrea 700S</b>';
+  $('#s2eb span').textContent = 'Պաշտոնական ներկայացուցիչ';
+  const s2 = $('#s2title');
+  fitLines(s2, ['Պրեմիում', 'արևապաշտպան', 'համակարգեր', 'Կովկասում'], 960, 112);
+  s2.style.lineHeight = '1.1';
+  $('#mark2').style.top = '220px';
+  $('#s2eb').style.top = '555px';
+  s2.style.top = '612px';
+  const tilesTop = 612 + s2.offsetHeight + 70;
+  [0, 1, 2].forEach((i) => { $('#tile' + i).style.top = tilesTop + 'px'; });
+  ['Ավստրիա', 'Գերմանիա', 'Շվեյցարիա'].forEach((c, i) => { $('#tile' + i + ' .ctry').textContent = c; });
+  $('#s3eb span').textContent = 'Կատալոգ';
+  $('#numLabel').textContent = 'մոդել';
+  $('#s3sub').textContent = '40 կատեգորիա · 3 բրենդ';
+  fitLines($('#capA'), ['Ընտրում եք մոդելը —'], 900, 86);
+  fitLines($('#capB'), ['— և այն արդեն հայտում է'], 900, 86);
+  $('#formPanel h2').textContent = 'Ուղարկել հայտ';
+  $('#toast .t').textContent = 'Հայտն ուղարկված է';
+  $('#toast .d').textContent = 'Մոտ ժամանակում մենք կապ կհաստատենք ձեզ հետ։';
+  $('#s6btn a').firstChild.nodeValue = 'Պատվիրել չափագրում ';
+  $('#s6geo').textContent = 'Հայաստան · Վրաստան · Կովկաս';
+  const warm = document.createElement('div');
+  warm.innerHTML = `<span class="disp">${$('#stage').innerText}</span><span class="sans" style="font-weight:400">${$('#stage').innerText}</span><span class="sans" style="font-weight:500">${$('#stage').innerText}</span><span class="sans" style="font-weight:600">${$('#stage').innerText}</span>`;
+  $('#fontwarm').appendChild(warm);
+}
 
 let card, cardImgs, cardDots, pill550, pill580, cardDesc, cardSpecs, cardLink, form, submitBtn, solSel, comment;
 let P = {}; // rest positions of tap targets, in stage px
 const CARD_SCALE = 1.85, FORM_SCALE = 2.1;
 
 async function setup() {
-  $('#cardWrap').innerHTML = await (await fetch('/card.html')).text();
-  $('#formHost').innerHTML = await (await fetch('/form.html')).text();
+  const sfx = HY ? '-hy' : '';
+  $('#cardWrap').innerHTML = await (await fetch(`/card${sfx}.html`)).text();
+  $('#formHost').innerHTML = await (await fetch(`/form${sfx}.html`)).text();
   card = $('#cardWrap article');
   cardImgs = [...card.querySelectorAll('img')];
   cardImgs.forEach((im) => { im.loading = 'eager'; });
@@ -268,10 +324,11 @@ async function setup() {
   const cut = rows[2].offsetTop - rows[0].offsetTop; // start at "Тип объекта / Город"
   form.style.marginTop = (-cut + 24) + 'px';
   $('#formClip').style.maskImage = $('#formClip').style.webkitMaskImage = 'linear-gradient(to bottom, transparent 0, #000 28px)';
-  solSel.value = 'Маркизы для террасы';
-  comment.value = 'Интересует модель: Terrea 550 / 580';
-  form.querySelector('select[name="objectType"]').value = 'house';
-  form.querySelector('input[name="city"]').value = 'Ереван';
+  solSel.value = HY ? 'Պատշգամբի մարկիզաներ' : 'Маркизы для террасы';
+  comment.value = HY ? 'Հետաքրքրում է մոդելը: Terrea 550 / 580' : 'Интересует модель: Terrea 550 / 580';
+  form.querySelector('select[name="objectType"]').value = HY ? 'apartment' : 'house';
+  form.querySelector('input[name="city"]').value = HY ? 'Երևան' : 'Ереван';
+  if (HY) { await document.fonts.ready; applyHy(); }
 
   // measure tap targets at rest
   $('#s4').style.visibility = 'visible';
@@ -471,7 +528,7 @@ function s5(t) {
   $('#pan5 img').style.transform = `scale(${lerp(1.12, 1.02, expo(prog(t, 15.75, 19)))})`;
   rise($('#pan5'), t, 15.9, 0.9, 30);
   rise($('#langs'), t, 16.0, 0.8, 20);
-  const ids = ['RU', 'HY', 'EN'];
+  const ids = HY ? ['HY', 'RU', 'EN'] : ['RU', 'HY', 'EN']; // order they light up
   const k = t < 16.75 ? 0 : t < 17.75 ? 1 : 2;
   ids.forEach((id, i) => { $('#l' + id).style.color = i === k ? '#fff' : 'rgba(255,255,255,0.4)'; });
   // underline slides under the active code

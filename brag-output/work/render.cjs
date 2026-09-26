@@ -5,7 +5,7 @@ const FPS = 30, DUR = 22.5, FRAMES = Math.round(FPS * DUR), POSTER_T = 2.8;
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   page.on('pageerror', (e) => console.log('pageerror:', e.message));
-  await page.goto('http://localhost:4181/', { waitUntil: 'networkidle' });
+  await page.goto('http://localhost:4181/' + (process.env.QS || ''), { waitUntil: 'networkidle' });
   await page.evaluate(() => window.ready);
   const shot = async (t) => {
     await page.evaluate((t) => window.renderAt(t), t);
@@ -13,13 +13,13 @@ const FPS = 30, DUR = 22.5, FRAMES = Math.round(FPS * DUR), POSTER_T = 2.8;
     return page.screenshot({ type: 'png' });
   };
   const poster = await shot(POSTER_T);
-  require('fs').writeFileSync('poster.png', poster);
+  require('fs').writeFileSync(process.env.POSTER || 'poster.png', poster);
   const ff = spawn('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error',
     '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'png', '-i', '-',
     '-i', 'audio.wav',
     '-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-pix_fmt', 'yuv420p', '-profile:v', 'high', '-r', String(FPS),
     '-c:a', 'aac', '-b:a', '192k', '-ar', '48000',
-    '-movflags', '+faststart', '-shortest', '../brag.mp4'], { stdio: ['pipe', 'inherit', 'inherit'] });
+    '-movflags', '+faststart', '-shortest', process.env.OUT || '../brag.mp4'], { stdio: ['pipe', 'inherit', 'inherit'] });
   const done = new Promise((res) => ff.on('close', res));
   const t0 = Date.now();
   for (let i = 0; i < FRAMES; i++) {
