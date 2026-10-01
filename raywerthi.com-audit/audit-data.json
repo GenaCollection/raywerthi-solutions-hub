@@ -1,0 +1,602 @@
+{
+  "summary": {
+    "health_score": 28,
+    "business_type": "Local Service / Hybrid (brick-and-mortar HQ in Yerevan + service-area business across Armenia and Georgia) — Home & Construction / premium sun-shading & automation systems, official regional representative of HELLA, WAREMA, Silent Gliss",
+    "top_findings": [
+      "Vercel SPA routing misconfiguration: 5 of 6 pages (/solutions, /services, /portfolio, /about, /contacts) return a genuine server-level HTTP 404 on direct fetch — the exact same request pattern Googlebot, Bingbot, AI crawlers, and real users following a shared/bookmarked link or refreshing use. Only the homepage returns 200. This is the root cause behind nearly every other finding in this audit.",
+      "Zero server-side rendering: even the one working page (the homepage) ships an empty '<div id=\"root\"></div>' to any crawler that doesn't execute JavaScript (GPTBot, ClaudeBot, PerplexityBot, CCBot). All visible content, canonical tag, and hreflang links are injected client-side only.",
+      "raywerthi.com does not appear anywhere in Google's actual search results for any of 5 realistic target queries tested (e.g. 'HELLA официальный представитель Армения', 'Silent Gliss Армения карнизы') — unrelated businesses and foreign competitors outrank it.",
+      "LocalBusiness/Organization structured data is broken: two conflicting JSON-LD blocks give the business two different names ('Raywerthi' vs 'Raywerthi Solutions Hub') and two phone formats, and the LocalBusiness entity has no address or geo-coordinates at all despite a real office existing.",
+      "Site explicitly claims coverage of Georgia/Tbilisi but has zero supporting evidence — one Armenia-only address, one Armenian phone number, and all 8 portfolio projects tagged to Armenian cities only, undermining the claim and losing the Tbilisi-buyer search intent entirely."
+    ],
+    "quick_wins": [
+      "Add a vercel.json SPA-fallback rewrite (rewrites all paths to /index.html) — a five-minute config change that unblocks 5 of 6 pages from total 404. Single highest-leverage fix on the entire audit.",
+      "Consolidate the two conflicting Organization/LocalBusiness JSON-LD blocks into one, using the real brand name 'RayWerThi' consistently, and add the missing address/geo (ready-to-use JSON-LD provided in findings/schema.md).",
+      "Add security headers (CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) via vercel.json — currently only HSTS is present.",
+      "Fix the WhatsApp/Telegram contact buttons on /contacts, currently dead href=\"#\" placeholders, and make the phone number a clickable tel: link.",
+      "Populate the completely empty 'Преимущества RayWerThi' (Advantages) section on the homepage — the heading exists but zero content renders underneath it."
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 18,
+      "what_works": [
+        "robots.txt is clean, permissive, and correctly declares the sitemap",
+        "HTTPS enforced site-wide with HSTS; clean http→https and www→apex redirects",
+        "Homepage <head> has real server-delivered SEO metadata (title, description, OG/Twitter tags, static JSON-LD) before any JS runs",
+        "No accidental noindex/X-Robots-Tag blocking; no mixed content",
+        "Mobile-responsive markup with correct viewport tag; JS bundle loads without console errors"
+      ],
+      "findings": [
+        {
+          "title": "Vercel SPA routing misconfiguration — 5 of 6 pages return real HTTP 404 on direct request",
+          "severity": "Critical",
+          "description": "Independently verified via curl (no JS execution, matching bot behavior) and via forced Playwright render: /solutions, /services, /portfolio, /about, /contacts all return genuine server-level 404 (X-Vercel-Error: NOT_FOUND). Only / returns 200. These are the exact URLs in sitemap.xml and the homepage nav — Google Search Console will report 'Submitted URL not found (404)' for 83% of the sitemap.",
+          "recommendation": "Add a vercel.json rewrite routing all non-asset paths to /index.html so React Router can handle client-side routing after initial load. Redeploy, then re-verify all 6 sitemap URLs return 200 via curl -I before resubmitting the sitemap in Search Console."
+        },
+        {
+          "title": "Pure client-side rendering — canonical, hreflang, and rich structured data invisible without JS execution",
+          "severity": "Critical",
+          "description": "Raw HTML for / is an empty <div id=\"root\"></div>; canonical tag, hreflang alternates, and the richer JSON-LD @graph block are only injected client-side via react-helmet-async. Most non-Google crawlers (Bing, AI crawlers, link-preview bots, most SEO tools) rely on raw HTML and never see these signals.",
+          "recommendation": "Migrate to SSR/SSG (Next.js, Remix, Astro) or add a prerendering step (vite-react-ssg, Prerender.io) so canonical, hreflang, meta description, and title exist in raw HTML for every route. Minimum viable interim fix: move the homepage's canonical/hreflang into the static index.html <head>."
+        },
+        {
+          "title": "hreflang alternates all point to the identical URL — HY/EN content is not indexable",
+          "severity": "High",
+          "description": "All four hreflang values (ru, hy, en, x-default) resolve to the same URL. The RU/HY/EN switcher is three buttons with no href/path prefix — pure client-side state, confirmed no i18n routing pattern in the production bundle.",
+          "recommendation": "Re-architect the language switcher to produce real, distinct, crawlable URLs per language (e.g. /en/solutions, /hy/solutions) with correct reciprocal hreflang, each with its own title/meta description. Only then add hreflang entries to the sitemap."
+        },
+        {
+          "title": "Missing critical security headers",
+          "severity": "High",
+          "description": "Only Strict-Transport-Security is present on responses. CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy are all absent — a real security gap for a site collecting lead/contact data.",
+          "recommendation": "Add security headers via vercel.json headers config. Test CSP in report-only mode first since the app loads Google Fonts and Unsplash-hosted images."
+        },
+        {
+          "title": "Oversized, non-responsive LCP-candidate images",
+          "severity": "Medium",
+          "description": "Hero image is a single 1920x1080, 250KB JPEG served identically to all breakpoints with no srcset/sizes and no modern format. Header logo is a 116KB PNG rendered at 25x more pixel data than needed, no width/height attributes.",
+          "recommendation": "Generate responsive srcset/sizes variants, convert to WebP/AVIF, add explicit width/height, and preload the hero image with fetchpriority=\"high\"."
+        },
+        {
+          "title": "Render-blocking Google Fonts stylesheet with no preconnect",
+          "severity": "Medium",
+          "description": "Google Fonts CSS loads synchronously with no preconnect/dns-prefetch hints, adding avoidable latency to FCP/LCP; six font weights requested for one family.",
+          "recommendation": "Add preconnect hints for fonts.googleapis.com and fonts.gstatic.com, trim requested font weights, or self-host Inter via @fontsource/inter."
+        },
+        {
+          "title": "Duplicate, inconsistent Organization structured data",
+          "severity": "Medium",
+          "description": "Two JSON-LD Organization blocks with different names ('Raywerthi' static vs 'Raywerthi Solutions Hub' client-injected) and different phone formats coexist on the homepage.",
+          "recommendation": "Keep one JSON-LD source of truth with a consistent business name and phone format across schema, title tag, and Google Business Profile listing."
+        },
+        {
+          "title": "www→apex redirect uses temporary (307) instead of permanent status",
+          "severity": "Low",
+          "description": "https://www.raywerthi.com/ redirects with 307 instead of 301/308, making link-equity consolidation less certain.",
+          "recommendation": "Change the www→apex redirect to a permanent status code (301/308) at the DNS/domain config level."
+        },
+        {
+          "title": "IndexNow protocol not implemented",
+          "severity": "Low",
+          "description": "No IndexNow key file or API calls found — Bing/Yandex/Naver support near-instant crawl notification on publish/update.",
+          "recommendation": "Low priority until the routing fix ships. Once fixed, generate an IndexNow key and submit the 6 sitemap URLs to accelerate re-crawl."
+        },
+        {
+          "title": "Minimal favicon/touch-icon set",
+          "severity": "Info",
+          "description": "Only a single .ico favicon; no apple-touch-icon, SVG favicon, or web app manifest.",
+          "recommendation": "Add a modern icon set (favicon.svg, apple-touch-icon.png, site.webmanifest) — low priority polish item."
+        }
+      ]
+    },
+    {
+      "name": "Sitemap & Crawl Coverage",
+      "score": 15,
+      "what_works": [
+        "sitemap.xml is valid, well-formed XML correctly declared in robots.txt",
+        "6 URLs are well within Google's limits; no orphaned/extraneous entries",
+        "Domain canonicalization (http→https, www→apex) is correctly handled at the edge"
+      ],
+      "findings": [
+        {
+          "title": "5 of 6 sitemap URLs return HTTP 404 on the exact request pattern Googlebot uses to verify sitemap entries",
+          "severity": "Critical",
+          "description": "Same root cause as the technical-SEO routing finding — restated here because it means the sitemap is actively telling Google to index 5 URLs that 404. Retested 3 times with a Googlebot user-agent string, same result.",
+          "recommendation": "Same fix as technical finding #1 (vercel.json SPA rewrite). Re-verify all 6 URLs return 200 before resubmitting in Search Console."
+        },
+        {
+          "title": "No lastmod on any of the 6 URL entries",
+          "severity": "Medium",
+          "description": "None of the 6 <url> entries include a <lastmod> tag, giving Google no freshness signal at all.",
+          "recommendation": "Add lastmod in YYYY-MM-DD format reflecting genuine content-change dates per route, not a uniform build-time stamp."
+        },
+        {
+          "title": "Deprecated priority/changefreq tags present",
+          "severity": "Info",
+          "description": "Every entry sets priority and changefreq, both of which Google has stated are ignored for ranking/crawl purposes.",
+          "recommendation": "Optional cleanup — safe to remove, no ranking impact either way."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality (E-E-A-T)",
+      "score": 34,
+      "what_works": [
+        "Legitimate authority hook: official representative of three recognized international manufacturers (HELLA, WAREMA, Silent Gliss)",
+        "Genuine multi-market, multi-language targeting (RU/HY/EN) reflecting real audience needs",
+        "Niche vertical focus with genuine case-study/differentiation potential",
+        "Homepage is reachable and indexable, giving at least one crawlable entry point"
+      ],
+      "findings": [
+        {
+          "title": "Five of six pages return HTTP 404 — content is effectively unindexed regardless of quality",
+          "severity": "Critical",
+          "description": "A page search engines record as 404 will not be indexed or ranked no matter how strong its underlying content is. This is the dominant factor suppressing the content score.",
+          "recommendation": "Fix the Vercel routing issue first — nearly every other content finding is provisional until then."
+        },
+        {
+          "title": "Trustworthiness signals unverified — highest-weighted E-E-A-T factor is the biggest blind spot",
+          "severity": "High",
+          "description": "Trust (30% of E-E-A-T weight) depends heavily on /contacts and /about, precisely the pages that 404. Physical address, manufacturer-authorization proof, and legal entity details could not be confirmed as reachable content.",
+          "recommendation": "Once routing is fixed, verify /contacts shows a real address and phone numbers for both markets, and /about publishes visible proof of manufacturer authorization with verifiable partner-page links."
+        },
+        {
+          "title": "Expertise/experience signals (staff credentials, real case studies) unconfirmed",
+          "severity": "High",
+          "description": "No named staff/installer credentials, certifications, or detailed project case studies with real photos/specs could be confirmed on /portfolio or /services.",
+          "recommendation": "Once accessible, add real project photography, address/region tags per project, named team members, and concrete differentiators (warranty terms, completed-installation counts)."
+        },
+        {
+          "title": "Word-count/topical-coverage floors not confirmed against page-type minimums",
+          "severity": "Medium",
+          "description": "Insufficient data gathered for /solutions, /services, /portfolio, /about, /contacts before the audit's data-gathering turns were exhausted — flagged for re-audit rather than guessed.",
+          "recommendation": "Re-run word-count and topical-coverage extraction once the routing fix is deployed and pages reliably return 200."
+        },
+        {
+          "title": "Homepage readability and freshness signals not fully captured",
+          "severity": "Low",
+          "description": "Insufficient data gathered on exact word count, keyword density, and freshness metadata for the homepage — flagged for re-audit.",
+          "recommendation": "Re-fetch and run full readability and freshness checks on the homepage."
+        },
+        {
+          "title": "Risk of templated/repetitive structure across RU/HY/EN variants unverified",
+          "severity": "Low",
+          "description": "Could not confirm whether language variants are genuinely localized versus straight machine-translated strings.",
+          "recommendation": "Compare corresponding sections across all three locales for genuine localization once real per-language URLs exist."
+        },
+        {
+          "title": "AI citation readiness could not be assessed",
+          "severity": "Low",
+          "description": "Structured data completeness, heading hierarchy, and quotable/extractable facts across the site were not fully assessed due to the routing blocker.",
+          "recommendation": "Once routing is fixed, ensure clear H1-H6 hierarchy and add quotable factual statements (e.g. 'authorized dealer since YYYY')."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 35,
+      "what_works": [
+        "Homepage ships valid, server-rendered JSON-LD (Organization + LocalBusiness) with correct @context and absolute URLs",
+        "areaServed (Armenia, Georgia, Caucasus) present on both entities",
+        "No deprecated schema types in use",
+        "priceRange set on LocalBusiness"
+      ],
+      "findings": [
+        {
+          "title": "Inner pages return HTTP 404 — all schema on them is currently unreachable by crawlers",
+          "severity": "Critical",
+          "description": "JS-rendered snapshots show full page-specific schema exists on /solutions, /services, /portfolio, but a plain HTTP GET (how Googlebot's initial crawl and schema-validation tools fetch a URL) receives a 404 first, so none of it has any rich-result eligibility today.",
+          "recommendation": "Fix the Vercel SPA rewrite so all routes serve 200. Re-fetch each URL raw (no JS) and confirm 200 before treating any schema on those pages as valid."
+        },
+        {
+          "title": "LocalBusiness entity is missing address entirely",
+          "severity": "Critical",
+          "description": "No PostalAddress or geo property at all despite a real, visible street address existing in the rendered HTML — a core property for local search eligibility.",
+          "recommendation": "Add a PostalAddress with streetAddress, addressLocality, and addressCountry, plus GeoCoordinates. Verify the exact address from /contacts once reachable."
+        },
+        {
+          "title": "Duplicate, conflicting Organization schema on the homepage",
+          "severity": "High",
+          "description": "Two Organization JSON-LD blocks disagree on business name ('Raywerthi' vs 'Raywerthi Solutions Hub' — neither exactly matches the visible brand 'RayWerThi') and phone formatting.",
+          "recommendation": "Remove the duplicate static block; standardize name to match the visible brand and use one consistent E.164 phone format. Ready-to-use consolidated JSON-LD provided in findings/schema.md."
+        },
+        {
+          "title": "Generic LocalBusiness type instead of a more specific valid subtype",
+          "severity": "Medium",
+          "description": "The business maps well to HomeAndConstructionBusiness, a Google-recognized LocalBusiness subtype, but uses the generic type.",
+          "recommendation": "Use [\"LocalBusiness\", \"HomeAndConstructionBusiness\"] as the @type."
+        },
+        {
+          "title": "Missing logo, sameAs, email, and contactPoint properties",
+          "severity": "Medium",
+          "description": "Neither JSON-LD block includes a logo URL, social/GBP sameAs links, the real contact email, or a ContactPoint with availableLanguage despite the site supporting RU/HY/EN.",
+          "recommendation": "Add these properties to the consolidated Organization node — full example provided in findings/schema.md."
+        },
+        {
+          "title": "No WebSite or BreadcrumbList schema anywhere",
+          "severity": "Medium",
+          "description": "No WebSite entity tying Organization/LocalBusiness together, and no BreadcrumbList despite a clear site hierarchy.",
+          "recommendation": "Add a WebSite node with publisher linking to Organization, and per-page BreadcrumbList once inner pages return 200."
+        },
+        {
+          "title": "No Service/Product schema despite six distinct offerings described on /solutions",
+          "severity": "Info",
+          "description": "Six offerings tied to specific brands are described but not expressed as Service/Product schema. Low priority until the page itself is indexable.",
+          "recommendation": "Once routing is fixed, add one Service entity per solution category with provider, areaServed, and brand."
+        },
+        {
+          "title": "Address/contact details unverified pending routing fix",
+          "severity": "Low",
+          "description": "Because /contacts 404s on raw fetch, exact street address, opening hours, and geo coordinates could not be confirmed.",
+          "recommendation": "Once /contacts is reachable, pull authoritative address/hours and replace placeholders before publishing new schema."
+        }
+      ]
+    },
+    {
+      "name": "Performance (Core Web Vitals)",
+      "score": 55,
+      "what_works": [
+        "Hero image has explicit width/height attributes, reducing CLS risk",
+        "Below-the-fold images use loading=\"lazy\" consistently",
+        "Single CSS/JS Vite production build output, no duplicate bundle shipping",
+        "Inline SVG icons rather than icon fonts or sprites",
+        "Homepage DOM size (~340 tags) is well under the INP-risk threshold"
+      ],
+      "findings": [
+        {
+          "title": "5 of 6 primary routes are unreachable, blocking all real-world CWV measurement",
+          "severity": "Critical",
+          "description": "A URL that 404s on direct load/reload cannot be said to meet Core Web Vitals in the field regardless of underlying SPA speed, since real users landing directly see a failed load, not a slow one. No PSI/CrUX/Lighthouse data could be captured for this audit at all (rate-limited/tooling failure) — every score here is a conservative, explicitly-labeled estimate, not a measurement.",
+          "recommendation": "Fix the SPA routing issue first — a precondition for any real CWV measurement. Then run PSI/Lighthouse/CrUX against all 6 URLs to replace every estimate in this category with real numbers."
+        },
+        {
+          "title": "Single monolithic JS bundle for a dependency-heavy 6-page site (estimated INP/LCP risk)",
+          "severity": "High",
+          "description": "No evidence of route-based code-splitting; package.json lists ~25 Radix UI packages, recharts, embla-carousel, and other libraries that may not all be used, all shipped in one bundle to every visitor.",
+          "recommendation": "Audit and remove unused dependencies, enable route-based code splitting via React.lazy()/dynamic import per page, and inspect real chunk sizes via a production vite build."
+        },
+        {
+          "title": "Portfolio preview images hotlinked from Unsplash without explicit dimensions",
+          "severity": "Medium",
+          "description": "6 homepage project images load from images.unsplash.com with loading=\"lazy\" but no width/height attributes, a CLS/LCP risk, plus an unnecessary third-party dependency.",
+          "recommendation": "Self-host and optimize portfolio images (WebP/AVIF, responsive srcset) with explicit dimensions on every image."
+        },
+        {
+          "title": "No preconnect/preload/dns-prefetch resource hints",
+          "severity": "Low",
+          "description": "No resource hints for the likely LCP hero image or third-party image/font origins.",
+          "recommendation": "Add preload for the hero image and preconnect for any retained third-party origins."
+        },
+        {
+          "title": "Web font loading strategy unknown",
+          "severity": "Info",
+          "description": "No font declarations found in rendered HTML head — fonts may be bundled in CSS (not fetched in this audit) or the site may use system fonts.",
+          "recommendation": "Confirm via the built CSS file; if web fonts are used, ensure font-display: swap and preload the primary file."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness (GEO)",
+      "score": 16,
+      "what_works": [
+        "robots.txt does not block AI crawlers — falls through to a permissive wildcard Allow: / group",
+        "A static, JS-independent JSON-LD Organization block exists in the raw head, readable by non-rendering crawlers",
+        "Static title and meta description are present and descriptive on the raw homepage HTML",
+        "Once rendered, content is on-topic and unambiguous about brand, partnerships, and service area"
+      ],
+      "findings": [
+        {
+          "title": "5 of 6 pages return genuine HTTP 404 to every crawler that doesn't execute JavaScript — including essentially all major AI crawlers",
+          "severity": "Critical",
+          "description": "GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, and CCBot are all documented as non-JS-executing. The 404 is a genuine server-side response reproduced even under forced full-browser rendering — no client-side router ever gets a chance to run for these paths.",
+          "recommendation": "Same P0 fix as technical/sitemap findings: add the Vercel SPA rewrite. Every other GEO recommendation is moot for 5 of 6 pages until this lands."
+        },
+        {
+          "title": "Raw (non-JS) HTML for every page is an empty shell with zero body text for any non-rendering AI crawler",
+          "severity": "Critical",
+          "description": "The entire site's independently-fetchable text budget for a non-rendering crawler is a meta description (~30 words) and one static JSON-LD block. Even the JS-rendered homepage carries only 167 words of extractable body text total.",
+          "recommendation": "Implement SSR, static pre-rendering, or a bot-triggered prerender layer so the first HTTP response for every URL contains full readable text. The single highest-leverage fix in this audit for citability, structural readability, and technical accessibility simultaneously."
+        },
+        {
+          "title": "llms.txt does not exist",
+          "severity": "Medium",
+          "description": "/llms.txt returns 404. No explicit crawler-friendly summary of the business and its pages exists to partially compensate for the CSR content-access problem.",
+          "recommendation": "Create /llms.txt with a concise summary of the company, links to core pages, and contact info — low effort, though value is gated behind the routing/SSR fixes."
+        },
+        {
+          "title": "robots.txt does not explicitly name any AI crawler — relies entirely on wildcard fallthrough",
+          "severity": "Low",
+          "description": "No dedicated groups for GPTBot, ClaudeBot, PerplexityBot, etc. — currently allowed only implicitly via the wildcard, which is fragile to future edits.",
+          "recommendation": "Add explicit Allow: / groups for GPTBot, OAI-SearchBot, ClaudeBot, and PerplexityBot for documentation and future-proofing."
+        },
+        {
+          "title": "Duplicate, mutually inconsistent JSON-LD and meta description tags in the rendered head",
+          "severity": "Medium",
+          "description": "react-helmet-async appends rather than replaces the static Organization block and meta description, so two versions of each exist simultaneously with different wording/names.",
+          "recommendation": "Fix react-helmet-async to replace static placeholders rather than append; standardize on one canonical name and description everywhere."
+        },
+        {
+          "title": "Zero brand/entity corroboration signals anywhere on-site",
+          "severity": "Medium",
+          "description": "No social links (Instagram, Facebook, YouTube, LinkedIn), no reviews/testimonials markup, and minimal case-study detail — no cross-corroboration pathway for AI systems to validate the business.",
+          "recommendation": "Add functioning social/GBP links with sameAs entries in schema; even a small install/process video on YouTube is the strongest documented correlate with AI citation."
+        },
+        {
+          "title": "No FAQ-style, question-based, or comparison content anywhere",
+          "severity": "Medium",
+          "description": "All headings are declarative, not question-phrased; no FAQPage schema; the 'Преимущества RayWerThi' section renders completely empty despite being the natural home for citable differentiators.",
+          "recommendation": "Add a short FAQ section covering brand representation, service areas, and process; fix the empty Advantages section first since it's already structurally planned for this content."
+        },
+        {
+          "title": "Multi-language content exists only as client-side UI state — HY/EN invisible to all crawlers",
+          "severity": "Medium",
+          "description": "Cross-referenced from the technical/sitemap hreflang finding, restated for its direct GEO impact — two of three target-language audiences currently cannot be reached via AI search at all.",
+          "recommendation": "Implement real per-language routing once SSR and the routing fix are in place."
+        }
+      ]
+    },
+    {
+      "name": "Local SEO",
+      "score": 20,
+      "what_works": [
+        "areaServed (Armenia, Georgia, Caucasus) is machine-readably declared, even if not backed by location pages",
+        "Phone number digits are consistent everywhere they appear, only formatting differs",
+        "A Google Maps iframe and real street address exist on /contacts",
+        "Multiple contact channels offered (phone, email, WhatsApp, Telegram) reflecting regional client preferences",
+        "Portfolio cards carry a location tag, showing the template supports location-tagged proof of work"
+      ],
+      "findings": [
+        {
+          "title": "/contacts and /about — the only pages carrying NAP and Georgia-market claims — return real HTTP 404",
+          "severity": "Critical",
+          "description": "The entire local-NAP payload of the site (address, phone, map, lead form, official-representative claims) exists only behind the same routing bug documented elsewhere.",
+          "recommendation": "Same fix as the site-wide routing issue; re-verify these two URLs return 200 before any further local-SEO work."
+        },
+        {
+          "title": "LocalBusiness schema has no address or geo despite a real visible office",
+          "severity": "Critical",
+          "description": "Cross-referenced from the schema audit — directly undercuts Local Pack and Knowledge Panel eligibility.",
+          "recommendation": "Add PostalAddress and GeoCoordinates to the LocalBusiness entity."
+        },
+        {
+          "title": "Conflicting business name and phone formatting across two simultaneous JSON-LD blocks",
+          "severity": "High",
+          "description": "The business name appears in three different forms across the site (RayWerThi, Raywerthi, Raywerthi Solutions Hub) — a documented ranking suppressor when it mismatches the Google Business Profile listing.",
+          "recommendation": "Standardize on one canonical name and phone format everywhere, including the GBP listing itself."
+        },
+        {
+          "title": "No verifiable Google Business Profile signal",
+          "severity": "High",
+          "description": "The Maps embed uses a generic text-search query, not a Place ID/CID — proves nothing about a claimed/verified GBP listing. No reviews, ratings, or photo carousel found anywhere.",
+          "recommendation": "Confirm whether a GBP listing exists and is claimed; replace the embed with a real Place ID reference once available."
+        },
+        {
+          "title": "Zero reviews, testimonials, or ratings anywhere on the site",
+          "severity": "High",
+          "description": "No aggregateRating or Review schema, no visible testimonials — a significant trust gap for a premium-positioned installer.",
+          "recommendation": "Actively solicit reviews post-installation and surface a review widget with aggregateRating schema."
+        },
+        {
+          "title": "Site claims two-country footprint (Armenia + Georgia) but has zero Georgia-tagged proof of work",
+          "severity": "High",
+          "description": "All 5-8 portfolio projects are tagged to Armenian cities only; no Georgia address, phone, or case study exists despite explicit 'successful projects in Georgia' copy.",
+          "recommendation": "Add at least one real Georgia/Tbilisi project with photos and city tag, or soften the claim until evidence exists — an unsupported claim damages trust more than a modest one."
+        },
+        {
+          "title": "Visible NAP address block omits city name and postal code",
+          "severity": "Medium",
+          "description": "The visible address widget shows only country and street, not city — undermining citation-matching consistency.",
+          "recommendation": "Complete the visible address to full 'Street, City, Country' format."
+        },
+        {
+          "title": "Armenian-language toggle produces no independently crawlable Armenian content",
+          "severity": "Medium",
+          "description": "Cross-referenced from the hreflang finding — a missed local-trust signal for the home-market Armenian-speaking audience.",
+          "recommendation": "Implement real per-language URLs once SSR/routing fixes are in place."
+        },
+        {
+          "title": "WhatsApp and Telegram contact buttons are non-functional href=\"#\" placeholders",
+          "severity": "Medium",
+          "description": "Both messaging-app buttons on /contacts link nowhere, directly reducing lead capture from the region's preferred first-contact channels.",
+          "recommendation": "Wire both buttons to real wa.me/t.me deep links."
+        },
+        {
+          "title": "Contact email uses a free Gmail address rather than the owned domain",
+          "severity": "Low",
+          "description": "All mailto: links point to a Gmail address despite owning raywerthi.com.",
+          "recommendation": "Set up and switch to a branded domain email address."
+        },
+        {
+          "title": "LocalBusiness uses the generic type with no openingHoursSpecification",
+          "severity": "Info",
+          "description": "Cross-referenced from the schema audit — a completeness gap once address/geo are added.",
+          "recommendation": "Add HomeAndConstructionBusiness subtype and openingHoursSpecification."
+        }
+      ]
+    },
+    {
+      "name": "Search Experience (SXO)",
+      "score": 32,
+      "what_works": [
+        "Homepage hero has a single, clear value proposition with two well-differentiated CTAs",
+        "/services and /solutions content (verified via rendered HTML) map well to what SERP consensus rewards for their page types",
+        "/contacts has a real geocoded map, working lead form, and three parallel contact channels",
+        "Portfolio grid has the right data shape (city + product/brand tag per project), even though depth is currently shallow",
+        "robots.txt allows all crawlers — the 404s are a routing config gap, not a deliberate exclusion, making this a fixable architecture problem"
+      ],
+      "findings": [
+        {
+          "title": "Site does not appear in Google search results for any of 5 realistic target queries tested",
+          "severity": "Critical",
+          "description": "Live search checks for queries like 'HELLA официальный представитель Армения' and 'Silent Gliss Армения карнизы' show zero appearances of raywerthi.com — competitors, generic catalogs, and even an unrelated automotive-parts business outrank it. Directly explained by the crawl/index failure documented across this audit.",
+          "recommendation": "P0, fix the routing issue — this is the precondition for any SXO improvement to matter in search at all."
+        },
+        {
+          "title": "Site architecture collapses 5 distinct search intents into 1 crawlable URL, while the SERP rewards per-intent pages",
+          "severity": "Critical",
+          "description": "SERP consensus across all 5 queries is dominated by narrow-intent pages (local directory, product catalog, distributor page). RayWerThi's content model matches this shape in principle but Google can currently only index the single combined homepage.",
+          "recommendation": "After the routing fix, extend the architecture with intent-specific pages — a Georgia/Tbilisi-focused page and per-brand/category landing pages."
+        },
+        {
+          "title": "'Преимущества RayWerThi' (Advantages) section renders completely empty",
+          "severity": "High",
+          "description": "A full heading exists with a zero-child content container beneath it — exactly the section that should carry the strongest Authority/Trust signals.",
+          "recommendation": "Investigate the broken data source/render call and populate with 3-6 concrete advantage cards (years in business, warranty, direct manufacturer supply)."
+        },
+        {
+          "title": "'HELLA' brand-name entity collision suppresses branded-distributor visibility",
+          "severity": "Medium",
+          "description": "Searching for HELLA's official Armenia representative surfaces an unrelated automotive-parts retailer sharing the same trademark, competing for the same search real estate.",
+          "recommendation": "Consistently pair 'HELLA' with shading-specific terms in titles/H1s/schema, and consider explicit disambiguation copy once indexed."
+        },
+        {
+          "title": "Portfolio uses generic stock photography, not real project photos, on a page claiming 'Реализованные объекты'",
+          "severity": "Medium",
+          "description": "All 8 portfolio images resolve to Unsplash stock URLs despite specific-sounding project names — a credibility risk if noticed by a Decision-stage buyer.",
+          "recommendation": "Replace with real, self-hosted project photography as projects are completed."
+        },
+        {
+          "title": "No pricing, spec sheets, or downloadable technical content for evaluators",
+          "severity": "Medium",
+          "description": "No price ranges or named smart-home protocols beyond a generic mention, while competing content goes further into product specifics.",
+          "recommendation": "Add starting-price indicators and name specific supported smart-home platforms; consider a downloadable spec-sheet PDF per brand."
+        },
+        {
+          "title": "No testimonials, reviews, or third-party trust signals anywhere",
+          "severity": "Medium",
+          "description": "The single lowest-scoring dimension across all 5 tested personas (Trust: 6-9/25 for every persona).",
+          "recommendation": "Collect and publish real client testimonials tied to specific projects; pursue Google Business Profile reviews."
+        },
+        {
+          "title": "Contact phone number is not a clickable tel: link",
+          "severity": "Low",
+          "description": "Appears as plain text sitewide, adding friction to the lowest-friction possible mobile conversion action.",
+          "recommendation": "Wrap the phone number in an href=\"tel:...\" link sitewide."
+        }
+      ]
+    },
+    {
+      "name": "Visual & Mobile",
+      "score": 18,
+      "what_works": [
+        "Homepage design is visually strong: polished hero, clear value proposition, dual CTAs above the fold on both breakpoints",
+        "Mobile layout reflows cleanly to a single column with no visible overlap or text cutoff",
+        "Brand/partner logo section reads clearly at both breakpoints, reinforcing credibility"
+      ],
+      "findings": [
+        {
+          "title": "Primary navigation destinations return a Vercel 404 error page on every device",
+          "severity": "Critical",
+          "description": "Screenshots of /solutions, /services, /portfolio, /contacts on both desktop and mobile show a plain Vercel '404: NOT_FOUND' error card, not site content — confirmed both by file-size analysis (error pages are ~13-21KB vs 1-2.9MB for the real homepage) and by visually opening the images.",
+          "recommendation": "Same routing fix as the rest of this audit; re-capture screenshots to confirm before any further visual QA on these templates."
+        },
+        {
+          "title": "Cannot verify above-the-fold and responsiveness for 4 of 5 templates",
+          "severity": "High",
+          "description": "Because the affected pages are error pages, no standard visual QA (CTA placement, layout shift, touch-target sizing) could be evaluated for them.",
+          "recommendation": "Re-run the full screenshot capture and visual QA pass across all breakpoints once routing is fixed."
+        },
+        {
+          "title": "Mobile header appears to lack a visible hamburger/menu control",
+          "severity": "Medium",
+          "description": "Only the logo and language switcher are visible in the mobile header capture; no menu affordance is clearly distinguishable.",
+          "recommendation": "Manually verify in a live browser whether a working mobile menu exists — if not, mobile users cannot reach any secondary page at all."
+        },
+        {
+          "title": "About page has no visual coverage at all",
+          "severity": "Info",
+          "description": "No screenshots exist for /about; its visual state is unknown and, given the pattern on other pages, should not be assumed to work.",
+          "recommendation": "Capture and review /about screenshots in a follow-up pass."
+        }
+      ]
+    },
+    {
+      "name": "Backlinks",
+      "score": 25,
+      "what_works": [
+        "The Tier 0 audit pipeline executed cleanly with no errors",
+        "No red flags found — no evidence of toxic or spammy inbound links",
+        "A strong, underexploited legitimate foundation exists for future link-building via the HELLA/WAREMA/Silent Gliss brand relationships"
+      ],
+      "findings": [
+        {
+          "title": "Domain absent from Common Crawl's web graph — zero measurable inbound-link signal",
+          "severity": "High",
+          "description": "The only free data source available at this audit's tier (no Moz/Bing/DataForSEO keys configured) returned no record of the domain at all — this does not confirm zero backlinks, only zero visibility into them from this tier.",
+          "recommendation": "Cannot be resolved by on-site changes alone. Add a free Moz API key and/or Bing Webmaster registration to get direct referring-domain data regardless of Common Crawl coverage."
+        },
+        {
+          "title": "No premium backlink data sources configured — most scoring factors unmeasured",
+          "severity": "Medium",
+          "description": "0 of 7 standard backlink scoring factors (referring domains, toxic ratio, anchor text, etc.) have any data source at this tier.",
+          "recommendation": "Register free Moz and Bing Webmaster Tools accounts to replace 'insufficient data' with real measurement on the next audit cycle."
+        },
+        {
+          "title": "Untapped high-relevance backlink opportunity: HELLA, WAREMA, and Silent Gliss dealer/partner listings",
+          "severity": "Medium",
+          "description": "No evidence was found (nor could be checked in this pass) that raywerthi.com is linked from any of these brands' official dealer-locator pages — a highly relevant, low-spam-risk, naturally-justified link source.",
+          "recommendation": "Contact each manufacturer's regional sales/marketing contact to confirm or add a hyperlinked listing on their dealer-locator pages."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Add a vercel.json SPA-fallback rewrite so /solutions, /services, /portfolio, /about, /contacts all serve the app (200) instead of a platform 404 — the single highest-leverage fix on the entire audit",
+          "Re-verify all 6 sitemap URLs return 200 via curl -I, then resubmit sitemap.xml in Google Search Console and request re-indexing",
+          "Consolidate the two conflicting Organization/LocalBusiness JSON-LD blocks into one, standardized on the real brand name 'RayWerThi' with one phone format, and add the missing PostalAddress + GeoCoordinates (ready-to-use JSON-LD in findings/schema.md)",
+          "Add security headers (CSP report-only to start, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) via vercel.json"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Implement SSR/pre-rendering (or at minimum move canonical/hreflang/meta tags into static index.html) so raw HTML contains real content for every route — unlocks AI-search visibility and non-Google crawler indexing",
+          "Re-architect the RU/HY/EN language switcher to produce real, distinct, crawlable URLs with correct reciprocal hreflang",
+          "Populate the empty 'Преимущества RayWerThi' section with 3-6 concrete advantage cards",
+          "Fix the WhatsApp/Telegram href=\"#\" placeholder links and make the phone number a clickable tel: link sitewide",
+          "Add real Georgia/Tbilisi proof (address, phone, or at least one tagged portfolio project) or soften the unsupported Georgia coverage claim",
+          "Confirm or create/claim a Google Business Profile listing; replace the generic Maps query embed with a real Place ID embed once available",
+          "Optimize the hero image and logo (responsive srcset, WebP/AVIF, explicit dimensions, preload)",
+          "Verify a working mobile hamburger menu exists — currently unconfirmed from screenshots"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Add a short FAQ section covering brand representation, service areas, and process, with FAQPage schema",
+          "Replace stock Unsplash portfolio photography with real, self-hosted project photos",
+          "Collect and publish real client testimonials with aggregateRating schema; pursue Google Business Profile reviews",
+          "Add /llms.txt with a concise business summary and links to core pages",
+          "Reach out to HELLA, WAREMA, and Silent Gliss for hyperlinked dealer-locator listings",
+          "Register free Moz and Bing Webmaster Tools accounts for ongoing backlink visibility",
+          "Add starting-price indicators and named smart-home platform support for technical evaluators",
+          "Audit and remove unused JS dependencies; enable route-based code splitting to reduce bundle size"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Re-run PageSpeed Insights/Lighthouse/CrUX against all 6 URLs once routing is fixed to replace every performance estimate with real measurements",
+          "Monitor Google Search Console indexing status weekly until all 6 pages show as indexed",
+          "Track SERP rankings for the 5 target queries tested in this audit as a leading indicator of recovery",
+          "Re-run the backlink audit in 3-6 months once Moz/Bing data is available",
+          "Re-audit content quality and word-count/topical-coverage once inner pages are reliably reachable"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

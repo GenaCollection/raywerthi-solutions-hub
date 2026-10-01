@@ -1,0 +1,52 @@
+{
+  "url": "https://raywerthi.com/services",
+  "status_code": 404,
+  "content": "The page could not be found\n\nNOT_FOUND\n\nfra1::nnzrx-1788848543078-6d5b76ac04d8\n",
+  "raw_content": "The page could not be found\n\nNOT_FOUND\n\nfra1::nnzrx-1788848543078-6d5b76ac04d8\n",
+  "is_spa": false,
+  "extracted_text": null,
+  "publication_date": null,
+  "accessibility_tree": null,
+  "accessibility_error": null,
+  "accessibility_partial": false,
+  "headers": {
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Content-Length": "79",
+    "Content-Type": "text/plain; charset=utf-8",
+    "Date": "Tue, 08 Sep 2026 06:22:23 GMT",
+    "Server": "Vercel",
+    "Strict-Transport-Security": "max-age=63072000",
+    "X-Vercel-Error": "NOT_FOUND",
+    "X-Vercel-Id": "fra1::nnzrx-1788848543078-6d5b76ac04d8"
+  },
+  "redirect_chain": [],
+  "console_errors": [],
+  "render_diagnostics": [],
+  "render_engine": null,
+  "render_ms": null,
+  "mode_used": "raw",
+  "error": null,
+  "structured_data": {
+    "block_count": 0,
+    "processed_count": 0,
+    "total_bytes": 0,
+    "truncated": false,
+    "blocks": []
+  },
+  "truncation": {
+    "limit": null,
+    "fields": {
+      "content": {
+        "original_chars": 79,
+        "returned_chars": 79,
+        "truncated": false
+      },
+      "raw_content": {
+        "original_chars": 79,
+        "returned_chars": 79,
+        "truncated": false
+      }
+    }
+  },
+  "output_written": false
+}

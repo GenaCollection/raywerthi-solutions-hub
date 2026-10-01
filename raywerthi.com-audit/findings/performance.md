@@ -1,0 +1,55 @@
+# Performance Audit — raywerthi.com
+
+**Method note (read first):** No PSI/CrUX field data and no Lighthouse/Playwright lab run could be captured for this audit (API/tooling issues on our end — a custom Playwright measurement script failed on a module-type conflict and was not fixed in time). This assessment is therefore **qualitative and estimate-based**, built from: (1) the static rendered HTML captured by `render_page.py` for the homepage (`raywerthi.com-audit/homepage.json`), and (2) the project's `package.json` dependency graph. No real LCP/INP/CLS field or lab numbers exist for this site. Every score/threshold below is a conservative estimate, explicitly labeled — treat this report as directional, and re-run PSI/Lighthouse against the live production URLs before making final go/no-go decisions.
+
+## Score: 55 / 100 (Estimated, Low Confidence)
+
+Justification: the homepage's static markup shows several good practices (explicit hero image dimensions, lazy-loading on below-the-fold images, a single small SVG icon set) that argue against a severe CLS problem on `/`. But the JS dependency footprint is heavy for a 6-page marketing site and appears to ship as a single non-code-split bundle, which is a classic INP/TBT risk on mid-range mobile devices. Most importantly, **5 of the site's 6 primary routes returned 404 on direct fetch** in this audit (per sibling technical/crawl findings), meaning real-world performance for the majority of the site could not be measured or observed at all — that alone caps the score, since a page that doesn't reliably serve on direct navigation/refresh cannot be said to meet Core Web Vitals in the field (CrUX / real users hitting those URLs directly, via bookmarks, or via shared links would see failed loads, not just slow ones).
+
+## What Works
+
+- **Hero image has explicit `width="1920" height="1080"`** on the homepage (`<img src="/assets/hero-home-DEkII6aE.jpg" ... width="1920" height="1080">`), which reserves layout space and should prevent CLS from the single largest above-the-fold image.
+- **Below-the-fold images use `loading="lazy"`** — confirmed on the header's light-mode logo, both partner SVG logos (WAREMA, Silent Gliss), and all 3 sampled portfolio thumbnail `<img>` tags in the rendered HTML (10 total `loading="lazy"` attributes found on the homepage).
+- **Single CSS and single JS asset referenced** (`/assets/index-CO2MCbcQ.css`, `/assets/index-CMjOWT8M.js`) with `crossorigin` and `type="module"` — a straightforward Vite production build output, no evidence of duplicate/legacy bundle shipping.
+- **Icon usage is inline SVG (lucide-react)**, not icon-font or heavy image sprites — inline SVGs are cheap and don't introduce extra network requests or FOIT/FOUT-style flashes.
+- **DOM size on the homepage looks reasonable** — approximately 340 tags counted in the rendered markup, well under the ~1,500-element threshold that typically correlates with INP problems.
+
+## Findings
+
+### Finding: 5 of 6 primary routes are unreachable, blocking all real-world CWV measurement
+- **Severity:** Critical
+- **Description:** Per sibling crawl/technical findings, `/solutions`, `/services`, `/portfolio`, `/about`, and `/contacts` return HTTP 404 on direct fetch (a Vercel SPA-routing/rewrite misconfiguration), leaving only `/` reliably servable. This is not a performance metric in itself, but it is a performance-audit blocker: CWV is measured per-URL against real navigations (CrUX, PSI, RUM), and a URL that 404s on direct load or reload will register as a failed/poor experience for any user who lands on it directly (search click-through, bookmark, shared link, refresh) — regardless of how fast the underlying SPA shell renders once JS takes over via client-side routing. We could not run PSI, CrUX, or even a basic render check against any of these 5 URLs as a result.
+- **Recommendation:** Fix the SPA rewrite/fallback rule in `vercel.json` (or platform routing config) first, as a prerequisite to any further performance work — every other recommendation in this report is secondary until these routes serve 200s on direct fetch. Once fixed, re-run this performance audit against all 6 URLs individually.
+
+### Finding: No quantitative CWV data available (LCP, INP, CLS all unmeasured)
+- **Severity:** Info / Blocker
+- **Description:** Neither CrUX field data nor a Lighthouse/PSI lab run nor a working Playwright timing script produced numbers for this audit. We do not know actual LCP, INP, or CLS for any page on this domain, in the lab or the field. The one number the render tool did capture — `render_ms: 5034` for the homepage — is the internal duration of the headless-render helper (including its own browser cold-start and network fetch), not a calibrated LCP/TTFB measurement, and should not be treated as a CWV data point; it is mentioned only for transparency.
+- **Recommendation:** Once the routing bug above is fixed, run `pagespeed_check.py` (PSI API) and/or Lighthouse CLI against all 6 URLs on both mobile and desktop, and pull CrUX field data via `crux_history.py` if the domain has sufficient traffic (28-day CrUX). Re-score this report with real numbers before treating it as final.
+
+### Finding: Single monolithic JS bundle for a dependency-heavy 6-page marketing site (estimated INP/LCP risk)
+- **Severity:** High (estimated)
+- **Description:** The homepage loads exactly one JS module (`/assets/index-CMjOWT8M.js`) and one CSS file — no evidence of route-based code-splitting or separate vendor chunks in the served HTML. `package.json` lists a large dependency surface for what is a 6-page marketing/lead-gen site: ~25 separate `@radix-ui/react-*` packages, `recharts` (a charting library, unusual for a marketing site — worth confirming it's actually used and where), `embla-carousel-react`, `react-hook-form` + `@hookform/resolvers` + `zod`, `date-fns` + `react-day-picker`, `cmdk`, `vaul`, `sonner`, `react-resizable-panels`, `next-themes`, among others. If Vite is not configured for manual chunking / dynamic `import()` per route, every visitor to the homepage downloads and parses JS for components (data tables/charts, command palettes, resizable panels, date pickers) that are likely only used on other pages, if at all. This inflates parse/compile time on the main thread, which is a direct contributor to poor INP (and, on slower devices/networks, delays hydration and can push out LCP if the hero content depends on JS-driven layout).
+- **Recommendation:** (1) Audit actual usage of `recharts`, `cmdk`, `vaul`, `react-resizable-panels`, `input-otp` — remove any that are unused leftovers from a starter template (this codebase's `vite_react_shadcn_ts` name and full shadcn/ui Radix set strongly suggest a scaffolded template where not every installed primitive is used). (2) Enable route-based code splitting via `React.lazy()`/dynamic `import()` per page (Home, Solutions, Services, About, Portfolio, Contacts) so each route only ships the JS it needs. (3) Run `vite build` with `--mode production` and inspect the real chunk sizes (`dist/assets/*.js` sizes) — this is a 10-minute local check that doesn't require the browser-automation tooling that failed earlier, and would convert this from an estimate to a measured finding.
+
+### Finding: Portfolio preview images are hotlinked from Unsplash without explicit dimensions
+- **Severity:** Medium
+- **Description:** The homepage's "Наши проекты" (Our Projects) section renders at least 6 images directly from `images.unsplash.com` (e.g. `https://images.unsplash.com/photo-1600596542815-...?w=600&h=400&fit=crop`) with `loading="lazy"` but **no `width`/`height` attributes**, unlike the hero image which does have them. Because the aspect ratio isn't declared in HTML (only via a `class="aspect-[4/3]"` wrapper div, which does help but is less robust than native `width`/`height`), and because these load from a third-party origin with its own latency/availability profile, this is a plausible CLS and LCP-stability risk if the CSS is slow to apply or the wrapper sizing fails on any browser/zoom combination. A live `/portfolio` page (currently 404, see Critical finding above) likely has a larger, image-heavy grid of similar unsized third-party images, which would amplify this risk — but that page could not be inspected.
+- **Recommendation:** Self-host and optimize portfolio images (WebP/AVIF, responsive `srcset`) rather than hotlinking Unsplash placeholder URLs — this also removes a third-party DNS/TLS/connection dependency from the critical path. Add explicit `width`/`height` (or `aspect-ratio` in CSS applied server-side/pre-hydration) to every image, not just the hero. Once `/portfolio` is reachable, audit it specifically for image weight and count, since it is a priori the most image-heavy page on the site.
+
+### Finding: No `preconnect`/`preload`/`dns-prefetch` resource hints observed
+- **Severity:** Low
+- **Description:** The rendered homepage `<head>` contains no `rel="preload"`, `rel="preconnect"`, or `rel="dns-prefetch"` hints — not for the hero image (the likely LCP element), not for the third-party `images.unsplash.com` origin used by the portfolio section, and not for any web font origin.
+- **Recommendation:** Add `<link rel="preload" as="image" href="/assets/hero-home-DEkII6aE.jpg">` (or the current hashed hero filename) to shorten LCP resource discovery time, and `<link rel="preconnect" href="https://images.unsplash.com" crossorigin>` if third-party image hotlinking is retained (superseded by the self-hosting recommendation above if implemented).
+
+### Finding: Web font loading strategy unknown / not observable from this audit
+- **Severity:** Info
+- **Description:** No `@font-face` declaration, Google Fonts `<link>`, or other web-font reference appeared in the rendered HTML `<head>` captured by the render tool. This could mean the site uses only system fonts (no FOIT/FOUT risk at all — a good outcome if true), or it could mean fonts are declared inside the bundled CSS file (`index-CO2MCbcQ.css`), which this audit did not fetch/parse.
+- **Recommendation:** Confirm which case applies by inspecting the built CSS directly (`dist/assets/index-*.css` after `vite build`, or view-source on the live CSS file). If web fonts are in use, ensure `font-display: swap` (or `optional`) is set and add `rel="preload"` for the primary font file(s) to avoid render-blocking font loads contributing to CLS/LCP.
+
+## Priority Order
+
+1. **Critical — Fix SPA route 404s** (`vercel.json` rewrites) so all 6 pages can even be measured and are servable to real users. Nothing else matters until this ships.
+2. **High — Re-run PSI/Lighthouse/CrUX against all 6 URLs** once routing is fixed, to replace every estimate in this report with real LCP/INP/CLS numbers.
+3. **High — Audit and reduce JS bundle** via `vite build` chunk inspection, dead-dependency removal (recharts/cmdk/vaul/etc. if unused), and route-level code splitting.
+4. **Medium — Self-host and size portfolio images**, add resource hints for the LCP hero image.
+5. **Low/Info — Verify font-loading strategy** and add `preload`/`font-display: swap` if web fonts are in use.

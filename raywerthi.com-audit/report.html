@@ -1,0 +1,560 @@
+<title>SEO-аудит RayWerThi</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#F5F6F8; --surface:#FFFFFF; --surface-2:#ECEEF2; --surface-3:#DEE2E8;
+  --border:#D3D8E0; --text:#14171C; --text-muted:#57606E; --text-faint:#8A93A0;
+  --accent:#215263; --accent-soft:#DCE8EB; --accent-strong:#153A47;
+  --gold:#B9822F; --gold-soft:#F3E7D2;
+  --sev-critical:#B3261E; --sev-critical-bg:#FBEAE9;
+  --sev-high:#A85A0A; --sev-high-bg:#FBEFE2;
+  --sev-medium:#8A6D00; --sev-medium-bg:#FAF3D6;
+  --sev-low:#2A5C99; --sev-low-bg:#E7EFF9;
+  --sev-info:#55606E; --sev-info-bg:#EEF0F3;
+  --success:#2E7D4A; --success-bg:#E4F3E9;
+  --code-bg:#14171C; --code-text:#E7EAEE;
+  --shadow:0 1px 2px rgba(20,23,28,.05), 0 10px 28px -14px rgba(20,23,28,.22);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14171C; --surface:#1B1F26; --surface-2:#232833; --surface-3:#2C323D;
+    --border:#343B47; --text:#E8EAED; --text-muted:#A7AFBC; --text-faint:#737C8A;
+    --accent:#7BB6C6; --accent-soft:#20363D; --accent-strong:#A9D3DE;
+    --gold:#E3B15C; --gold-soft:#392C15;
+    --sev-critical:#F2897E; --sev-critical-bg:#3A1E1C;
+    --sev-high:#F0A85E; --sev-high-bg:#3A2A16;
+    --sev-medium:#E3C34E; --sev-medium-bg:#352D12;
+    --sev-low:#87B4E4; --sev-low-bg:#1C2C3E;
+    --sev-info:#A7AFBC; --sev-info-bg:#262B33;
+    --success:#7FCB9A; --success-bg:#163224;
+    --code-bg:#0E1014; --code-text:#D6DAE1;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px -14px rgba(0,0,0,.55);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14171C; --surface:#1B1F26; --surface-2:#232833; --surface-3:#2C323D;
+  --border:#343B47; --text:#E8EAED; --text-muted:#A7AFBC; --text-faint:#737C8A;
+  --accent:#7BB6C6; --accent-soft:#20363D; --accent-strong:#A9D3DE;
+  --gold:#E3B15C; --gold-soft:#392C15;
+  --sev-critical:#F2897E; --sev-critical-bg:#3A1E1C;
+  --sev-high:#F0A85E; --sev-high-bg:#3A2A16;
+  --sev-medium:#E3C34E; --sev-medium-bg:#352D12;
+  --sev-low:#87B4E4; --sev-low-bg:#1C2C3E;
+  --sev-info:#A7AFBC; --sev-info-bg:#262B33;
+  --success:#7FCB9A; --success-bg:#163224;
+  --code-bg:#0E1014; --code-text:#D6DAE1;
+  --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px -14px rgba(0,0,0,.55);
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  font-size:16px; line-height:1.55;
+}
+.wrap{max-width:920px; margin:0 auto; padding:0 24px 96px;}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; font-weight:600; letter-spacing:-.01em; margin:0;}
+code, .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+a{color:var(--accent);}
+
+/* ---------- Top bar ---------- */
+.topbar{
+  border-bottom:1px solid var(--border); background:var(--surface);
+}
+.topbar-inner{
+  max-width:920px; margin:0 auto; padding:14px 24px;
+  display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap;
+}
+.brand{font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem;}
+.brand span{color:var(--text-faint); font-weight:400; font-family:'IBM Plex Sans',sans-serif; font-size:.85rem;}
+.meta-strip{display:flex; gap:18px; font-size:.8rem; color:var(--text-muted); flex-wrap:wrap;}
+.meta-strip b{color:var(--text); font-weight:600;}
+
+/* ---------- Hero ---------- */
+.hero{padding:48px 0 8px;}
+.hero h1{font-size:2.4rem; line-height:1.08;}
+.hero .lede{color:var(--text-muted); font-size:1.05rem; max-width:62ch; margin-top:10px;}
+
+.scorepanel{
+  display:grid; grid-template-columns:auto 1fr; gap:36px; align-items:center;
+  background:var(--surface); border:1px solid var(--border); border-radius:14px;
+  padding:28px 32px; margin:28px 0; box-shadow:var(--shadow);
+}
+.gauge{position:relative; width:168px; height:168px; flex:none;}
+.gauge svg{width:100%; height:100%; transform:rotate(-90deg);}
+.gauge-num{
+  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.gauge-num .n{font-family:'Fraunces',serif; font-size:2.6rem; font-weight:700; color:var(--sev-critical); line-height:1;}
+.gauge-num .d{font-size:.72rem; color:var(--text-faint); text-transform:uppercase; letter-spacing:.08em; margin-top:4px;}
+
+.stat-row{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
+.stat{padding:0 16px; border-left:1px solid var(--border);}
+.stat:first-child{border-left:none; padding-left:0;}
+.stat .v{font-family:'IBM Plex Mono',monospace; font-size:1.6rem; font-weight:600; font-variant-numeric:tabular-nums;}
+.stat .l{font-size:.76rem; color:var(--text-muted); margin-top:2px;}
+.stat.crit .v{color:var(--sev-critical);}
+
+/* ---------- Critical callout ---------- */
+.callout{
+  background:var(--sev-critical-bg); border:1px solid color-mix(in srgb, var(--sev-critical) 35%, transparent);
+  border-left:4px solid var(--sev-critical); border-radius:10px; padding:22px 24px; margin:32px 0;
+}
+.callout .tag{
+  font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--sev-critical);
+}
+.callout h2{font-size:1.3rem; margin-top:6px; color:var(--text);}
+.callout p{margin:10px 0 0; color:var(--text); max-width:70ch;}
+.callout .evidence{
+  margin-top:14px; background:var(--code-bg); color:var(--code-text); border-radius:8px; padding:12px 14px;
+  font-size:.82rem; overflow-x:auto;
+}
+.callout .evidence table{border-collapse:collapse; width:100%;}
+.callout .evidence td{padding:2px 10px 2px 0; white-space:nowrap; font-family:'IBM Plex Mono',monospace;}
+.callout .status-404{color:#F2897E;}
+.callout .status-200{color:#7FCB9A;}
+
+/* ---------- Section headers ---------- */
+section{margin-top:56px;}
+.section-head{margin-bottom:18px;}
+.eyebrow{
+  font-size:.74rem; text-transform:uppercase; letter-spacing:.1em; color:var(--gold); font-weight:600;
+}
+.section-head h2{font-size:1.6rem; margin-top:6px;}
+.section-head p{color:var(--text-muted); margin-top:6px; max-width:68ch;}
+
+/* ---------- Category grid ---------- */
+.cat-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:12px;}
+.cat-tile{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px;
+  display:flex; flex-direction:column; gap:10px; text-decoration:none; color:var(--text);
+  transition:border-color .15s ease;
+}
+.cat-tile:hover{border-color:var(--accent);}
+.cat-tile .name{font-weight:600; font-size:.92rem;}
+.cat-tile .score-line{display:flex; align-items:baseline; gap:6px;}
+.cat-tile .score-line .v{font-family:'IBM Plex Mono',monospace; font-size:1.3rem; font-weight:600;}
+.cat-tile .score-line .of{font-size:.72rem; color:var(--text-faint);}
+.bar-track{height:6px; border-radius:3px; background:var(--surface-3); overflow:hidden;}
+.bar-fill{height:100%; border-radius:3px;}
+.band-critical .v, .band-critical .bar-fill{color:var(--sev-critical); background:var(--sev-critical);}
+.band-poor .v, .band-poor .bar-fill{color:var(--sev-high); background:var(--sev-high);}
+.band-fair .v, .band-fair .bar-fill{color:var(--sev-medium); background:var(--sev-medium);}
+.band-good .v, .band-good .bar-fill{color:var(--accent); background:var(--accent);}
+.cat-tile.unmeasured{color:var(--text-faint);}
+.cat-tile.unmeasured .score-line .v{color:var(--text-faint); font-size:.95rem;}
+
+/* ---------- Quick wins / lists ---------- */
+.win-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+.win-list li{
+  display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--border);
+  border-radius:10px; padding:14px 16px;
+}
+.win-list .idx{
+  font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--accent); background:var(--accent-soft);
+  border-radius:6px; width:26px; height:26px; display:flex; align-items:center; justify-content:center; flex:none; font-size:.85rem;
+}
+.win-list p{margin:0; font-size:.94rem;}
+
+/* ---------- Severity distribution ---------- */
+.sev-strip{display:flex; gap:10px; flex-wrap:wrap;}
+.sev-pill{
+  display:flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; font-size:.82rem; font-weight:600;
+}
+.sev-pill .dot{width:8px; height:8px; border-radius:50%;}
+.sev-pill.critical{background:var(--sev-critical-bg); color:var(--sev-critical);}
+.sev-pill.critical .dot{background:var(--sev-critical);}
+.sev-pill.high{background:var(--sev-high-bg); color:var(--sev-high);}
+.sev-pill.high .dot{background:var(--sev-high);}
+.sev-pill.medium{background:var(--sev-medium-bg); color:var(--sev-medium);}
+.sev-pill.medium .dot{background:var(--sev-medium);}
+.sev-pill.low{background:var(--sev-low-bg); color:var(--sev-low);}
+.sev-pill.low .dot{background:var(--sev-low);}
+.sev-pill.info{background:var(--sev-info-bg); color:var(--sev-info);}
+.sev-pill.info .dot{background:var(--sev-info);}
+
+/* ---------- Action plan ---------- */
+.phases{display:flex; flex-direction:column; gap:0;}
+.phase{
+  display:grid; grid-template-columns:140px 1fr; gap:20px; padding:22px 0; border-top:1px solid var(--border);
+}
+.phase:first-child{border-top:none;}
+.phase-label{}
+.phase-label .when{font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--text-faint);}
+.phase-label .name{font-family:'Fraunces',serif; font-weight:600; font-size:1.1rem; margin-top:4px;}
+.phase ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
+.phase li{display:flex; gap:10px; align-items:flex-start; font-size:.92rem;}
+.phase li::before{
+  content:''; width:15px; height:15px; border-radius:4px; border:1.5px solid var(--text-faint);
+  flex:none; margin-top:2px;
+}
+
+/* ---------- Findings accordion ---------- */
+.cat-detail{
+  background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:12px;
+  scroll-margin-top:20px;
+}
+.cat-detail > summary{
+  list-style:none; cursor:pointer; padding:18px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.cat-detail > summary::-webkit-details-marker{display:none;}
+.cat-detail summary .left{display:flex; align-items:center; gap:14px;}
+.cat-detail summary .title{font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem;}
+.cat-detail summary .score-badge{
+  font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.95rem; padding:3px 10px; border-radius:6px;
+}
+.cat-detail summary .chev{color:var(--text-faint); transition:transform .15s ease; flex:none;}
+.cat-detail[open] summary .chev{transform:rotate(90deg);}
+.cat-detail .body{padding:0 22px 22px;}
+.works-box{
+  background:var(--success-bg); border-radius:8px; padding:14px 16px; margin-bottom:16px; font-size:.88rem;
+}
+.works-box .lbl{font-weight:700; color:var(--success); font-size:.74rem; text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px;}
+.works-box ul{margin:0; padding-left:18px; color:var(--text);}
+.works-box li{margin-bottom:3px;}
+
+.finding{
+  border-left:3px solid var(--border); padding:4px 0 4px 16px; margin-bottom:16px;
+}
+.finding:last-child{margin-bottom:0;}
+.finding.critical{border-color:var(--sev-critical);}
+.finding.high{border-color:var(--sev-high);}
+.finding.medium{border-color:var(--sev-medium);}
+.finding.low{border-color:var(--sev-low);}
+.finding.info{border-color:var(--sev-info);}
+.finding .fh{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;}
+.finding .ft{font-weight:600; font-size:.96rem;}
+.finding .fsev{
+  font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:1px 8px; border-radius:999px;
+}
+.finding.critical .fsev{background:var(--sev-critical-bg); color:var(--sev-critical);}
+.finding.high .fsev{background:var(--sev-high-bg); color:var(--sev-high);}
+.finding.medium .fsev{background:var(--sev-medium-bg); color:var(--sev-medium);}
+.finding.low .fsev{background:var(--sev-low-bg); color:var(--sev-low);}
+.finding.info .fsev{background:var(--sev-info-bg); color:var(--sev-info);}
+.finding p{margin:6px 0 0; font-size:.88rem; color:var(--text-muted);}
+.finding .rec{margin-top:6px;}
+.finding .rec b{color:var(--text); font-weight:600;}
+
+/* ---------- footer ---------- */
+footer{margin-top:64px; padding-top:24px; border-top:1px solid var(--border); color:var(--text-faint); font-size:.82rem;}
+footer p{max-width:72ch;}
+
+@media (max-width:640px){
+  .scorepanel{grid-template-columns:1fr; text-align:center;}
+  .stat-row{grid-template-columns:repeat(2,1fr); row-gap:16px;}
+  .stat{border-left:none; padding-left:0;}
+  .phase{grid-template-columns:1fr;}
+  .hero h1{font-size:1.9rem;}
+}
+</style>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">SEO-аудит <span>/ независимый технический анализ</span></div>
+    <div class="meta-strip">
+      <span><b>raywerthi.com</b></span>
+      <span>8 сентября 2026</span>
+      <span>6 страниц проверено</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Полный SEO-аудит raywerthi.com</h1>
+    <p class="lede">RayWerThi — официальный представитель HELLA, WAREMA и Silent Gliss, солнцезащитные и фасадные системы для Армении и Грузии. Проверены все 6 страниц сайта по 10 направлениям: техническое SEO, контент, структурированные данные, производительность, AI-поиск, локальное SEO, поисковый опыт, визуал и бэклинки.</p>
+
+    <div class="scorepanel">
+      <div class="gauge">
+        <svg viewBox="0 0 168 168">
+          <circle cx="84" cy="84" r="70" fill="none" stroke="var(--surface-3)" stroke-width="14"/>
+          <circle cx="84" cy="84" r="70" fill="none" stroke="var(--sev-critical)" stroke-width="14"
+            stroke-linecap="round" stroke-dasharray="439.8" stroke-dashoffset="316.6"/>
+        </svg>
+        <div class="gauge-num"><div class="n">28</div><div class="d">из 100</div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="v">1 / 6</div><div class="l">страниц реально доступны краулерам</div></div>
+        <div class="stat crit"><div class="v">14</div><div class="l">критичных находок</div></div>
+        <div class="stat"><div class="v">69</div><div class="l">находок по всем категориям</div></div>
+        <div class="stat"><div class="v">0 / 5</div><div class="l">запросов, где сайт найден в Google</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="tag">Корневая причина · критично</div>
+    <h2>SPA-роутинг сломан — 5 из 6 страниц отдают настоящую 404</h2>
+    <p>Сайт (React/Vite SPA на Vercel) развёрнут без fallback-правила для клиентских маршрутов. При прямом запросе — именно так его получают Google, Bing, AI-краулеры и пользователи по ссылке или обновлению страницы — сервер возвращает подлинную ошибку 404, а не страницу приложения. Это подтвердили независимо 6 из 10 агентов аудита разными методами (curl, принудительный рендер в Playwright, живой поиск в Google, скриншоты).</p>
+    <div class="evidence">
+      <table>
+        <tr><td>GET /</td><td class="status-200">200 OK</td></tr>
+        <tr><td>GET /solutions</td><td class="status-404">404 NOT_FOUND</td></tr>
+        <tr><td>GET /services</td><td class="status-404">404 NOT_FOUND</td></tr>
+        <tr><td>GET /portfolio</td><td class="status-404">404 NOT_FOUND</td></tr>
+        <tr><td>GET /about</td><td class="status-404">404 NOT_FOUND</td></tr>
+        <tr><td>GET /contacts</td><td class="status-404">404 NOT_FOUND</td></tr>
+      </table>
+    </div>
+    <p style="margin-top:14px"><b>Фикс — 5 минут конфигурации:</b> добавить <code>vercel.json</code> с rewrite-правилом, направляющим все пути в <code>/index.html</code>. Это единственное изменение, которое разблокирует 83% сайта.</p>
+  </div>
+
+  <!-- ================= CATEGORY GRID ================= -->
+  <section id="categories">
+    <div class="section-head">
+      <div class="eyebrow">Оценки по категориям</div>
+      <h2>Где именно сайт теряет баллы</h2>
+      <p>Итоговый Health Score взвешен по стандартной модели (техническое SEO 22%, контент 23%, on-page 20%, schema 10%, производительность 10%, AI-поиск 10%, изображения 5%). Локальное SEO, поисковый опыт, визуал и бэклинки — дополнительные категории, важные для этого типа бизнеса.</p>
+    </div>
+    <div class="cat-grid">
+      <a href="#f-technical" class="cat-tile band-critical"><div class="name">Техническое SEO</div><div class="score-line"><span class="v">18</span><span class="of">/ 100</span></div><div class="bar-track"><div class="bar-fill" style="width:18%"></div></div></a>
+      <a href="#f-sitemap" class="cat-tile band-critical"><div class="name">Sitemap и краулинг</div><div class="score-line"><span class="v">15</span><span class="of">/ 100</span></div><div class="bar-track"><div class="bar-fill" style="width:15%"></div></div></a>
+      <a href="#f-content" class="cat-tile band-poor"><div class="name">Контент (E-E-A-T)</div><div class="score-line"><span class="v">34</span><span class="of">/ 100</span></div><div class="bar-track"><div class="bar-fill" style="width:34%"></div></div></a>
+      <a href="#f-schema" class="cat-tile band-poor"><div class="name">Структурир. данные</div><div class="score-line"><span class="v">35</span><span class="of">/ 100</span></div><div class="bar-track"><div class="bar-fill" style="width:35%"></div></div></a>
+      <a href="#f-performance" class="cat-tile band-fair"><div class="name">Производительность</div><div class="score-line"><span class="v">55</span><span class="of">/ 100*</span></div><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div></a>
+      <a href="#f-geo" class="cat-tile band-critical"><div class="name">AI-поиск (GEO)</div><div class="score-line"><span class="v">16</span><span class="of">/ 100</span></div><div class="bar-track"><div class="bar-fill" style="width:16%"></div></div></a>
+      <a href="#f-local" class="cat-tile band-critical"><div class="name">Локальное SEO</div><div class="score-line"><span class="v">20</span><span class="of">/ 100</span></div><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div></a>
+      <a href="#f-sxo" class="cat-tile band-poor"><div class="name">Поисковый опыт</div><div class="score-line"><span class="v">32</span><span class="of">/ 100</span></div><div class="bar-track"><div class="bar-fill" style="width:32%"></div></div></a>
+      <a href="#f-visual" class="cat-tile band-critical"><div class="name">Визуал / мобильный</div><div class="score-line"><span class="v">18</span><span class="of">/ 100</span></div><div class="bar-track"><div class="bar-fill" style="width:18%"></div></div></a>
+      <a href="#f-backlinks" class="cat-tile unmeasured"><div class="name">Бэклинки</div><div class="score-line"><span class="v">Tier 0</span></div><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div></a>
+    </div>
+    <p style="font-size:.78rem; color:var(--text-faint); margin-top:10px;">* Оценка производительности приблизительная — реальные измерения CWV заблокированы той же проблемой роутинга.</p>
+  </section>
+
+  <!-- ================= QUICK WINS ================= -->
+  <section id="wins">
+    <div class="section-head">
+      <div class="eyebrow">Быстрые победы</div>
+      <h2>5 фиксов с максимальной отдачей</h2>
+    </div>
+    <ol class="win-list" style="padding-left:0;">
+      <li><span class="idx">1</span><p><b>vercel.json с SPA-fallback rewrite</b> — 5 минут конфигурации, разблокирует 5 из 6 страниц. Самый выгодный фикс во всём аудите.</p></li>
+      <li><span class="idx">2</span><p><b>Объединить два конфликтующих JSON-LD блока</b> Organization/LocalBusiness в один с реальным названием «RayWerThi» и добавленным адресом.</p></li>
+      <li><span class="idx">3</span><p><b>Добавить security-заголовки</b> (CSP, X-Frame-Options, X-Content-Type-Options) через vercel.json — сейчас есть только HSTS.</p></li>
+      <li><span class="idx">4</span><p><b>Починить кнопки WhatsApp/Telegram</b> на /contacts (сейчас ведут в никуда) и сделать телефон кликабельной tel:-ссылкой.</p></li>
+      <li><span class="idx">5</span><p><b>Заполнить пустую секцию «Преимущества RayWerThi»</b> — заголовок есть, контента под ним нет вообще.</p></li>
+    </ol>
+  </section>
+
+  <!-- ================= SEVERITY DISTRIBUTION ================= -->
+  <section id="distribution">
+    <div class="section-head">
+      <div class="eyebrow">69 находок во всех категориях</div>
+      <h2>Распределение по критичности</h2>
+    </div>
+    <div class="sev-strip">
+      <div class="sev-pill critical"><span class="dot"></span>Critical — 14</div>
+      <div class="sev-pill high"><span class="dot"></span>High — 15</div>
+      <div class="sev-pill medium"><span class="dot"></span>Medium — 25</div>
+      <div class="sev-pill low"><span class="dot"></span>Low — 9</div>
+      <div class="sev-pill info"><span class="dot"></span>Info — 6</div>
+    </div>
+  </section>
+
+  <!-- ================= ACTION PLAN ================= -->
+  <section id="plan">
+    <div class="section-head">
+      <div class="eyebrow">План действий</div>
+      <h2>Четыре фазы, от блокера до мониторинга</h2>
+    </div>
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-label"><div class="when">Неделя 1</div><div class="name">Критичные фиксы</div></div>
+        <ul>
+          <li>vercel.json SPA-fallback rewrite — разблокировать 5 страниц</li>
+          <li>Проверить все 6 URL через curl -I, пересдать sitemap в Search Console</li>
+          <li>Объединить JSON-LD, добавить адрес и geo в LocalBusiness</li>
+          <li>Добавить security-заголовки (CSP report-only → enforce)</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="phase-label"><div class="when">Недели 2–3</div><div class="name">Высокий приоритет</div></div>
+        <ul>
+          <li>SSR / pre-rendering — сейчас даже главная отдаёт краулерам пустой div</li>
+          <li>Реальные URL для RU/HY/EN вместо переключателя без роутинга</li>
+          <li>Заполнить «Преимущества», починить WhatsApp/Telegram, tel:-ссылку</li>
+          <li>Доказательства присутствия в Грузии или смягчить формулировку</li>
+          <li>Подтвердить Google Business Profile, заменить embed карты на Place ID</li>
+          <li>Оптимизировать hero-изображение и логотип</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="phase-label"><div class="when">Месяц 2</div><div class="name">Контент и авторитетность</div></div>
+        <ul>
+          <li>FAQ-блок + FAQPage schema</li>
+          <li>Реальные фото объектов вместо стоковых Unsplash</li>
+          <li>Отзывы клиентов + aggregateRating schema</li>
+          <li>llms.txt; ссылки с дилерских страниц HELLA/WAREMA/Silent Gliss</li>
+          <li>Бесплатные Moz + Bing Webmaster для видимости бэклинков</li>
+          <li>Code splitting, удаление неиспользуемых зависимостей</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="phase-label"><div class="when">Постоянно</div><div class="name">Мониторинг</div></div>
+        <ul>
+          <li>Реальные PSI/Lighthouse/CrUX по всем 6 URL после фикса роутинга</li>
+          <li>Еженедельно — статус индексации в Search Console</li>
+          <li>Позиции по 5 проверенным запросам как индикатор восстановления</li>
+          <li>Повтор аудита бэклинков через 3–6 месяцев</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DETAILED FINDINGS ================= -->
+  <section id="findings">
+    <div class="section-head">
+      <div class="eyebrow">Детальные находки</div>
+      <h2>По каждой из 10 категорий</h2>
+      <p>Разверните категорию, чтобы увидеть все находки с описанием и рекомендацией. Полные технические доказательства (HTTP-заголовки, JSON-LD, скриншоты) — в файлах <code>findings/*.md</code>.</p>
+    </div>
+
+    <details class="cat-detail" id="f-technical" open>
+      <summary><div class="left"><span class="title">Техническое SEO</span></div><div style="display:flex;align-items:center;gap:12px"><span class="score-badge" style="background:var(--sev-critical-bg);color:var(--sev-critical)">18/100</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div></summary>
+      <div class="body">
+        <div class="works-box"><div class="lbl">Работает хорошо</div><ul><li>robots.txt чистый, корректно указывает sitemap</li><li>HTTPS с HSTS, чистые редиректы http→https и www→apex</li><li>На главной есть серверные meta-теги (title, description, OG) ещё до JS</li><li>Мобильная вёрстка адаптивна, нет console-ошибок</li></ul></div>
+        <div class="finding critical"><div class="fh"><span class="ft">Vercel SPA routing bug — 5 из 6 страниц отдают настоящую 404</span><span class="fsev">critical</span></div><p>Подтверждено через curl и принудительный Playwright-рендер: /solutions, /services, /portfolio, /about, /contacts возвращают X-Vercel-Error: NOT_FOUND. Это те же URL, что в sitemap.xml — Search Console покажет «Отправленный URL не найден» для 83% карты сайта.</p><p class="rec"><b>Фикс:</b> vercel.json с rewrite всех путей на /index.html, редеплой, проверка всех 6 URL через curl -I.</p></div>
+        <div class="finding critical"><div class="fh"><span class="ft">Чистый client-side рендеринг — canonical, hreflang и часть schema невидимы без JS</span><span class="fsev">critical</span></div><p>Raw HTML главной — пустой &lt;div id="root"&gt;&lt;/div&gt;. Canonical-тег, hreflang и расширенный JSON-LD внедряются только react-helmet-async на клиенте — большинство не-Google краулеров их не видят.</p><p class="rec"><b>Фикс:</b> SSR/SSG (Next.js, Remix, Astro) или prerendering; минимально — перенести canonical/hreflang главной в статичный index.html.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">hreflang все указывают на один и тот же URL</span><span class="fsev">high</span></div><p>ru/hy/en/x-default — все ведут на «/». Переключатель языков — три кнопки без href, чистое состояние компонента. HY/EN контент не индексируется.</p><p class="rec"><b>Фикс:</b> реальные отдельные URL на язык (/en/..., /hy/...) с корректными hreflang.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Отсутствуют критичные security-заголовки</span><span class="fsev">high</span></div><p>Есть только Strict-Transport-Security. Нет CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy — реальный пробел для сайта, собирающего контактные данные.</p><p class="rec"><b>Фикс:</b> добавить заголовки через vercel.json, CSP сначала в Report-Only режиме.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Негабаритные, нересponsive изображения-кандидаты в LCP</span><span class="fsev">medium</span></div><p>Hero-изображение — 1920×1080, 250KB JPEG без srcset и современных форматов. Логотип — PNG в 25 раз больше нужного разрешения.</p><p class="rec"><b>Фикс:</b> responsive srcset, WebP/AVIF, явные width/height, preload для hero.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Блокирующий рендер Google Fonts без preconnect</span><span class="fsev">medium</span></div><p>Синхронная загрузка шрифтов без preconnect/dns-prefetch добавляет задержку к FCP/LCP; запрошено 6 начертаний одного шрифта.</p><p class="rec"><b>Фикс:</b> preconnect-хинты, сократить число начертаний или самостоятельный хостинг Inter.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Дублирующиеся, противоречивые Organization-данные</span><span class="fsev">medium</span></div><p>Два JSON-LD блока с разными названиями («Raywerthi» vs «Raywerthi Solutions Hub») и разным форматом телефона.</p><p class="rec"><b>Фикс:</b> оставить один источник правды с единым названием и форматом телефона.</p></div>
+        <div class="finding low"><div class="fh"><span class="ft">Редирект www→apex использует временный статус 307</span><span class="fsev">low</span></div><p>Вместо постоянного 301/308, что делает консолидацию ссылочного веса менее определённой.</p><p class="rec"><b>Фикс:</b> сменить статус редиректа на 301/308 на уровне DNS/домена.</p></div>
+        <div class="finding low"><div class="fh"><span class="ft">Протокол IndexNow не внедрён</span><span class="fsev">low</span></div><p>Нет файла ключа IndexNow — Bing/Yandex могли бы узнавать об обновлениях почти мгновенно.</p><p class="rec"><b>Фикс:</b> низкий приоритет до фикса роутинга; после — сгенерировать ключ и отправить 6 URL.</p></div>
+        <div class="finding info"><div class="fh"><span class="ft">Минимальный набор favicon/иконок</span><span class="fsev">info</span></div><p>Только один .ico favicon, нет apple-touch-icon, SVG-favicon или web app manifest.</p><p class="rec"><b>Фикс:</b> добавить современный набор иконок — низкий приоритет.</p></div>
+      </div>
+    </details>
+
+    <details class="cat-detail" id="f-sitemap">
+      <summary><div class="left"><span class="title">Sitemap и покрытие краулингом</span></div><div style="display:flex;align-items:center;gap:12px"><span class="score-badge" style="background:var(--sev-critical-bg);color:var(--sev-critical)">15/100</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div></summary>
+      <div class="body">
+        <div class="works-box"><div class="lbl">Работает хорошо</div><ul><li>sitemap.xml валиден, корректно указан в robots.txt</li><li>6 URL — далеко в пределах лимитов Google</li><li>Канонизация домена (http→https, www→apex) настроена корректно</li></ul></div>
+        <div class="finding critical"><div class="fh"><span class="ft">5 из 6 URL в sitemap отдают HTTP 404 — тем же способом, каким их проверяет Googlebot</span><span class="fsev">critical</span></div><p>Проверено трижды, включая запрос с User-Agent Googlebot — результат идентичен. Контрольный запрос к заведомо несуществующему пути даёт такую же generic-404, подтверждая полное отсутствие SPA fallback.</p><p class="rec"><b>Фикс:</b> тот же vercel.json rewrite; после фикса — пересдать sitemap в Search Console.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Нет lastmod ни у одного из 6 URL</span><span class="fsev">medium</span></div><p>Google не получает вообще никакого сигнала свежести контента.</p><p class="rec"><b>Фикс:</b> добавить lastmod в формате YYYY-MM-DD по реальным датам значимых изменений.</p></div>
+        <div class="finding info"><div class="fh"><span class="ft">Устаревшие теги priority и changefreq</span><span class="fsev">info</span></div><p>Google открыто заявляет, что игнорирует оба тега для ранжирования и краулинга.</p><p class="rec"><b>Фикс:</b> опционально — можно удалить, влияния на ранжирование нет.</p></div>
+      </div>
+    </details>
+
+    <details class="cat-detail" id="f-content">
+      <summary><div class="left"><span class="title">Качество контента (E-E-A-T)</span></div><div style="display:flex;align-items:center;gap:12px"><span class="score-badge" style="background:var(--sev-high-bg);color:var(--sev-high)">34/100</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div></summary>
+      <div class="body">
+        <div class="works-box"><div class="lbl">Работает хорошо</div><ul><li>Официальное представительство трёх узнаваемых брендов — реальный сигнал авторитетности</li><li>Настоящий мультиязычный таргетинг (RU/HY/EN), а не шаблонная локализация</li><li>Узкая ниша с потенциалом для сильных кейс-стади</li></ul></div>
+        <div class="finding critical"><div class="fh"><span class="ft">5 из 6 страниц отдают 404 — контент фактически не индексируется</span><span class="fsev">critical</span></div><p>Страница, зафиксированная поисковиком как 404, не будет проиндексирована независимо от качества контента на ней.</p><p class="rec"><b>Фикс:</b> сначала — роутинг; повторный аудит контента только после фикса.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Сигналы доверия не проверены — самый весомый фактор E-E-A-T</span><span class="fsev">high</span></div><p>Доверие (30% веса) зависит от /contacts и /about — именно тех страниц, что отдают 404.</p><p class="rec"><b>Фикс:</b> после фикса роутинга — проверить наличие адреса, телефонов для обеих стран, подтверждения партнёрства.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Сигналы экспертизы (кейсы, команда) не подтверждены</span><span class="fsev">high</span></div><p>Не удалось подтвердить именных сотрудников, сертификаты или детальные кейс-стади с фото/спецификациями.</p><p class="rec"><b>Фикс:</b> реальные фото объектов, теги региона, именные сотрудники, конкретные УТП.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Минимумы по объёму текста не проверены</span><span class="fsev">medium</span></div><p>Недостаточно данных по /solutions, /services, /portfolio, /about, /contacts — помечено для повторной проверки.</p><p class="rec"><b>Фикс:</b> пересчитать после стабильного возврата 200 на всех страницах.</p></div>
+        <div class="finding low"><div class="fh"><span class="ft">Читаемость и свежесть главной не полностью проверены</span><span class="fsev">low</span></div><p>Недостаточно данных по точному объёму текста и сигналам свежести.</p><p class="rec"><b>Фикс:</b> повторный прогон читаемости после стабилизации краулинга.</p></div>
+        <div class="finding low"><div class="fh"><span class="ft">Риск шаблонности между RU/HY/EN не проверен</span><span class="fsev">low</span></div><p>Не подтверждено, реальная ли локализация или машинный перевод строк интерфейса.</p><p class="rec"><b>Фикс:</b> сравнить разделы между локалями на предмет реальной локализации.</p></div>
+        <div class="finding low"><div class="fh"><span class="ft">Готовность к цитированию AI не оценена</span><span class="fsev">low</span></div><p>Полнота структуры заголовков и «цитируемых» фактов не оценена из-за блокера роутинга.</p><p class="rec"><b>Фикс:</b> после фикса — чёткая иерархия H1-H6 и конкретные факты для цитирования.</p></div>
+      </div>
+    </details>
+
+    <details class="cat-detail" id="f-schema">
+      <summary><div class="left"><span class="title">Структурированные данные</span></div><div style="display:flex;align-items:center;gap:12px"><span class="score-badge" style="background:var(--sev-high-bg);color:var(--sev-high)">35/100</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div></summary>
+      <div class="body">
+        <div class="works-box"><div class="lbl">Работает хорошо</div><ul><li>Валидный, серверно отрендеренный JSON-LD (Organization + LocalBusiness)</li><li>areaServed указан на обеих сущностях (Армения, Грузия, Кавказ)</li><li>Нет устаревших типов schema</li></ul></div>
+        <div class="finding critical"><div class="fh"><span class="ft">Schema на внутренних страницах недоступна краулерам</span><span class="fsev">critical</span></div><p>Полноценная schema существует в React-приложении, но обычный HTTP GET получает 404 раньше, чем JS успевает её отрисовать.</p><p class="rec"><b>Фикс:</b> тот же routing-фикс; перепроверить схему после возврата 200.</p></div>
+        <div class="finding critical"><div class="fh"><span class="ft">В LocalBusiness полностью отсутствует address</span><span class="fsev">critical</span></div><p>Нет ни PostalAddress, ни geo — при этом реальный адрес виден в HTML.</p><p class="rec"><b>Фикс:</b> добавить PostalAddress (streetAddress, addressLocality, addressCountry) и GeoCoordinates.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Дублирующаяся, конфликтующая Organization schema</span><span class="fsev">high</span></div><p>Два блока не совпадают по названию компании и формату телефона.</p><p class="rec"><b>Фикс:</b> удалить дубль, унифицировать название под видимый бренд «RayWerThi».</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Использован generic LocalBusiness вместо более точного подтипа</span><span class="fsev">medium</span></div><p>Бизнес хорошо описывается подтипом HomeAndConstructionBusiness.</p><p class="rec"><b>Фикс:</b> "@type": ["LocalBusiness", "HomeAndConstructionBusiness"].</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Отсутствуют logo, sameAs, email, contactPoint</span><span class="fsev">medium</span></div><p>Ни один блок не содержит логотип, ссылки на соцсети/GBP, email или ContactPoint с availableLanguage.</p><p class="rec"><b>Фикс:</b> дополнить консолидированный узел Organization этими свойствами.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Нет WebSite или BreadcrumbList schema</span><span class="fsev">medium</span></div><p>Ничего не связывает Organization/LocalBusiness через publisher; нет хлебных крошек при явной иерархии сайта.</p><p class="rec"><b>Фикс:</b> добавить WebSite-узел и BreadcrumbList после фикса роутинга.</p></div>
+        <div class="finding info"><div class="fh"><span class="ft">Нет Service/Product schema для 6 категорий решений</span><span class="fsev">info</span></div><p>Низкий приоритет, пока страница недоступна для индексации.</p><p class="rec"><b>Фикс:</b> добавить Service-сущность на категорию после фикса роутинга.</p></div>
+        <div class="finding low"><div class="fh"><span class="ft">Контактные данные не подтверждены из-за 404 на /contacts</span><span class="fsev">low</span></div><p>Точный адрес, часы работы и geo не удалось подтвердить.</p><p class="rec"><b>Фикс:</b> подставить реальные данные из /contacts после фикса.</p></div>
+      </div>
+    </details>
+
+    <details class="cat-detail" id="f-performance">
+      <summary><div class="left"><span class="title">Производительность (CWV)</span></div><div style="display:flex;align-items:center;gap:12px"><span class="score-badge" style="background:var(--sev-medium-bg);color:var(--sev-medium)">55/100*</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div></summary>
+      <div class="body">
+        <div class="works-box"><div class="lbl">Работает хорошо</div><ul><li>Hero-изображение имеет явные width/height — снижает риск CLS</li><li>Изображения ниже экрана используют loading="lazy"</li><li>Единая сборка CSS/JS без дублей; DOM-размер главной в норме</li></ul></div>
+        <div class="finding critical"><div class="fh"><span class="ft">5 из 6 маршрутов недоступны — блокирует любое реальное измерение CWV</span><span class="fsev">critical</span></div><p>Данных PSI/CrUX/Lighthouse получить не удалось. Все оценки в этом разделе — приблизительные, явно помечены как таковые.</p><p class="rec"><b>Фикс:</b> сначала роутинг, затем реальные замеры по всем 6 URL.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Единый монолитный JS-бандл при тяжёлом наборе зависимостей</span><span class="fsev">high</span></div><p>~25 пакетов Radix UI, recharts, embla-carousel и другие библиотеки грузятся одним бандлом без code splitting.</p><p class="rec"><b>Фикс:</b> аудит неиспользуемых зависимостей, code splitting по маршрутам через React.lazy().</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Превью портфолио — хотлинки с Unsplash без размеров</span><span class="fsev">medium</span></div><p>6 изображений загружаются со стороннего домена без width/height — риск CLS.</p><p class="rec"><b>Фикс:</b> самостоятельный хостинг, оптимизация WebP/AVIF, явные размеры.</p></div>
+        <div class="finding low"><div class="fh"><span class="ft">Нет ресурсных хинтов preconnect/preload</span><span class="fsev">low</span></div><p>Ни для вероятного LCP-изображения, ни для сторонних доменов.</p><p class="rec"><b>Фикс:</b> добавить preload для hero, preconnect для сторонних доменов.</p></div>
+        <div class="finding info"><div class="fh"><span class="ft">Стратегия загрузки шрифтов не определена</span><span class="fsev">info</span></div><p>Декларации шрифтов не найдены в отрендеренном &lt;head&gt; — возможно, они в CSS-бандле.</p><p class="rec"><b>Фикс:</b> проверить собранный CSS, добавить font-display: swap при необходимости.</p></div>
+      </div>
+    </details>
+
+    <details class="cat-detail" id="f-geo">
+      <summary><div class="left"><span class="title">AI-поиск (GEO)</span></div><div style="display:flex;align-items:center;gap:12px"><span class="score-badge" style="background:var(--sev-critical-bg);color:var(--sev-critical)">16/100</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div></summary>
+      <div class="body">
+        <div class="works-box"><div class="lbl">Работает хорошо</div><ul><li>robots.txt не блокирует AI-краулеров (проходят через wildcard-правило)</li><li>Статичный JSON-LD Organization в raw-HTML — единственный содержательный факт для не-JS краулеров</li><li>Статичные title/description информативны и упоминают все три бренда</li></ul></div>
+        <div class="finding critical"><div class="fh"><span class="ft">5 из 6 страниц отдают 404 практически всем AI-краулерам</span><span class="fsev">critical</span></div><p>GPTBot, ClaudeBot, PerplexityBot и CCBot не выполняют JS — они получают тот же честный серверный 404, что и обычные боты.</p><p class="rec"><b>Фикс:</b> тот же routing-фикс — предпосылка для всех остальных рекомендаций по GEO.</p></div>
+        <div class="finding critical"><div class="fh"><span class="ft">Raw HTML любой страницы — пустая оболочка без текста</span><span class="fsev">critical</span></div><p>Весь независимо получаемый текстовый бюджет сайта для не-рендерящего краулера — meta-описание (~30 слов) и один JSON-LD блок. Даже отрендеренная главная содержит всего 167 слов текста.</p><p class="rec"><b>Фикс:</b> SSR/pre-rendering — самый выгодный фикс для цитируемости, структуры и доступности одновременно.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Файл llms.txt отсутствует</span><span class="fsev">medium</span></div><p>/llms.txt отдаёт 404 — нет явного краулер-дружелюбного описания бизнеса.</p><p class="rec"><b>Фикс:</b> создать /llms.txt с кратким описанием компании и ссылками на страницы.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">robots.txt не называет AI-краулеров явно</span><span class="fsev">medium</span></div><p>Разрешение проходит только через wildcard-правило — неявное, хрупкое к будущим изменениям.</p><p class="rec"><b>Фикс:</b> явные Allow-группы для GPTBot, ClaudeBot, PerplexityBot и др.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Дублирующиеся JSON-LD и meta description в финальном DOM</span><span class="fsev">medium</span></div><p>react-helmet-async добавляет, а не заменяет статичные теги — в итоге два description и два разных названия компании одновременно.</p><p class="rec"><b>Фикс:</b> настроить helmet на замену, а не добавление; единое название везде.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Ноль сигналов подтверждения бренда извне</span><span class="fsev">medium</span></div><p>Нет ссылок на Instagram, YouTube, LinkedIn, нет отзывов — AI-системам не на что опереться для проверки бизнеса.</p><p class="rec"><b>Фикс:</b> добавить рабочие соцсети с sameAs в schema; видео на YouTube — сильнейший коррелят цитируемости.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Нет FAQ и вопрос-ответного контента</span><span class="fsev">medium</span></div><p>Все заголовки декларативны; секция «Преимущества» рендерится полностью пустой.</p><p class="rec"><b>Фикс:</b> добавить FAQ-блок; сначала починить пустую секцию Преимуществ.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Мультиязычный контент существует только как состояние UI</span><span class="fsev">medium</span></div><p>Нет отдельных URL для HY/EN — два из трёх языков аудитории недостижимы для AI-поиска.</p><p class="rec"><b>Фикс:</b> реальный роутинг по языкам после SSR и routing-фикса.</p></div>
+      </div>
+    </details>
+
+    <details class="cat-detail" id="f-local">
+      <summary><div class="left"><span class="title">Локальное SEO</span></div><div style="display:flex;align-items:center;gap:12px"><span class="score-badge" style="background:var(--sev-critical-bg);color:var(--sev-critical)">20/100</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div></summary>
+      <div class="body">
+        <div class="works-box"><div class="lbl">Работает хорошо</div><ul><li>areaServed машиночитаемо указан на уровне организации</li><li>Номер телефона консистентен везде (различается только форматирование)</li><li>Реальный адрес и карта существуют на /contacts</li><li>Несколько каналов связи с учётом региональных привычек (WhatsApp, Telegram)</li></ul></div>
+        <div class="finding critical"><div class="fh"><span class="ft">/contacts и /about — единственные страницы с NAP — отдают 404</span><span class="fsev">critical</span></div><p>Весь локальный payload сайта (адрес, телефон, карта, форма) недоступен краулерам напрямую.</p><p class="rec"><b>Фикс:</b> тот же routing-фикс — приоритет №1 для локального SEO.</p></div>
+        <div class="finding critical"><div class="fh"><span class="ft">В LocalBusiness нет address и geo</span><span class="fsev">critical</span></div><p>Подрывает право на Local Pack и Google Maps панель знаний.</p><p class="rec"><b>Фикс:</b> добавить PostalAddress и GeoCoordinates.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Название компании и телефон конфликтуют между двумя JSON-LD блоками</span><span class="fsev">high</span></div><p>Название встречается в трёх формах: RayWerThi, Raywerthi, Raywerthi Solutions Hub — известный фактор подавления ранжирования при несовпадении с GBP.</p><p class="rec"><b>Фикс:</b> единое название и формат телефона везде, включая листинг Google Business Profile.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Нет проверяемого сигнала Google Business Profile</span><span class="fsev">high</span></div><p>Embed карты использует generic текстовый поиск, а не Place ID — не доказывает существование листинга. Нет отзывов, фото, постов.</p><p class="rec"><b>Фикс:</b> подтвердить/создать GBP-листинг, заменить embed на реальный Place ID.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Ноль отзывов, рейтингов и тестимониалов</span><span class="fsev">high</span></div><p>Значительный пробел доверия для премиального позиционирования ($$$).</p><p class="rec"><b>Фикс:</b> собирать отзывы после установки, добавить aggregateRating schema.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Заявлено покрытие двух стран, но ноль доказательств по Грузии</span><span class="fsev">high</span></div><p>Единственный адрес и телефон — армянские; все проекты портфолио отмечены только Ереваном, хотя /about заявляет об «успешных проектах в Грузии».</p><p class="rec"><b>Фикс:</b> добавить реальный грузинский проект с фото и тегом города, либо смягчить формулировку.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Видимый адрес не содержит город и индекс</span><span class="fsev">medium</span></div><p>Блок адреса на /contacts показывает только страну и улицу.</p><p class="rec"><b>Фикс:</b> дополнить адрес до полного формата «Улица, Город, Страна».</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Армянский язык не создаёт независимо краулируемого контента</span><span class="fsev">medium</span></div><p>Все hreflang-альтернативы, включая hy, ведут на один URL.</p><p class="rec"><b>Фикс:</b> реальные URL по языку после SSR/routing-фикса.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Кнопки WhatsApp и Telegram — нерабочие заглушки</span><span class="fsev">medium</span></div><p>Обе ведут на href="#" вместо реальных wa.me/t.me ссылок.</p><p class="rec"><b>Фикс:</b> подключить настоящие deep-ссылки на мессенджеры.</p></div>
+        <div class="finding low"><div class="fh"><span class="ft">Контактный email — на бесплатном Gmail, а не на домене</span><span class="fsev">low</span></div><p>Все mailto-ссылки ведут на Gmail-адрес несмотря на владение доменом raywerthi.com.</p><p class="rec"><b>Фикс:</b> завести и использовать брендированный email на домене.</p></div>
+        <div class="finding info"><div class="fh"><span class="ft">Generic LocalBusiness без openingHoursSpecification</span><span class="fsev">info</span></div><p>Рекомендуемые, но не обязательные свойства для полноты Local Pack.</p><p class="rec"><b>Фикс:</b> добавить подтип HomeAndConstructionBusiness и часы работы.</p></div>
+      </div>
+    </details>
+
+    <details class="cat-detail" id="f-sxo">
+      <summary><div class="left"><span class="title">Поисковый опыт (SXO)</span></div><div style="display:flex;align-items:center;gap:12px"><span class="score-badge" style="background:var(--sev-high-bg);color:var(--sev-high)">32/100</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div></summary>
+      <div class="body">
+        <div class="works-box"><div class="lbl">Работает хорошо</div><ul><li>Ясное УТП на главной с двумя различимыми CTA</li><li>/services и /solutions хорошо соответствуют тому, что вознаграждает SERP для таких типов страниц</li><li>/contacts имеет рабочую форму, карту и три канала связи</li><li>robots.txt ничего не блокирует — проблема в конфигурации, а не в стратегии</li></ul></div>
+        <div class="finding critical"><div class="fh"><span class="ft">Сайт не найден в Google ни по одному из 5 проверенных запросов</span><span class="fsev">critical</span></div><p>По запросам вроде «HELLA официальный представитель Армения» и «Silent Gliss Армения карнизы» raywerthi.com не появляется вообще — конкуренты и даже нерелевантный магазин автозапчастей обгоняют сайт.</p><p class="rec"><b>Фикс:</b> P0, фикс роутинга — без него ни одна SXO-рекомендация не имеет значения.</p></div>
+        <div class="finding critical"><div class="fh"><span class="ft">Архитектура сайта сжимает 5 разных поисковых интентов в 1 доступный URL</span><span class="fsev">critical</span></div><p>SERP по всем 5 запросам вознаграждает узкоспециализированные страницы (локальный каталог, продуктовая карточка, страница дистрибьютора). У RayWerThi структура для этого есть, но Google видит только одну общую главную.</p><p class="rec"><b>Фикс:</b> после routing-фикса — добавить страницы под конкретные интенты (Грузия/Тбилиси, категории брендов).</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Секция «Преимущества RayWerThi» рендерится полностью пустой</span><span class="fsev">high</span></div><p>Заголовок есть, контейнер контента — пустой div с нулём дочерних элементов, подтверждено и в HTML, и на скриншоте.</p><p class="rec"><b>Фикс:</b> найти сломанный источник данных, заполнить 3-6 карточками конкретных преимуществ.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">LocalBusiness без address/geo/часов работы</span><span class="fsev">high</span></div><p>При этом на /contacts существует реальный геокодированный офис.</p><p class="rec"><b>Фикс:</b> заполнить структуру полным адресом и координатами.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Нет присутствия в Грузии/Тбилиси при явных заявлениях об этом</span><span class="fsev">high</span></div><p>SERP по запросу «маркизы Тбилиси» показывает локальный справочник с реальными тбилисскими адресами — именно то конкретное доказательство, которого не хватает RayWerThi.</p><p class="rec"><b>Фикс:</b> добавить реальный грузинский проект/контакт или смягчить заявление.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Коллизия бренда «HELLA» с автозапчастями подавляет видимость</span><span class="fsev">medium</span></div><p>Поиск по официальному представителю HELLA выдаёт несвязанный магазин автозапчастей под тем же товарным знаком.</p><p class="rec"><b>Фикс:</b> последовательно сочетать «HELLA» с терминами солнцезащиты в заголовках и schema.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Портфолио использует стоковые фото вместо реальных объектов</span><span class="fsev">medium</span></div><p>Все 8 изображений — с Unsplash, несмотря на конкретные названия проектов — риск доверия при обнаружении.</p><p class="rec"><b>Фикс:</b> заменить на реальную фотографию завершённых объектов.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Нет цен, спецификаций или технического контента для оценщиков</span><span class="fsev">medium</span></div><p>Конкурирующий контент по «автоматические жалюзи Армения» идёт глубже в конкретику продукта.</p><p class="rec"><b>Фикс:</b> добавить ориентировочные цены «от» и названия поддерживаемых платформ умного дома.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Нет отзывов и сторонних сигналов доверия</span><span class="fsev">medium</span></div><p>Самое слабое измерение среди всех 5 проверенных персон (доверие: 6-9 из 25).</p><p class="rec"><b>Фикс:</b> собрать реальные отзывы, привязанные к конкретным проектам.</p></div>
+        <div class="finding low"><div class="fh"><span class="ft">Номер телефона — не кликабельная tel:-ссылка</span><span class="fsev">low</span></div><p>Добавляет трение на мобильных для самого низкозатратного действия — звонка.</p><p class="rec"><b>Фикс:</b> обернуть номер в href="tel:..." по всему сайту.</p></div>
+      </div>
+    </details>
+
+    <details class="cat-detail" id="f-visual">
+      <summary><div class="left"><span class="title">Визуал / мобильная версия</span></div><div style="display:flex;align-items:center;gap:12px"><span class="score-badge" style="background:var(--sev-critical-bg);color:var(--sev-critical)">18/100</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div></summary>
+      <div class="body">
+        <div class="works-box"><div class="lbl">Работает хорошо</div><ul><li>Дизайн главной визуально силён: чёткое УТП, два CTA над сгибом на обоих брейкпоинтах</li><li>Мобильная раскладка аккуратно сворачивается в одну колонку без наложений</li><li>Секция брендов-партнёров читается чётко на обоих экранах</li></ul></div>
+        <div class="finding critical"><div class="fh"><span class="ft">Пункты главной навигации отдают ошибку Vercel 404 на любом устройстве</span><span class="fsev">critical</span></div><p>Скриншоты /solutions, /services, /portfolio, /contacts на desktop и mobile показывают карточку ошибки Vercel, а не контент сайта — подтверждено и по размеру файлов, и визуально.</p><p class="rec"><b>Фикс:</b> тот же routing-фикс; пересобрать скриншоты для подтверждения.</p></div>
+        <div class="finding high"><div class="fh"><span class="ft">Above-the-fold и адаптивность нельзя проверить для 4 из 5 шаблонов</span><span class="fsev">high</span></div><p>Поскольку затронутые страницы — страницы ошибки, ни одна стандартная визуальная проверка невозможна.</p><p class="rec"><b>Фикс:</b> пересобрать скриншоты и визуальный QA после фикса роутинга.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">В мобильной шапке не видно кнопки-гамбургера</span><span class="fsev">medium</span></div><p>На скриншоте мобильной версии виден только логотип и переключатель языка — меню не различимо.</p><p class="rec"><b>Фикс:</b> вручную проверить в браузере наличие рабочего мобильного меню.</p></div>
+        <div class="finding info"><div class="fh"><span class="ft">Страница «О компании» вообще не охвачена скриншотами</span><span class="fsev">info</span></div><p>Визуальное состояние /about неизвестно и не проверено этим аудитом.</p><p class="rec"><b>Фикс:</b> снять и проверить скриншоты /about отдельным проходом.</p></div>
+      </div>
+    </details>
+
+    <details class="cat-detail" id="f-backlinks">
+      <summary><div class="left"><span class="title">Бэклинки</span></div><div style="display:flex;align-items:center;gap:12px"><span class="score-badge" style="background:var(--sev-info-bg);color:var(--sev-info)">Tier 0</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></div></summary>
+      <div class="body">
+        <div class="works-box"><div class="lbl">Работает хорошо</div><ul><li>Пайплайн аудита отработал чисто, без ошибок</li><li>Не найдено признаков токсичных или спамных ссылок</li><li>Сильная неиспользованная база для линкбилдинга через бренды-партнёры</li></ul></div>
+        <div class="finding high"><div class="fh"><span class="ft">Домен отсутствует в графе Common Crawl — нет измеримого сигнала о входящих ссылках</span><span class="fsev">high</span></div><p>Единственный бесплатный источник данных на этом уровне доступа не нашёл записи о домене вообще. Это не подтверждает отсутствие бэклинков — только отсутствие видимости на этом уровне.</p><p class="rec"><b>Фикс:</b> не решается изменениями на сайте; требует реальных входящих ссылок или платного источника данных (Moz/DataForSEO).</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Не подключены премиум-источники данных о бэклинках</span><span class="fsev">medium</span></div><p>0 из 7 факторов оценки бэклинков имеют источник данных на этом уровне доступа.</p><p class="rec"><b>Фикс:</b> зарегистрировать бесплатный Moz API и Bing Webmaster Tools.</p></div>
+        <div class="finding medium"><div class="fh"><span class="ft">Неиспользованная возможность: ссылки со страниц дилеров HELLA, WAREMA, Silent Gliss</span><span class="fsev">medium</span></div><p>Не найдено подтверждений, что raywerthi.com указан на официальных страницах поиска дилеров этих брендов — естественный, релевантный и низкорисковый источник ссылок.</p><p class="rec"><b>Фикс:</b> связаться с региональными контактами брендов и запросить добавление в список дилеров со ссылкой.</p></div>
+      </div>
+    </details>
+
+  </section>
+
+  <footer>
+    <p><b>Методологическое примечание.</b> Полноценные измерения Core Web Vitals (PSI/CrUX/Lighthouse) получить не удалось из-за отсутствия Google API credentials — раздел производительности оценочный, а не измеренный. Бэклинк-профиль оценён только на уровне Tier 0 (Common Crawl, без Moz/Bing) — «недостаточно данных» не значит «плохой профиль». Полные технические доказательства (HTTP-заголовки, JSON-LD, скриншоты, результаты поиска) — в файлах <code>findings/*.md</code> папки аудита.</p>
+  </footer>
+
+</div>

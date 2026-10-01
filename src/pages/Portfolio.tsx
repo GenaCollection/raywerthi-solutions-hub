@@ -23,7 +23,12 @@ interface Project {
 const Portfolio: React.FC = () => {
   const { t, tRaw } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<string>('all');
-  const projects: Project[] = Array.isArray(tRaw('portfolio.projects')) ? tRaw('portfolio.projects') : [];
+  const rawProjects = tRaw('portfolio.projects');
+  const projects = Array.isArray(rawProjects) ? rawProjects.filter((item): item is Project =>
+    typeof item === 'object' && item !== null &&
+    ['name', 'location', 'type', 'solution', 'brands'].every((key) =>
+      key in item && typeof (item as Record<string, unknown>)[key] === 'string')
+  ) : [];
 
   const entries = projects.map((project, index) => ({ project, image: portfolioIllustrations[index % portfolioIllustrations.length] }));
   const filtered = activeFilter === 'all' ? entries : entries.filter(({ project }) => project.type === activeFilter);

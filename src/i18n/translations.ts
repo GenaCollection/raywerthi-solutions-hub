@@ -1,6 +1,8 @@
 export type Language = 'ru' | 'hy' | 'en';
 
-export const translations: Record<Language, Record<string, any>> = {
+export type TranslationValue = string | TranslationValue[] | { [key: string]: TranslationValue };
+
+export const translations: Record<Language, Record<string, TranslationValue>> = {
   ru: {
     nav: {
       home: 'Главная',

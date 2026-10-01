@@ -1,0 +1,224 @@
+{
+  "url": "https://raywerthi.com/",
+  "label": "home",
+  "nav_error": null,
+  "load_ms": 1357.8,
+  "settle_ms": 6363.7,
+  "lcp_ms": null,
+  "lcp_element": null,
+  "cls": 0,
+  "cls_shift_count": 0,
+  "fcp_ms": null,
+  "tbt_approx_ms": 0,
+  "longtask_count": 0,
+  "nav_timing": {
+    "ttfb_ms": 269.39999997615814,
+    "dom_content_loaded_ms": 1286.0999999046326,
+    "load_event_ms": 1286.0999999046326,
+    "transfer_size": 1395,
+    "encoded_body_size": 1095
+  },
+  "dom_element_count": 321,
+  "images": [
+    {
+      "src": "https://raywerthi.com/assets/raywerthi-mark-BJtAylsg.png",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": null,
+      "natural_width": 700,
+      "natural_height": 312,
+      "rendered_width": 99,
+      "rendered_height": 44
+    },
+    {
+      "src": "https://raywerthi.com/assets/hero-home-DEkII6aE.jpg",
+      "width_attr": "1920",
+      "height_attr": "1080",
+      "loading": null,
+      "natural_width": 1920,
+      "natural_height": 1080,
+      "rendered_width": 375,
+      "rendered_height": 731
+    },
+    {
+      "src": "data:image/svg+xml,%3c",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": "lazy",
+      "natural_width": 140,
+      "natural_height": 29,
+      "rendered_width": 140,
+      "rendered_height": 29
+    },
+    {
+      "src": "https://raywerthi.com/assets/warema-logo-Bag3X_F4.svg",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": "lazy",
+      "natural_width": 1024,
+      "natural_height": 650,
+      "rendered_width": 101,
+      "rendered_height": 64
+    },
+    {
+      "src": "https://raywerthi.com/assets/silentgliss-logo-CUL19Bj9.svg",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": "lazy",
+      "natural_width": 648,
+      "natural_height": 144,
+      "rendered_width": 247,
+      "rendered_height": 55
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": "lazy",
+      "natural_width": 0,
+      "natural_height": 0,
+      "rendered_width": 309,
+      "rendered_height": 232
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": "lazy",
+      "natural_width": 0,
+      "natural_height": 0,
+      "rendered_width": 309,
+      "rendered_height": 232
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": "lazy",
+      "natural_width": 0,
+      "natural_height": 0,
+      "rendered_width": 309,
+      "rendered_height": 232
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": "lazy",
+      "natural_width": 0,
+      "natural_height": 0,
+      "rendered_width": 309,
+      "rendered_height": 232
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": "lazy",
+      "natural_width": 0,
+      "natural_height": 0,
+      "rendered_width": 309,
+      "rendered_height": 232
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1600573472592-401b489a3cdc",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": "lazy",
+      "natural_width": 0,
+      "natural_height": 0,
+      "rendered_width": 309,
+      "rendered_height": 232
+    },
+    {
+      "src": "https://raywerthi.com/assets/raywerthi-mark-light-CJ9xe6Ia.png",
+      "width_attr": null,
+      "height_attr": null,
+      "loading": "lazy",
+      "natural_width": 0,
+      "natural_height": 0,
+      "rendered_width": 0,
+      "rendered_height": 48
+    }
+  ],
+  "render_blocking": {
+    "blocking_scripts": [],
+    "stylesheets": [
+      "https://raywerthi.com/assets/index-CO2MCbcQ.css"
+    ]
+  },
+  "console_error_count": 0,
+  "console_errors": [],
+  "resources": [
+    {
+      "url": "https://raywerthi.com/",
+      "status": 200,
+      "resource_type": "document",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null
+    },
+    {
+      "url": "https://raywerthi.com/assets/index-CO2MCbcQ.css",
+      "status": 200,
+      "resource_type": "stylesheet",
+      "content_type": "text/css; charset=utf-8",
+      "content_length": null
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap",
+      "status": 200,
+      "resource_type": "stylesheet",
+      "content_type": "text/css; charset=utf-8",
+      "content_length": null
+    },
+    {
+      "url": "https://raywerthi.com/assets/index-CMjOWT8M.js",
+      "status": 200,
+      "resource_type": "script",
+      "content_type": "application/javascript; charset=utf-8",
+      "content_length": null
+    },
+    {
+      "url": "https://raywerthi.com/assets/hero-home-DEkII6aE.jpg",
+      "status": 200,
+      "resource_type": "image",
+      "content_type": "image/jpeg",
+      "content_length": 250357
+    },
+    {
+      "url": "https://raywerthi.com/assets/raywerthi-mark-BJtAylsg.png",
+      "status": 200,
+      "resource_type": "image",
+      "content_type": "image/png",
+      "content_length": 116548
+    },
+    {
+      "url": "https://raywerthi.com/assets/warema-logo-Bag3X_F4.svg",
+      "status": 200,
+      "resource_type": "image",
+      "content_type": "image/svg+xml",
+      "content_length": null
+    },
+    {
+      "url": "https://raywerthi.com/assets/silentgliss-logo-CUL19Bj9.svg",
+      "status": 200,
+      "resource_type": "image",
+      "content_type": "image/svg+xml",
+      "content_length": null
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2",
+      "status": 200,
+      "resource_type": "font",
+      "content_type": "font/woff2",
+      "content_length": 18744
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+      "status": 200,
+      "resource_type": "font",
+      "content_type": "font/woff2",
+      "content_length": 48432
+    }
+  ]
+}

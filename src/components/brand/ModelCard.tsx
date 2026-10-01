@@ -38,7 +38,7 @@ const ModelCard: React.FC<ModelCardProps> = ({ model, fallbackImage, solutionNam
   const sourceUrl = activeVariant?.sourceUrl ?? model.sourceUrl;
   const visibleSpecs = expanded ? specs : specs.slice(0, VISIBLE_SPECS);
 
-  const quoteHref = `/contacts?solution=${encodeURIComponent(solutionName)}&model=${encodeURIComponent(model.name)}`;
+  const quoteHref = `/contacts?solution=${encodeURIComponent(solutionName)}&model=${encodeURIComponent(activeVariant ? model.name + ' (' + activeVariant.label + ')' : model.name)}`;
 
   return (
     <article className="group flex flex-col border border-border bg-card transition-colors hover:border-foreground/30">

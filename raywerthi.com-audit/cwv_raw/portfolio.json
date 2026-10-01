@@ -1,0 +1,40 @@
+{
+  "url": "https://raywerthi.com/portfolio",
+  "label": "portfolio",
+  "nav_error": null,
+  "load_ms": 416.5,
+  "settle_ms": 5424.9,
+  "lcp_ms": null,
+  "lcp_element": null,
+  "cls": 0,
+  "cls_shift_count": 0,
+  "fcp_ms": null,
+  "tbt_approx_ms": 0,
+  "longtask_count": 0,
+  "nav_timing": {
+    "ttfb_ms": 268.89999997615814,
+    "dom_content_loaded_ms": 396.60000002384186,
+    "load_event_ms": 398.60000002384186,
+    "transfer_size": 1853,
+    "encoded_body_size": 1553
+  },
+  "dom_element_count": 19,
+  "images": [],
+  "render_blocking": {
+    "blocking_scripts": [],
+    "stylesheets": []
+  },
+  "console_error_count": 1,
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 ()"
+  ],
+  "resources": [
+    {
+      "url": "https://raywerthi.com/portfolio",
+      "status": 404,
+      "resource_type": "document",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null
+    }
+  ]
+}
